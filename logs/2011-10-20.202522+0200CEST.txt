@@ -1,0 +1,73 @@
+Conversation with #fife at Thu 20 Oct 2011 08:25:22 PM CEST on karottenreibe@irc.freenode.net (irc)
+(08:25:22 PM) List of 22 users: [ ChanServ ][ Beliar ][ cassmodiah ][ chrisoelmueller ][ christoph_debian ][ CIA-79 ][ Crisco ][ doobeh ][ FIFEGuard ][ helios2k ][ intripoon_ ][ karottenreibe ][ Kilian] ][ Nightraven ][ nihathrael ][ phil__ ][ prock ][ shevy ][ Tonux ][ totycro_ ][ UH-Guard ][ vtchill_afk ]
+(08:25:44 PM) karottenreibe: hi, I was wondering how stable fife's editor currently is
+(08:26:25 PM) karottenreibe: I was thinking about using it for UH but in the wiki it says something about an editor_rewrite branch, so I'm not sure if it's stable enough^^
+(08:26:52 PM) Kilian]: hi karottenreibe the editor doesnt work for Uh at the moment
+(08:27:12 PM) Kilian]: it uses XML files for maps but UH uses sqlite DB's
+(08:27:49 PM) karottenreibe: Kilian]: exactly, I'd like to implement some sort of map editor, either a new one from scratch or using the fife editor with some sort of plugin to handle loading-saving etc
+(08:28:21 PM) karottenreibe: but if you are currently rewriting it, there's no point to using the old API^^
+(08:28:32 PM) vtchill_afk: we are working on something similar karottenreibe, a plug-in type of save/load 
+(08:29:03 PM) vtchill_afk: loading is currently possible but the plugin side of the editor still needs to be done.. the saving side is planned as well
+(08:29:20 PM) Kilian]: phil__: if you search some people for your project, dont ask in forums or stuff before you didnt do anything, the people have to see that you have a basic concept whats to do, and you should start set up a basic infrstructure, like software repositiry on github, and a blog and forum. You should start with the game design and write it down deatiled in a wiki
+(08:29:30 PM) vtchill_afk: phil__ if you could try and open the editor from command line (by running python run.py from the editory directory) that should tell you a little more about why it is not opening
+(08:29:57 PM) karottenreibe: vtchill_afk: so you write a plugin that handles the loading process and one that handles the saving process?
+(08:30:16 PM) vtchill_afk: yes that is the idea
+(08:30:23 PM) Kilian]: karottenreibe: yes thats what we have done in the past
+(08:30:29 PM) vtchill_afk: fife currently handles a custom loader based on an interface, but it is not exposed yet through the editor
+(08:30:38 PM) Kilian]: i can search the stuff, one moment
+(08:30:56 PM) vtchill_afk: and a similar concept for the saver is goign to be implemented as well
+(08:31:29 PM) vtchill_afk: you can of course do your own purely in python right now and augment the editor for your own purposes
+(08:31:36 PM) phil__: i'm trying to reinstall everything as we speak...i'll see what that does first.
+(08:32:12 PM) karottenreibe: vtchill_afk: contributing to the fife editor is of course also an option for me^^ but I haven't looked at the code very much yet
+(08:32:25 PM) vtchill_afk: gotcha
+(08:32:27 PM) karottenreibe: I was just trying to generally figure out if it is stable enough to even consider using it
+(08:32:35 PM) vtchill_afk: i believe it is
+(08:32:41 PM) karottenreibe: great :)
+(08:33:14 PM) karottenreibe: so, is this the current plugin-format or is this still just a proposal: http://wiki.fifengine.net/Editor:Proposal:Plugin_format
+(08:34:12 PM) vtchill_afk: looks valid to me, you can also look in the plugin folder in <fife>/tools/editor
+(08:34:17 PM) vtchill_afk: to get some examples
+(08:34:22 PM) karottenreibe: good
+(08:35:01 PM) vtchill_afk: loader/savers are a little more difficult though as they would probably need to modify existing ui's instead of be self contained
+(08:35:04 PM) vtchill_afk: such as the filebrowser ui
+(08:35:11 PM) Kilian]: karottenreibe: loader.py and savers.py are the both pluginfiles https://github.com/unknown-horizons/unknown-horizons/tree/master/editor[1]
+(08:35:44 PM) vtchill_afk: and from the fife side we would need to query for all loaders/savers that match an interface and then provide the user with drop down choices
+(08:35:48 PM) karottenreibe: Kilian]: but AFAICS they don't work right now?
+(08:36:12 PM) vtchill_afk: but if you are just working on something just for Uh and it doesn't need to be completely flexible then you are free to leave some of those generic type of things out
+(08:36:44 PM) karottenreibe: yeah, well just have to see what's worth generalizing and what's UH specific
+(08:37:42 PM) Kilian]: karottenreibe: i think so, but i didnt tested it in the last time
+(08:38:39 PM) karottenreibe: vtchill_afk: how much work would the savers part be, that is not yet implemented in the editor itself? and how easily can that be done by someone who's never worked with the editor^^
+(08:39:44 PM) vtchill_afk: both good questions, as i have not had a ton os editor experience and i am trying to add these features it is taking a decent bit of time i feel like
+(08:40:24 PM) karottenreibe: hm yeah, that's what i feared ;-)
+(08:40:32 PM) vtchill_afk: if you just want a user supplied loader/saver into the editor you would just need at minimum some loader/saver plugin interface and some way to query the plugin to know if it fit t he interface and then allow the user to select it in a ui for saving/loader a map
+(08:40:34 PM) vtchill_afk: and done
+(08:40:55 PM) karottenreibe: sounds reasonable
+(08:41:08 PM) vtchill_afk: we are trying to a little more complete solution on the fife side by providing a default loader (which is done) and a default saver both in c++ code to support c++ projects as well as python ones
+(08:41:37 PM) karottenreibe: yeah, understandable
+(08:41:42 PM) vtchill_afk: and then get this all working with the editor while allowing clients to supply their own as well
+(08:41:58 PM) vtchill_afk: so its a fairly large task when you want it to work for everybody
+(08:42:02 PM) phil__: got it.  so now, is this editor you were refering to a text editor or map editor?   
+(08:42:09 PM) vtchill_afk: map editor
+(08:42:23 PM) phil__: ok...where do you do the text editing for the code?
+(08:42:25 PM) vtchill_afk: it should bring up a window with a toolbar at the top
+(08:42:35 PM) phil__: ive got that
+(08:42:37 PM) vtchill_afk: you can do that in whatever editor you like best
+(08:42:56 PM) vtchill_afk: for python code i use komodo edit or notepad++ or something similar
+(08:43:01 PM) karottenreibe: so, what is the general idea about how one would do that? am I supposed to copy-paset all the editor code over to the UH repository or just host the plugins there? is there any recommended workflow
+(08:43:06 PM) phil__: ok then, that brings me back to my question...no documentation i find explains how to connect the two...the map editor and python
+(08:43:31 PM) vtchill_afk: the map editor only produces an xml file to load on startup
+(08:44:13 PM) vtchill_afk: the  python code you write (which will probably be inherited from something like ApplicationBase in fife) will load the specified map file and then you interact directly with the fife engine code to add/remove/move instances on the map that was loaded
+(08:44:40 PM) Kilian]: karottenreibe: we copied the code of the editor in fife source, buts only for easier testing, in general we need only 2 plugins for the editor to save and load UH-maps
+(08:45:05 PM) karottenreibe: Kilian]: ok great
+(08:45:07 PM) vtchill_afk: i think it really depends on who you see using it karottenreibe, if its just devs then hosting the plugins is probably fine
+(08:45:20 PM) vtchill_afk: if its game players, then providing it as part of the package would be more reasonable
+(08:45:44 PM) vtchill_afk: i would assume UH devs also have the fife dev stuff and can just drop the plugin files into the right place and be done
+(08:45:51 PM) karottenreibe: yes, indeed, good point
+(08:46:01 PM) phil__: i guess i'm going to have to do more googling then.  i looked at the demo and the little tutorial that went with it.  i didn't find it very helpful, but you have been.  i thank u
+(08:46:07 PM) vtchill_afk: that way you get the latest editor fixes (and maybe bugs) all the time
+(08:46:24 PM) karottenreibe: hehe right^^
+(08:46:34 PM) karottenreibe: well thanks, that cleared up my questions :-)
+(08:46:43 PM) vtchill_afk: no problem phil__, try and look through the rio_de_hola demo and the other demos to see how it loads the map and interacts with fife
+(08:46:52 PM) karottenreibe: I'll have to think about this now I guess ;-) cheers
+(08:46:58 PM) vtchill_afk: yep let me k now what you do
+(08:47:08 PM) karottenreibe: I will, definitely
+(08:47:14 PM) karottenreibe: cya

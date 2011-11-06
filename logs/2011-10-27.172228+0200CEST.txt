@@ -1,0 +1,36 @@
+Conversation with #unknown-horizons at Thu 27 Oct 2011 05:22:28 PM CEST on karottenreibe@irc.freenode.net (irc)
+(05:22:28 PM) #unknown-horizons: The topic for #unknown-horizons is: Welcome to #unknown-horizons | www.unknown-horizons.org | Read the FAQ: http://wiki.unknown-horizons.org/w/FAQ[1] | News: Release coming up next week. Stay tuned!
+(05:22:28 PM) List of 32 users: [ ChanServ ][ UH-Guard ][ abeaumont ][ cassmodiah ][ chrisoelmueller ][ christoph_debian ][ CIA-79 ][ Gambit ][ gscai ][ Guest97904 ][ janebot ][ janus ][ josch ][ karottenreibe ][ ketas-av ][ ketas-li ][ Kilian] ][ lolcat ][ manue|_ ][ Meldrian ][ nayr ][ Nightraven ][ nihathrael ][ prock ][ rudi_s ][ scaaabi ][ shadowmaster ][ skelet ][ slopes ][ spq ][ totycro ][ wentam ]
+(05:22:32 PM) karottenreibe: hey
+(05:23:53 PM) karottenreibe: so I'm one of the guys who'd like to do the map editor and I have some questions and was wondering if the next meeting would be the right place to ask them
+(05:24:07 PM) karottenreibe: can one of you help me out with that?
+(05:24:09 PM) Kilian]: hi karottenreibe
+(05:24:17 PM) karottenreibe: hi Kilian]
+(05:24:47 PM) Kilian]: the meeting is in general to discuss things, if you have only some questions, feel free to ask
+(05:24:54 PM) karottenreibe: so basically, there is a decision to be made as to whether we should work on the existing fife editor or not (where we favor working on it)
+(05:25:08 PM) karottenreibe: i thought that maybe that should be decided by more than one person
+(05:25:52 PM) karottenreibe: we don't wanna start working on it and then not get the changes accepted because most people feel that the editor is not what they want ;-)
+(05:25:57 PM) Kilian]: the fife editor should be quite stable, i think it would be easier to adapt him via plugins to the needs of UH
+(05:26:40 PM) Kilian]: karottenreibe: what are your personal plan ? write a complete new editor from scratch or write some plugins ?
+(05:27:03 PM) karottenreibe: Kilian]: we'd favor writing plugins to handle the loading/saving in fifedit
+(05:27:15 PM) karottenreibe: it's simpler, obviously and should work fine, AFAICS
+(05:27:50 PM) karottenreibe: so do you think this is something that should be brought up in one of the meetings?
+(05:28:12 PM) Kilian]: i think everyone is fine with this, because its the same way we handled it in the past
+(05:28:23 PM) karottenreibe: okidoke, nice :D
+(05:28:38 PM) Kilian]: i dont think thats necessary to discuss there anything from my side
+(05:28:59 PM) Kilian]: but you are welcome to participate at the meetings ;)
+(05:29:02 PM) karottenreibe: also, there's the question of what to store in the repository. currently we store a full copy of fifedit, is there a strong reason for this?
+(05:29:16 PM) karottenreibe: I mean the plugins should be enough, right?
+(05:29:37 PM) karottenreibe: the repo version is outdated anyways afaics
+(05:30:21 PM) Kilian]: the plugins should be enough in my opinion
+(05:30:53 PM) Kilian]: on linux we will have several packages, like fifeengine, fifeeditor, fifedemos etc.
+(05:31:12 PM) Kilian]: but on windows we create a full installer which includes all necessary files
+(05:31:27 PM) Kilian]: i think thats why our repository includes the fifeeditor
+(05:32:00 PM) Kilian]: at github, you can make a bridge between repositorys, i dont know the correct name of it, but maybe it could be a good way to handle this
+(05:32:04 PM) karottenreibe: hm ok, but it doesn't include the engine, so I guess the installer script(s) could just package the editor the same way as the engine
+(05:32:46 PM) Kilian]: go with plugins only, as you mentioned the other stuff is outdated, so it can be removed
+(05:32:53 PM) karottenreibe: great :-)
+(05:32:59 PM) karottenreibe: thanks, that helped me out
+(05:33:00 PM) Kilian]: if everyone need it again i can add it later to the repo again
+(05:33:13 PM) karottenreibe: gotta run now ;-) cya
+(05:33:17 PM) Kilian]: bye

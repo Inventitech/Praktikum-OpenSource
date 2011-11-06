@@ -1,0 +1,32 @@
+Conversation with #fife at Thu 20 Oct 2011 07:17:37 PM CEST on karottenreibe@irc.freenode.net (irc)
+(07:17:37 PM) #fife: The topic for #fife is: Welcome to the FIFEngine IRC Channel! http://www.fifengine.net | FIFE 0.3.3 released 2011/10/06! | IRC Logs: http://logs.fifengine.net
+(07:17:37 PM) List of 20 users: [ ChanServ ][ Beliar ][ cassmodiah ][ chrisoelmueller ][ christoph_debian ][ CIA-79 ][ Crisco ][ doobeh ][ FIFEGuard ][ helios2k ][ intripoon_ ][ karottenreibe ][ Nightraven ][ nihathrael ][ prock ][ shevy ][ Tonux ][ totycro_ ][ UH-Guard ][ vtchill_afk ]
+(07:17:45 PM) prock: but I think thats a bug in removeUnreferenced()
+(07:17:58 PM) helios2k: here it get an assert in sharedptr.h
+(07:30:34 PM) Beliar is now known as Beliar|AFK
+(07:39:03 PM) vtchill_afk: doesn't sound good
+(07:39:30 PM) phil__ [4c16cba6@gateway/web/freenode/ip.76.22.203.166] entered the room.
+(07:40:23 PM) phil__: don't see any chatting...is this a live room with live ppl?
+(07:40:52 PM) Kilian] [~kili@p5DCE4E15.dip.t-dialin.net] entered the room.
+(07:42:44 PM) vtchill_afk: indeed
+(07:43:55 PM) phil__: i'm just trying to get a few questions answered...i'm seeing that there are ppl here from all over the world...i only know english so was a little bit concerned about communicating
+(07:45:55 PM) vtchill_afk: what are your questions?
+(07:46:40 PM) phil__: im just getting started with fife....still learning all the in's and out's of it.  very little reading to be sure.  
+(07:46:50 PM) phil__: i've also downloaded activestate python 2.7
+(07:47:08 PM) vtchill_afk: ok great
+(07:47:23 PM) phil__: first question is, if i'm going to learn to create games in fife, and code in python, do i need yet a separate db such as mysqldb?
+(07:48:06 PM) vtchill_afk: if you are planning to use a large amount of in game assets then a db is not a bad idea, however it is not strictly required
+(07:48:11 PM) vtchill_afk: kind of depends on game
+(07:49:03 PM) phil__: hmmm...just out of curiosity..have you ever heard of the game "locomotion" by chris sawyer?  and if you have, do you know anything about it?
+(07:49:13 PM) vtchill_afk: it may also depend on how a game is structure, think of something like mario on nes.. no db but still seemed like a lot of content there
+(07:49:48 PM) vtchill_afk: it sounds familiar, sort of like a tycoon style game?
+(07:49:57 PM) phil__: exactly.
+(07:50:00 PM) vtchill_afk: ok
+(07:50:50 PM) phil__: i'm wantiing to create a SIMILAR game (just so nobody thinks i'm trying to copy it)...but with more and better functionality.  (i know it'll take a long time to learn to program that detailed, but no better time than the present 2 start learning
+(07:51:34 PM) phil__: anyway...I was wondering if the fife game engine was capable of storing that much data?  (trains, actions, buildings, etc...plus the things additionally i'd include)
+(07:51:48 PM) vtchill_afk: yep, just sets some small realistic goals and work towards it and just remember that it takes time
+(07:52:55 PM) phil__: i'd love to get this going as an open source game project, but have no idea how to get ppl involved.  
+(07:53:00 PM) vtchill_afk: fife can certainly handle all of those things, you will basically be creating instances and connected those with locations on the map and art assets and it will be up to your code to manage the interaction and fife will just help with the behind the scenes work of graphics and other utility type of things
+(07:53:47 PM) phil__: good to know.  that means i don't need mysql.  (which is proving to be a pain in the a** to find that works with python 2.7.
+(07:54:23 PM) vtchill_afk: well you might want to talk with some of the guys at Uh about their approach and why they chose to use a db
+(07:54:37 PM) vtchill_afk: they may provide some useful hints and help in that department
