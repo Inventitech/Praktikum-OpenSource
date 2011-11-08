@@ -1,0 +1,4 @@
+Conversation with #fife at Thu 03 Nov 2011 01:17:53 PM CET on karottenreibe@irc.freenode.net (irc)
+(01:17:53 PM) List of 16 users: [ ChanServ ][ cassmodiah ][ chrisoelmueller ][ christoph_debian ][ CIA-79 ][ Crisco ][ doobeh ][ FIFEGuard ][ GreyGhost ][ intripoon_ ][ karottenreibe ][ Nightraven ][ nihathrael ][ shevy ][ totycro_ ][ UH-Guard ]
+(01:17:53 PM) calvino.freenode.net: (notice) [freenode-info] channel flooding and no channel staff around to help? Please check with freenode support: http://freenode.net/faq.shtml#gettinghelp[1]
+(01:41:55 PM) GreyGhost left the room (quit: Ping timeout: 260 seconds).

@@ -1,0 +1,39 @@
+Conversation with #fife at Sun 06 Nov 2011 09:15:59 PM CET on karottenreibe@irc.freenode.net (irc)
+(09:15:59 PM) List of 20 users: [ ChanServ ][ barra_home ][ Beliar ][ cassmodiah ][ christoph_debian ][ CIA-79 ][ Crisco ][ doobeh ][ FIFEGuard ][ GreyGhost ][ hel|afk ][ karottenreibe ][ Kilian] ][ LinuxDonald ][ Nightraven ][ nihathrael ][ Tonux ][ totycro_ ][ UH-Guard ][ Wr4i7h ]
+(09:16:02 PM) Rockdtben [~Rockdtben@209.152.117.94] entered the room.
+(09:18:40 PM) prock [~prock@S01060014bf10a14c.wp.shawcable.net] entered the room.
+(09:19:00 PM) prock: hi fife
+(09:19:29 PM) karottenreibe: hi prock
+(09:19:33 PM) karottenreibe: just the guy i need ;-)
+(09:19:43 PM) karottenreibe: nihathrael told me to talk to you, do you have a minute?
+(09:19:45 PM) prock: hi karottenreibe 
+(09:19:49 PM) prock: sure do.. whats up?
+(09:20:10 PM) karottenreibe: it's about this patch here: http://fife.trac.cvsdude.com/engine/ticket/598
+(09:20:20 PM) karottenreibe: he said you're the guy to talk to about getting it merged
+(09:20:28 PM) karottenreibe: it's a fix for the editor we need at UH
+(09:20:50 PM) karottenreibe: could you have a look and tell me if it's OK this way or if I need to work on something before you can merge it?
+(09:21:12 PM) karottenreibe: it just adds a command line option --plugin-dir so we can set a different plugin dir
+(09:21:26 PM) prock: right.. for setting an additional plugin directory
+(09:21:30 PM) karottenreibe: exactly
+(09:22:03 PM) karottenreibe: we're working on adapting fifedit for the UH maps so it would be awesome if we could get this merged :D
+(09:22:24 PM) prock: I had looked over your first patch.. looks good to me.  perhaps it could also be something a user could set in their settings.xml file for the editor as well
+(09:22:52 PM) karottenreibe: yeah, sure. I don't know much about that though^^
+(09:23:09 PM) prock: your patch looks complete enough for me to apply it though
+(09:23:19 PM) karottenreibe: great!
+(09:28:11 PM) Rockdtben left the room.
+(09:28:44 PM) nihathrael: great
+(09:31:22 PM) barra_home: heya lads
+(09:31:29 PM) barra_home: and great choice for a nick karottenreibe :-)
+(09:32:01 PM) CIA-79: fife: prock * r3808 /trunk/tools/editor/ (run.py scripts/editor.py scripts/plugin.py): * This patch allows the user to specify an additional plugin directory for the editor. Thanks to karottenreibe for the patch. fixes[o:fife, p:engine, s:trac, t:598, r:3808]
+(09:32:03 PM) karottenreibe: barra_home: thanks :D
+(09:32:23 PM) karottenreibe: nice :D thanks prock
+(09:32:35 PM) prock: np
+(09:32:43 PM) prock: barra_home: do you remember who hosts our epydocs?
+(09:33:04 PM) Kilian]: awesome prock, looks like CIA-79 is working
+(09:33:17 PM) prock: seems it stopped working on August 15th
+(09:33:30 PM) prock: at least it stopped being updated on the 15th
+(09:34:00 PM) prock: Kilian]: yeah :D  and its pretty quick as well.. probably a 10 second delay
+(09:35:45 PM) GreyGhost: prock, about the instancerenderer coloring wrong instance when instance is removed bug .. i have fixed it in UH by removecolored() and closed the bug report but left the FIFE bug open so that you can look into wether you want to handle it in FIFE or otherwise..
+(09:36:38 PM) prock: okay thanks greyghost
+(09:38:53 PM) prock: bbiab
+(09:38:56 PM) prock left the room (quit: Quit: Leaving).
