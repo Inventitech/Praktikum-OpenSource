@@ -2,6 +2,7 @@
 
 ## filed
 http://fife.trac.cvsdude.com/engine/ticket/603
+http://fife.trac.cvsdude.com/engine/ticket/604
 
 ## merged
 http://fife.trac.cvsdude.com/engine/ticket/598
