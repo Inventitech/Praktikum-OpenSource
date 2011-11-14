@@ -1,9 +1,9 @@
 # Tickets created by the project
 
 ## filed
-http://fife.trac.cvsdude.com/engine/ticket/603
-http://fife.trac.cvsdude.com/engine/ticket/604
 
 ## merged
 http://fife.trac.cvsdude.com/engine/ticket/598
+http://fife.trac.cvsdude.com/engine/ticket/603
+http://fife.trac.cvsdude.com/engine/ticket/604
 
