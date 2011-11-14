@@ -1,0 +1,26 @@
+Conversation with #fife at Sat 12 Nov 2011 10:59:36 AM CET on karottenreibe@irc.freenode.net (irc)
+(10:59:37 AM) List of 18 users: [ ChanServ ][ cassmodiah ][ chrisoelmueller ][ christoph_debian ][ CIA-28 ][ Crisco ][ doobeh ][ GreyGhost ][ intripoon_ ][ karottenreibe ][ Nightraven ][ Nihathrael ][ poutine ][ prock ][ rostnix ][ TankBo ][ totycro_ ][ UH-Guard ]
+(11:03:24 AM) GreyGhost_ [~GreyGhost@triband-mum-59.183.53.17.mtnl.net.in] entered the room.
+(11:06:28 AM) GreyGhost left the room (quit: Ping timeout: 240 seconds).
+(11:12:29 AM) GreyGhost_ left the room (quit: Quit: Leaving).
+(11:47:46 AM) CIA-28: unknown-horizons: totycro master * r47e5f38 / horizons/gui/gui.py : 
+(11:47:46 AM) CIA-28: unknown-horizons: Fixed crash when clicking on savegames in the save dialog
+(11:47:46 AM) CIA-28: unknown-horizons: Fixes #1223 - http://git.io/OrF-Dw
+(12:09:07 PM) karottenreibe: prock: found a little bug in the editor: http://fife.trac.cvsdude.com/engine/ticket/603
+(12:22:01 PM) karottenreibe: prock: also, this one fixes a bug that prevents custom maploaders from being called at all: http://fife.trac.cvsdude.com/engine/ticket/604
+(12:22:15 PM) karottenreibe: it would be awesome if you could merge them ;-)
+(12:35:45 PM) GreyGhost [~GreyGhost@triband-mum-59.183.53.17.mtnl.net.in] entered the room.
+(12:35:45 PM) GreyGhost left the room (quit: Changing host).
+(12:35:45 PM) GreyGhost [~GreyGhost@unaffiliated/greyghost] entered the room.
+(01:35:42 PM) helios2k [~helios200@dslb-094-221-177-217.pools.arcor-ip.net] entered the room.
+(01:35:47 PM) helios2k: moin fife
+(01:41:57 PM) GreyGhost left the room (quit: Ping timeout: 240 seconds).
+(02:13:22 PM) Tonux [Metallica@5ade70d7.bb.sky.com] entered the room.
+(02:23:01 PM) Rockdtben [~Rockdtben@209.152.117.94] entered the room.
+(02:34:30 PM) Wr4i7h [~abc@a89-154-41-86.cpe.netcabo.pt] entered the room.
+(02:36:09 PM) Beliar [~Beliar@a89-182-76-37.net-htp.de] entered the room.
+(02:36:30 PM) Beliar: heya
+(02:36:59 PM) helios2k: hey Beliar
+(02:46:15 PM) Beliar_ [~Beliar@a89-182-76-37.net-htp.de] entered the room.
+(02:46:15 PM) Beliar left the room (quit: Disconnected by services).
+(02:46:17 PM) Beliar_ is now known as Beliar

@@ -1,0 +1,61 @@
+Conversation with #fife at Tue 08 Nov 2011 06:45:07 PM CET on karottenreibe@irc.freenode.net (irc)
+(06:45:07 PM) List of 20 users: [ ChanServ ][ cassmodiah ][ christoph_debian ][ CIA-28 ][ Crisco ][ doobeh ][ GreyGhost ][ intripoon ][ karottenreibe ][ Kilian] ][ madlion ][ Nightraven ][ Nihathrael ][ oldtopman ][ prock ][ TankBo ][ Tonux ][ totycro_ ][ UH-Guard ][ vtchill ]
+(06:45:15 PM) karottenreibe: hi vtchill
+(06:45:56 PM) vtchill: hey karottenreibe 
+(06:46:11 PM) karottenreibe: so maybe you've heard: we're gonna use fifedit for the UH map editor :-)
+(06:50:14 PM) vtchill: yep
+(06:51:36 PM) karottenreibe: so my buddy, ronnie_c, is gonna adjust savers.py so it works the same as loaders.py and also make the filebrowser accept other extensions than XML
+(06:51:49 PM) vtchill: ok
+(06:51:58 PM) karottenreibe: we're not gonna port the python map saver code to C though, that's just way out of scope for our project ;-)
+(06:52:18 PM) karottenreibe: if we have something that we deem mergable, may we come to you with it?
+(06:52:20 PM) vtchill: yea that wouldn't make sense, just implement the interface and provide as a plugin
+(06:52:35 PM) vtchill: absolutely, myself or prock
+(06:52:40 PM) karottenreibe: nice, thx! :-)
+(06:53:00 PM) vtchill: prock just actually committed the IMapSaver interface in c++ and exposed it to the python client side
+(06:53:13 PM) vtchill: we are moving to using IMapLoader andIMapSaver instead of loaders.py and savers.py
+(06:53:45 PM) karottenreibe: ah ok. so doesthe interface for registering your own maploader/saver change?
+(06:54:00 PM) vtchill: so you can base you stuff off of the current loaders.py and savers.py but that will be changing at some point in the future
+(06:54:22 PM) vtchill: well the interface for registering plugin loaders/savers has not bee implemented yet in the editor
+(06:54:37 PM) karottenreibe: well, for loaders it has^^, just not for savers
+(06:54:59 PM) vtchill: well it wasn't implement by fife, maybe by you guys
+(06:55:36 PM) karottenreibe: no, in the trunk in loaders.py there's stuff like addMapLoader()
+(06:55:38 PM) vtchill: my thought was to let the editor look for all plugins that satisfy the IMapLoader and IMapSaver interface and then provide these in the load and save browsers
+(06:55:59 PM) vtchill: and once you added it where was the choice to use it?
+(06:56:17 PM) karottenreibe: that's done by file extension
+(06:56:26 PM) karottenreibe: so sqlite would be opened by the UHMapLoader for example
+(06:57:06 PM) vtchill: yea i was thinking a little more flexible... like microsoft office style... where it loads all available and provides a drop down of options saying a name and a file extension and lets the user choose
+(06:57:20 PM) karottenreibe: oh yeah, that would be nice too
+(06:57:56 PM) prock: for the loaders it can call the "isLoadable()" for each loader until it finds the one it should use
+(06:58:17 PM) vtchill: it could but some loaders are not super smart... they may just look for extension
+(06:58:25 PM) prock: true
+(06:59:05 PM) prock: but that works in most cases
+(06:59:09 PM) karottenreibe: well, from looking at the interfaces, I think the changes to our code should be fairly minimal
+(06:59:21 PM) vtchill: yea it should be
+(06:59:34 PM) vtchill: just have to support 2 functions basically
+(06:59:48 PM) prock: just remember to stay away from loaders.py and savers.py... those will go away
+(06:59:56 PM) karottenreibe: right. what's the setAnimationLoader etc. for?
+(07:00:14 PM) vtchill: the IMapLoader is built to be very flexible
+(07:00:22 PM) prock: when the map is loaded it can also load animations
+(07:00:22 PM) karottenreibe: prock: we'll fix up savers.py a bit for now, so we can actually provide our own loader, but that won't be much trouble
+(07:00:45 PM) vtchill: so for instance lets say you wanted to use the basic map format outline... but wanted a different animation format you could set your own animation file loader
+(07:00:54 PM) prock: if your map format has that defined
+(07:01:19 PM) karottenreibe: ah ok, but why are they setters? shouldn't they be getters?
+(07:01:22 PM) vtchill: same with the object loader... we wanted a client to be able to use the map format but change out the object and animation file formats to suit their needs
+(07:01:33 PM) karottenreibe: oh ok, now i get it
+(07:01:44 PM) karottenreibe: the client tells the map loader which object format it wants
+(07:02:12 PM) vtchill: yea it gives it an object loader if the clients want a different object file format than the default provided by fife
+(07:02:33 PM) karottenreibe: ok great
+(07:03:03 PM) vtchill: so object, animation, and atlas loaders i believe all have interfaces that the client can override and provide their own
+(07:03:24 PM) karottenreibe: so, if we fix up savers.py so one can register their own saver, would you merge that?
+(07:03:38 PM) karottenreibe: exactly
+(07:04:03 PM) vtchill: it might be worth it in the short term, but once we move completely to IMapSaver for the default fife map saver then the loader.py and saver.py will be deprecated
+(07:04:48 PM) karottenreibe: ok. I only ask because we do this project for university and we get points for everything that gets merged. So we don't wanna waste a lot of time on things that won't get merged anyways ;-)
+(07:05:21 PM) vtchill: well we still use savers.py today so it could be useful... it just depends on when we are able to move everything to IMapSaver interface
+(07:05:36 PM) prock: yeah the biggest thing to note is that loaders.py and savers.py will go away
+(07:06:16 PM) karottenreibe: ok, so we'll keep an eye out for it and if we're fast enough we'll send you our modifications
+(07:06:45 PM) prock: I suppose if you modify loaders.py and savers.py in such a way that they support our new loader/saver interfaces
+(07:08:13 PM) prock: they would stick around... and could be used as the basis for the loader/saver plugin system
+(07:08:18 PM) prock: hmm
+(07:09:24 PM) karottenreibe: hm it's hard to do that without knowing exactly where you guys want to go ;-) but I'll think about it for a bit
+(07:09:27 PM) karottenreibe: gotta run now
+(07:09:30 PM) karottenreibe: see you soon

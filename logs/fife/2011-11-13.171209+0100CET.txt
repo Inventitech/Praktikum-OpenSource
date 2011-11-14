@@ -1,0 +1,26 @@
+Conversation with #fife at Sun 13 Nov 2011 05:12:09 PM CET on karottenreibe@irc.freenode.net (irc)
+(05:12:09 PM) List of 21 users: [ ChanServ ][ aber ][ Beliar ][ cassmodiah ][ chrisoelmueller ][ christoph_debian ][ CIA-28 ][ Crisco ][ doobeh ][ GreyGhost_ ][ intripoon ][ karottenreibe ][ Nightraven ][ Nihathrael ][ poutine ][ prock ][ rostnix ][ TankBo ][ Tonux ][ totycro_ ][ UH-Guard ]
+(05:27:37 PM) CIA-28: parpg: Beliar * parpg-assets/: 
+(05:27:37 PM) CIA-28: parpg: Patch by Beliar:
+(05:27:37 PM) CIA-28: parpg: Further work on the scripting system.
+(05:27:37 PM) CIA-28: parpg: Affected files:
+(05:27:37 PM) CIA-28: parpg: M trunk/dialogue/
+(05:27:37 PM) CIA-28: parpg: M trunk/dialogue/fguard.yaml
+(05:27:38 PM) CIA-28: parpg: Commit from user: Beliar
+(05:33:52 PM) CIA-28: parpg: Beliar * parpg-core/: 
+(05:33:52 PM) CIA-28: parpg: Implemented simple script system.
+(05:33:52 PM) CIA-28: parpg: Commit from user: Beliar
+(05:33:52 PM) CIA-28: parpg: Beliar * parpg-core/: 
+(05:33:52 PM) CIA-28: parpg: The approach method of MovingAgentBehaviour now accepts a locatior or another instance, and uses the follow method to move to the instance position.
+(05:33:52 PM) CIA-28: parpg: Commit from user: Beliar
+(05:33:53 PM) CIA-28: parpg: Beliar * parpg-core/: 
+(05:33:54 PM) CIA-28: parpg: script commands are stored in the System now instead of the the script object.
+(05:33:54 PM) CIA-28: parpg: Commit from user: Beliar
+(05:33:55 PM) CIA-28: parpg: Beliar * parpg-core/: 
+(05:33:55 PM) CIA-28: parpg: Further work on the scripting system.
+(05:33:56 PM) CIA-28: parpg: Commit from user: Beliar
+(05:51:37 PM) Wr4i7h [~abc@a89-154-41-86.cpe.netcabo.pt] entered the room.
+(06:04:31 PM) Beliar is now known as Beliar|AFK
+(06:09:25 PM) prock is now known as prock|afk
+(06:31:11 PM) Beliar|AFK left the room (quit: Ping timeout: 252 seconds).
+(06:36:24 PM) chrisoelmueller left the room ("Where's those banana cream pies, eh").

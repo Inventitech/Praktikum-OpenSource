@@ -1,0 +1,831 @@
+Conversation with #unknown-horizons at Sun 13 Nov 2011 05:12:10 PM CET on karottenreibe@irc.freenode.net (irc)
+(05:12:10 PM) #unknown-horizons: The topic for #unknown-horizons is: Welcome to #unknown-horizons | www.unknown-horizons.org | Read the FAQ: http://wiki.unknown-horizons.org/w/FAQ[1] | News: Release coming up next week. Stay tuned!
+(05:12:10 PM) List of 34 users: [ ChanServ ][ UH-Guard ][ abeaumont ][ aber ][ Andre_Re ][ Beliar ][ cassmodiah ][ chrisoelmueller ][ christoph_debian ][ CIA-28 ][ Gambit ][ GreyGhost_ ][ gscai ][ hagabaka ][ janebot ][ janus ][ josch ][ karottenreibe ][ ketas ][ ketas-ts ][ lolcat ][ manue| ][ mmaruseacph2 ][ Nightraven ][ Nihathrael ][ nmarques ][ prock ][ rudi_s ][ shadowmaster ][ skelet ][ spq ][ strfry ][ totycro_ ][ wentam ]
+(05:22:43 PM) prock: gscai: when exactly are you freeing the images that causes the ground layer to go away?
+(05:23:31 PM) gscai: I tried to do it at the end of a game session
+(05:24:02 PM) gscai: in horizons.session.end()
+(05:24:33 PM) prock: do you remove any objects from model?
+(05:24:39 PM) prock: before that
+(05:24:40 PM) prock: ??
+(05:25:02 PM) gscai: what do you mean?
+(05:26:52 PM) prock: do you call deleteObject() or deleteObjects()?
+(05:27:19 PM) prock: also, is that an atlas?
+(05:27:45 PM) gscai: it should be
+(05:28:40 PM) prock: so an atlas goes away when it shouldn't?
+(05:29:13 PM) prock: can you confirm that?
+(05:29:28 PM) gscai: how could I detect it?
+(05:30:16 PM) gscai: oh and changing the place of the call makes the layer stay the way it should
+(05:31:22 PM) prock: I'm not sure...  if all the instances that go away all use the same atlas
+(05:31:50 PM) prock: that probably means that atlas is being freed for some reason
+(05:31:55 PM) gscai: all ground tiles are part of the same atlas afaik
+(05:32:22 PM) prock: so thats probably what happens
+(05:33:05 PM) prock: now, to figure out whats different from two places where you call freeResources()
+(05:37:34 PM) gscai: if I do it before self.view = None it works
+(05:37:34 PM) gscai: if I do it after that then it won't
+(05:39:35 PM) tuempl [~Miranda@213.47.93.188] entered the room.
+(05:40:42 PM) janebot: Don't forget about the meeting today in 30 minutes! [ http://wiki.unknown-horizons.org/w/Next_meeting[1] ]
+(05:40:42 PM) prock: what type of object is view?
+(05:41:17 PM) gscai: "Class that takes care of all the camera and rendering stuff."
+(05:42:05 PM) gscai: it seems to also have a layers list
+(05:42:31 PM) inken [~inken@a89-182-80-134.net-htp.de] entered the room.
+(05:53:35 PM) prock: do you call self.view.end()?
+(05:54:54 PM) gscai: yes, it happens automatically
+(05:56:48 PM) prock: just to confirm, you are calling freeUnreferenced()?
+(05:57:09 PM) gscai: horizons.main.fife.imagemanager.freeUnreferenced()
+(05:57:15 PM) gscai: horizons.main.fife.imagemanager.removeUnreferenced()
+(05:57:59 PM) prock: both
+(05:58:00 PM) prock: ?
+(05:58:03 PM) gscai: yes
+(05:58:21 PM) prock: oh..  you should only call one...  in this case removeUnreferenced() should be fine
+(05:59:02 PM) gscai: what is the difference between them?
+(05:59:38 PM) gscai: calling just removeUnreferenced has the same problem
+(06:00:42 PM) janebot: Don't forget about the meeting today in 10 minutes! [ http://wiki.unknown-horizons.org/w/Next_meeting[1] ]
+(06:01:13 PM) prock: yeah...  the difference is freeUnreferenced will not delete the definition of the image in the imagemanager
+(06:01:26 PM) prock: removeUnreferenced() will completely delete it
+(06:02:27 PM) prock: they both will free the image from memory though
+(06:04:31 PM) Beliar is now known as Beliar|AFK
+(06:05:39 PM) gscai: freeUnreferenced alone doesn't have the blackness effect
+(06:06:09 PM) prock: does it free the same amount of memory roughly?
+(06:06:26 PM) gscai: a bit less
+(06:06:45 PM) prock: do you have fife debug on?
+(06:06:58 PM) gscai: no
+(06:07:17 PM) gscai: it makes sense to free more if you remove the stuff you need though
+(06:08:30 PM) prock: I'll have to try and re-produce this in rio...
+(06:08:39 PM) prock: thanks for the heads up on this one
+(06:09:08 PM) prock: it shouldn't be deleting the atlas image if it's required
+(06:09:21 PM) prock: and I have an idea on why
+(06:09:23 PM) prock: afk a bit
+(06:09:25 PM) prock is now known as prock|afk
+(06:10:46 PM) gscai: proposed new look for unknown horizons: http://uh.otinn.com/blackness.jpg[1]
+(06:10:55 PM) gscai: it runs a bit faster :)
+(06:11:26 PM) GreyGhost_: when the sun was no more? :P
+(06:11:42 PM) totycro_: nice :0
+(06:11:43 PM) totycro_: :)
+(06:11:46 PM) karottenreibe: end of the world, i like it^^
+(06:11:46 PM) totycro_: special metal edition
+(06:12:10 PM) totycro_: the trees and plants need a bit more black, also rooftops, but the rest is fine
+(06:12:31 PM) totycro_: UH-Guard: !pingall meeting
+(06:12:32 PM) UH-Guard: totycro_: Error: "!pingall" is not a valid command.
+(06:12:37 PM) totycro_: UH-Guard: pingall meeting
+(06:12:37 PM) UH-Guard: meeting
+(06:12:37 PM) UH-Guard: abeaumont aber Andre_Re Beliar|AFK cassmodiah ChanServ chrisoelmueller christoph_debian CIA-28 Gambit GreyGhost_ gscai hagabaka inken janebot janus josch karottenreibe ketas ketas-ts lolcat manue| mmaruseacph2 Nightraven Nihathrael nmarques prock|afk rudi_s 
+(06:12:37 PM) UH-Guard: shadowmaster skelet spq strfry totycro_ tuempl UH-Guard wentam 
+(06:12:37 PM) UH-Guard: meeting
+(06:13:19 PM) strfry: oh hai
+(06:13:31 PM) totycro_: i'd moderate again if you want me to, but it could be someone else again..
+(06:13:34 PM) Andre_Re: hello guys
+(06:13:43 PM) Andre_Re: totycro_: do it ;)
+(06:14:26 PM) totycro_: i'm kind of busy eating atm, how about we postpone for ~5 min?
+(06:15:22 PM) totycro_: the first topic seems to not require that much moderation, so we could acutally start now
+(06:15:54 PM) totycro_: or should we wait for someone?
+(06:16:11 PM) gscai: 'everybody' isn't here :(
+(06:17:01 PM) Nihathrael: did we move the meeting time?
+(06:17:09 PM) totycro_: it's still the same in utc
+(06:17:38 PM) totycro_: #startmeeting 
+(06:17:38 PM) UH-Guard: Meeting started Sun Nov 13 17:06:57 2011 UTC.  The chair is totycro_. Information about MeetBot at http://wiki.debian.org/MeetBot[1].
+(06:17:38 PM) UH-Guard: Useful Commands: #action #agreed #help #info #idea #link #topic.
+(06:17:45 PM) totycro_: welcome all who are present
+(06:17:50 PM) totycro_: #topic 2011.3
+(06:17:50 PM) UH-Guard!~unknown-h@cl-1281.dus-01.de.sixxs.net: UH-Guard has changed the topic to: 2011.3
+(06:17:52 PM) Nihathrael: i hate timezones
+(06:18:00 PM) totycro_: the topic descriptions says:
+(06:18:00 PM) totycro_:     remaining tasks
+(06:18:01 PM) totycro_:     release preparation review
+(06:18:01 PM) totycro_:     PR and marketing 
+(06:18:14 PM) totycro_: so let's start with tasks related to 2011.3
+(06:18:30 PM) totycro_: what do you think should still be done about it?
+(06:18:46 PM) Nihathrael: we are still missing ubuntu packages
+(06:18:47 PM) totycro_: are all packages going to be there soon?
+(06:19:39 PM) Nihathrael: i guess those will bethere soon
+(06:19:39 PM) Andre_Re: It would be great to see UH in the official ubuntu repos
+(06:19:43 PM) Nihathrael: when christoph comes back
+(06:20:19 PM) totycro_: do you know any webpages where we should announce the release?
+(06:20:43 PM) Andre_Re: Hm, Chip probably
+(06:20:44 PM) Andre_Re: and heise
+(06:20:57 PM) totycro_: i checked with the referrers list of the webpage today in order to contact blog writers
+(06:20:59 PM) Nihathrael: we should try to search for release announcements from our previous release
+(06:21:08 PM) Nihathrael: and try to contect them
+(06:21:14 PM) totycro_: in the end, i just reached 2 of them, but we could do more about this
+(06:21:34 PM) totycro_: i think chip and heise are unreachable for us
+(06:21:46 PM) Nihathrael: chip is no problem
+(06:21:49 PM) totycro_: i mailed a few professional magazines the last time, and there was no response whatsoever
+(06:22:05 PM) Nihathrael: they usually update their downloads section quite quickly
+(06:22:12 PM) GreyGhost_: we have a page dedicated to where we are supposed to do PR and u[date on the wiki with list of sites..
+(06:22:37 PM) totycro_: GreyGhost_: i fear that that's really outdated
+(06:22:51 PM) totycro_: and contains some small pages, where it might not be worth investing time to keep the info up to date
+(06:23:43 PM) totycro_: anything to add for this topic?
+(06:23:52 PM) totycro_: we seem to be mostly done with 2011.3 ..
+(06:23:56 PM) Nihathrael: we should review our release
+(06:24:02 PM) Nihathrael: see what worked and what didn't
+(06:24:26 PM) totycro_: the actual release, or the development cycle?
+(06:24:27 PM) Nihathrael: we had a rather long feature freeze time this release
+(06:24:35 PM) Nihathrael: i think that was a good idea
+(06:24:40 PM) Nihathrael: because a lot of bugs were found
+(06:25:13 PM) totycro_: in my view, it wasn't intentional, we called the code ready when fife released their rc1
+(06:25:29 PM) totycro_: but it kind of really helped
+(06:25:42 PM) totycro_: a big part of the bugs would have gone unnoticed by most users though
+(06:25:56 PM) Nihathrael: maybe we should try to always have at least one, better two weeks of featurefreeze and testing only
+(06:26:01 PM) GreyGhost_: yeah.. in theory we should feature freeze at least one branch (master or create a relase branch) that way no bugs get introduced ..most projects do that..
+(06:26:06 PM) totycro_: in this cycle, i think there were many new people, who mostly left again until now
+(06:26:06 PM) Nihathrael: on master
+(06:27:00 PM) Andre_Re: totycro_: well, they have addresses like redaktion@ or so
+(06:27:14 PM) Andre_Re: you can just announce the new release there and hope for an update
+(06:27:18 PM) totycro_: tbh, i don't see that much need for discussion about the release-work, we've done this a lot of times, and it tends to work
+(06:27:45 PM) totycro_: Andre_Re: i did exactly that, and nothing happened
+(06:27:54 PM) Nihathrael: ok, lets move on then
+(06:28:04 PM) totycro_: i'd like to stick a bit to my last point
+(06:28:14 PM) totycro_: we don't really actively work with new people imo
+(06:28:24 PM) totycro_: but only guide them when they say something
+(06:28:29 PM) totycro_: to make that clear, i think it's ok
+(06:28:42 PM) totycro_: the team could be bigger though if we actively worked on that
+(06:28:44 PM) Andre_Re: totycro_: they usually never answer
+(06:28:54 PM) totycro_: so that would be my point of view, what do you think about that?
+(06:29:15 PM) Andre_Re: I have press contacts in other circumstances and that's what's heppening there, too
+(06:29:28 PM) Andre_Re: you doin't get an answer but they update their stuff or write articles
+(06:29:37 PM) newbie [~newbie_@176.54.96.61] entered the room.
+(06:29:39 PM) GreyGhost_: totycro_, work with them how? like what ideas you have?
+(06:29:40 PM) newbie: hey guys
+(06:29:41 PM) Andre_Re: or they even call you some day
+(06:30:00 PM) newbie is now known as Guest40051
+(06:30:00 PM) Andre_Re: hello newbie, great to see you back
+(06:30:12 PM) Nihathrael: totycro_: yes that is probably true, the question is how we can move to that active working and what that would mean for us
+(06:30:14 PM) Guest40051: thank you Andre_Re 
+(06:30:34 PM) Guest40051: so what are you planning to
+(06:30:36 PM) Andre_Re: you can change your name by typing /nick blablabla
+(06:30:41 PM) totycro_: i mean talking to people without waiting for them to ask
+(06:30:48 PM) totycro_: searching tasks for them
+(06:30:52 PM) totycro_: asking about their progress
+(06:31:08 PM) Guest40051: guys is there any problem
+(06:31:11 PM) Beliar|AFK left the room (quit: Ping timeout: 252 seconds).
+(06:31:12 PM) Nihathrael: so that would mean going more to the mentor approach thing again
+(06:31:17 PM) totycro_: i'm saying that something like that could help us find more people, but we shouldn't force us to do it
+(06:31:32 PM) GreyGhost_: ahh oki .. what we need is something like "how you could help" and then we need them to put down what skill set they have and what they are willing to do..
+(06:31:50 PM) totycro_: GreyGhost_: that we be a concrete action for this general idea
+(06:31:59 PM) Guest40051 is now known as mehmet
+(06:32:18 PM) karottenreibe: also maybe: these are the 5 or so guys that you should talk to if you have a problem or need something?
+(06:32:20 PM) totycro_: my point is kind of: do we/you want to do that? 
+(06:32:26 PM) karottenreibe: like choose people that fit their task
+(06:32:31 PM) totycro_: what do you think about the way we approach new people?
+(06:32:37 PM) GreyGhost_: totycro_, sure++
+(06:32:52 PM) totycro_: karottenreibe: we already have that, but it's not well advertised
+(06:32:57 PM) karottenreibe: if you want long-term contributers, that's gonna help
+(06:33:11 PM) karottenreibe: totycro_: my point exactly: advertise it if you want to do more mentoring
+(06:33:33 PM) chrisoelmueller: heya
+(06:33:39 PM) Nihathrael: 3yea that is probably true
+(06:33:44 PM) totycro_: yes, and my point is if we want to do the mentoring
+(06:34:03 PM) chrisoelmueller: http://wiki.unknown-horizons.org/w/Go-to_developers[1] <== list of possible mentors already exists, more or less.
+(06:34:10 PM) GreyGhost_: <side note> release time (once we get all packages) would be a good time to post for help needed for graphics etc at other forums that way people know we are wokring rather than doing it 2 months later
+(06:34:11 PM) totycro_: it takes time and energy, and people have to actually work on that
+(06:34:26 PM) chrisoelmueller: GreyGhost_: sorry, i disagree :)
+(06:34:27 PM) totycro_: we can also decide to not want to spend time in this, or that this isn't interesting for most of us
+(06:35:04 PM) totycro_: quick survey: do you want to talk about this issue?
+(06:35:13 PM) Nihathrael: yes i think we should
+(06:35:20 PM) karottenreibe: so the question is: is the effort of mentoring balanced by the amount of work done by the mentees
+(06:35:23 PM) GreyGhost_: +1
+(06:35:44 PM) janebot: Unknown Horizons Forums | Common • Re: 2011.3 won't start (from sources, gnu/linux) by Anonymous [ 11-13-2011 01:58 ] [ http://forum.unknown-horizons.org/viewtopic.php?t=570&p=1595#p1595[1] ]
+(06:35:45 PM) totycro_: karottenreibe: kind of, but i'm not only thinking about efficiency
+(06:36:02 PM) Nihathrael: the thing is, if you force yourself to do something you don't like, you wont do it your freetime
+(06:36:08 PM) totycro_: we're not a for-profit organisation, so the most important aspect is doing what we like
+(06:36:13 PM) Nihathrael: -> no better mentoring and no better coding
+(06:36:14 PM) GreyGhost_: i  guess more than mentoring it should be point them in the direction and get them started and help themout..
+(06:36:40 PM) chrisoelmueller: GreyGhost_: usually, when we release we have mostly finished our design for that cycle (and thus do not know what we want for the next release)
+(06:36:42 PM) chrisoelmueller: so i think a better time would be after these design questions are sorted out (best: placeholder graphics in-game)
+(06:36:47 PM) totycro_: GreyGhost_: so you're more for the passive kind of mentoring, where we provide support when someone needs it
+(06:37:32 PM) karottenreibe: then maybe the issue is to get people to ask more questions?
+(06:37:39 PM) karottenreibe: like, make that easier somehow?
+(06:38:04 PM) Nihathrael: i think a lot of new developers are sometimes shy to ask questions
+(06:38:19 PM) totycro_: one could think that asking questions is already easy enough, and everyone, who really wants to participate, will manage to do so
+(06:38:20 PM) Nihathrael: and getting rid of that fear takes active work on the mentors side
+(06:38:32 PM) totycro_: and all those who aren't really serious will at some point stop doing stuff
+(06:38:33 PM) karottenreibe: Nihathrael: i agree
+(06:39:15 PM) totycro_: Nihathrael: i agree to some extend
+(06:39:32 PM) Nihathrael: the question is always how much effort is really worth the hassle
+(06:39:50 PM) totycro_: people like e.g. squiddy were certainly not shy, at least in my perception
+(06:40:04 PM) Nihathrael: true
+(06:40:31 PM) Andre_Re: <>
+(06:41:52 PM) totycro_: <>
+(06:41:56 PM) Nihathrael: I think we should try to actively try to "mentor" new people, but I don't think we should fix any rules in that concern
+(06:41:57 PM) Nihathrael: <>
+(06:42:19 PM) karottenreibe: <>
+(06:42:19 PM) GreyGhost_: Nihathrael, +1
+(06:42:22 PM) GreyGhost_: <>
+(06:42:39 PM) totycro_: #topic 2012.1
+(06:42:39 PM) UH-Guard!~unknown-h@cl-1281.dus-01.de.sixxs.net: UH-Guard has changed the topic to: 2012.1
+(06:42:40 PM) totycro_: gscai: 
+(06:42:47 PM) totycro_: #link http://wiki.unknown-horizons.org/w/2012.1_ideas[1]
+(06:42:50 PM) GreyGhost_: and we need to make sure that we get the message through that we are looking for as many devs that we can
+(06:43:26 PM) chrisoelmueller: i would like to emphasize the importance of this topic.
+(06:43:44 PM) totycro_: gscai: it's marked as your topic, do you want to say anything about it?
+(06:43:55 PM) gscai: no idea why it is marked as my topic...
+(06:43:58 PM) chrisoelmueller: totycro_: that was an error is guess.
+(06:44:00 PM) totycro_: ok
+(06:44:08 PM) chrisoelmueller: in my wiki it's marked as everybody
+(06:44:10 PM) totycro_: well, it's about what we want to have in 2012.1
+(06:44:30 PM) chrisoelmueller: also, that link is brokem
+(06:44:33 PM) chrisoelmueller: broken*
+(06:44:39 PM) totycro_: the results of the voting are in the wiki, which just went down
+(06:45:14 PM) GreyGhost_: its struggling it came back after a few refreshes..
+(06:45:23 PM) Andre_Re: I think the poll was successful
+(06:45:28 PM) totycro_: k, any good ideas on how to tackle this?
+(06:45:33 PM) chrisoelmueller: question is: how many huge features would we like to implement for 2012.1 and who would take a look at which of them
+(06:45:39 PM) totycro_: talking about the poins with the most votes one by one?
+(06:45:52 PM) mehmet: can i say something as a player
+(06:45:56 PM) chrisoelmueller: i think we agree that a lot of things are nice, but nobody will work on them soon
+(06:46:05 PM) Nihathrael: mehmet: yes please do
+(06:46:12 PM) Andre_Re: mehmet: please, sure
+(06:46:14 PM) mehmet: well in game
+(06:46:18 PM) mehmet: there is a field
+(06:46:27 PM) totycro_: putting an emphasis on easy tasks could be very useful
+(06:46:29 PM) mehmet: potato field and we can only grow potatoes
+(06:46:34 PM) mehmet: but in real world
+(06:46:43 PM) mehmet: farmers have fields and they grow what they want
+(06:46:44 PM) chrisoelmueller: so i'd like to ask Nihathrael first: how long do you estimate your component refactoring work to take until a merge?
+(06:47:38 PM) totycro_: mehmet: there are more fields in the last increment
+(06:47:44 PM) mehmet: i think change the field to empty field and put a chose box or something and let the players to grow what they want for example potatoes tomatoes
+(06:47:51 PM) Nihathrael: hopefully i will have it in a somewhat wroking state in the beginning of december
+(06:47:54 PM) mehmet: ok totycro_ 
+(06:48:02 PM) totycro_: also, we didn't want this to get too complex, we already have many means of food production
+(06:49:10 PM) totycro_: k, i'd like us to discuss the features one by one now, please add your comments concerning feasibility, effort, importance
+(06:49:15 PM) totycro_: subtopic: military ground unit production 
+(06:49:29 PM) totycro_: should be easy to implement, as it's like the ship production
+(06:49:43 PM) totycro_: we'd need a proper gui, that we possibly would also use for the boatbuilder
+(06:50:06 PM) mehmet: well also let the lands
+(06:50:11 PM) mehmet: yesterday i said it
+(06:50:17 PM) Andre_Re: what about the building upgrades?
+(06:50:27 PM) mehmet: yes
+(06:50:34 PM) totycro_: i'm preferring the features with many votes, we can talk about the others later
+(06:50:39 PM) mehmet: it would be great high storey buildings 
+(06:50:47 PM) mehmet: two storeys
+(06:51:05 PM) totycro_: if there are no more comments, let's proceed to the next one
+(06:51:08 PM) Nihathrael: I think ground units should be fairly easy to do
+(06:51:17 PM) mehmet: also roads
+(06:51:18 PM) Nihathrael: should be a nice addition
+(06:51:19 PM) Andre_Re: ah, I thought you are going 1–n
+(06:51:28 PM) mehmet: wider road would be fine
+(06:51:30 PM) chrisoelmueller: Nihathrael: so that's three weeks before which i will certainly not work on implementing new buildings or resources
+(06:51:49 PM) mehmet: guyss 
+(06:52:02 PM) totycro_: subtopic: rivers 
+(06:52:05 PM) GreyGhost_: mehmet, topic wise :)
+(06:52:07 PM) Andre_Re: yes
+(06:52:11 PM) mehmet: can you write a tool like 
+(06:52:19 PM) totycro_: chrisoelmueller: could you explain why  you are against it?
+(06:52:21 PM) mehmet: building creator
+(06:52:40 PM) totycro_: it might be some effort to implement it properly, but could be done as hack simliar to the mountains
+(06:52:51 PM) mehmet: let the players to create their own buildings
+(06:52:56 PM) chrisoelmueller: totycro_: because i feared exactly that
+(06:52:59 PM) totycro_: mehmet: please stick to current topics during the meeting
+(06:53:05 PM) mehmet: oki
+(06:53:06 PM) mehmet: sorry
+(06:53:08 PM) Andre_Re: totycro_: well, i think if we do it, we should do it the right way
+(06:53:10 PM) chrisoelmueller: we have no graphics and i do not think we shold focus on this kind of tiles in 2012.1
+(06:53:11 PM) totycro_: mehmet: np
+(06:53:29 PM) totycro_: i've heard from users that our nature is too boring
+(06:53:30 PM) chrisoelmueller: and there's a lot to be done before we can work on rivers (e.g. transition handling)
+(06:53:38 PM) Andre_Re: totycro_: it is
+(06:53:40 PM) chrisoelmueller: true, but we need ambient graphics, not rivers
+(06:53:48 PM) Andre_Re: we should also think about variations in the tile set
+(06:53:50 PM) totycro_: what do you mean by ambient graphics?
+(06:53:56 PM) Andre_Re: not just one gras, but also flowers and so on
+(06:53:58 PM) mehmet: but graphics are good
+(06:54:03 PM) chrisoelmueller: what Andre_Re said
+(06:54:03 PM) mehmet: for now
+(06:54:05 PM) totycro_: for me, a river is an ambient obj
+(06:54:07 PM) totycro_: chrisoelmueller: k
+(06:54:12 PM) Nihathrael: i am also not sure if rivers are a really good feature, it wuold be badi f they were hacked in
+(06:54:24 PM) Nihathrael: if we can do it right (no idea what that would be) it could be nice though
+(06:54:28 PM) Andre_Re: totycro_: it's also a strategic object and it offers you special buildings like the water mill
+(06:54:31 PM) mehmet: guys river is cool but it is funny mountains are so small
+(06:54:34 PM) chrisoelmueller: no, rivers have more questions than answers (where do they come from, where do they go, how wide can rivers be, what happens to tiles, ...)
+(06:54:38 PM) GreyGhost_: i voted for taht cause we need a water source..
+(06:54:41 PM) Nihathrael: although basically a river could be implemented as a road
+(06:54:49 PM) chrisoelmueller: a doodad is just placed and animated and that's it
+(06:54:52 PM) totycro_: k, to summarize: we want it if there is time and we have a proper design, otherwise postpone until some point in the future
+(06:55:13 PM) totycro_: i'd like to keep the discussion short here, because there are many points
+(06:55:21 PM) totycro_: and i think we captured the basic opinions
+(06:55:23 PM) chrisoelmueller: yeah i had a page on the wiki with a list of such
+(06:55:30 PM) Andre_Re: Nihathrael: that fact that rivers should have a variable width would break the "do it as a road" concept
+(06:55:32 PM) totycro_: so would it be fine with you if we move on now?
+(06:55:35 PM) mehmet: can  i say something again
+(06:55:41 PM) chrisoelmueller: please let me look that up quickly :)
+(06:56:09 PM) chrisoelmueller: http://wiki.unknown-horizons.org/w/Climate[1] <== cf. table section Graphics
+(06:56:09 PM) Andre_Re: mehmet: you can talk whenever you want, but please stick to the topic when it's meeting ti me
+(06:56:12 PM) mehmet: some buildings have radius
+(06:56:18 PM) mehmet: ok andre
+(06:56:25 PM) mehmet: and the raidus is small
+(06:56:36 PM) mehmet: just thing in villages there is only a market palce
+(06:56:46 PM) mehmet: so its raidus must bi so big
+(06:57:10 PM) mehmet: some people may live very far away from the community but they reach to market place
+(06:57:17 PM) totycro_: mehmet: building radiuses have some problems, that's known, but currently not the topic
+(06:57:21 PM) Andre_Re: decision? yes or no?
+(06:57:34 PM) mehmet: ok totycro_ 
+(06:57:35 PM) Andre_Re: I think we should add agree marks
+(06:57:47 PM) mehmet: for what Andre_Re 
+(06:57:53 PM) totycro_: my view is, is that we can't decide what someone will do in the next months
+(06:57:54 PM) chrisoelmueller: our main square needs no range at all (and that's not the topic right now)
+(06:58:03 PM) Andre_Re: it's an internal feature of the meeting bot
+(06:58:20 PM) gscai: we can decide whether it would be an acceptable feature
+(06:58:33 PM) Andre_Re: well, but we should decide what we will focus on, and what not
+(06:58:42 PM) totycro_: all of the features would be nice, and with proper design, i'm sure we agree on all of them
+(06:59:08 PM) mehmet: guys grao some lender artist from blender channel
+(06:59:13 PM) mehmet: grab*
+(06:59:17 PM) Andre_Re: for example: if we see that a lot of people are for rivers, we should focus on designing them out
+(06:59:36 PM) chrisoelmueller: Andre_Re: that's what the whole voting was about, yes.
+(06:59:43 PM) mehmet: yes rivers
+(06:59:43 PM) chrisoelmueller: thanks for explaining.
+(06:59:51 PM) mehmet: but there must be bridge too
+(06:59:58 PM) totycro_: there are already way more reasonable features than we have manpower
+(07:00:06 PM) totycro_: so i think we can't really focus
+(07:00:08 PM) Nihathrael: so lets postpone this then
+(07:00:13 PM) Andre_Re: <>
+(07:00:15 PM) Nihathrael: if we have more
+(07:00:22 PM) GreyGhost_: <>
+(07:00:24 PM) Nihathrael: lets focus on the ones that we can agree on
+(07:00:25 PM) totycro_: if someone loves rivers, has a perfect design, he/she can certainly implementi t
+(07:00:28 PM) totycro_: *it
+(07:00:31 PM) totycro_: subtopic: catastrophes
+(07:00:36 PM) totycro_: everyone was for that
+(07:00:44 PM) Nihathrael: totally good feature :)
+(07:00:51 PM) totycro_: stuff like fire might be hard to display
+(07:00:57 PM) gscai: not Andre_Re ;)
+(07:01:00 PM) totycro_: plagues could be done via status icon
+(07:01:05 PM) Nihathrael: probably some work, goes hand in hand with the displaying icons over buildings thing
+(07:01:08 PM) mehmet: i think forget disaster for now
+(07:01:10 PM) totycro_: gscai: i meant no one was against it
+(07:01:19 PM) mehmet: cause we cant make very big villages
+(07:01:26 PM) totycro_: the doctor might be a nice addition then
+(07:01:29 PM) mehmet: i couldnot pass 70 people
+(07:01:32 PM) strfry left the room.
+(07:01:38 PM) Andre_Re: I would also oppose the fire, because you need extra graphics
+(07:01:42 PM) mehmet: yes
+(07:01:49 PM) chrisoelmueller: doctor is already implemented as building in-game but hidden in 2011.3
+(07:01:56 PM) Andre_Re: however, plagues would be great, and I think, we already have the herb garden, don't we?
+(07:01:56 PM) Nihathrael: well one icon should certainly be possible
+(07:01:59 PM) chrisoelmueller: of course lacks all function.
+(07:02:00 PM) totycro_: chrisoelmueller: but not it's code, right?
+(07:02:16 PM) chrisoelmueller: totycro_: right.
+(07:02:20 PM) chrisoelmueller: Andre_Re: right.
+(07:02:37 PM) Andre_Re: I think we should merge that topic with the status icons
+(07:02:46 PM) totycro_: k, so catastrophes and ground units could be the base things for 2012.1
+(07:02:50 PM) Andre_Re: it's basically just another state of the building
+(07:02:59 PM) chrisoelmueller: i see how lacking graphics can be an issue there though
+(07:03:02 PM) totycro_: i won't mention status icon, that's very consensual already
+(07:03:05 PM) GreyGhost_: imo disasters will be great.. if presently we can't get gfx we can simply simulate it throughh the Notification system
+(07:03:10 PM) Andre_Re: as a hack, we could implement the fire as status, too
+(07:03:30 PM) mehmet: what do you hack
+(07:03:35 PM) Nihathrael: as far as the research topic goes, how far is that design wise?
+(07:03:35 PM) mehmet: which game
+(07:03:49 PM) Andre_Re: mehmet: I mean, we could work around the problem
+(07:04:04 PM) Nihathrael: mehmet: can we please wait discussing off-topic stuff until after the meetings (30 minuter)
+(07:04:04 PM) mehmet: ok
+(07:04:15 PM) Andre_Re: instead of adding burning buildings, we could just add a status icon over the building
+(07:04:31 PM) Andre_Re: <>
+(07:04:39 PM) totycro_: i'll regard catastophes as wanted, so let's move on
+(07:04:39 PM) UH-Guard: New news from uhtrac: Ticket #1234 (Scenario description contains extra characters) created
+(07:04:43 PM) totycro_: subtopic: other features, not having many votes
+(07:04:53 PM) totycro_: do you want to talk about it?
+(07:04:54 PM) mehmet: i agree with Andre_Re 
+(07:04:55 PM) Andre_Re: well, the status icons did
+(07:04:56 PM) totycro_: emphasis on something?
+(07:05:04 PM) Nihathrael: research
+(07:05:08 PM) Nihathrael: this has been discussed many times
+(07:05:13 PM) Nihathrael: how far is the design process
+(07:05:21 PM) Nihathrael: before we can ipmlement anything we have to hav ethe design fixed
+(07:05:25 PM) Andre_Re: should we do the status icons like in 1601?
+(07:05:37 PM) Andre_Re: rotating, floating icons above the buildings?
+(07:05:44 PM) Andre_Re: I liked that
+(07:05:46 PM) janebot: Unknown Horizons Forums | Bugs • Graphic Bug Win7 by Anonymous [ 11-13-2011 16:17 ] [ http://forum.unknown-horizons.org/viewtopic.php?t=571&p=1596#p1596[1] ]
+(07:05:48 PM) Nihathrael: Andre_Re: not imported right now
+(07:05:54 PM) Nihathrael: important*
+(07:05:57 PM) chrisoelmueller: the question is more about, do you want us to design a research concept this winter or rather focus on other stuff
+(07:06:21 PM) chrisoelmueller: my time is not unlimited, neither is kilian's
+(07:06:25 PM) Andre_Re: well, I think we should keep that in mind if we see, that we don't have any more work for the coders
+(07:06:31 PM) totycro_: Nihathrael: as far as i know we were very unable to agree on something
+(07:06:45 PM) chrisoelmueller: Andre_Re: there is no such concept as 'having work for the coders'.
+(07:06:48 PM) GreyGhost_: do we have a basic design yet? icos there are many ways it can work ..
+(07:06:50 PM) mehmet: i can be a coder
+(07:06:51 PM) totycro_: it could change the game a lot, which means much work
+(07:06:54 PM) Nihathrael: I think having normal balanced gameplay would be more important than research
+(07:06:59 PM) Nihathrael: and research will make this even more difficult
+(07:07:09 PM) totycro_: or we could keep it small, in which case it might not be worth the effort ( much work for less game play impact )
+(07:07:15 PM) totycro_: Nihathrael: +1
+(07:07:19 PM) chrisoelmueller: Nihathrael: we're too easy at the moment, so need a way to spend money :P
+(07:07:43 PM) gscai: Nihathrael: +1
+(07:07:47 PM) totycro_: k, no clear order to implement research
+(07:07:47 PM) chrisoelmueller: oh, and i want it to have remarkable effect on gameplay, that's for sure
+(07:08:12 PM) totycro_: chrisoelmueller: in this case, i think we need very much tim efor it -> 2012.X or 2013.X
+(07:08:19 PM) Nihathrael: then lets focus on something else first i guess. On the other hand if we want to have it, there is no big point in balacning the current buildings
+(07:08:27 PM) Nihathrael: as it will be destroyed with research later anyway
+(07:08:28 PM) chrisoelmueller: yes, but also need to start early enough for a concept to grow
+(07:08:33 PM) GreyGhost_: and as we set targets we should keep in mind that we have quite a bit of overhauling to do..
+(07:08:34 PM) chrisoelmueller: before we all die :)
+(07:08:49 PM) totycro_: GreyGhost_: good point, there are already meby topics
+(07:08:51 PM) totycro_: *many
+(07:09:13 PM) totycro_: imo, ground units, 1-2 catastrophes and status icons suffice for 2012.1
+(07:09:24 PM) chrisoelmueller: i think with our new component system we have enough code refactoring already
+(07:09:28 PM) GreyGhost_: +1
+(07:09:38 PM) chrisoelmueller: and should get the last bugs ironed out there which also costs a lot of time
+(07:09:43 PM) Nihathrael: totycro_: yes that sounds pretty legit
+(07:10:07 PM) Nihathrael: and we have the new tile system which we should not expect to work perfectly right away
+(07:10:09 PM) totycro_: so no research for 2012.1?
+(07:10:11 PM) Nihathrael: so there will be enough work i guess
+(07:10:36 PM) totycro_: k
+(07:10:45 PM) totycro_: i'll regard the features topic as closed then
+(07:10:52 PM) totycro_: do you want to discuss the buildings?
+(07:11:12 PM) totycro_: some of them are obvious (fire brigade if we have fire..)
+(07:11:21 PM) totycro_: stone houses are consensual
+(07:11:25 PM) Andre_Re: well, the reasearch was a big part of the anno series
+(07:11:31 PM) totycro_: gun production follows from ground units
+(07:11:40 PM) totycro_: Andre_Re: apparently, it's not in UH
+(07:11:50 PM) totycro_: (at least at this stage)
+(07:12:00 PM) mehmet: stone houses is great
+(07:12:11 PM) mehmet: but we will need stone source 
+(07:12:13 PM) Andre_Re: what I wanted to ask: what is the "new settler design" topic by gscai?
+(07:12:19 PM) GreyGhost_: research will need a concrete design and quite a bit of implementation .. not a good idea for 2012.1 i guess..
+(07:12:34 PM) Andre_Re: GreyGhost_: +1
+(07:12:39 PM) chrisoelmueller: gscai: also, i personally hate all kinds of sweets but still think confectionery is something players expect in UH. any particular reason against it?
+(07:12:52 PM) totycro_: #topic 2012.1 - buildings
+(07:12:52 PM) UH-Guard!~unknown-h@cl-1281.dus-01.de.sixxs.net: UH-Guard has changed the topic to: 2012.1 - buildings
+(07:13:16 PM) gscai: I am against introducing lots of resources without them improving the game play
+(07:13:28 PM) totycro_: what do you think about bakerys?
+(07:13:34 PM) mehmet: yep
+(07:13:38 PM) Andre_Re: yes
+(07:13:44 PM) gscai: we should have that
+(07:13:44 PM) mehmet: bakerys and flaurs
+(07:13:56 PM) totycro_: also seeing that we already have many means of food production?
+(07:13:56 PM) qubodup [~qubodup@46.115.25.62] entered the room.
+(07:13:57 PM) mehmet: stone houses
+(07:14:34 PM) Nihathrael: totycro_: i think its a very standard production chain
+(07:14:40 PM) Nihathrael: mills look great
+(07:14:43 PM) Nihathrael: we should have it :D
+(07:14:49 PM) gscai: ^^
+(07:15:05 PM) Andre_Re: sure
+(07:15:07 PM) totycro_: if we want that, then i think we need the meta-res concept, where people require differnt kinds of food
+(07:15:15 PM) Andre_Re: and also water mills, as soon as we introduce rivers
+(07:15:22 PM) totycro_: if they want e.g. meat and bread, it's useful to have many food production mechanisms
+(07:15:31 PM) GreyGhost_: oki .. just off the top of mind.. do u want to add a bit of not much use but fun thing? Like speacial buildings -> after u go to new increment you get to create a memorial for the previous one 
+(07:15:33 PM) Andre_Re: totycro_: we could do it like in stronghold
+(07:15:46 PM) mehmet: pubs
+(07:15:50 PM) mehmet: and beeer
+(07:15:51 PM) Andre_Re: I even think that 1701 had a various-food-concept
+(07:15:51 PM) totycro_: GreyGhost_: +1
+(07:15:58 PM) totycro_: but only if we get the gfx for free
+(07:16:11 PM) mehmet: fun place pub
+(07:16:14 PM) chrisoelmueller: gscai: key part of UH's economy system is about providing several resources. you'd consider most existing ones useless then as well, right?
+(07:16:16 PM) mehmet: new thing beer
+(07:16:18 PM) Andre_Re: or was it 1404?
+(07:16:21 PM) chrisoelmueller: then i would like to discuss ropes as ship construction material :)
+(07:16:25 PM) gscai: chrisoelmueller: no
+(07:16:36 PM) GreyGhost_: totycro_,  yeah .. gfx is another thing .. but as an design idea (not necessarily for 2012.1)
+(07:16:54 PM) qubodup: hi
+(07:16:57 PM) Andre_Re: however, the concept was, that the higher the class of the inhabitants, the more varieties of food they demanded
+(07:17:20 PM) Nihathrael: this is something that can easily be tested
+(07:17:29 PM) Andre_Re: in stronghold, however, the people are just more happy depending on how many foods they get
+(07:17:30 PM) Nihathrael: changing a few res ids is not such a big deal
+(07:17:37 PM) totycro_: i really like the idea of buildings for reward, they are no effort to us, and players like rewards
+(07:17:37 PM) Andre_Re: I would prefer the 1404 concept
+(07:17:39 PM) chrisoelmueller: heya qubodup 
+(07:18:09 PM) qubodup: chrisoelmueller: hi
+(07:18:22 PM) totycro_: Nihathrael: what can easily be tested
+(07:18:50 PM) Nihathrael: if different food types are better than only one food type
+(07:19:09 PM) mehmet: guys
+(07:19:11 PM) gscai: chrisoelmueller: basically I like the idea of representing the major types of resources you would need for buildings, units, and settler consumption but at some point you can go too low level - I wouldn't like the settlers to demand all separate ingredients to make a pizza
+(07:19:15 PM) totycro_: the meta-res design includes more than just different res
+(07:19:17 PM) mehmet: bread milk cheese and beer would be fine
+(07:19:26 PM) totycro_: but e.g. provide at least 2 out of 4, but no more than 3
+(07:19:36 PM) totycro_: (people can't eat everything, and want some variety)
+(07:20:01 PM) totycro_: for a starting point, we could go with 2 res categories for 2012.1
+(07:20:06 PM) totycro_: and think about meta-res later
+(07:20:22 PM) totycro_: the categories could be meat and non-meat, or something else
+(07:20:26 PM) Andre_Re: gscai: I think, in 1404 they haven't had more then 5 differnet types, one for each level
+(07:20:42 PM) Andre_Re: they split it into food and luxories
+(07:21:16 PM) Nihathrael: totycro: yea that sounds fair enough
+(07:21:33 PM) totycro_: k, so can we include that as one point of attention for 2012.1?
+(07:21:49 PM) Nihathrael: i'd be ok with that
+(07:22:32 PM) totycro_: ok, to summarize, these would be the currently viewed as main poitns for 2012.1:
+(07:22:33 PM) chrisoelmueller: Andre_Re: what, one res for one level?!
+(07:22:34 PM) chrisoelmueller: or one new entry per group per level?
+(07:22:35 PM) totycro_: military ground, catastrophes, 2 food types, status icons
+(07:22:46 PM) totycro_: this seems to develop as our vague plan
+(07:22:47 PM) Andre_Re: chrisoelmueller: I'm trying to find a screen shot
+(07:22:52 PM) totycro_: if you have problems with that, please say it now
+(07:23:01 PM) GreyGhost_: +1
+(07:23:03 PM) gscai: no problems for me
+(07:23:05 PM) totycro_: also please speak if you think something else must be included there
+(07:23:24 PM) mehmet: can i say something again
+(07:23:47 PM) GreyGhost_: mehmet, on topic.. sure
+(07:23:51 PM) totycro_: mehmet: if it's relevant to the discussion, yes
+(07:23:56 PM) mehmet: well about buildings
+(07:24:02 PM) mehmet: stone houses 
+(07:24:08 PM) mehmet: bakery and pub
+(07:24:08 PM) Andre_Re: http://i.computer-bild.de/imgs/1/8/8/8/9/7/8/Bildergalerie-Anno-1404-745x596-a37e67146dbea941.jpg[1]
+(07:24:29 PM) Andre_Re: it's a bad example, but that's how it works
+(07:24:30 PM) qubodup: oh, pretty
+(07:24:31 PM) totycro_: stone houses are consensual, the other buildings are likely to be implemented
+(07:24:41 PM) mehmet: ok
+(07:24:47 PM) Andre_Re: the lower part shows the overall demand
+(07:25:03 PM) totycro_: Andre_Re: please don't lead the discussion into too much detail now
+(07:25:10 PM) Andre_Re: and if you click on one of the icons, you get the little cake up there, which is split in the different resources
+(07:25:29 PM) Andre_Re: totycro_: I just wanted to transfer my point
+(07:25:34 PM) totycro_: k
+(07:25:51 PM) Nihathrael: ok so next topic?
+(07:25:58 PM) totycro_: Nihathrael: i just wanted to say that
+(07:26:07 PM) totycro_: all of the features will get further discussion, i'd say
+(07:26:21 PM) totycro_: this is just a vague plan, so we can also change it later
+(07:26:26 PM) Andre_Re: overall information: http://anno1404.wikia.com/wiki/Needs[1]
+(07:26:28 PM) totycro_: but i'd like it if we keep it as general goad/guideline
+(07:26:30 PM) totycro_: <>
+(07:26:33 PM) Andre_Re: there you can find all the diagrams
+(07:26:40 PM) GreyGhost_: <>
+(07:26:48 PM) Andre_Re: <>
+(07:26:54 PM) totycro_: #topic Show health bars of units who fought recently
+(07:26:54 PM) UH-Guard!~unknown-h@cl-1281.dus-01.de.sixxs.net: UH-Guard has changed the topic to: Show health bars of units who fought recently
+(07:26:54 PM) totycro_: gscai: 
+(07:27:03 PM) Kilian] [~kili@p4FF7AB13.dip.t-dialin.net] entered the room.
+(07:27:20 PM) gscai: anyone opposed to the idea?
+(07:27:29 PM) Andre_Re: no
+(07:27:40 PM) Nihathrael: 2i think it could be a nice idea
+(07:27:42 PM) totycro_: nope
+(07:28:01 PM) GreyGhost_: +1
+(07:28:10 PM) totycro_: k, that's what i hoped for 
+(07:28:15 PM) chrisoelmueller: we could perhaps add a small (still visible) bar to all units and a larger one when selected
+(07:28:24 PM) totycro_: #agreed we want this.
+(07:28:59 PM) totycro_: chrisoelmueller: +1, if someone wants to implement it
+(07:29:06 PM) totycro_: any further comments?
+(07:29:08 PM) Andre_Re: chrisoelmueller: I oppose – it's not necessary
+(07:29:12 PM) gscai: in my opinion that could be too much detail
+(07:29:20 PM) gscai: but if I can turn it off then it is fine
+(07:29:26 PM) qubodup: usability note: it might make sense to always show the health of a unit when it is not fully healed
+(07:29:32 PM) Kilian]: hi
+(07:29:51 PM) qubodup: (sorry to interfer, I'm just a visitor, please tell me to be quiet if I should)
+(07:30:06 PM) totycro_: qubodup: i like the point
+(07:30:09 PM) GreyGhost_: qubodup, not atall .. we want feedback..
+(07:30:11 PM) Andre_Re: qubodup: I would prefer that we do it like in 1602, where the shiip just looked wrecked
+(07:30:33 PM) Nihathrael: we need a lot of graphics for tha
+(07:30:36 PM) gscai: that would be nicer
+(07:30:49 PM) Nihathrael: so as an intermediate solution showing the bars when a unit is damaged could be a really nice idea
+(07:30:50 PM) Kilian]: Andre_Re: i think helthbar concept should be indepandent from the gfx
+(07:30:57 PM) Andre_Re: Nihathrael: sure, it's nothing for the next few days, but more of a long term target
+(07:31:13 PM) Andre_Re: brb
+(07:31:27 PM) totycro_: <>
+(07:31:30 PM) gscai: <>
+(07:31:30 PM) Nihathrael: <>
+(07:31:43 PM) totycro_: #topic Graphics report
+(07:31:43 PM) UH-Guard!~unknown-h@cl-1281.dus-01.de.sixxs.net: UH-Guard has changed the topic to: Graphics report
+(07:31:45 PM) totycro_: Nihathrael: 
+(07:31:55 PM) qubodup: Andre_Re: in that case, having a bar visible when a unit is fighting or attacking or recently fought would probably be enough
+(07:32:24 PM) Nihathrael: we have a new thread to collect new background pictures
+(07:32:25 PM) Nihathrael: http://forum.unknown-horizons.org/viewtopic.php?f=38&t=566[1]
+(07:32:35 PM) Nihathrael: we still need to promote that more
+(07:32:47 PM) Nihathrael: i have not yet had the time to look into different graphics forums in detail
+(07:32:51 PM) Nihathrael: i'll do that this week
+(07:33:12 PM) qubodup: #what Nihathrael said: first implement permanent health bar when not 100% healed, when broken ship images are available, reduce it to when fighting is/was recently.
+(07:33:14 PM) totycro_: is there already a list of buildings where we need gfx for?
+(07:33:28 PM) Nihathrael: i will also try to figure out how we can put all the needed information for the artsts together
+(07:33:30 PM) Nihathrael: no
+(07:33:53 PM) totycro_: it could be a wiki page, with list of buildings + comments for each one
+(07:34:12 PM) totycro_: that way, it could be possible to manage different forum entries
+(07:34:14 PM) Nihathrael: yes but we also need other information like what to render and how
+(07:34:25 PM) Andre_Re: re
+(07:34:37 PM) GreyGhost_: btw we should do a new news post maybe in the next week wehere we do the "What you can do for UH" thing we decided last week and also add things like this background forum thread there for users to get involved..
+(07:34:47 PM) Nihathrael: yep
+(07:35:05 PM) totycro_: btw, to me, ingame gfx is way more important than background images
+(07:35:17 PM) Nihathrael: yes
+(07:35:27 PM) Andre_Re: GreyGhost_: +1
+(07:35:40 PM) qubodup: Nihathrael: about BG thread. I will write an article on freegamer.blogspot.com and promote that thread there
+(07:35:41 PM) Andre_Re: totycro_: +++1
+(07:35:49 PM) GreyGhost_: yeah.. we have quite a bit of rerenders too .. though the script can do that i think
+(07:35:54 PM) totycro_: qubodup: great
+(07:36:08 PM) Andre_Re: for me, the most important thing would be a background image that fills the whole screen
+(07:36:11 PM) mehmet: take care guys
+(07:36:19 PM) mehmet: see y'all later
+(07:36:57 PM) mehmet left the room (quit: Quit: Ex-Chat).
+(07:36:59 PM) Nihathrael: qubodup: maybe you can wait with that until we have a thread ready for new buildings?
+(07:37:07 PM) Beliar [~Beliar@a89-182-101-141.net-htp.de] entered the room.
+(07:37:09 PM) Nihathrael: that is way more important and has a lot more impact on the game itself
+(07:37:28 PM) totycro_: GreyGhost_: could you start with collecting ideas about "What you can do for UH"?
+(07:37:38 PM) Kilian]: the problem is that fife isnt able to scale an image afaik
+(07:37:51 PM) qubodup: Nihathrael: when will the thread be there? I'll be done with the post in 4-20 hours I assume
+(07:38:17 PM) Kilian]: Andre_Re: we would had to ship one image for every resolution, that would be use much space
+(07:38:56 PM) Nihathrael: qubodup: i can try to create one tomorrow 
+(07:39:11 PM) chrisoelmueller: #info together with Kilian], I am uploading a lot of our graphics (in-game models and GUI) to opengameart over the course of the next week(s)
+(07:39:24 PM) GreyGhost__ [~GreyGhost@unaffiliated/greyghost] entered the room.
+(07:39:37 PM) GreyGhost__ is now known as GreyGhost
+(07:39:50 PM) GreyGhost: sure.. i'll put create a wiki page.. but should it include help in development/ gfx etc too?
+(07:40:02 PM) qubodup: Nihathrael: what will it be about?
+(07:40:17 PM) qubodup: 19:23 < totycro_> is there already a list of buildings where we need gfx for?
+(07:40:18 PM) totycro_: GreyGhost_: the article could have section for misc departments
+(07:40:20 PM) qubodup: 19:23 < totycro_> is there already a list of buildings where we need gfx for?
+(07:40:20 PM) Andre_Re: Kilian]: can't guichan resize the image?
+(07:40:23 PM) qubodup: 19:23 < totycro_> is there already a list of buildings where we need gfx for?
+(07:40:26 PM) qubodup: 19:23 < totycro_> is there already a list of buildings where we need gfx for?
+(07:40:28 PM) Nihathrael: qubodup: yes
+(07:40:29 PM) qubodup: 19:23 < totycro_> is there already a list of buildings where we need gfx for?
+(07:40:31 PM) totycro_: so coder read the code and artists read the gfx section
+(07:40:32 PM) qubodup: 19:23 < totycro_> is there already a list of buildings where we need gfx for?
+(07:40:35 PM) qubodup: 19:23 < totycro_> is there already a list of buildings where we need gfx for?
+(07:40:38 PM) qubodup: 19:23 < totycro_> is there already a list of buildings where we need gfx for?
+(07:40:41 PM) qubodup: 19:23 < totycro_> is there already a list of buildings where we need gfx for?
+(07:40:44 PM) qubodup: 19:23 < totycro_> is there already a list of buildings where we need gfx for?
+(07:40:44 PM) GreyGhost: what what??
+(07:40:47 PM) qubodup: 19:23 < totycro_> is there already a list of buildings where we need gfx for?
+(07:40:50 PM) Andre_Re: please stop flooding the channel!
+(07:40:50 PM) qubodup: 19:23 < totycro_> is there already a list of buildings where we need gfx for?
+(07:40:53 PM) chrisoelmueller: Andre_Re: have you tested?
+(07:40:53 PM) qubodup: 19:23 < totycro_> is there already a list of buildings where we need gfx for?
+(07:40:56 PM) qubodup: 19:23 < totycro_> is there already a list of buildings where we need gfx for?
+(07:40:59 PM) qubodup: 19:23 < totycro_> is there already a list of buildings where we need gfx for?
+(07:41:02 PM) qubodup: 19:23 < totycro_> is there already a list of buildings where we need gfx for?
+(07:41:05 PM) qubodup: 19:23 < totycro_> is there already a list of buildings where we need gfx for?
+(07:41:06 PM) Andre_Re: can someone please kick qubodup
+(07:41:08 PM) qubodup: ffffffffffff
+(07:41:09 PM) totycro_: i'm assuming this is a bug, but can someone block him/her
+(07:41:11 PM) qubodup: sorry
+(07:41:14 PM) qubodup: I thought my middle mouse button was broken *facepalm*
+(07:41:22 PM) Andre_Re: oh, ok
+(07:41:25 PM) totycro_: qubodup: np then
+(07:41:54 PM) totycro_: Nihathrael: where is that list?
+(07:41:55 PM) Andre_Re: chrisoelmueller: I don't know if it can do it
+(07:42:12 PM) GreyGhost: totycro_, 
+(07:42:14 PM) GreyGhost: oki
+(07:42:31 PM) Nihathrael: totycro_: we don't have one yet
+(07:42:33 PM) Nihathrael: i will have to make one
+(07:42:37 PM) totycro_: ok
+(07:42:39 PM) Andre_Re: we could, however, ship just a big image and then resize it program wise, save it and load it as a background
+(07:42:48 PM) GreyGhost_ left the room (quit: Ping timeout: 245 seconds).
+(07:43:00 PM) totycro_: we could perhaps talk about it a bit in one of the next meetings, when the list is done
+(07:43:10 PM) Andre_Re: <>
+(07:43:24 PM) GreyGhost: Andre_Re, that would add an extra dependecy .. PIL to handle the resizing
+(07:43:50 PM) totycro_: <>
+(07:44:07 PM) ***nmarques finished syncing Unknown-Horizons repositories in openSUSE
+(07:44:20 PM) totycro_: #topic Status update and Hallway chat
+(07:44:20 PM) UH-Guard!~unknown-h@cl-1281.dus-01.de.sixxs.net: UH-Guard has changed the topic to: Status update and Hallway chat
+(07:44:21 PM) Andre_Re: GreyGhost: doesn't python offer standard methods for that?
+(07:44:31 PM) GreyGhost: Andre_Re, nope
+(07:44:31 PM) chrisoelmueller: Andre_Re: okay. so you want to find out how we can scale images with fife until next week? thanks!
+(07:45:08 PM) Andre_Re: I can't promise
+(07:45:10 PM) Andre_Re: <>
+(07:45:43 PM) totycro_: karottenreibe: any progress on the editor already?
+(07:45:46 PM) janebot: Unknown Horizons Forums | Bugs • Re: Graphic Bug Win7 by Andre [ 11-13-2011 20:28 ] [ http://forum.unknown-horizons.org/viewtopic.php?t=571&p=1597#p1597[1] ]
+(07:46:17 PM) karottenreibe: totycro_: yes, it now loads the islands and places sand tiles wherever there is ground
+(07:46:24 PM) Kilian]: nmarques: great :)
+(07:46:42 PM) Andre_Re: :D
+(07:46:46 PM) karottenreibe: we also got a patch merged in fife, one more is pending before the editor works correctly
+(07:47:00 PM) karottenreibe: i'm gonna hit the fife guys on that one next week
+(07:47:00 PM) gscai: #info Today I made large saved game loading about 30% faster.
+(07:47:35 PM) chrisoelmueller: #info most important: i merged my branch with improvements to translation code and pot file generation. this means that some bugs with untranslated radiobuttons and labels are fixed.
+(07:47:37 PM) chrisoelmueller: #help additionally, I added support for i18n (internationalization) comments to both xml files and python code. PLEASE use them for ambiguous strings to clarify the context -- else translators do not know what the string means in reality!
+(07:48:16 PM) Andre_Re: ok
+(07:48:32 PM) Andre_Re: afk
+(07:49:24 PM) totycro_: k, anything else to mention?
+(07:49:34 PM) Nihathrael: karottenreibe: nice work
+(07:49:36 PM) Nihathrael: <>
+(07:49:38 PM) karottenreibe: thx
+(07:49:43 PM) GreyGhost: <>
+(07:49:45 PM) karottenreibe: <>
+(07:49:54 PM) chrisoelmueller: #info i improved several xml files that had unflexible positioning wrt the width of translated strings. this process is not yet finished, but i highly appreciate help like reports of where a translation looks bad.
+(07:50:54 PM) qubodup: Questios about forum: Why was the German language forum closed? Who administers the forum?
+(07:51:18 PM) totycro_: qubodup: Kilian] is kind of responsible, but there's no one who is really in charge except for everyone
+(07:51:55 PM) totycro_: iirc, the german forum was just not needed anymore
+(07:51:57 PM) Nihathrael: qubodup: because we want all the information to be available for eveyone
+(07:52:08 PM) totycro_: also it's hard to answer everything in multiple languages
+(07:52:11 PM) Nihathrael: splitting stuff to german subforums is not helpful with that goal
+(07:52:24 PM) Nihathrael: questions get asked mutliple times and stuff
+(07:52:41 PM) chrisoelmueller: #info another important new feature to note is that UH now supports ngettext. if you add strings that look different depending on singular/plural, be aware that other languages have other plural concepts and DO NOT use something like appending 's' to a string for a plural form. instead, consult ngettext docs or the example in gui/gui.py line 460.
+(07:53:34 PM) chrisoelmueller: #info i've registered some official UH team accounts and sent mails to team@ with the respective credentials. more will probably happen as PR for 2011.3 intensifies.
+(07:55:37 PM) chrisoelmueller: #info i also merged a branch that should make UH run with fife trunk again. there are some funny things to note about this, in the end it boils down to: UH HEAD runs with fife trunk; UH 2011.3 runs with fife 0.3.3r2; all other combinations do not work without bugs or crashes. this is esp. important for packaging.
+(07:55:47 PM) janebot: Unknown Horizons Forums | Bugs • Re: Graphic Bug Win7 by GreyGhost [ 11-13-2011 20:43 ] [ http://forum.unknown-horizons.org/viewtopic.php?t=571&p=1599#p1599[1] ]
+(07:55:51 PM) Kilian]: qubodup: do you think theres a need for a forum in german ?
+(07:56:08 PM) qubodup: Kilian]: I don't know. I was just curious
+(07:56:18 PM) Kilian]: qubodup: okay :)
+(07:56:23 PM) chrisoelmueller: a po (translation) file update is scheduled for mid next week
+(07:56:40 PM) totycro_: #info i've just summarized the 2012.1 feature discussion here: http://wiki.unknown-horizons.org/w/2012.1_ideas[1]
+(07:56:44 PM) chrisoelmueller: i plan to not continue work on tutorial improvements as it feels too tiresome
+(07:56:56 PM) totycro_: since this is probably the information that will stick, please adapt it as you see fit
+(07:56:57 PM) chrisoelmueller: perhaps try to convince me again in a few months :p
+(07:57:05 PM) totycro_: chrisoelmueller: ;)
+(07:57:26 PM) totycro_: <>
+(07:58:16 PM) Nihathrael: ah
+(07:58:23 PM) Nihathrael: #info We got another 250$ donation
+(07:58:30 PM) Nihathrael: how couldi forget that
+(07:58:35 PM) totycro_: nice
+(07:58:44 PM) GreyGhost: nice ..lots of donations.. 
+(07:58:49 PM) Nihathrael: it was the second time for him
+(07:58:49 PM) Kilian]: cool
+(07:58:49 PM) totycro_: so the money is at paypal right now?
+(07:58:53 PM) Nihathrael: yes
+(07:58:54 PM) GreyGhost: we can start creating UH mugs and tshirts now ;)
+(07:58:59 PM) Kilian]: btw
+(07:59:11 PM) Nihathrael: we have 460euros on donations, because we still haven't decided on what to do with the first round
+(07:59:24 PM) Kilian]: youtube mailed us we could amke money with ads at our offical youtube site, if this wasnt spam ...
+(07:59:27 PM) totycro_: GreyGhost: we've had the tshirt discussion already, but there's no one who would design the shirt
+(07:59:45 PM) totycro_: Nihathrael: that's with the last 250?
+(07:59:54 PM) GreyGhost: oh.. it was seriously done? i was just kiding mostly ;)
+(07:59:56 PM) Nihathrael: yes and there was another small one
+(08:00:10 PM) Nihathrael: "small" as in 100 dollar or so
+(08:00:29 PM) GreyGhost: 5,000 Rs here .. not small ;)
+(08:00:38 PM) Nihathrael: yea its a lot of money
+(08:01:19 PM) totycro_: as always, i'm for buying tshirts :)
+(08:01:29 PM) Nihathrael: for me personally i'd like to use it for getting people to fosdem next year
+(08:01:33 PM) Nihathrael: so we could have a team meetup
+(08:01:45 PM) totycro_: should we talk about that now?
+(08:01:49 PM) totycro_: i'd like to close the meeting
+(08:01:55 PM) Nihathrael: there will be a game-dev room, with all sorts of talks on games
+(08:02:05 PM) Nihathrael: yea close the meeting
+(08:02:15 PM) totycro_: #endmeeting
+(08:02:16 PM) UH-Guard!~unknown-h@cl-1281.dus-01.de.sixxs.net: UH-Guard has changed the topic to: Welcome to #unknown-horizons | www.unknown-horizons.org | Read the FAQ: http://wiki.unknown-horizons.org/w/FAQ[1] | News: Release coming up next week. Stay tuned!
+(08:02:16 PM) UH-Guard: Meeting ended Sun Nov 13 18:51:34 2011 UTC.  Information about MeetBot at http://wiki.debian.org/MeetBot[1] . (v 0.1.4)
+(08:02:16 PM) UH-Guard: Minutes:        http://meetings.christoph-egger.org/unknown-horizons/2011/unknown-horizons.2011-11-13-17.06.html[1]
+(08:02:16 PM) UH-Guard: Minutes (text): http://meetings.christoph-egger.org/unknown-horizons/2011/unknown-horizons.2011-11-13-17.06.txt[1]
+(08:02:16 PM) UH-Guard: Log:            http://meetings.christoph-egger.org/unknown-horizons/2011/unknown-horizons.2011-11-13-17.06.log.html[1]
+(08:02:29 PM) Nihathrael: so there are basically a few options
+(08:02:29 PM) totycro_: people, i'm really sorry about the confused moderation especially in the first part
+(08:02:39 PM) Nihathrael: 1) buy shirts
+(08:02:41 PM) totycro_: i didn't really know how to tackle the issue
+(08:02:42 PM) Nihathrael: 2) pay servers
+(08:02:50 PM) Nihathrael: 3) use money for fosdem
+(08:02:59 PM) Nihathrael: or other meetup place
+(08:03:11 PM) totycro_: i'm for all of these, i.e. splitting the money
+(08:03:11 PM) Nihathrael: 4) Buy graphics 
+(08:03:17 PM) totycro_: definitely not for 4
+(08:03:38 PM) Nihathrael: Buying models for example would bring the game forward a lot
+(08:03:51 PM) totycro_: buying coders would as well
+(08:03:54 PM) totycro_: or advertisements
+(08:03:59 PM) GreyGhost: err.. is uh-dev ever used??
+(08:03:59 PM) Nihathrael: ah right, there is the next option
+(08:04:02 PM) Kilian]: totycro_: like 0.A.D ?
+(08:04:03 PM) totycro_: or management
+(08:04:13 PM) Nihathrael: 5) use crowd funding to pay one of us for development
+(08:04:14 PM) totycro_: GreyGhost: the mailing list? no
+(08:04:28 PM) GreyGhost: totycro_, oki ..i just subsribed to it :P
+(08:04:49 PM) chrisoelmueller: qubodup: would you happen to know of anybody capable of creating an UH gameplay / ad video?
+(08:04:49 PM) chrisoelmueller: we fail at assembling them the third or fourth time in a row now
+(08:04:57 PM) GreyGhost: presently who pays for the server?
+(08:05:06 PM) Nihathrael: GreyGhost: nightraven and christoph_debian
+(08:05:25 PM) GreyGhost: Nihathrael,  off their pockets?
+(08:05:34 PM) Nihathrael: yes
+(08:05:52 PM) GreyGhost: then i'd put pay for servers higher up the priority.. 
+(08:06:12 PM) Nihathrael: yes, i would put that fairly high as well
+(08:06:24 PM) chrisoelmueller: also, marketing stuff like stickers and flyers.. Nightraven wanted to discuss that at some point but never pursued
+(08:06:24 PM) Nihathrael: but nightraven has for example said that he would prefere the meetup version
+(08:06:44 PM) GreyGhost: hmm
+(08:06:59 PM) qubodup: chrisoelmueller: me perhaps, although I just switched to an open source radeon driver, which might heavily affect performance and I also have sound problems.
+(08:07:22 PM) qubodup: chrisoelmueller: other than that, #gameboom might help you out
+(08:07:42 PM) qubodup: chrisoelmueller: it's be good if you could tell me/them what features to show off!
+(08:08:47 PM) chrisoelmueller: qubodup: hehe, FIFE has severe issues with older ATI drivers on linux, so open source might actually help you there :-))
+(08:08:57 PM) qubodup: :D
+(08:09:43 PM) chrisoelmueller: i'm not exactly having spare time to do even more marketing jobs, but i think we should try and get a video done asap
+(08:09:57 PM) chrisoelmueller: anybody felling like idling in #gameboom was what s/he ever wanted?
+(08:10:00 PM) chrisoelmueller: feeling*
+(08:11:00 PM) GreyGhost: i've got university exams starting in exactly a week :P so i'm in a bit of time crunch myself .. :(
+(08:11:22 PM) qubodup: actually, audio works again :d
+(08:11:24 PM) qubodup: :D
+(08:11:42 PM) totycro_: what's gameboom besides a page about games?
+(08:11:51 PM) GreyGhost: just wondering .. who does what academically/ professionally here in real life?
+(08:12:20 PM) GreyGhost: didn't we have a Team Activity page where all devs put their active status?
+(08:12:29 PM) GreyGhost: *what = everyone
+(08:12:29 PM) Kilian]: GreyGhost: i never used this
+(08:12:34 PM) Nihathrael: GreyGhost: yea, we got rid of that because it was never up to date
+(08:12:41 PM) GreyGhost: k
+(08:12:51 PM) GreyGhost: so who does what?
+(08:12:52 PM) Kilian]: iam active when i like to be
+(08:13:04 PM) nmarques: GreyGhost, I'm not a dev, but I do RHEL6 packaging and platform deployment for PT Inovação S.A. (Research & Development from Portugal Telcom)
+(08:13:12 PM) qubodup: question about background images: http://forum.unknown-horizons.org/viewtopic.php?f=38&t=566[1]
+(08:13:25 PM) GreyGhost: i'm studying to become a doctor ..
+(08:13:31 PM) qubodup: totycro_: they put gameplay videos on youtube
+(08:13:35 PM) nmarques: GreyGhost, not RHEL6 only (RHEL4, 5 and 6) and some in-house stuff
+(08:13:45 PM) qubodup: totycro_: they are open source friendly and have a channel here #gameboom
+(08:13:50 PM) gscai: janebot: !ticket 1234 @ chrisoelmueller
+(08:13:50 PM) GreyGhost: nmarques, nyc
+(08:13:50 PM) janebot: chrisoelmueller: http://trac.unknown-horizons.org/t/ticket/1234[1]
+(08:13:52 PM) janebot: chrisoelmueller:  #1234 (Scenario description contains extra characters) – Unknown Horizons 
+(08:13:58 PM) totycro_: qubodup: i see, thx
+(08:14:10 PM) Kilian]: i'm studying applied computing to become maybe a programmer for mobile apps
+(08:14:30 PM) qubodup: totycro_: their plan is/was to mix indie/freeware/opensource game news to make freeware/indiegame players aware of foss projects
+(08:14:41 PM) totycro_: GreyGhost: i'm studying computer science, still 2-3 years to go..
+(08:14:42 PM) GreyGhost: Kilian], nyc.. iOS and android gonna make ppl rich in future i think :)
+(08:14:56 PM) nmarques: qubodup, there is something regarding free software
+(08:15:08 PM) Nihathrael: GreyGhost: i study computer scinece. 1.5 years left
+(08:15:13 PM) GreyGhost: hmm.. why does it seem i'm the only one who is nowhere related to computers here?
+(08:15:24 PM) nmarques: qubodup, http://www.freedesktop.org/wiki/Games/[1]
+(08:15:28 PM) Kilian]: GreyGhost: probably
+(08:15:31 PM) totycro_: GreyGhost: or the revolution will finally arrive in the future, and everyone will be rich ;)
+(08:15:48 PM) nmarques: qubodup, thats a place where many game devs hang around, it's mainly concerning deployment on FreeDesktop (linux, kde, GNOME, etc)
+(08:15:51 PM) GreyGhost: totycro_, ;)
+(08:16:30 PM) qubodup: nmarques: thanks, this might be nice
+(08:16:37 PM) Andre_Re: re
+(08:17:17 PM) Kilian]: we got already a lot of positive critism from our uploads to opengameart.org
+(08:17:39 PM) Nihathrael: Kilian]: ling!s
+(08:17:41 PM) Nihathrael: link?
+(08:19:04 PM) Kilian]: http://opengameart.org/users/unknown-horizons[1]
+(08:19:33 PM) Kilian]: you have to click on a single contribution, to see who marked it as favourite or wrote a comment
+(08:21:51 PM) totycro_: what's the function of an arsenal?
+(08:23:26 PM) Andre_Re: Nihathrael: about the donation: was it a private person or a company?
+(08:23:36 PM) totycro_: i've now completed the summary of the meeting in the wiki, and i'd like to propose this as roadmap for 2012.1: http://wiki.unknown-horizons.org/w/2012.1_ideas#Summary[1]
+(08:23:59 PM) totycro_: a next step for the next meeting could be to find people who will actually work on this
+(08:24:04 PM) Andre_Re: Kilian]: if the mail was from @youtube.com, it's true
+(08:24:16 PM) Andre_Re: the monitorizing system is really great
+(08:24:17 PM) totycro_: we could also not assign people, and let everyone just work
+(08:24:18 PM) Nihathrael: Andre_Re: all private people
+(08:24:25 PM) Andre_Re: I already do that with my private channel
+(08:24:39 PM) karottenreibe: alright, im off, cya :)
+(08:24:41 PM) totycro_: Andre_Re: you can fake the source mail adress

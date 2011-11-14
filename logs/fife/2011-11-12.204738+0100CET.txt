@@ -1,0 +1,38 @@
+Conversation with #fife at Sat 12 Nov 2011 08:47:38 PM CET on karottenreibe@irc.freenode.net (irc)
+(08:47:38 PM) List of 24 users: [ ChanServ ][ Beliar ][ cassmodiah ][ chrisoelmueller ][ christoph_debian ][ CIA-28 ][ Crisco ][ doobeh ][ GreyGhost_ ][ helios2k ][ intripoon_ ][ karottenreibe ][ Kilian]_afk ][ LinuxDonald ][ Nightraven ][ Nihathrael ][ poutine ][ prock ][ rostnix ][ TankBo ][ Tonux ][ totycro_ ][ UH-Guard ][ vtchill ]
+(08:47:46 PM) karottenreibe: hey hey
+(08:47:56 PM) vtchill: hey karottenreibe 
+(08:48:13 PM) karottenreibe: having a litte trouble using the imagemanager, could you help me out?
+(08:48:33 PM) vtchill: sure whats up
+(08:48:35 PM) karottenreibe: nomatter what i do, i always get RuntimeError: _[NotFound]_ , Something was searched, but not found :: content/gui/images/cursors/cursor.png
+(08:48:45 PM) karottenreibe: I tried absolute paths as well, same thing
+(08:49:04 PM) vtchill: how did you load the image?
+(08:49:13 PM) karottenreibe: imagemanager.load('/media/data/proj/unknown-horizons/content/gui/images/cursors/cursor.png')
+(08:50:20 PM) karottenreibe: the imagemanager I got from engine.getImageManager() and the engine is the one I get from fifedit
+(08:50:35 PM) vtchill: ok
+(08:50:46 PM) karottenreibe: could it be that it expects relative paths?
+(08:51:50 PM) karottenreibe: hm jep. looks like it^^
+(08:51:59 PM) karottenreibe: if i append a lot of ../.. it works ;-)
+(08:52:03 PM) karottenreibe: is that intended behaviour?
+(08:52:27 PM) GreyGhost_: karottenreibe, giving content/gui/images/cursors/cursor.png did not work?
+(08:52:36 PM) vtchill: it uses the vfs to load and the vfs has "paths" that it looks in when loading
+(08:52:49 PM) karottenreibe: GreyGhost_: my PWD is not the UH dir, it's fife/trunk/tools/editor
+(08:53:04 PM) vtchill: so the vfs will go through its search paths... by default only the root dir (where the application was started from is in the search path)
+(08:53:16 PM) karottenreibe: hm ok makes sense
+(08:53:40 PM) vtchill: you can add a path to the vfs to search if you want and it should work
+(08:53:52 PM) GreyGhost_: i think it has some addNewPath or something ..
+(08:54:01 PM) GreyGhost_: addNewSource()
+(08:54:02 PM) Wr4i7h [~abc@a89-154-41-86.cpe.netcabo.pt] entered the room.
+(08:54:08 PM) GreyGhost_: sweet updated epydoc :D
+(08:54:48 PM) karottenreibe: ok nice, I'll try that, thanks :-)
+(08:54:48 PM) vtchill: in the fife map loader i always load things by adding the map file directory (which is absolute from where the application was loaded)
+(08:54:58 PM) vtchill: so it is in affect absolute from application dir
+(08:56:09 PM) vtchill: so if you ever look at the path from loading an object.xml from the fife loader it may look really weird like.... ../../<demo_name>/maps/../objects/<object_name>/object.xml
+(08:57:36 PM) qubodup [~qubodup@46.115.25.62] entered the room.
+(08:57:45 PM) karottenreibe: hehe ok
+(08:58:53 PM) Beliar: vtchill, follow works as you told (calling OnInstanceActionFinished when it reached the "leader")
+(08:59:01 PM) karottenreibe: awesome! it worked, thanks vtchill and GreyGhost_
+(08:59:08 PM) vtchill: np
+(08:59:11 PM) vtchill: ok great to hear Beliar 
+(09:00:10 PM) Beliar: looks much better than our method (that checked the distance from the agent after it moved to its orignal location)
+(09:00:23 PM) vtchill: yea definitely

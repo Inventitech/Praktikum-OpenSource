@@ -1,0 +1,36 @@
+Conversation with #fife at Mon 14 Nov 2011 03:08:02 PM CET on karottenreibe@irc.freenode.net (irc)
+(03:08:02 PM) List of 18 users: [ ChanServ ][ cassmodiah ][ chrisoelmueller ][ christoph_debian ][ CIA-28 ][ Crisco ][ doobeh ][ GreyGhost ][ intripoon ][ karottenreibe ][ Kilian] ][ Nightraven ][ Nihathrael ][ poutine ][ rostnix ][ TankBo ][ totycro_ ][ UH-Guard ]
+(03:08:13 PM) karottenreibe: hi
+(03:14:24 PM) CIA-28: unknown-horizons: nihathrael component * r2b90e30 / (88 files in 35 dirs): (log message trimmed)
+(03:14:25 PM) CIA-28: unknown-horizons: Merge branch 'master' into component
+(03:14:25 PM) CIA-28: unknown-horizons: Conflicts:
+(03:14:25 PM) CIA-28: unknown-horizons:  horizons/gui/tabs/buyselltab.py
+(03:14:25 PM) CIA-28: unknown-horizons:  horizons/gui/widgets/routeconfig.py
+(03:14:25 PM) CIA-28: unknown-horizons:  horizons/world/componentholder.py
+(03:14:25 PM) CIA-28: unknown-horizons:  horizons/world/resourcehandler.py
+(03:39:34 PM) Kilian] left the room (quit: Quit: Leaving.).
+(04:10:55 PM) prock [~prock@S01060014bf10a14c.wp.shawcable.net] entered the room.
+(04:11:10 PM) prock: morning fife
+(04:12:29 PM) karottenreibe: morning prock
+(04:13:26 PM) karottenreibe: prock: can I bother you about merging some bugfixes again^^
+(04:13:37 PM) karottenreibe: it's http://fife.trac.cvsdude.com/engine/ticket/604 and http://fife.trac.cvsdude.com/engine/ticket/603
+(04:13:40 PM) prock: yup.. I seen those ones
+(04:14:02 PM) prock: I'm about to test them actually :D
+(04:14:18 PM) karottenreibe: uh nice :D
+(04:14:40 PM) karottenreibe: if you need any help/explanation, let me know. should be pretty straight-forward though. it's only minimal changes
+(04:20:39 PM) vtchill [824c609b@gateway/web/freenode/ip.130.76.96.155] entered the room.
+(04:22:04 PM) CIA-28: fife: prock * r3811 /trunk/ (6 files in 4 dirs): 
+(04:22:04 PM) CIA-28: fife: * Removed the sub image loaders as they are not used.
+(04:22:04 PM) CIA-28: fife: * Object no longer is derived from IResource
+(04:22:04 PM) CIA-28: fife: * Applied 2 patches by karottenreibe that fixes a couple small editor bugs. fixes[o:fife, p:engine, s:trac, t:603, r:3811] and fixes[o:fife, p:engine, s:trac, t:604, r:3811]
+(04:22:10 PM) prock: morning vtchill
+(04:22:14 PM) vtchill: hey prock 
+(04:22:25 PM) karottenreibe: thx prock :D
+(04:22:42 PM) prock: np
+(04:23:16 PM) vtchill: yea i saw 604, it was intended to be written that way  until we actually supported multiple loaders properly
+(04:26:09 PM) karottenreibe: ah ok, well, I hope the way it is now is OK. otherwise our custom loader wouldn't be used at all
+(04:27:18 PM) vtchill: yea its fine to change it, i just wanted to force the use of the default loader until we got the proper support in the editor to allow the user to choose a loader and got rid of the loaders.py
+(04:27:43 PM) karottenreibe: alright, good :-)
+(04:27:46 PM) vtchill: but since you are working with loaders.py it will have to be changed for you to continue
+(04:28:29 PM) karottenreibe: great, i gotta run now
+(04:28:31 PM) karottenreibe: cya
