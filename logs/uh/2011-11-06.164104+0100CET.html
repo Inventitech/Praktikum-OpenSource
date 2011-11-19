@@ -1,0 +1,1391 @@
+<html><head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><title>Conversation with #unknown-horizons at So 06 Nov 2011 16:41:04 CET on ronnie_c@irc.freenode.net (irc)</title></head><body><h3>Conversation with #unknown-horizons at So 06 Nov 2011 16:41:04 CET on ronnie_c@irc.freenode.net (irc)</h3>
+<font size="2">(16:41:04)</font><b> Das Thema für #unknown-horizons ist: Welcome to #unknown-horizons | <a href="http://www.unknown-horizons.org">www.unknown-horizons.org</a> | Read the FAQ: <a href="http://wiki.unknown-horizons.org/w/FAQ">http://wiki.unknown-horizons.org/w/FAQ</a> | News: Release coming up next week. Stay tuned!</b><br/>
+<font color="#16569E"><font size="2">(16:41:10)</font> <b>ronnie_c:</b></font> hi guys<br/>
+<font color="#A82F2F"><font size="2">(16:41:14)</font> <b>gscai:</b></font> conclusion: it may or may not be a good idea to use cattle<br/>
+<font color="#A82F2F"><font size="2">(16:42:03)</font> <b>chrisoelmueller:</b></font> hey ronnie_c <br/>
+<font color="#A82F2F"><font size="2">(16:42:30)</font> <b>chrisoelmueller:</b></font> uuuh how about a new loading glitch?<br/>
+<font color="#A82F2F"><font size="2">(16:42:57)</font> <b>chrisoelmueller:</b></font> when i load my savegame, a building that got saved as idle_full will now display idle instead after load<br/>
+<font color="#A82F2F"><font size="2">(16:43:08)</font> <b>chrisoelmueller:</b></font> totycro_: do you think that&apos;s easy to fix?<br/>
+<font color="#A82F2F"><font size="2">(16:43:17)</font> <b>chrisoelmueller:</b></font> if not i&apos;ll not ticket it :p<br/>
+<font color="#A82F2F"><font size="2">(16:43:49)</font> <b>chrisoelmueller:</b></font> ronnie_c: would you like an own topic in today&apos;s meeting?<br/>
+<font color="#A82F2F"><font size="2">(16:43:50)</font> <b>gscai:</b></font> let&apos;s get to ticket 1500 by next year!<br/>
+<font color="#A82F2F"><font size="2">(16:44:19)</font> <b>chrisoelmueller:</b></font> ronnie_c: if so, edit http://wiki.unknown-horizons.org/w/Next_meeting to tell us :)<br/>
+<font color="#A82F2F"><font size="2">(16:44:23)</font> <b>totycro_:</b></font> chrisoelmueller: is it only a visual problem?<br/>
+<font color="#A82F2F"><font size="2">(16:44:28)</font> <b>chrisoelmueller:</b></font> totycro_: yeah<br/>
+<font color="#A82F2F"><font size="2">(16:44:34)</font> <b>chrisoelmueller:</b></font> totycro_: the stuff is still in<br/>
+<font color="#A82F2F"><font size="2">(16:44:39)</font> <b>chrisoelmueller:</b></font> else i&apos;d more of complain<br/>
+<font color="#16569E"><font size="2">(16:44:50)</font> <b>ronnie_c:</b></font> chrisoelmueller: thx, gonna do that<br/>
+<font color="#A82F2F"><font size="2">(16:46:43)</font> <b>totycro_:</b></font> chrisoelmueller: do you have a savegame with a building in idle_full?<br/>
+<font color="#A82F2F"><font size="2">(16:46:47)</font> <b>totycro_:</b></font> it could be an easy fix<br/>
+<font color="#A82F2F"><font size="2">(16:47:00)</font> <b>chrisoelmueller:</b></font> totycro_: sure, one sec (several min) please to upload<br/>
+<font color="#A82F2F"><font size="2">(16:47:15)</font> <b>totycro_:</b></font> you could compress it<br/>
+<font color="#A82F2F"><font size="2">(16:48:32)</font> <b>totycro_:</b></font> with xz, i get 100K instead of 600K<br/>
+<font color="#A82F2F"><font size="2">(16:49:06)</font> <b>chrisoelmueller:</b></font> yeah it&apos;s only 20k here<br/>
+<font color="#A82F2F"><font size="2">(16:49:12)</font> <b>totycro_:</b></font> btw, implementing compression for savegames and maps would be trivial, but of course would make the file harder to edit manually<br/>
+<font color="#A82F2F"><font size="2">(16:49:33)</font> <b>chrisoelmueller:</b></font> let&apos;s discuss this today, shall we? i see no major backdraw<br/>
+<font color="#A82F2F"><font size="2">(16:49:38)</font> <b>gscai:</b></font> ^ the same goes for log files<br/>
+<font color="#A82F2F"><font size="2">(16:49:59)</font> <b>chrisoelmueller:</b></font> totycro_: http://minus.com/dmfv264NYBoXQ.xz<br/>
+<font color="#A82F2F"><font size="2">(16:50:00)</font> <b>totycro_:</b></font> i&apos;ll add it to the topics, but we could also delay it if we run out of time<br/>
+<font color="#A82F2F"><font size="2">(16:50:09)</font> <b>totycro_:</b></font> gscai: are you against the  compression of logfiles?<br/>
+<font color="#A82F2F"><font size="2">(16:50:18)</font> <b>totycro_:</b></font> chrisoelmueller: thx<br/>
+<font color="#A82F2F"><font size="2">(16:50:28)</font> <b>chrisoelmueller:</b></font> totycro_: the charcoal burner is filled with its max of coal (2t)<br/>
+<font color="#A82F2F"><font size="2">(16:50:30)</font> <b>gscai:</b></font> I don&apos;t like the broken compression<br/>
+<font color="#A82F2F"><font size="2">(16:51:00)</font> <b>gscai:</b></font> I found it easier to use --debug and redirect stderr to a file<br/>
+<font color="#A82F2F"><font size="2">(16:51:44)</font> <b>gscai:</b></font> 7zip and winrar were against letting me see anything otherwise<br/>
+<font color="#A82F2F"><font size="2">(16:52:15)</font> <b>totycro_:</b></font> we could have an option (cmd line or settings file) to disable compression<br/>
+<font color="#A82F2F"><font size="2">(16:52:30)</font> <b>chrisoelmueller:</b></font> don&apos;t we have that?<br/>
+<font color="#A82F2F"><font size="2">(16:52:36)</font> <b>totycro_:</b></font> weren&apos;t there some files that weren&apos;t openable with 7zip &amp; winrar, but worked with tar?<br/>
+<font color="#A82F2F"><font size="2">(16:53:21)</font> <b>chrisoelmueller:</b></font> hm seems we haven&apos;t, +1 for that switch<br/>
+<font color="#A82F2F"><font size="2">(16:53:48)</font> <b>gscai:</b></font> we could also add it to the settings file<br/>
+<font color="#A82F2F"><font size="2">(16:54:13)</font> <b>chrisoelmueller:</b></font> no~, no space available, we need tabbed settings<br/>
+<font color="#A82F2F"><font size="2">(16:54:16)</font> <b>chrisoelmueller:</b></font> 0:-)<br/>
+<font color="#A82F2F"><font size="2">(16:54:26)</font> <b>gscai:</b></font> just the settings file, not the menu :P<br/>
+<font color="#A82F2F"><font size="2">(16:54:32)</font> <b>chrisoelmueller:</b></font> ah i see<br/>
+<font color="#A82F2F"><font size="2">(16:54:42)</font> <b>chrisoelmueller:</b></font> (how about we do that for the BPP setting, too?)<br/>
+<font color="#A82F2F"><font size="2">(16:54:53)</font> <b>totycro_:</b></font> chrisoelmueller: +1<br/>
+<font color="#16569E"><font size="2">(16:54:54)</font> <b>ronnie_c:</b></font> chrisoelmueller: i am not getting any email from your wiki, so cant edit the page<br/>
+<font color="#A82F2F"><font size="2">(16:55:02)</font> <b>chrisoelmueller:</b></font> it confuses a lot and FIFE hardly supports changing to anything nondefault<br/>
+<font color="#A82F2F"><font size="2">(16:55:04)</font> <b>Kilian]:</b></font> the need mouse settings also blocked by the space problem <br/>
+<font color="#A82F2F"><font size="2">(16:55:04)</font> <b>totycro_:</b></font> we once had a bug, that caused a crash when setting the bpp<br/>
+<font color="#A82F2F"><font size="2">(16:55:11)</font> <b>totycro_:</b></font> it was unnoticed for about 2 years<br/>
+<font color="#A82F2F"><font size="2">(16:55:17)</font> <b>Kilian]:</b></font> bpp ?<br/>
+<font size="2">(16:55:20)</font><b> Andre_Re [<em>~Andre@dslb-178-002-217-134.pools.arcor-ip.net</em>] hat den Raum betreten.</b><br/>
+<font color="#A82F2F"><font size="2">(16:55:22)</font> <b>totycro_:</b></font> bits per pixel<br/>
+<font color="#A82F2F"><font size="2">(16:55:34)</font> <b>Kilian]:</b></font> okay<br/>
+<font color="#A82F2F"><font size="2">(16:55:50)</font> <b>Kilian]:</b></font> i never got why there is 0, 16 and 32<br/>
+<font color="#A82F2F"><font size="2">(16:55:50)</font> <b>chrisoelmueller:</b></font> ronnie_c: alright, could you pastebin your change somewhere? i&apos;ll add it<br/>
+<font color="#A82F2F"><font size="2">(16:55:59)</font> <b>gscai:</b></font> if it doesn&apos;t work in general then we should hide it<br/>
+<font color="#A82F2F"><font size="2">(16:56:09)</font> <b>chrisoelmueller:</b></font> ronnie_c: also, you might want to bug Nightraven in that case because our spambots seem to get mails<br/>
+<font color="#A82F2F"><font size="2">(16:56:26)</font> <b>totycro_:</b></font> the bpp setting should work now<br/>
+<font color="#A82F2F"><font size="2">(16:56:30)</font> <b>Andre_Re:</b></font> hey guys, what&apos;s goin&apos; on?<br/>
+<font size="2">(16:56:37)</font><b> Beliar heißt jetzt Beliar|AFK</b><br/>
+<font color="#A82F2F"><font size="2">(16:56:41)</font> <b>chrisoelmueller:</b></font> just that it does nothing at best<br/>
+<font color="#A82F2F"><font size="2">(16:56:48)</font> <b>chrisoelmueller:</b></font> and borks player gfx else<br/>
+<font color="#A82F2F"><font size="2">(16:57:06)</font> <b>chrisoelmueller:</b></font> which i would still consider a bad investment to keep it :p<br/>
+<font color="#A82F2F"><font size="2">(16:57:36)</font> <b>totycro_:</b></font> Andre_Re: there&apos;s too few space in the settings menu<br/>
+<font color="#16569E"><font size="2">(16:58:49)</font> <b>ronnie_c:</b></font> chrisoelmueller: http://pastebin.com/8Bit9pVV<br/>
+<font color="#16569E"><font size="2">(16:59:33)</font> <b>ronnie_c:</b></font> chrisoelmueller: And I think that your wiki email smtp is broken ;-)<br/>
+<font color="#A82F2F"><font size="2">(17:00:00)</font> <b>janebot:</b></font> Don&apos;t forget about the meeting <span style='font-weight: bold;'>today</span> in <span style='font-weight: bold;'>60 minutes</span>! [ http://wiki.unknown-horizons.org/w/Next_meeting ]<br/>
+<font color="#A82F2F"><font size="2">(17:01:00)</font> <b>totycro_:</b></font> ronnie_c: it might take more than 5 min<br/>
+<font color="#A82F2F"><font size="2">(17:01:18)</font> <b>totycro_:</b></font> hehe, i just introduced the priority tag ~3 mins ago, nice to see it spreading :)<br/>
+<font color="#16569E"><font size="2">(17:02:32)</font> <b>ronnie_c:</b></font> totycro_: maybe ...<br/>
+<font color="#16569E"><font size="2">(17:03:08)</font> <b>ronnie_c:</b></font> actually, seldom it's not 1998 anymore ;-)<br/>
+<font color="#A82F2F"><font size="2">(17:03:14)</font> <b>chrisoelmueller:</b></font> ronnie_c: nah, we get like 5 spammer registrations per day which seem to receive mails just fine<br/>
+<font color="#A82F2F"><font size="2">(17:05:06)</font> <b>UH-Guard:</b></font> <span style='font-weight: bold;'>New news from uhtrac: </span>Ticket #1211 (Provide info about the amount of input res required for production) created<br/>
+<font color="#A82F2F"><font size="2">(17:05:06)</font> <b>gscai:</b></font> what is the idea about map compression?<br/>
+<font color="#A82F2F"><font size="2">(17:05:27)</font> <b>totycro_:</b></font> gscai: just saving it as .bz2 perhaps and uncompressing it transparently at load<br/>
+<font color="#A82F2F"><font size="2">(17:06:53)</font> <b>gscai:</b></font> how much do we save in relation to the total distribution size?<br/>
+<font color="#A82F2F"><font size="2">(17:08:31)</font> <b>GreyGhost:</b></font> Kilian], whats the atlas max size?<br/>
+<font color="#A82F2F"><font size="2">(17:08:33)</font> <b>totycro_:</b></font> it&apos;s 2MB now, so it&apos;s not that relevant<br/>
+<font color="#A82F2F"><font size="2">(17:08:45)</font> <b>chrisoelmueller:</b></font> 2MB is relevant<br/>
+<font color="#A82F2F"><font size="2">(17:08:57)</font> <b>totycro_:</b></font> but those are only very small islands, i expect the number to grow a lot<br/>
+<font color="#A82F2F"><font size="2">(17:09:04)</font> <b>chrisoelmueller:</b></font> for e.g. distribution with opensuse every byte counts :)<br/>
+<font color="#A82F2F"><font size="2">(17:09:23)</font> <b>gscai:</b></font> isn&apos;t it compressed in the distribution?<br/>
+<font color="#A82F2F"><font size="2">(17:09:42)</font> <b>totycro_:</b></font> my savegames tend to be between 300K and 1.5MB, so i&apos;d consider compressing them relevant<br/>
+<font color="#16569E"><font size="2">(17:09:51)</font> <b>ronnie_c:</b></font> chrisoelmueller: ok, i will wait and if i don't get it by tomorrow i am gonna contact you again<br/>
+<font color="#A82F2F"><font size="2">(17:09:58)</font> <b>gscai:</b></font> totycro_: that part I agree with<br/>
+<font color="#A82F2F"><font size="2">(17:10:17)</font> <b>chrisoelmueller:</b></font> ronnie_c: contact Nightraven instead, he&apos;s pretty much the only one that could help with that :)<br/>
+<font color="#A82F2F"><font size="2">(17:10:26)</font> <b>chrisoelmueller:</b></font> ronnie_c: added your topic<br/>
+<font color="#A82F2F"><font size="2">(17:10:27)</font> <b>GreyGhost:</b></font> anyone know what size atlases supposed to be?<br/>
+<font color="#16569E"><font size="2">(17:10:47)</font> <b>ronnie_c:</b></font> chrisoelmueller: thanks a lot :-)<br/>
+<font color="#A82F2F"><font size="2">(17:10:52)</font> <b>chrisoelmueller:</b></font> GreyGhost: powers of two, 1024x1024 where possible<br/>
+<font color="#A82F2F"><font size="2">(17:11:04)</font> <b>GreyGhost:</b></font> oki<br/>
+<font color="#A82F2F"><font size="2">(17:11:17)</font> <b>chrisoelmueller:</b></font> GreyGhost: most cards today support texture sizes of 4096, but we&apos;d want to make sure this change crashes nobody<br/>
+<font color="#A82F2F"><font size="2">(17:11:30)</font> <b>chrisoelmueller:</b></font> and it&apos;s still a heavy improvement compared to single files<br/>
+<font color="#A82F2F"><font size="2">(17:11:33)</font> <b>totycro_:</b></font> final steps and concrete actions for 2011.3 isn&apos;t on the meeting agenda, shouldn&apos;t that be the first topic?<br/>
+<font color="#A82F2F"><font size="2">(17:11:36)</font> <b>gscai:</b></font> wasn&apos;t 2048 used recently?<br/>
+<font color="#A82F2F"><font size="2">(17:11:40)</font> <b>chrisoelmueller:</b></font> totycro_: yeah<br/>
+<font color="#A82F2F"><font size="2">(17:11:48)</font> <b>GreyGhost:</b></font> chrisoelmueller, oki<br/>
+<font color="#A82F2F"><font size="2">(17:11:56)</font> <b>GreyGhost:</b></font> i&apos;m just testing something ..not gonna commit ..<br/>
+<font size="2">(17:11:58)</font><b> spq hat den Raum verlassen (quit: Quit: ChatZilla 0.9.87 [Firefox 7.0.1/20110928134238]).</b><br/>
+<font color="#A82F2F"><font size="2">(17:13:06)</font> <b>totycro_:</b></font> janebot: won&apos;t you annoy us with meeting announcements today?<br/>
+<font color="#A82F2F"><font size="2">(17:13:07)</font> <b>janebot:</b></font> totycro_: Yeah. <br/>
+<font color="#A82F2F"><font size="2">(17:14:50)</font> <b>gscai:</b></font> I&apos;m going to predict that there will be a lot of &quot;terminate called after throwing an instance of &apos;gcn::Exception&apos;&quot; from windows users in 2011.3<br/>
+<font color="#16569E"><font size="2">(17:14:51)</font> <b>ronnie_c:</b></font> Out of interest, are the GSoC students still dropping by from time to time?<br/>
+<font color="#A82F2F"><font size="2">(17:15:56)</font> <b>GreyGhost:</b></font> i hate unity..<br/>
+<font color="#A82F2F"><font size="2">(17:17:06)</font> <b>gscai:</b></font> ronnie_c: yes<br/>
+<font color="#A82F2F"><font size="2">(17:21:57)</font> <b>GreyGhost:</b></font> oki.. my atlas generation failed :P<br/>
+<font color="#A82F2F"><font size="2">(17:22:49)</font> <b>Kilian]:</b></font> GreyGhost: max size i used 2048x2048<br/>
+<font color="#A82F2F"><font size="2">(17:23:06)</font> <b>Kilian]:</b></font> if it doesnt fit you have to create multiple ones<br/>
+<font color="#A82F2F"><font size="2">(17:25:06)</font> <b>gscai:</b></font> I&apos;m not sure how I did it but I just managed to load a game so that the gold icon in the top left corner was hidden<br/>
+<font color="#A82F2F"><font size="2">(17:25:09)</font> <b>Kilian]:</b></font> GreyGhost: http://www.panda3d.org/manual/index.php/Choosing_a_Texture_Size<br/>
+<font color="#A82F2F"><font size="2">(17:25:26)</font> <b>Kilian]:</b></font> i read the part about Standard Texture Sizes<br/>
+<font color="#A82F2F"><font size="2">(17:25:39)</font> <b>GreyGhost:</b></font> Kilian], i tried a shortcut .. i dissasembled the misc.xml .. replaced the files and put it back together ..<br/>
+<font color="#A82F2F"><font size="2">(17:25:42)</font> <b>Kilian]:</b></font> and i think it was good to udnerstand whats happing at the atlascreator<br/>
+<font color="#A82F2F"><font size="2">(17:26:01)</font> <b>GreyGhost:</b></font> sadly now it gave me some error bout the clay pit ..<br/>
+<font color="#A82F2F"><font size="2">(17:27:13)</font> <b>Kilian]:</b></font> can you upload the xml file somewhere ?<br/>
+<font color="#A82F2F"><font size="2">(17:27:35)</font> <b>GreyGhost:</b></font> i just did a git reset to get rid of everything .. its not a big matter..<br/>
+<font color="#A82F2F"><font size="2">(17:27:53)</font> <b>GreyGhost:</b></font> i was trying to see how it would look with fishes poping out of water.. <br/>
+<font color="#A82F2F"><font size="2">(17:28:10)</font> <b>GreyGhost:</b></font> we should get someone to render them for us .. it would look mch better i think<br/>
+<font color="#16569E"><font size="2">(17:28:22)</font> <b>ronnie_c:</b></font> GreyGhost: +1<br/>
+<font color="#A82F2F"><font size="2">(17:28:57)</font> <b>chrisoelmueller:</b></font> GreyGhost: meeting topic graphics report<br/>
+<font color="#A82F2F"><font size="2">(17:28:59)</font> <b>chrisoelmueller:</b></font> your call<br/>
+<font color="#A82F2F"><font size="2">(17:29:24)</font> <b>totycro_:</b></font> nihathrael agreed to take care of this topic, but it&apos;s of course general<br/>
+<font color="#A82F2F"><font size="2">(17:30:01)</font> <b>janebot:</b></font> Don&apos;t forget about the meeting <span style='font-weight: bold;'>today</span> in <span style='font-weight: bold;'>30 minutes</span>! [ http://wiki.unknown-horizons.org/w/Next_meeting ]<br/>
+<font color="#A82F2F"><font size="2">(17:30:33)</font> <b>GreyGhost:</b></font> chrisoelmueller, didnt get you.. u want a graphics report from me?<br/>
+<font color="#A82F2F"><font size="2">(17:31:03)</font> <b>totycro_:</b></font> GreyGhost: that&apos;s a new permanent segment of the meeting<br/>
+<font color="#A82F2F"><font size="2">(17:31:40)</font> <b>GreyGhost:</b></font> ahh oki<br/>
+<font color="#A82F2F"><font size="2">(17:34:13)</font> <b>GreyGhost:</b></font> totycro_, what do we do of ticket 1210<br/>
+<font color="#A82F2F"><font size="2">(17:34:19)</font> <b>totycro_:</b></font> janebot: !ticket 1210<br/>
+<font color="#A82F2F"><font size="2">(17:34:19)</font> <b>janebot:</b></font> totycro_: http://trac.unknown-horizons.org/t/ticket/1210<br/>
+<font color="#A82F2F"><font size="2">(17:34:21)</font> <b>janebot:</b></font> totycro_:  #1210 (Selections left behind after selecting tearing tool) – Unknown Horizons <br/>
+<font color="#A82F2F"><font size="2">(17:34:56)</font> <b>totycro_:</b></font> sry, i haven&apos;t had time to look into that<br/>
+<font color="#A82F2F"><font size="2">(17:35:13)</font> <b>GreyGhost:</b></font> oki<br/>
+<font color="#A82F2F"><font size="2">(17:36:02)</font> <b>totycro_:</b></font> i&apos;d expect that the buildings are re-colored when the tearing tool leaves<br/>
+<font color="#A82F2F"><font size="2">(17:36:30)</font> <b>totycro_:</b></font> but deselecting on entering the tearing tool would also work for me<br/>
+<font color="#A82F2F"><font size="2">(17:36:49)</font> <b>totycro_:</b></font> GreyGhost: why don&apos;t you just commit what you think is best?<br/>
+<font color="#A82F2F"><font size="2">(17:37:28)</font> <b>GreyGhost:</b></font> totycro_, cos i thought you might want to decide on what behaviour we want.. personnaly i like desecting ..<br/>
+<font color="#A82F2F"><font size="2">(17:37:32)</font> <b>GreyGhost:</b></font> wil lcommit in a bit<br/>
+<font color="#A82F2F"><font size="2">(17:41:21)</font> <b>GreyGhost:</b></font> oki.. msys git not compatible with linux git i think .. <br/>
+<font color="#A82F2F"><font size="2">(17:44:07)</font> <b>totycro_:</b></font> hmm.. it should be<br/>
+<font color="#A82F2F"><font size="2">(17:44:21)</font> <b>chrisoelmueller:</b></font> GreyGhost: are you following this? http://help.github.com/win-set-up-git/<br/>
+<font color="#A82F2F"><font size="2">(17:45:03)</font> <b>GreyGhost:</b></font> yeah . its set up properly..<br/>
+<font color="#A82F2F"><font size="2">(17:45:13)</font> <b>gscai:</b></font> what is the problem?<br/>
+<font color="#A82F2F"><font size="2">(17:45:21)</font> <b>GreyGhost:</b></font> no matter i did &quot;git reset --hard&quot; and it cleaned up properly.. <br/>
+<font color="#A82F2F"><font size="2">(17:45:34)</font> <b>GreyGhost:</b></font> but the files it showed changes to .. i have never touched ..<br/>
+<font color="#A82F2F"><font size="2">(17:45:42)</font> <b>GreyGhost:</b></font> must be line endings or something ..<br/>
+<font color="#A82F2F"><font size="2">(17:46:51)</font> <b>CIA-79:</b></font> <span style='font-weight: bold;'>unknown-horizons:</span> <span style='color: dark green;'>gscai</span> <span style='color: orange;'>master</span> * r<span style='font-weight: bold;'>1adb58a</span> <span style='color: teal;'></span>/ horizons/ai/aiplayer/goal/improvecollectorcoverage.py <span style='font-weight: bold;'>:</span> Fix too fast storage addition in case of bad collector coverage. - http://git.io/uwfAfA<br/>
+<font color="#A82F2F"><font size="2">(17:47:32)</font> <b>gscai:</b></font> totycro_: this fixes the huge storage numbers<br/>
+<font color="#A82F2F"><font size="2">(17:47:49)</font> <b>totycro_:</b></font> nice <br/>
+<font color="#A82F2F"><font size="2">(17:49:35)</font> <b>totycro_:</b></font> i assume we&apos;ll have to delay some topics of today&apos;s meeting, which are probably going to be the last entries<br/>
+<font color="#A82F2F"><font size="2">(17:49:48)</font> <b>totycro_:</b></font> so does anyone have comments about the order of the topics?<br/>
+<font color="#A82F2F"><font size="2">(17:50:01)</font> <b>janebot:</b></font> Don&apos;t forget about the meeting <span style='font-weight: bold;'>today</span> in <span style='font-weight: bold;'>10 minutes</span>! [ http://wiki.unknown-horizons.org/w/Next_meeting ]<br/>
+<font color="#A82F2F"><font size="2">(17:50:08)</font> <b>chrisoelmueller:</b></font> first thing to discuss 2011.3 sounds sane<br/>
+<font color="#A82F2F"><font size="2">(17:50:34)</font> <b>chrisoelmueller:</b></font> second topic is something we should really do at some point (and if everybody is around today, that&apos;s a great opportunity)<br/>
+<font color="#A82F2F"><font size="2">(17:52:40)</font> <b>totycro_:</b></font> i guess the cannons and pigs/cattle issues won&apos;t make it in the release, so it&apos;s also sane not to discuss them as first topic<br/>
+<font color="#A82F2F"><font size="2">(17:52:55)</font> <b>totycro_:</b></font> would you be ok if i moved 2011.3 crowdsourcing before that?<br/>
+<font color="#A82F2F"><font size="2">(17:53:06)</font> <b>totycro_:</b></font> (just out of time pressing considerations, not importance)<br/>
+<font color="#A82F2F"><font size="2">(17:53:31)</font> <b>chrisoelmueller:</b></font> i think the pig/cattle stuff should make it into the release<br/>
+<font color="#A82F2F"><font size="2">(17:53:40)</font> <b>gscai:</b></font> the cannons thing shouldn&apos;t really take even 5 minutes<br/>
+<font color="#A82F2F"><font size="2">(17:53:59)</font> <b>totycro_:</b></font> ronnie_c: it&apos;s going to take a while until we&apos;ll reach the editor topic, is that ok?<br/>
+<font color="#A82F2F"><font size="2">(17:54:04)</font> <b>chrisoelmueller:</b></font> because .. well .. it&apos;s confusing and i would rather have different behavior until we fix this crazy coupling<br/>
+<font size="2">(17:54:16)</font><b> barra_home [<em>barra@f055213123.adsl.alicedsl.de</em>] hat den Raum betreten.</b><br/>
+<font color="#A82F2F"><font size="2">(17:54:41)</font> <b>totycro_:</b></font> k, then i&apos;ll leave the topic ordering as it is<br/>
+<font color="#A82F2F"><font size="2">(17:54:43)</font> <b>totycro_:</b></font> brb<br/>
+<font color="#A82F2F"><font size="2">(17:58:32)</font> <b>totycro_:</b></font> is anyone against me doing to moderation again?<br/>
+<font color="#A82F2F"><font size="2">(17:59:44)</font> <b>gscai:</b></font> I&apos;m fine with it<br/>
+<font color="#A82F2F"><font size="2">(18:01:28)</font> <b>Kilian]:</b></font> totycro_: do it<br/>
+<font color="#16569E"><font size="2">(18:01:47)</font> <b>ronnie_c:</b></font> totycro_: totally ok<br/>
+<font color="#A82F2F"><font size="2">(18:01:51)</font> <b>chrisoelmueller:</b></font> as always, please forgive me not reacting, i will catch up as my connection allows<br/>
+<font color="#A82F2F"><font size="2">(18:01:54)</font> <b>chrisoelmueller:</b></font> UH-Guard: pingall meeting<br/>
+<font color="#A82F2F"><font size="2">(18:01:54)</font> <b>UH-Guard:</b></font> meeting<br/>
+<font color="#A82F2F"><font size="2">(18:01:54)</font> <b>UH-Guard:</b></font> abeaumont Andre_Re barra_home Beliar|AFK cassmodiah ChanServ chrisoelmueller christoph_debian CIA-79 Gambit GreyGhost gscai hagabaka inken janebot janus josch ketas ketas-ts Kilian] LinuxDonald lolcat manue| Nightraven nihathrael ronnie_c rudi_s scaaabi shadowmaster <br/>
+<font color="#A82F2F"><font size="2">(18:01:54)</font> <b>UH-Guard:</b></font> skelet totycro_ tuempl UH-Guard wentam <br/>
+<font color="#A82F2F"><font size="2">(18:01:54)</font> <b>UH-Guard:</b></font> meeting<br/>
+<font color="#A82F2F"><font size="2">(18:01:59)</font> <b>totycro_:</b></font> great<br/>
+<font color="#A82F2F"><font size="2">(18:02:01)</font> <b>totycro_:</b></font> #startmeeting<br/>
+<font color="#A82F2F"><font size="2">(18:02:02)</font> <b>UH-Guard:</b></font> Meeting started Sun Nov  6 17:02:01 2011 UTC.  The chair is totycro_. Information about MeetBot at http://wiki.debian.org/MeetBot.<br/>
+<font color="#A82F2F"><font size="2">(18:02:02)</font> <b>UH-Guard:</b></font> Useful Commands: #action #agreed #help #info #idea #link #topic.<br/>
+<font color="#A82F2F"><font size="2">(18:02:04)</font> <b>totycro_:</b></font> welcome everyone<br/>
+<font color="#A82F2F"><font size="2">(18:02:11)</font> <b>totycro_:</b></font> #topic 2011.3 - Remaining tasks, release preparation, win RC<br/>
+<font size="2">(18:02:12)</font><b> UH-Guard hat das Thema zu 2011.3 - Remaining tasks, release preparation, win RC abgeändert</b><br/>
+<font color="#A82F2F"><font size="2">(18:02:19)</font> <b>totycro_:</b></font> maybe we should start with remaining tasks<br/>
+<font color="#A82F2F"><font size="2">(18:02:25)</font> <b>totycro_:</b></font> shoot :)<br/>
+<font color="#A82F2F"><font size="2">(18:02:53)</font> <b>totycro_:</b></font> one thing is certainly the ship jumping because of big sea tiles, where we have a half-baked fix<br/>
+<font color="#A82F2F"><font size="2">(18:03:24)</font> <b>Kilian]:</b></font> i can say some sentence about atlases<br/>
+<font color="#A82F2F"><font size="2">(18:03:37)</font> <b>totycro_:</b></font> i&apos;m under the impression that no one volunteered to do that, so i&apos;ll see that i can look into it<br/>
+<font color="#A82F2F"><font size="2">(18:03:43)</font> <b>totycro_:</b></font> Kilian]: please do<br/>
+<font color="#A82F2F"><font size="2">(18:03:56)</font> <b>Kilian]:</b></font> in generell we dont use the power of two atlases, so iam not sure if it really works for everyone<br/>
+<font color="#A82F2F"><font size="2">(18:04:18)</font> <b>Kilian]:</b></font> if i got it correctly older cards only works with these power of two option<br/>
+<font color="#A82F2F"><font size="2">(18:04:36)</font> <b>totycro_:</b></font> #link http://trac.unknown-horizons.org/t/report/3?asc=1&amp;page=3<br/>
+<font color="#A82F2F"><font size="2">(18:04:45)</font> <b>totycro_:</b></font> those are the remaining 2011.3 tasks<br/>
+<font color="#A82F2F"><font size="2">(18:05:01)</font> <b>totycro_:</b></font> Kilian]: are there any reports of problems?<br/>
+<font color="#A82F2F"><font size="2">(18:05:14)</font> <b>totycro_:</b></font> is it easy to convert the atlases to that format?<br/>
+<font color="#A82F2F"><font size="2">(18:05:20)</font> <b>Kilian]:</b></font> totycro_: not yet, but iam not sure if anyone except us tested it already<br/>
+<font color="#A82F2F"><font size="2">(18:05:30)</font> <b>Kilian]:</b></font> totycro_: its easy but needs time<br/>
+<font color="#A82F2F"><font size="2">(18:05:43)</font> <b>Kilian]:</b></font> if its necessary i can do it tomorrow<br/>
+<font color="#A82F2F"><font size="2">(18:05:44)</font> <b>totycro_:</b></font> do you happen to have the time to do it?<br/>
+<font color="#A82F2F"><font size="2">(18:05:50)</font> <b>totycro_:</b></font> that&apos;d be great<br/>
+<font color="#A82F2F"><font size="2">(18:06:18)</font> <b>Kilian]:</b></font> okay<br/>
+<font color="#A82F2F"><font size="2">(18:06:26)</font> <b>Kilian]:</b></font> and now the strange part<br/>
+<font color="#A82F2F"><font size="2">(18:06:46)</font> <b>Kilian]:</b></font> all atlas files in development/atlases are only temp files<br/>
+<font color="#A82F2F"><font size="2">(18:07:08)</font> <b>Kilian]:</b></font> you create an atlas with the atlascreator, after saving you have an XML and a PNG<br/>
+<font color="#A82F2F"><font size="2">(18:07:16)</font> <b>Kilian]:</b></font> when you run the parse script<br/>
+<font color="#A82F2F"><font size="2">(18:07:29)</font> <b>Kilian]:</b></font> the png is copied in the content/gfx/atlas folder<br/>
+<font color="#A82F2F"><font size="2">(18:07:43)</font> <b>Kilian]:</b></font> and it creates and entry in content/atlas.sql<br/>
+<font color="#A82F2F"><font size="2">(18:08:00)</font> <b>Kilian]:</b></font> and an entry in content/animations.json<br/>
+<font color="#A82F2F"><font size="2">(18:08:04)</font> <b>Kilian]:</b></font> so in general<br/>
+<font color="#A82F2F"><font size="2">(18:08:18)</font> <b>Kilian]:</b></font> we can remove all the atlas stuff in development/atlases<br/>
+<font color="#A82F2F"><font size="2">(18:08:36)</font> <b>totycro_:</b></font> if it&apos;s really not needed by anyone, please just remove it<br/>
+<font color="#A82F2F"><font size="2">(18:08:37)</font> <b>Kilian]:</b></font> and the single gfx files in content/gfx/buildings e.g.<br/>
+<font color="#A82F2F"><font size="2">(18:08:49)</font> <b>chrisoelmueller:</b></font> well those should stay in the repo<br/>
+<font color="#A82F2F"><font size="2">(18:08:49)</font> <b>Kilian]:</b></font> i would not say it isnt needed<br/>
+<font color="#A82F2F"><font size="2">(18:08:52)</font> <b>chrisoelmueller:</b></font> but not be packaged<br/>
+<font color="#A82F2F"><font size="2">(18:09:03)</font> <b>Kilian]:</b></font> chrisoelmueller: right<br/>
+<font color="#A82F2F"><font size="2">(18:09:04)</font> <b>totycro_:</b></font> development usually shouldn&apos;t be packaged<br/>
+<font color="#A82F2F"><font size="2">(18:09:09)</font> <b>chrisoelmueller:</b></font> that as well<br/>
+<font color="#A82F2F"><font size="2">(18:09:10)</font> <b>chrisoelmueller:</b></font> #info changelog got updated this week<br/>
+<font color="#A82F2F"><font size="2">(18:09:20)</font> <b>Kilian]:</b></font> if you want to disamble you need the png and the xml file<br/>
+<font color="#A82F2F"><font size="2">(18:09:24)</font> <b>chrisoelmueller:</b></font> #info translations are ready (and got updated)<br/>
+<font color="#A82F2F"><font size="2">(18:09:26)</font> <b>totycro_:</b></font> Kilian]: do you need a decision or something there now?<br/>
+<font color="#A82F2F"><font size="2">(18:09:37)</font> <b>Kilian]:</b></font> so its only needed if you try to create single files out of an atlas<br/>
+<font color="#A82F2F"><font size="2">(18:09:45)</font> <b>Kilian]:</b></font> totycro_: not really<br/>
+<font color="#A82F2F"><font size="2">(18:09:47)</font> <b>chrisoelmueller:</b></font> #action chrisoelmueller will look into updating the release notes (written in early September) today<br/>
+<font color="#A82F2F"><font size="2">(18:10:02)</font> <b>Kilian]:</b></font> but in generall, we could make a small atlas branch or something<br/>
+<font color="#A82F2F"><font size="2">(18:10:18)</font> <b>totycro_:</b></font> Kilian]: k, we can keep that in mind for later i guess<br/>
+<font color="#A82F2F"><font size="2">(18:10:28)</font> <b>totycro_:</b></font> any code/gfx/game-related issues for 2011.3?<br/>
+<font color="#A82F2F"><font size="2">(18:10:37)</font> <b>gscai:</b></font> I&apos;d say that #1187 would be nice to fix<br/>
+<font color="#A82F2F"><font size="2">(18:10:44)</font> <b>totycro_:</b></font> if they are not mentioned now, nothing will probably get done about them<br/>
+<font color="#A82F2F"><font size="2">(18:10:51)</font> <b>Kilian]:</b></font> ah<br/>
+<font color="#A82F2F"><font size="2">(18:11:06)</font> <b>totycro_:</b></font> gscai: could you look into that?<br/>
+<font color="#A82F2F"><font size="2">(18:11:12)</font> <b>totycro_:</b></font> i&apos;m already quite busy with rl and the other fix<br/>
+<font color="#A82F2F"><font size="2">(18:11:29)</font> <b>totycro_:</b></font> nihathrael also seems to not swim in free time<br/>
+<font color="#A82F2F"><font size="2">(18:11:33)</font> <b>Kilian]:</b></font> i have something i need to look at it again<br/>
+<font color="#A82F2F"><font size="2">(18:11:55)</font> <b>Kilian]:</b></font> the diplomacy wasnt changable while attacking<br/>
+<font color="#A82F2F"><font size="2">(18:11:57)</font> <b>gscai:</b></font> I&apos;ll try to look at it<br/>
+<font color="#A82F2F"><font size="2">(18:12:03)</font> <b>totycro_:</b></font> #1210 is handled by GreyGhost as i understand it?<br/>
+<font color="#A82F2F"><font size="2">(18:12:10)</font> <b>Kilian]:</b></font> it was changed visually but the ships didnt stop fighting<br/>
+<font color="#A82F2F"><font size="2">(18:12:13)</font> <b>GreyGhost:</b></font> totycro_, yep<br/>
+<font color="#A82F2F"><font size="2">(18:12:19)</font> <b>totycro_:</b></font> gscai: great<br/>
+<font color="#A82F2F"><font size="2">(18:12:23)</font> <b>totycro_:</b></font> GreyGhost: great as well :)<br/>
+<font color="#A82F2F"><font size="2">(18:12:37)</font> <b>chrisoelmueller:</b></font> Kilian]: i guess we can simply call diplomacy a test feature<br/>
+<font color="#A82F2F"><font size="2">(18:12:40)</font> <b>totycro_:</b></font> Kilian]: could you do that rather soon, e.g. today?<br/>
+<font color="#A82F2F"><font size="2">(18:12:46)</font> <b>Kilian]:</b></font> totycro_: yes<br/>
+<font color="#A82F2F"><font size="2">(18:12:52)</font> <b>chrisoelmueller:</b></font> as mihai seems to work on improving that<br/>
+<font color="#A82F2F"><font size="2">(18:13:19)</font> <b>GreyGhost:</b></font> totycro_, 1178 is also fixed in UH. But left open in case FIFE guys want to handle the case.<br/>
+<font color="#A82F2F"><font size="2">(18:13:49)</font> <b>totycro_:</b></font> GreyGhost: so shouldn&apos;t we move the ticket to fife trac?<br/>
+<font color="#A82F2F"><font size="2">(18:14:09)</font> <b>GreyGhost:</b></font> totycro_, already did.. its linked to this one .. i&apos;ll close ours.<br/>
+<font color="#A82F2F"><font size="2">(18:14:19)</font> <b>Kilian]:</b></font> janebot: !ticket 1178<br/>
+<font color="#A82F2F"><font size="2">(18:14:20)</font> <b>janebot:</b></font> Kilian]: http://trac.unknown-horizons.org/t/ticket/1178<br/>
+<font color="#A82F2F"><font size="2">(18:14:21)</font> <b>janebot:</b></font> Kilian]:  #1178 (Resource deposits remain selected after being removed.) – Unknown Horizons <br/>
+<font color="#A82F2F"><font size="2">(18:14:55)</font> <b>totycro_:</b></font> k<br/>
+<font color="#A82F2F"><font size="2">(18:14:59)</font> <b>totycro_:</b></font> if you can still think of an open tasks, please just shout it out as soon as possible<br/>
+<font color="#A82F2F"><font size="2">(18:15:02)</font> <b>totycro_:</b></font> let&apos;s move on to release preparations<br/>
+<font color="#A82F2F"><font size="2">(18:15:06)</font> <b>totycro_:</b></font> #link http://wiki.unknown-horizons.org/w/Release_tasks<br/>
+<font color="#A82F2F"><font size="2">(18:15:23)</font> <b>totycro_:</b></font> the major thing is probably packaging<br/>
+<font color="#A82F2F"><font size="2">(18:15:36)</font> <b>totycro_:</b></font> christoph_debian declared to probably be able to make time to do the debs<br/>
+<font color="#A82F2F"><font size="2">(18:15:58)</font> <b>totycro_:</b></font> i hope nihathrael can do the win package, let&apos;s ask him when he shows up<br/>
+<font color="#A82F2F"><font size="2">(18:16:05)</font> <b>chrisoelmueller:</b></font> it would be awesome if nihathrael packaged a RC of the current HEAD as he returns<br/>
+<font color="#A82F2F"><font size="2">(18:16:20)</font> <b>totycro_:</b></font> chrisoelmueller: +1<br/>
+<font color="#A82F2F"><font size="2">(18:16:43)</font> <b>totycro_:</b></font> anything else to be prepared?<br/>
+<font color="#A82F2F"><font size="2">(18:17:05)</font> <b>totycro_:</b></font> am i correct to think that there&apos;s a release announcement in the cms?<br/>
+<font color="#A82F2F"><font size="2">(18:17:27)</font> <b>chrisoelmueller:</b></font> see above<br/>
+<font color="#A82F2F"><font size="2">(18:17:32)</font> <b>chrisoelmueller:</b></font> &lt;chrisoelmueller&gt; #action chrisoelmueller will look into updating the release notes (written in early September) today<br/>
+<font color="#A82F2F"><font size="2">(18:17:50)</font> <b>totycro_:</b></font> sry, got it confused with changelog<br/>
+<font color="#A82F2F"><font size="2">(18:17:51)</font> <b>totycro_:</b></font> thx<br/>
+<font color="#A82F2F"><font size="2">(18:18:24)</font> <b>totycro_:</b></font> chrisoelmueller: do you have an eye on all translation issues?<br/>
+<font color="#A82F2F"><font size="2">(18:19:04)</font> <b>chrisoelmueller:</b></font> &lt;chrisoelmueller&gt; #info translations are ready (and got updated)<br/>
+<font color="#A82F2F"><font size="2">(18:19:25)</font> <b>totycro_:</b></font> i know, i just wanted to make sure that it includes everything, as in tutorial,..<br/>
+<font color="#A82F2F"><font size="2">(18:19:52)</font> <b>chrisoelmueller:</b></font> yes.<br/>
+<font color="#A82F2F"><font size="2">(18:20:08)</font> <b>totycro_:</b></font> k, awesome<br/>
+<font color="#A82F2F"><font size="2">(18:20:08)</font> <b>totycro_:</b></font> &lt;&gt;<br/>
+<font color="#A82F2F"><font size="2">(18:20:14)</font> <b>Kilian]:</b></font> &lt;&gt;<br/>
+<font color="#A82F2F"><font size="2">(18:20:20)</font> <b>gscai:</b></font> &lt;&gt;<br/>
+<font color="#A82F2F"><font size="2">(18:20:24)</font> <b>GreyGhost:</b></font> &lt;&gt;<br/>
+<font color="#A82F2F"><font size="2">(18:20:27)</font> <b>totycro_:</b></font> #topic 2012.1 - Discussion of a vague roadmap <br/>
+<font size="2">(18:20:27)</font><b> UH-Guard hat das Thema zu 2012.1 - Discussion of a vague roadmap abgeändert</b><br/>
+<font color="#A82F2F"><font size="2">(18:20:29)</font> <b>chrisoelmueller:</b></font> i will probably do some xml stuff later tonight<br/>
+<font color="#A82F2F"><font size="2">(18:20:31)</font> <b>chrisoelmueller:</b></font> aw<br/>
+<font color="#A82F2F"><font size="2">(18:20:58)</font> <b>totycro_:</b></font> so, we already have a lot of tasks and tickets for 2012.1<br/>
+<font color="#A82F2F"><font size="2">(18:21:15)</font> <b>totycro_:</b></font> except for the editor, there isn&apos;t much that would count as new features from the point of view os users<br/>
+<font color="#A82F2F"><font size="2">(18:21:29)</font> <b>Kilian]:</b></font> creating land units<br/>
+<font color="#A82F2F"><font size="2">(18:21:45)</font> <b>Kilian]:</b></font> that would be a new feature for the players<br/>
+<font color="#A82F2F"><font size="2">(18:21:55)</font> <b>totycro_:</b></font> so a unit produciton building + loading units into ships?<br/>
+<font color="#A82F2F"><font size="2">(18:22:06)</font> <b>Kilian]:</b></font> yes<br/>
+<font color="#A82F2F"><font size="2">(18:22:06)</font> <b>totycro_:</b></font> (mihai talked about the latter one concerning his unit project)<br/>
+<font color="#A82F2F"><font size="2">(18:22:42)</font> <b>totycro_:</b></font> chrisoelmueller started this list: http://wiki.unknown-horizons.org/w/2012.1_ideas<br/>
+<font color="#A82F2F"><font size="2">(18:22:54)</font> <b>chrisoelmueller:</b></font> keep in mind that some of those huge features require a lot of game design work done before they can be implemented<br/>
+<font color="#A82F2F"><font size="2">(18:23:50)</font> <b>totycro_:</b></font> i&apos;ve the idea of doing a vote to decide the most important features<br/>
+<font color="#A82F2F"><font size="2">(18:24:06)</font> <b>totycro_:</b></font> e.g. everyone can distribute ~10 points on all the ideas or something like that<br/>
+<font color="#A82F2F"><font size="2">(18:24:12)</font> <b>totycro_:</b></font> as a vague indication of importance<br/>
+<font color="#A82F2F"><font size="2">(18:24:24)</font> <b>totycro_:</b></font> would you want to do that, or mainly talk about it here?<br/>
+<font color="#A82F2F"><font size="2">(18:25:05)</font> <b>Kilian]:</b></font> totycro_: i think doing a vote and talk about the important topics only would save a lot of time<br/>
+<font color="#A82F2F"><font size="2">(18:25:27)</font> <b>totycro_:</b></font> k, then we could perhaps try to complete the list now<br/>
+<font color="#A82F2F"><font size="2">(18:25:41)</font> <b>totycro_:</b></font> i can then later open such a vote somewhere, and leave it open till next week or so<br/>
+<font color="#A82F2F"><font size="2">(18:26:09)</font> <b>chrisoelmueller:</b></font> http://wiki.unknown-horizons.org/w/2012.1_ideas &lt;== list of possible larger features for 2012.1<br/>
+<font color="#A82F2F"><font size="2">(18:26:19)</font> <b>gscai:</b></font> can we also vote against some ideas?<br/>
+<font color="#A82F2F"><font size="2">(18:26:24)</font> <b>totycro_:</b></font> just to be clear: i wouldn&apos;t want the vote to be binding, i.e. everyone can still work on what whatever he/she&apos;s interested in<br/>
+<font color="#A82F2F"><font size="2">(18:26:36)</font> <b>chrisoelmueller:</b></font> #idea expand this list, vote on what you think is important<br/>
+<font color="#A82F2F"><font size="2">(18:26:45)</font> <b>Kilian]:</b></font> totycro_: sure<br/>
+<font color="#A82F2F"><font size="2">(18:27:05)</font> <b>totycro_:</b></font> gscai: are there specific features you don&apos;t want to have?<br/>
+<font color="#A82F2F"><font size="2">(18:27:10)</font> <b>chrisoelmueller:</b></font> right now i would like to talk about the game design parts (new buildings/resources)<br/>
+<font color="#A82F2F"><font size="2">(18:27:10)</font> <b>Kilian]:</b></font> but if theres noone for river at the mometn we do not need talk about this, it would need lots of time<br/>
+<font color="#A82F2F"><font size="2">(18:27:24)</font> <b>Kilian]:</b></font> because it effects the a lot of things<br/>
+<font color="#A82F2F"><font size="2">(18:27:32)</font> <b>gscai:</b></font> totycro_: yes, terrain height for example<br/>
+<font color="#A82F2F"><font size="2">(18:27:54)</font> <b>gscai:</b></font> but I don&apos;t want to hold up the meeting for that<br/>
+<font color="#A82F2F"><font size="2">(18:28:15)</font> <b>totycro_:</b></font> #idea informal meeting after the meeting to discuss the voting mode<br/>
+<font color="#A82F2F"><font size="2">(18:28:47)</font> <b>totycro_:</b></font> chrisoelmueller: do you mean the buildings of incr 3/4?<br/>
+<font color="#A82F2F"><font size="2">(18:28:54)</font> <b>totycro_:</b></font> and resources<br/>
+<font color="#A82F2F"><font size="2">(18:29:25)</font> <b>totycro_:</b></font> i guess it&apos;s clear that in 2012.1, incr 3 should be compelted and perhaps 4 started<br/>
+<font color="#A82F2F"><font size="2">(18:30:21)</font> <b>totycro_:</b></font> any thoughts on that?<br/>
+<font color="#A82F2F"><font size="2">(18:30:34)</font> <b>totycro_:</b></font> chrisoelmueller: what in particular do you want to talk about?<br/>
+<font color="#A82F2F"><font size="2">(18:31:34)</font> <b>Andre_Re:</b></font> what? why was the meeting at 6 pm?<br/>
+<font color="#A82F2F"><font size="2">(18:32:05)</font> <b>totycro_:</b></font> Andre_Re: it&apos;s still 19:00 UTC, but the local time has changed<br/>
+<font color="#A82F2F"><font size="2">(18:32:13)</font> <b>Andre_Re:</b></font> fuck<br/>
+<font color="#A82F2F"><font size="2">(18:32:28)</font> <b>Andre_Re:</b></font> totally forgot about that!<br/>
+<font color="#A82F2F"><font size="2">(18:32:31)</font> <b>totycro_:</b></font> there is a propsal of incr 4 in the wiki:<br/>
+<font color="#A82F2F"><font size="2">(18:32:32)</font> <b>chrisoelmueller:</b></font> which of those sound great to you and which would you rather leave out for now / forever?<br/>
+<font color="#A82F2F"><font size="2">(18:32:32)</font> <b>chrisoelmueller:</b></font> Andre_Re: the meeting is at 5pm UTC<br/>
+<font color="#A82F2F"><font size="2">(18:32:33)</font> <b>totycro_:</b></font> #link http://wiki.unknown-horizons.org/w/DD/Increments/4<br/>
+<font color="#A82F2F"><font size="2">(18:32:34)</font> <b>gscai:</b></font> isn&apos;t it 17:00 UTC?<br/>
+<font color="#A82F2F"><font size="2">(18:32:52)</font> <b>totycro_:</b></font> ah, sry, you&apos;re probably right about the time<br/>
+<font color="#A82F2F"><font size="2">(18:33:20)</font> <b>gscai:</b></font> chrisoelmueller: I would leave out the village well (except maybe as a graphical part of the main square)<br/>
+<font color="#A82F2F"><font size="2">(18:33:37)</font> <b>totycro_:</b></font> we already have many means of food production, but a bakery is probably a must have<br/>
+<font color="#A82F2F"><font size="2">(18:33:57)</font> <b>Kilian]:</b></font> totycro_: yes<br/>
+<font color="#A82F2F"><font size="2">(18:34:08)</font> <b>gscai:</b></font> a bakery makes sense<br/>
+<font color="#A82F2F"><font size="2">(18:34:08)</font> <b>Kilian]:</b></font> in later increments the people want different kinds of food<br/>
+<font color="#A82F2F"><font size="2">(18:34:15)</font> <b>totycro_:</b></font> fire service would make sense in connection with fire as catastrophe, +1 on that<br/>
+<font color="#A82F2F"><font size="2">(18:34:43)</font> <b>totycro_:</b></font> we do have a focus on food, for that to make sense we probably should consider the meta-res consumption desgin<br/>
+<font color="#A82F2F"><font size="2">(18:34:55)</font> <b>Andre_Re:</b></font> we should think about adding rivers<br/>
+<font color="#A82F2F"><font size="2">(18:35:03)</font> <b>totycro_:</b></font> gunsmith + barracks are probably also very useful now<br/>
+<font color="#A82F2F"><font size="2">(18:35:15)</font> <b>Kilian]:</b></font> totycro_: +1<br/>
+<font color="#16569E"><font size="2">(18:35:21)</font> <b>ronnie_c:</b></font> totycro_: +1<br/>
+<font color="#A82F2F"><font size="2">(18:35:40)</font> <b>totycro_:</b></font> any ideas that are not already in the wiki page?<br/>
+<font size="2">(18:35:51)</font><b> chrisoelmueller hat den Raum verlassen (&quot;Where&apos;s those banana cream pies, eh&quot;).</b><br/>
+<font color="#A82F2F"><font size="2">(18:36:00)</font> <b>Andre_Re:</b></font> I&apos;m reading terrain height on the list of ideas<br/>
+<font size="2">(18:36:02)</font><b> chrisoelmueller [<em>bouncer@syngo.info</em>] hat den Raum betreten.</b><br/>
+<font color="#A82F2F"><font size="2">(18:36:11)</font> <b>Andre_Re:</b></font> is there a way to implement that now?<br/>
+<font color="#A82F2F"><font size="2">(18:36:12)</font> <b>totycro_:</b></font> do you think we would manage to agree on a design of research and building upgrades?<br/>
+<font color="#A82F2F"><font size="2">(18:36:16)</font> <b>totycro_:</b></font> (please don&apos;t discuss this now)<br/>
+<font color="#A82F2F"><font size="2">(18:36:37)</font> <b>totycro_:</b></font> Andre_Re: not really<br/>
+<font color="#A82F2F"><font size="2">(18:36:44)</font> <b>gscai:</b></font> I don&apos;t see a problem with building upgrades<br/>
+<font color="#A82F2F"><font size="2">(18:36:46)</font> <b>chrisoelmueller:</b></font> this agreement would rather look like Kilian] and I agree on something and then we propose it in a meeting<br/>
+<font color="#A82F2F"><font size="2">(18:36:55)</font> <b>Andre_Re:</b></font> I don&apos;t see, too<br/>
+<font color="#A82F2F"><font size="2">(18:37:06)</font> <b>totycro_:</b></font> gscai: there were really long discussion on how it should work, and we couldn&apos;t really agree <br/>
+<font color="#A82F2F"><font size="2">(18:37:07)</font> <b>Kilian]:</b></font> totycro_: we are able to find a solution, but we need some time<br/>
+<font color="#A82F2F"><font size="2">(18:37:18)</font> <b>chrisoelmueller:</b></font> it&apos;s a great feature and i completely, definitely want to have it rather soon<br/>
+<font color="#A82F2F"><font size="2">(18:37:20)</font> <b>totycro_:</b></font> it can take many different forms<br/>
+<font color="#A82F2F"><font size="2">(18:37:38)</font> <b>Andre_Re:</b></font> we should collect the possibilities in the wiki, I think<br/>
+<font color="#A82F2F"><font size="2">(18:38:09)</font> <b>gscai:</b></font> the research would be quite experimental so that sounds more difficult to agree on unless there is a truly great idea about how to make it work<br/>
+<font color="#A82F2F"><font size="2">(18:38:41)</font> <b>totycro_:</b></font> we could break this off now and see what the voting tells us<br/>
+<font color="#A82F2F"><font size="2">(18:38:56)</font> <b>gscai:</b></font> agreed<br/>
+<font color="#A82F2F"><font size="2">(18:39:07)</font> <b>totycro_:</b></font> i&apos;d like to mention that i find it very important to get scenarios<br/>
+<font color="#A82F2F"><font size="2">(18:39:23)</font> <b>Andre_Re:</b></font> totycro_: +1<br/>
+<font color="#A82F2F"><font size="2">(18:39:45)</font> <b>totycro_:</b></font> for that, we need creative writers, if you happen to know someone or are one yourself, please act so that we get scenarios :)<br/>
+<font color="#A82F2F"><font size="2">(18:40:09)</font> <b>Andre_Re:</b></font> I could do that<br/>
+<font size="2">(18:40:12)</font><b> Beliar|AFK hat den Raum verlassen (quit: Ping timeout: 252 seconds).</b><br/>
+<font color="#A82F2F"><font size="2">(18:40:25)</font> <b>totycro_:</b></font> Andre_Re: yes, please do<br/>
+<font color="#A82F2F"><font size="2">(18:40:39)</font> <b>totycro_:</b></font> the scenario system is ready for it, additions can be made as required<br/>
+<font color="#A82F2F"><font size="2">(18:40:44)</font> <b>Andre_Re:</b></font> I&apos;ll try to find a neat story for a small scenario<br/>
+<font color="#A82F2F"><font size="2">(18:41:01)</font> <b>totycro_:</b></font> there are vague general ideas in the wiki page<br/>
+<font color="#A82F2F"><font size="2">(18:41:08)</font> <b>chrisoelmueller:</b></font> how about the buildings / resources question now, what&apos;s your opinion on e.g. stone<br/>
+<font color="#A82F2F"><font size="2">(18:41:10)</font> <b>chrisoelmueller:</b></font> i am not going to implement them content-wise to then be told stone is awful<br/>
+<font color="#A82F2F"><font size="2">(18:41:22)</font> <b>totycro_:</b></font> what would be the usages of stone?<br/>
+<font color="#A82F2F"><font size="2">(18:41:33)</font> <b>chrisoelmueller:</b></font> the incr.4 construction material<br/>
+<font color="#A82F2F"><font size="2">(18:41:34)</font> <b>Andre_Re:</b></font> usage for bigger buildings<br/>
+<font color="#A82F2F"><font size="2">(18:41:40)</font> <b>Andre_Re:</b></font> but stone would work more like a mine<br/>
+<font color="#A82F2F"><font size="2">(18:41:41)</font> <b>chrisoelmueller:</b></font> the incr.4+ construction material, rather<br/>
+<font color="#A82F2F"><font size="2">(18:41:46)</font> <b>chrisoelmueller:</b></font> Andre_Re: it will.<br/>
+<font color="#A82F2F"><font size="2">(18:41:57)</font> <b>totycro_:</b></font> a salt mine could make sense now<br/>
+<font color="#A82F2F"><font size="2">(18:42:01)</font> <b>chrisoelmueller:</b></font> it&apos;s precisely defined to work similar to the clay pit<br/>
+<font color="#A82F2F"><font size="2">(18:42:01)</font> <b>totycro_:</b></font> (incr 4)<br/>
+<font color="#A82F2F"><font size="2">(18:42:11)</font> <b>Andre_Re:</b></font> for this, we would need to fina d way to add more then one building to a mountain<br/>
+<font color="#A82F2F"><font size="2">(18:42:25)</font> <b>totycro_:</b></font> would it be stone as in 1602, where you can get it off the border of any mountain?<br/>
+<font color="#A82F2F"><font size="2">(18:42:25)</font> <b>chrisoelmueller:</b></font> how so?<br/>
+<font color="#A82F2F"><font size="2">(18:42:31)</font> <b>chrisoelmueller:</b></font> totycro_: yes<br/>
+<font color="#A82F2F"><font size="2">(18:42:35)</font> <b>Andre_Re:</b></font> totycro_: yes<br/>
+<font color="#A82F2F"><font size="2">(18:42:47)</font> <b>chrisoelmueller:</b></font> Andre_Re: just add stone res to the mountain, then decide if you want stone or iron ore ;-)<br/>
+<font color="#A82F2F"><font size="2">(18:42:54)</font> <b>totycro_:</b></font> that would conflict with the current primitive mine design<br/>
+<font color="#A82F2F"><font size="2">(18:42:57)</font> <b>chrisoelmueller:</b></font> the player will have to decide that<br/>
+<font color="#A82F2F"><font size="2">(18:43:08)</font> <b>Andre_Re:</b></font> as soon as we add salt and so on, we should think about the flying symbols above the mountains like in anno<br/>
+<font color="#A82F2F"><font size="2">(18:43:17)</font> <b>Kilian]:</b></font> ...<br/>
+<font color="#A82F2F"><font size="2">(18:43:24)</font> <b>totycro_:</b></font> Andre_Re: we have a ticket for that, it&apos;s been open for ages :)<br/>
+<font color="#A82F2F"><font size="2">(18:43:33)</font> <b>chrisoelmueller:</b></font> Andre_Re: salt has been added months ago<br/>
+<font color="#A82F2F"><font size="2">(18:43:33)</font> <b>Kilian]:</b></font> can we stop mixing up multiple topics please<br/>
+<font color="#A82F2F"><font size="2">(18:43:37)</font> <b>Andre_Re:</b></font> like always ;)<br/>
+<font color="#A82F2F"><font size="2">(18:43:42)</font> <b>totycro_:</b></font> but it could be a really nice addition in 2012.1 also for settlers<br/>
+<font color="#A82F2F"><font size="2">(18:43:57)</font> <b>chrisoelmueller:</b></font> oh yeah you have a point there<br/>
+<font color="#A82F2F"><font size="2">(18:44:09)</font> <b>chrisoelmueller:</b></font> this rotating icon above buildings needs to happen in 2012.1<br/>
+<font color="#A82F2F"><font size="2">(18:44:16)</font> <b>Kilian]:</b></font> iam not against any of the new resources in the list<br/>
+<font color="#A82F2F"><font size="2">(18:44:18)</font> <b>totycro_:</b></font> chrisoelmueller: needs to?<br/>
+<font color="#A82F2F"><font size="2">(18:44:23)</font> <b>chrisoelmueller:</b></font> yeah.<br/>
+<font color="#A82F2F"><font size="2">(18:44:48)</font> <b>chrisoelmueller:</b></font> we need support for those mechanisms as UH gets more complex<br/>
+<font color="#A82F2F"><font size="2">(18:45:02)</font> <b>chrisoelmueller:</b></font> and esp. as our inhabitants demands increase<br/>
+<font color="#A82F2F"><font size="2">(18:45:05)</font> <b>chrisoelmueller:</b></font> inhabitant*<br/>
+<font color="#A82F2F"><font size="2">(18:45:13)</font> <b>Andre_Re:</b></font> in the original game, they used different methods to explore an island<br/>
+<font color="#A82F2F"><font size="2">(18:45:34)</font> <b>Andre_Re:</b></font> I think, in the original game, they had a button in order to explore the resource capacities<br/>
+<font color="#A82F2F"><font size="2">(18:45:41)</font> <b>gscai:</b></font> I don&apos;t see why it has to rotate but I do agree with the extra icons<br/>
+<font color="#A82F2F"><font size="2">(18:45:45)</font> <b>Andre_Re:</b></font> in the second game, they used a special uni<br/>
+<font color="#A82F2F"><font size="2">(18:45:50)</font> <b>Andre_Re:</b></font> *unit<br/>
+<font color="#A82F2F"><font size="2">(18:46:04)</font> <b>chrisoelmueller:</b></font> Andre_Re: there is no &apos;original game&apos;, please. :(<br/>
+<font color="#A82F2F"><font size="2">(18:46:04)</font> <b>chrisoelmueller:</b></font> it would also help to distinguish decommissioned buildings, storages that are overloaded and so forth<br/>
+<font color="#A82F2F"><font size="2">(18:46:09)</font> <b>totycro_:</b></font> Andre_Re: i think we can discuss the details when we have the vote on what we want in particular<br/>
+<font color="#A82F2F"><font size="2">(18:46:18)</font> <b>Andre_Re:</b></font> and in the latest two games, you gained the information just by sending your ship to the island<br/>
+<font color="#A82F2F"><font size="2">(18:46:39)</font> <b>Andre_Re:</b></font> ok, good idea<br/>
+<font color="#A82F2F"><font size="2">(18:46:55)</font> <b>Kilian]:</b></font> exploring anything is heavy linked to a solution for fog of war in my opinion<br/>
+<font color="#A82F2F"><font size="2">(18:47:04)</font> <b>Andre_Re:</b></font> sure<br/>
+<font color="#A82F2F"><font size="2">(18:47:10)</font> <b>totycro_:</b></font> i&apos;m noting that there were no new ideas, so i&apos;ll regard the wiki page as complete<br/>
+<font color="#A82F2F"><font size="2">(18:47:18)</font> <b>Kilian]:</b></font> totycro_: k<br/>
+<font color="#A82F2F"><font size="2">(18:47:19)</font> <b>Kilian]:</b></font> &lt;&gt;<br/>
+<font color="#A82F2F"><font size="2">(18:47:24)</font> <b>gscai:</b></font> &lt;&gt;<br/>
+<font color="#A82F2F"><font size="2">(18:47:31)</font> <b>chrisoelmueller:</b></font> totycro_: explicitly mentioning the icon support would be good though<br/>
+<font color="#A82F2F"><font size="2">(18:47:33)</font> <b>Andre_Re:</b></font> &lt;&gt;<br/>
+<font color="#A82F2F"><font size="2">(18:47:39)</font> <b>chrisoelmueller:</b></font> i&apos;m probably going to do that &lt;&gt;<br/>
+<font color="#A82F2F"><font size="2">(18:47:43)</font> <b>Andre_Re:</b></font> :D<br/>
+<font color="#A82F2F"><font size="2">(18:47:55)</font> <b>totycro_:</b></font> chrisoelmueller: k :)<br/>
+<font color="#A82F2F"><font size="2">(18:48:01)</font> <b>totycro_:</b></font> #topic How cannons get on ships<br/>
+<font size="2">(18:48:02)</font><b> UH-Guard hat das Thema zu How cannons get on ships abgeändert</b><br/>
+<font color="#A82F2F"><font size="2">(18:48:04)</font> <b>totycro_:</b></font> gscai: your topic<br/>
+<font color="#A82F2F"><font size="2">(18:48:13)</font> <b>Andre_Re:</b></font> oh dear, the old topic :P<br/>
+<font color="#A82F2F"><font size="2">(18:48:35)</font> <b>gscai:</b></font> the problem in my opinion is that you are required to have cannons to build a ship<br/>
+<font color="#A82F2F"><font size="2">(18:48:48)</font> <b>gscai:</b></font> while you can also add/remove them manually anyway<br/>
+<font color="#A82F2F"><font size="2">(18:48:53)</font> <b>chrisoelmueller:</b></font> gscai: allow me to add that this design was chosen for cannon towers<br/>
+<font color="#A82F2F"><font size="2">(18:49:01)</font> <b>chrisoelmueller:</b></font> and we wanted ships to behave in a similar way<br/>
+<font color="#A82F2F"><font size="2">(18:49:06)</font> <b>Kilian]:</b></font> i think it was my fault ...<br/>
+<font color="#A82F2F"><font size="2">(18:49:21)</font> <b>chrisoelmueller:</b></font> i also suggested what you do now but at the moment i think it&apos;s good as is<br/>
+<font color="#A82F2F"><font size="2">(18:49:23)</font> <b>Kilian]:</b></font> i added some values for building the frigate<br/>
+<font color="#A82F2F"><font size="2">(18:49:35)</font> <b>gscai:</b></font> I would propose to let the player build ships without having the cannons<br/>
+<font color="#A82F2F"><font size="2">(18:49:39)</font> <b>chrisoelmueller:</b></font> because you can not spam war ships and then equip them later<br/>
+<font color="#A82F2F"><font size="2">(18:49:55)</font> <b>gscai:</b></font> chrisoelmueller: you can still do it now<br/>
+<font color="#A82F2F"><font size="2">(18:49:58)</font> <b>chrisoelmueller:</b></font> if you want that, you need to do more work (unequip existing and unload)<br/>
+<font color="#A82F2F"><font size="2">(18:50:04)</font> <b>chrisoelmueller:</b></font> yes, i am aware of that<br/>
+<font size="2">(18:50:11)</font><b> karottenreibe [<em>~karottenr@mnch-5d85511d.pool.mediaWays.net</em>] hat den Raum betreten.</b><br/>
+<font color="#A82F2F"><font size="2">(18:50:11)</font> <b>Andre_Re:</b></font> what about a cannon slider in the ships yard menu?<br/>
+<font color="#A82F2F"><font size="2">(18:50:26)</font> <b>Kilian]:</b></font> hi karottenreibe<br/>
+<font color="#A82F2F"><font size="2">(18:50:31)</font> <b>karottenreibe:</b></font> hi everyone<br/>
+<font color="#A82F2F"><font size="2">(18:50:32)</font> <b>chrisoelmueller:</b></font> but as long as we do not change the cannon tower build design, building ships should be done similarly<br/>
+<font color="#A82F2F"><font size="2">(18:50:35)</font> <b>chrisoelmueller:</b></font> heya karottenreibe<br/>
+<font color="#A82F2F"><font size="2">(18:50:43)</font> <b>Andre_Re:</b></font> where you can preselect if the ship should be equipted with cannons while building, or not?<br/>
+<font color="#16569E"><font size="2">(18:50:51)</font> <b>ronnie_c:</b></font> karottenreibe: hi<br/>
+<font color="#A82F2F"><font size="2">(18:50:55)</font> <b>Andre_Re:</b></font> hi karottenreibe<br/>
+<font color="#A82F2F"><font size="2">(18:50:56)</font> <b>gscai:</b></font> Andre_Re: sounds good to me<br/>
+<font color="#A82F2F"><font size="2">(18:51:15)</font> <b>chrisoelmueller:</b></font> #idea add a slider &apos;cannon amount&apos; in the boat builder menu  where you can select the amount of cannons for the to-be-built ship<br/>
+<font color="#A82F2F"><font size="2">(18:51:17)</font> <b>Andre_Re:</b></font> this would solve that problem without adding too much micromanagement<br/>
+<font color="#A82F2F"><font size="2">(18:51:19)</font> <b>totycro_:</b></font> that would mean cannons are a modification of the ship<br/>
+<font color="#A82F2F"><font size="2">(18:51:27)</font> <b>chrisoelmueller:</b></font> they are, in the end<br/>
+<font color="#A82F2F"><font size="2">(18:51:39)</font> <b>totycro_:</b></font> as are planned for e.g. higher masts<br/>
+<font color="#A82F2F"><font size="2">(18:51:43)</font> <b>chrisoelmueller:</b></font> since there are plans (and widgets) for such a modification tab, that sounds good<br/>
+<font color="#A82F2F"><font size="2">(18:51:57)</font> <b>Kilian]:</b></font> didnt we vote against a solution where you have to take care of too much details while building a single ship ?<br/>
+<font color="#A82F2F"><font size="2">(18:52:03)</font> <b>totycro_:</b></font> should that be included in the whole mod tab?<br/>
+<font color="#A82F2F"><font size="2">(18:52:03)</font> <b>chrisoelmueller:</b></font> you would get to that tab after selecting the ship type and before confirming the order<br/>
+<font color="#A82F2F"><font size="2">(18:52:08)</font> <b>chrisoelmueller:</b></font> think: purchase certain upgrades<br/>
+<font color="#A82F2F"><font size="2">(18:52:29)</font> <b>totycro_:</b></font> Kilian]: didn&apos;t we agree on what chrisoelmueller just said?<br/>
+<font color="#A82F2F"><font size="2">(18:52:53)</font> <b>Andre_Re:</b></font> totycro_: +1<br/>
+<font color="#A82F2F"><font size="2">(18:53:16)</font> <b>Kilian]:</b></font> hm, maybe i confused already<br/>
+<font color="#A82F2F"><font size="2">(18:53:21)</font> <b>totycro_:</b></font> so it should still be possible to just build a ship without really needing extra clicks, but can be available to those who want that<br/>
+<font color="#A82F2F"><font size="2">(18:53:34)</font> <b>totycro_:</b></font> before concrete work on that we should probably recheck the meeting logs anyway<br/>
+<font color="#A82F2F"><font size="2">(18:53:56)</font> <b>totycro_:</b></font> so on this issue now, is the consensus to regard this as first mod and implement it soon?<br/>
+<font color="#A82F2F"><font size="2">(18:54:44)</font> <b>gscai:</b></font> sounds reasonable<br/>
+<font color="#A82F2F"><font size="2">(18:54:45)</font> <b>chrisoelmueller:</b></font> yeah, &apos;soon&apos;ish<br/>
+<font color="#A82F2F"><font size="2">(18:54:51)</font> <b>Kilian]:</b></font> btw if you have a variable amount of canons for the frigate, we have to rerender the ship with the correct amount of canons<br/>
+<font color="#A82F2F"><font size="2">(18:55:11)</font> <b>gscai:</b></font> Kilian]: we already have that problem<br/>
+<font color="#A82F2F"><font size="2">(18:55:22)</font> <b>totycro_:</b></font> what should be the default? weapons or no weapons?<br/>
+<font color="#A82F2F"><font size="2">(18:55:30)</font> <b>Andre_Re:</b></font> we could also add the smoke dynamically<br/>
+<font color="#A82F2F"><font size="2">(18:55:31)</font> <b>Kilian]:</b></font> weapon plz<br/>
+<font color="#A82F2F"><font size="2">(18:55:36)</font> <b>gscai:</b></font> no weapons<br/>
+<font color="#A82F2F"><font size="2">(18:55:46)</font> <b>chrisoelmueller:</b></font> which default?<br/>
+<font color="#A82F2F"><font size="2">(18:55:46)</font> <b>Andre_Re:</b></font> no weapons, I think<br/>
+<font color="#A82F2F"><font size="2">(18:55:59)</font> <b>Kilian]:</b></font> default amount of canons for the frigate<br/>
+<font color="#A82F2F"><font size="2">(18:56:19)</font> <b>totycro_:</b></font> what happens if you just click ok in the mod tab<br/>
+<font color="#A82F2F"><font size="2">(18:56:37)</font> <b>Andre_Re:</b></font> which mod tab?<br/>
+<font color="#A82F2F"><font size="2">(18:56:40)</font> <b>chrisoelmueller:</b></font> you get a slider with values 0..max_possible (for this ship)<br/>
+<font color="#A82F2F"><font size="2">(18:56:40)</font> <b>chrisoelmueller:</b></font> and the default value is max_ as long as you have those cannons in stock<br/>
+<font color="#A82F2F"><font size="2">(18:56:40)</font> <b>chrisoelmueller:</b></font> else the max amount of your cannons<br/>
+<font color="#A82F2F"><font size="2">(18:57:02)</font> <b>Kilian]:</b></font> chrisoelmueller: +1<br/>
+<font color="#A82F2F"><font size="2">(18:57:04)</font> <b>totycro_:</b></font> chrisoelmueller: +1<br/>
+<font color="#A82F2F"><font size="2">(18:57:10)</font> <b>Andre_Re:</b></font> I&apos;m against any automatic change<br/>
+<font color="#A82F2F"><font size="2">(18:57:16)</font> <b>Andre_Re:</b></font> this would confuse the player<br/>
+<font color="#A82F2F"><font size="2">(18:57:20)</font> <b>totycro_:</b></font> Andre_Re: that&apos;s the tab where you select the ship modifications<br/>
+<font color="#A82F2F"><font size="2">(18:57:33)</font> <b>chrisoelmueller:</b></font> you get a slider with values 0..max_possible (for this ship)<br/>
+<font color="#A82F2F"><font size="2">(18:57:35)</font> <b>gscai:</b></font> the last bit is going to be annoying if you don&apos;t have a lot of cannons but expect to get them soon<br/>
+<font color="#A82F2F"><font size="2">(18:57:36)</font> <b>chrisoelmueller:</b></font> and the default value is max_ as long as you have those cannons in stock<br/>
+<font color="#A82F2F"><font size="2">(18:57:40)</font> <b>Kilian]:</b></font> in my opinion its confusing to build a warship which isnt able to fight by default<br/>
+<font color="#A82F2F"><font size="2">(18:57:40)</font> <b>chrisoelmueller:</b></font> else the max amount of your cannons<br/>
+<font color="#A82F2F"><font size="2">(18:57:41)</font> <b>totycro_:</b></font> Andre_Re: in general, i agree with you, but here we get very reasonable values imo<br/>
+<font color="#A82F2F"><font size="2">(18:57:51)</font> <b>chrisoelmueller:</b></font> Kilian]: that.<br/>
+<font color="#A82F2F"><font size="2">(18:57:57)</font> <b>totycro_:</b></font> the amount of cannons could be very highlightes<br/>
+<font color="#A82F2F"><font size="2">(18:57:59)</font> <b>Andre_Re:</b></font> there should be more of a distinct warning message (&quot;You don&apos;t have enoough cannons in stock to build this ship&quot;)<br/>
+<font color="#A82F2F"><font size="2">(18:57:59)</font> <b>totycro_:</b></font> *highlighted<br/>
+<font color="#A82F2F"><font size="2">(18:58:19)</font> <b>chrisoelmueller:</b></font> Andre_Re: well, the slider would not be at max_ which is rather clear already<br/>
+<font color="#A82F2F"><font size="2">(18:58:39)</font> <b>totycro_:</b></font> just to note: &quot;a war ship always should be able to fight&quot; VS &quot;war ships should be buildable without cannons&quot;<br/>
+<font color="#A82F2F"><font size="2">(18:58:49)</font> <b>totycro_:</b></font> obviously, both is not possible<br/>
+<font color="#A82F2F"><font size="2">(18:59:09)</font> <b>Andre_Re:</b></font> should we use a relative scale instead?<br/>
+<font color="#A82F2F"><font size="2">(18:59:12)</font> <b>gscai:</b></font> it sounds reasonable to use frigates as trade ships if you intend to arm them soon after<br/>
+<font color="#A82F2F"><font size="2">(18:59:17)</font> <b>totycro_:</b></font> i like chrisoelmueller&apos;s compromise on this, if the number of cannons is clearly visible<br/>
+<font color="#A82F2F"><font size="2">(18:59:36)</font> <b>Andre_Re:</b></font> like empty – 1/4 – 1/2 - 3/4 - full<br/>
+<font color="#A82F2F"><font size="2">(18:59:51)</font> <b>Andre_Re:</b></font> this would work for any ship type<br/>
+<font color="#A82F2F"><font size="2">(18:59:57)</font> <b>gscai:</b></font> how about using the amount you used for the last ship of the same kind?<br/>
+<font color="#A82F2F"><font size="2">(19:00:20)</font> <b>Andre_Re:</b></font> gscai: this would change the slider for any tsype of ship<br/>
+<font color="#A82F2F"><font size="2">(19:00:25)</font> <b>totycro_:</b></font> i think you usually want max<br/>
+<font color="#A82F2F"><font size="2">(19:00:28)</font> <b>totycro_:</b></font> or 0<br/>
+<font color="#A82F2F"><font size="2">(19:00:58)</font> <b>Kilian]:</b></font> brb<br/>
+<font color="#A82F2F"><font size="2">(19:00:58)</font> <b>Andre_Re:</b></font> and, it would break or concept of the one click building<br/>
+<font color="#A82F2F"><font size="2">(19:01:19)</font> <b>Andre_Re:</b></font> you would have to select the type first, then set the slider and the start the building<br/>
+<font color="#A82F2F"><font size="2">(19:01:26)</font> <b>totycro_:</b></font> Andre_Re: it wouldn&apos;t with reasonable default values<br/>
+<font size="2">(19:01:26)</font><b> StefanUH [<em>bc1a2762@gateway/web/freenode/ip.188.26.39.98</em>] hat den Raum betreten.</b><br/>
+<font color="#A82F2F"><font size="2">(19:01:37)</font> <b>gscai:</b></font> you have to choose which type of ship you are building anyway<br/>
+<font color="#A82F2F"><font size="2">(19:01:47)</font> <b>gscai:</b></font> as in huker/frigate<br/>
+<font color="#A82F2F"><font size="2">(19:01:55)</font> <b>totycro_:</b></font> a compromise for now would be a second entry in the war tab: unarmed frigate<br/>
+<font color="#A82F2F"><font size="2">(19:01:59)</font> <b>chrisoelmueller:</b></font> heya StefanUH <br/>
+<font color="#A82F2F"><font size="2">(19:02:03)</font> <b>Andre_Re:</b></font> didn&apos;t we had a one click solution?<br/>
+<font color="#A82F2F"><font size="2">(19:02:05)</font> <b>chrisoelmueller:</b></font> totycro_: uuh, no<br/>
+<font color="#A82F2F"><font size="2">(19:02:16)</font> <b>Andre_Re:</b></font> I haven&apos;t built a ship for a rather long time :P<br/>
+<font color="#A82F2F"><font size="2">(19:02:34)</font> <b>StefanUH:</b></font> hello!<br/>
+<font color="#A82F2F"><font size="2">(19:02:44)</font> <b>Andre_Re:</b></font> hello StefanUH<br/>
+<font color="#A82F2F"><font size="2">(19:02:47)</font> <b>gscai:</b></font> Andre_Re: you choose the type of ship you want to build, not just &apos;any ship is fine, thanks&apos;<br/>
+<font color="#A82F2F"><font size="2">(19:03:13)</font> <b>Andre_Re:</b></font> no, that&apos;s not what I meant<br/>
+<font color="#A82F2F"><font size="2">(19:03:17)</font> <b>gscai:</b></font> totycro_: an unarmed frigate sounds nice for now although the name is confusing<br/>
+<font color="#A82F2F"><font size="2">(19:03:32)</font> <b>Andre_Re:</b></font> I thought, we had a list of all available ships and as soon as you click on one, it starts building<br/>
+<font color="#A82F2F"><font size="2">(19:03:44)</font> <b>gscai:</b></font> we do<br/>
+<font color="#A82F2F"><font size="2">(19:04:03)</font> <b>chrisoelmueller:</b></font> i guess we&apos;re at the point of misunderstanding each other<br/>
+<font color="#A82F2F"><font size="2">(19:04:04)</font> <b>chrisoelmueller:</b></font> what gscai suggested sounds good, just store the last value<br/>
+<font color="#A82F2F"><font size="2">(19:04:08)</font> <b>chrisoelmueller:</b></font> since the &apos;modification&apos; tab depends on the ship type in any case, why not just do that<br/>
+<font color="#A82F2F"><font size="2">(19:04:11)</font> <b>Andre_Re:</b></font> so now, if you add a separate slider for any type, you would break that concept<br/>
+<font color="#A82F2F"><font size="2">(19:04:15)</font> <b>chrisoelmueller:</b></font> it will not block players in any way<br/>
+<font color="#A82F2F"><font size="2">(19:04:24)</font> <b>chrisoelmueller:</b></font> Andre_Re: no, that&apos;s not how it will work.<br/>
+<font color="#A82F2F"><font size="2">(19:04:37)</font> <b>Andre_Re:</b></font> except you add a separate slider for each ship type and yozu place them like in a table<br/>
+<font color="#A82F2F"><font size="2">(19:05:18)</font> <b>Andre_Re:</b></font> chrisoelmueller: storing the last value is a great idea<br/>
+<font color="#A82F2F"><font size="2">(19:05:27)</font> <b>Kilian]:</b></font> in general, its not really important what kind of solution we visual implement, after a short time a lot of people will tell us, what they except how it should work<br/>
+<font color="#A82F2F"><font size="2">(19:05:48)</font> <b>Kilian]:</b></font> kind of the results of totycros usability test<br/>
+<font color="#A82F2F"><font size="2">(19:06:02)</font> <b>Andre_Re:</b></font> the problem is, if we use absolute values, the slider would jiggle around all the time you select another type<br/>
+<font color="#A82F2F"><font size="2">(19:06:21)</font> <b>Kilian]:</b></font> we use absolute values everywhere<br/>
+<font color="#A82F2F"><font size="2">(19:06:21)</font> <b>chrisoelmueller:</b></font> (status update: disconnect #20 after meeting start)<br/>
+<font color="#A82F2F"><font size="2">(19:06:35)</font> <b>Andre_Re:</b></font> a relative, percentage or fraction based value would solve that<br/>
+<font color="#A82F2F"><font size="2">(19:06:40)</font> <b>chrisoelmueller:</b></font> absolute values are fine with the current amount of cannons<br/>
+<font color="#A82F2F"><font size="2">(19:07:00)</font> <b>totycro_:</b></font> k, it&apos;s now nearly 20 minues for a 10 min topic<br/>
+<font color="#A82F2F"><font size="2">(19:07:17)</font> <b>totycro_:</b></font> how about we do a provisionary implementation and change/discuss it later as needed?<br/>
+<font color="#A82F2F"><font size="2">(19:07:33)</font> <b>Andre_Re:</b></font> totycro_: agree<br/>
+<font color="#A82F2F"><font size="2">(19:07:36)</font> <b>totycro_:</b></font> the general concept of cannons as mod seems to be liked by a number of people<br/>
+<font color="#A82F2F"><font size="2">(19:07:37)</font> <b>Kilian]:</b></font> totycro_: +1<br/>
+<font color="#A82F2F"><font size="2">(19:07:47)</font> <b>gscai:</b></font> fine with me<br/>
+<font color="#A82F2F"><font size="2">(19:07:52)</font> <b>Kilian]:</b></font> &lt;&gt;<br/>
+<font color="#A82F2F"><font size="2">(19:07:56)</font> <b>chrisoelmueller:</b></font> later on we might not want to have the options 1,2,3,4,..,20, just have 0,5,10,15,20 there.<br/>
+<font color="#16569E"><font size="2">(19:07:56)</font> <b>ronnie_c:</b></font> &lt;&gt;<br/>
+<font color="#A82F2F"><font size="2">(19:07:56)</font> <b>chrisoelmueller:</b></font> but that&apos;s no urgent issue in any way<br/>
+<font color="#A82F2F"><font size="2">(19:07:56)</font> <b>chrisoelmueller:</b></font> and can be discussed later<br/>
+<font color="#A82F2F"><font size="2">(19:07:56)</font> <b>chrisoelmueller:</b></font> (read: after implementing the basic idea)<br/>
+<font color="#A82F2F"><font size="2">(19:07:57)</font> <b>chrisoelmueller:</b></font> +1 &lt;&gt;<br/>
+<font color="#A82F2F"><font size="2">(19:08:10)</font> <b>Andre_Re:</b></font> &lt;&gt;<br/>
+<font color="#A82F2F"><font size="2">(19:08:12)</font> <b>totycro_:</b></font> #agreed we&apos;ll do a provisionary implementation of this with weapons as first modification<br/>
+<font color="#A82F2F"><font size="2">(19:08:43)</font> <b>totycro_:</b></font> #topic Collection of pigs and cattle for slaughter<br/>
+<font size="2">(19:08:44)</font><b> UH-Guard hat das Thema zu Collection of pigs and cattle for slaughter abgeändert</b><br/>
+<font color="#A82F2F"><font size="2">(19:08:46)</font> <b>totycro_:</b></font> gscai: <br/>
+<font color="#A82F2F"><font size="2">(19:09:06)</font> <b>gscai:</b></font> these are currently the only resources produced by farms that can not be picked up by the general collectors<br/>
+<font color="#A82F2F"><font size="2">(19:09:51)</font> <b>gscai:</b></font> the problem is that you have to have the butcheries right around next to the farm for it to work<br/>
+<font color="#A82F2F"><font size="2">(19:10:01)</font> <b>gscai:</b></font> which isn&apos;t required for anything else<br/>
+<font color="#A82F2F"><font size="2">(19:10:10)</font> <b>Andre_Re:</b></font> what about adding cattle drives?<br/>
+<font size="2">(19:10:25)</font><b> Beliar [<em>~Beliar@a89-182-49-87.net-htp.de</em>] hat den Raum betreten.</b><br/>
+<font color="#A82F2F"><font size="2">(19:10:56)</font> <b>totycro_:</b></font> making them tradeable (i.e. collectable) is unrealistic, but i think we should do it<br/>
+<font color="#A82F2F"><font size="2">(19:11:05)</font> <b>Kilian]:</b></font> totycro_: +1<br/>
+<font color="#A82F2F"><font size="2">(19:11:11)</font> <b>totycro_:</b></font> in a recent game, i&apos;ve had issues with buchery/farm productivity, this would help here<br/>
+<font color="#A82F2F"><font size="2">(19:11:18)</font> <b>gscai:</b></font> I agree<br/>
+<font color="#A82F2F"><font size="2">(19:11:39)</font> <b>gscai:</b></font> theoretically we could say that the animal was killed at the farm and the butchery did &apos;processing&apos; to make it into food<br/>
+<font color="#A82F2F"><font size="2">(19:11:48)</font> <b>totycro_:</b></font> chrisoelmueller: didn&apos;t you have something to say about this?<br/>
+<font color="#A82F2F"><font size="2">(19:12:08)</font> <b>Kilian]:</b></font> totycro_: lets wait<br/>
+<font color="#A82F2F"><font size="2">(19:12:17)</font> <b>Kilian]:</b></font> maybe hes offiline again<br/>
+<font color="#A82F2F"><font size="2">(19:13:11)</font> <b>totycro_:</b></font> hmm.. it sucks, but we can&apos;t wait indefinitely<br/>
+<font color="#A82F2F"><font size="2">(19:13:21)</font> <b>Kilian]:</b></font> yeah ...<br/>
+<font color="#A82F2F"><font size="2">(19:13:46)</font> <b>Kilian]:</b></font> &lt;&gt;<br/>
+<font color="#A82F2F"><font size="2">(19:14:53)</font> <b>Andre_Re:</b></font> &lt;&gt;<br/>
+<font color="#A82F2F"><font size="2">(19:14:54)</font> <b>gscai:</b></font> go on to map editor and return to this when he comes back?<br/>
+<font color="#A82F2F"><font size="2">(19:15:06)</font> <b>Andre_Re:</b></font> gscai: +1<br/>
+<font color="#A82F2F"><font size="2">(19:15:09)</font> <b>karottenreibe:</b></font> gscai: +1<br/>
+<font color="#A82F2F"><font size="2">(19:15:16)</font> <b>totycro_:</b></font> #topic Creating a map editor<br/>
+<font size="2">(19:15:17)</font><b> UH-Guard hat das Thema zu Creating a map editor abgeändert</b><br/>
+<font color="#A82F2F"><font size="2">(19:15:17)</font> <b>totycro_:</b></font> ronnie_c: <br/>
+<font color="#A82F2F"><font size="2">(19:15:19)</font> <b>totycro_:</b></font> karottenreibe: <br/>
+<font color="#A82F2F"><font size="2">(19:15:37)</font> <b>totycro_:</b></font> please briefly describe what you are doing<br/>
+<font color="#A82F2F"><font size="2">(19:15:52)</font> <b>karottenreibe:</b></font> right, so we&apos;re working on the map editor as part of a project on university<br/>
+<font color="#A82F2F"><font size="2">(19:16:08)</font> <b>karottenreibe:</b></font> the general idea is to take the existing fifedit and make it usable by adding plugins to it<br/>
+<font color="#A82F2F"><font size="2">(19:16:22)</font> <b>karottenreibe:</b></font> so, one plugin to load the UH map format and one to save it at the least<br/>
+<font color="#A82F2F"><font size="2">(19:16:42)</font> <b>karottenreibe:</b></font> the current status is: we looked at the code and it is possible<br/>
+<font color="#A82F2F"><font size="2">(19:17:09)</font> <b>karottenreibe:</b></font> I also fixed up a script to start the editor and a sample plugin to show that it can load the UH code and do something ;-)<br/>
+<font color="#A82F2F"><font size="2">(19:17:20)</font> <b>gscai:</b></font> what is the map editor supposed to do?<br/>
+<font color="#A82F2F"><font size="2">(19:17:21)</font> <b>totycro_:</b></font> sounds great :)<br/>
+<font color="#A82F2F"><font size="2">(19:17:33)</font> <b>karottenreibe:</b></font> it&apos;s used to create the islands for a start<br/>
+<font color="#A82F2F"><font size="2">(19:17:51)</font> <b>karottenreibe:</b></font> later we could add support for placing buildings or things like that if needed<br/>
+<font color="#A82F2F"><font size="2">(19:18:22)</font> <b>totycro_:</b></font> ambient objects such as trees and mountains are currently just buildings<br/>
+<font color="#A82F2F"><font size="2">(19:18:26)</font> <b>totycro_:</b></font> also fish<br/>
+<font color="#A82F2F"><font size="2">(19:18:36)</font> <b>totycro_:</b></font> do you already have a vague roadmap with milestones?<br/>
+<font color="#A82F2F"><font size="2">(19:18:41)</font> <b>karottenreibe:</b></font> ah, good to know, so that should be high on the priority list then<br/>
+<font color="#A82F2F"><font size="2">(19:19:03)</font> <b>karottenreibe:</b></font> the first milestone was getting it to accept the plugins, next is getting it to load an exsiting maps ground tiles<br/>
+<font color="#A82F2F"><font size="2">(19:19:08)</font> <b>karottenreibe:</b></font> after that we haven&apos;t fixed anything yet<br/>
+<font color="#A82F2F"><font size="2">(19:19:37)</font> <b>totycro_:</b></font> it might be a good idea to develop the ui a bit iteratively<br/>
+<font color="#A82F2F"><font size="2">(19:19:48)</font> <b>totycro_:</b></font> with vague designs and feedback, then more concrete desgin<br/>
+<font color="#A82F2F"><font size="2">(19:20:10)</font> <b>totycro_:</b></font> are you working with the new tileset design, that&apos;s not yet in master?<br/>
+<font color="#A82F2F"><font size="2">(19:20:25)</font> <b>karottenreibe:</b></font> yes, we&apos;re working with the development branch<br/>
+<font color="#A82F2F"><font size="2">(19:20:31)</font> <b>karottenreibe:</b></font> nihathrael thought that best as well<br/>
+<font color="#A82F2F"><font size="2">(19:20:41)</font> <b>totycro_:</b></font> great, that&apos;s probably being merged to master soon<br/>
+<font color="#A82F2F"><font size="2">(19:20:45)</font> <b>karottenreibe:</b></font> great<br/>
+<font color="#A82F2F"><font size="2">(19:21:10)</font> <b>karottenreibe:</b></font> so, we also removed the full copy of fifedit from the git repo and now only store the plugins there<br/>
+<font color="#A82F2F"><font size="2">(19:21:13)</font> <b>karottenreibe:</b></font> is that ok?<br/>
+<font color="#A82F2F"><font size="2">(19:21:14)</font> <b>totycro_:</b></font> how much time do you approximately have and when is your deadline?<br/>
+<font color="#A82F2F"><font size="2">(19:21:40)</font> <b>karottenreibe:</b></font> deadline is the start of the next semester (roughly), so that&apos;s some time in february<br/>
+<font color="#A82F2F"><font size="2">(19:21:59)</font> <b>totycro_:</b></font> karottenreibe: it should work with vanilla fife<br/>
+<font color="#A82F2F"><font size="2">(19:22:03)</font> <b>karottenreibe:</b></font> we get 10 credits that&apos;s officially equal to 250 hours per person, but we can spend time as we choose<br/>
+<font color="#16569E"><font size="2">(19:22:37)</font> <b>ronnie_c:</b></font> and with the schedule being quite full it doesn't have to be 250 manhours for my taste<br/>
+<font color="#A82F2F"><font size="2">(19:22:38)</font> <b>totycro_:</b></font> on a side note: we only got 6 for the whole multiplayer system..<br/>
+<font color="#A82F2F"><font size="2">(19:22:48)</font> <b>karottenreibe:</b></font> totycro_: I wrote a simple script to start the editor with the plugins from the UH repository. that works with teh current fife revision<br/>
+<font color="#A82F2F"><font size="2">(19:23:06)</font> <b>totycro_:</b></font> with removing fifeedit you mean old code in the current uh repo?<br/>
+<font color="#A82F2F"><font size="2">(19:23:11)</font> <b>karottenreibe:</b></font> right, I think we have enough time to get something decent and usable done<br/>
+<font color="#16569E"><font size="2">(19:23:13)</font> <b>ronnie_c:</b></font> yes<br/>
+<font color="#A82F2F"><font size="2">(19:23:20)</font> <b>totycro_:</b></font> k, that&apos;s no problem i guess<br/>
+<font color="#A82F2F"><font size="2">(19:23:35)</font> <b>karottenreibe:</b></font> totycro_: we submitted some of the changes nihathrael did to the editor to fife as a patch<br/>
+<font color="#A82F2F"><font size="2">(19:23:43)</font> <b>karottenreibe:</b></font> because we also use them<br/>
+<font size="2">(19:24:16)</font><b> mihaibivol [<em>~mihai@p16.eregie.pub.ro</em>] hat den Raum betreten.</b><br/>
+<font color="#16569E"><font size="2">(19:24:34)</font> <b>ronnie_c:</b></font> Basically, the idea for today's presentation was to get as much feedback from you regarding the development process + important aspects (such as not to forget fish) ...<br/>
+<font color="#A82F2F"><font size="2">(19:24:36)</font> <b>totycro_:</b></font> do you work in a branch<br/>
+<font color="#A82F2F"><font size="2">(19:24:38)</font> <b>totycro_:</b></font> ?<br/>
+<font color="#16569E"><font size="2">(19:24:40)</font> <b>ronnie_c:</b></font> yes<br/>
+<font color="#A82F2F"><font size="2">(19:24:55)</font> <b>karottenreibe:</b></font> yep, it&apos;s in my repo on github, the editor branch<br/>
+<font color="#A82F2F"><font size="2">(19:25:00)</font> <b>totycro_:</b></font> i&apos;m not sure what to tell, but please ask any question any time here<br/>
+<font color="#A82F2F"><font size="2">(19:25:09)</font> <b>karottenreibe:</b></font> totycro_: sure thing<br/>
+<font color="#16569E"><font size="2">(19:25:26)</font> <b>ronnie_c:</b></font> do you think that the planned compression will interfere with our work?<br/>
+<font color="#A82F2F"><font size="2">(19:25:44)</font> <b>totycro_:</b></font> no, it would just happen at the end of saveing/start of loading<br/>
+<font color="#A82F2F"><font size="2">(19:26:05)</font> <b>karottenreibe:</b></font> that&apos;s ok, as long as we can just use some classes/functions to do that job from the editor plugins<br/>
+<font color="#A82F2F"><font size="2">(19:26:09)</font> <b>totycro_:</b></font> ah, the big sea tiles might be an issue<br/>
+<font color="#A82F2F"><font size="2">(19:26:17)</font> <b>totycro_:</b></font> most tiles are just 1x1 images<br/>
+<font color="#A82F2F"><font size="2">(19:26:28)</font> <b>totycro_:</b></font> at the sea, there currently still are fake tiles<br/>
+<font color="#A82F2F"><font size="2">(19:26:43)</font> <b>totycro_:</b></font> but i think we should move on with the meeting, we could talk about it later<br/>
+<font color="#A82F2F"><font size="2">(19:26:44)</font> <b>karottenreibe:</b></font> totycro_: is the water actually stored in the savegame files? isn&apos;t that just set by the game wherever there&apos;s no land?<br/>
+<font color="#A82F2F"><font size="2">(19:26:45)</font> <b>gscai:</b></font> the sea tiles aren&apos;t even part of the saved game, are they?<br/>
+<font color="#A82F2F"><font size="2">(19:26:57)</font> <b>karottenreibe:</b></font> gscai: that was my understanding<br/>
+<font color="#A82F2F"><font size="2">(19:27:00)</font> <b>totycro_:</b></font> ah, right<br/>
+<font color="#A82F2F"><font size="2">(19:27:01)</font> <b>karottenreibe:</b></font> in that case it wouldn&apos;t matter<br/>
+<font color="#A82F2F"><font size="2">(19:27:20)</font> <b>totycro_:</b></font> but it might be useful to have a different sea somewhere<br/>
+<font color="#A82F2F"><font size="2">(19:27:40)</font> <b>gscai:</b></font> what do you mean?<br/>
+<font color="#A82F2F"><font size="2">(19:27:41)</font> <b>totycro_:</b></font> also, there are some ideas to use big tiles in the normal land<br/>
+<font color="#A82F2F"><font size="2">(19:27:55)</font> <b>totycro_:</b></font> currently, the deep sea is the same everywhere<br/>
+<font color="#16569E"><font size="2">(19:27:55)</font> <b>ronnie_c:</b></font> ok<br/>
+<font color="#A82F2F"><font size="2">(19:28:08)</font> <b>totycro_:</b></font> there might be deeper deep sea, or more shallow deep sea some time<br/>
+<font color="#A82F2F"><font size="2">(19:28:13)</font> <b>Andre_Re:</b></font> I think we shoul talk about that on another place<br/>
+<font color="#A82F2F"><font size="2">(19:28:15)</font> <b>totycro_:</b></font> with different properties for e.g. fish<br/>
+<font color="#A82F2F"><font size="2">(19:28:17)</font> <b>karottenreibe:</b></font> totycro_: i think we should first concentrate on getting the islands to work and then adjust if any of this is implemented in the game actually<br/>
+<font color="#A82F2F"><font size="2">(19:28:29)</font> <b>gscai:</b></font> Andre_Re: agreed<br/>
+<font color="#A82F2F"><font size="2">(19:28:29)</font> <b>totycro_:</b></font> k, i just meant that it should be as flexible as possible<br/>
+<font color="#A82F2F"><font size="2">(19:28:38)</font> <b>totycro_:</b></font> i&apos;ll shut up now then :)<br/>
+<font color="#A82F2F"><font size="2">(19:28:39)</font> <b>totycro_:</b></font> &lt;&gt;<br/>
+<font color="#A82F2F"><font size="2">(19:28:42)</font> <b>karottenreibe:</b></font> we&apos;ll keep an eye out for that<br/>
+<font color="#16569E"><font size="2">(19:28:45)</font> <b>ronnie_c:</b></font> ok<br/>
+<font color="#A82F2F"><font size="2">(19:28:45)</font> <b>Andre_Re:</b></font> &lt;&gt;<br/>
+<font color="#A82F2F"><font size="2">(19:28:50)</font> <b>karottenreibe:</b></font> what&apos;s &lt;&gt; by the way?<br/>
+<font color="#16569E"><font size="2">(19:28:51)</font> <b>ronnie_c:</b></font> wait a sec<br/>
+<font color="#16569E"><font size="2">(19:28:58)</font> <b>ronnie_c:</b></font> &lt;&gt; change of topics<br/>
+<font color="#A82F2F"><font size="2">(19:29:01)</font> <b>karottenreibe:</b></font> ah ok<br/>
+<font color="#A82F2F"><font size="2">(19:29:03)</font> <b>karottenreibe:</b></font> &lt;&gt;<br/>
+<font color="#A82F2F"><font size="2">(19:29:05)</font> <b>totycro_:</b></font> karottenreibe: &lt;&gt; = &quot;i don&apos;t have anything more to say and think we should move on to the next topic&quot;<br/>
+<font size="2">(19:29:20)</font><b> GreyGhost_ [<em>~greyghost@triband-mum-59.183.4.31.mtnl.net.in</em>] hat den Raum betreten.</b><br/>
+<font color="#A82F2F"><font size="2">(19:29:27)</font> <b>Andre_Re:</b></font> hey GreyGhost<br/>
+<font color="#A82F2F"><font size="2">(19:29:43)</font> <b>GreyGhost_:</b></font> hey<br/>
+<font color="#A82F2F"><font size="2">(19:29:43)</font> <b>totycro_:</b></font> so, there are 3 topics of minor importance now<br/>
+<font color="#A82F2F"><font size="2">(19:29:52)</font> <b>Kilian]:</b></font> totycro_: wait!<br/>
+<font color="#A82F2F"><font size="2">(19:29:55)</font> <b>Andre_Re:</b></font> ok, let&apos;s proceed<br/>
+<font color="#A82F2F"><font size="2">(19:29:58)</font> <b>Kilian]:</b></font> ronnie_c: want to say something<br/>
+<font color="#16569E"><font size="2">(19:30:23)</font> <b>ronnie_c:</b></font> I am just asking this because we won't receive a very good grade if our changes are not implemented into the master branch<br/>
+<font color="#A82F2F"><font size="2">(19:30:50)</font> <b>totycro_:</b></font> ronnie_c: sry, i thought you meant the line you said after &apos;wait a sec&apos;<br/>
+<font color="#16569E"><font size="2">(19:31:05)</font> <b>ronnie_c:</b></font> You plan on integrating it for the 2012.1 release and there is no one else currently working on this, right?<br/>
+<font color="#A82F2F"><font size="2">(19:31:17)</font> <b>Kilian]:</b></font> ronnie_c: both true<br/>
+<font color="#A82F2F"><font size="2">(19:31:19)</font> <b>totycro_:</b></font> yes<br/>
+<font color="#16569E"><font size="2">(19:31:24)</font> <b>ronnie_c:</b></font> ok thx thats all :-)<br/>
+<font color="#16569E"><font size="2">(19:31:26)</font> <b>ronnie_c:</b></font> &lt;&gt;<br/>
+<font color="#A82F2F"><font size="2">(19:31:30)</font> <b>Kilian]:</b></font> its already november<br/>
+<font color="#A82F2F"><font size="2">(19:31:34)</font> <b>totycro_:</b></font> it&apos;s yet unclear when 2012.1 will be though<br/>
+<font color="#A82F2F"><font size="2">(19:31:38)</font> <b>GreyGhost_:</b></font> totycro_, can&apos;t the editor work with layers? that way the botom layer is for the fake tiles (even if we use for the island)&gt;<br/>
+<font color="#A82F2F"><font size="2">(19:31:39)</font> <b>GreyGhost_:</b></font> ?<br/>
+<font color="#A82F2F"><font size="2">(19:31:51)</font> <b>Kilian]:</b></font> i think there will not be a 2012.1 release before march<br/>
+<font color="#A82F2F"><font size="2">(19:32:01)</font> <b>karottenreibe:</b></font> GreyGhost_ it has layer support<br/>
+<font color="#A82F2F"><font size="2">(19:32:31)</font> <b>karottenreibe:</b></font> Kilian]: but you could merge the changes before the release?<br/>
+<font size="2">(19:32:37)</font><b> GreyGhost hat den Raum verlassen (quit: Ping timeout: 240 seconds).</b><br/>
+<font color="#A82F2F"><font size="2">(19:32:38)</font> <b>karottenreibe:</b></font> that would be sufficient for our grading<br/>
+<font color="#A82F2F"><font size="2">(19:32:52)</font> <b>totycro_:</b></font> karottenreibe: yes<br/>
+<font color="#A82F2F"><font size="2">(19:32:57)</font> <b>Kilian]:</b></font> sure, if you are ready we will merge it into master<br/>
+<font color="#16569E"><font size="2">(19:33:03)</font> <b>ronnie_c:</b></font> cool<br/>
+<font color="#A82F2F"><font size="2">(19:33:04)</font> <b>karottenreibe:</b></font> great<br/>
+<font color="#A82F2F"><font size="2">(19:33:07)</font> <b>karottenreibe:</b></font> &lt;&gt;<br/>
+<font color="#A82F2F"><font size="2">(19:33:09)</font> <b>GreyGhost_:</b></font> karottenreibe, oki.. <br/>
+<font color="#16569E"><font size="2">(19:33:15)</font> <b>ronnie_c:</b></font> ah, and are you doing some kind of code review?<br/>
+<font color="#A82F2F"><font size="2">(19:33:17)</font> <b>totycro_:</b></font> it would be a good thing to show up regulary to present changes and get feedback, then i can almost guarantee you to get merged<br/>
+<font color="#A82F2F"><font size="2">(19:33:45)</font> <b>totycro_:</b></font> ronnie_c: i guess some people could at some points review the code<br/>
+<font color="#A82F2F"><font size="2">(19:34:00)</font> <b>totycro_:</b></font> k, should we move on now?<br/>
+<font color="#A82F2F"><font size="2">(19:34:04)</font> <b>Andre_Re:</b></font> &lt;&gt;<br/>
+<font color="#A82F2F"><font size="2">(19:34:05)</font> <b>Kilian]:</b></font> &lt;&gt;<br/>
+<font color="#16569E"><font size="2">(19:34:06)</font> <b>ronnie_c:</b></font> totycro_: yep<br/>
+<font color="#A82F2F"><font size="2">(19:34:06)</font> <b>karottenreibe:</b></font> &lt;&gt;<br/>
+<font color="#A82F2F"><font size="2">(19:34:11)</font> <b>GreyGhost_:</b></font> &lt;&gt;<br/>
+<font color="#A82F2F"><font size="2">(19:34:18)</font> <b>gscai:</b></font> &lt;&gt;<br/>
+<font color="#16569E"><font size="2">(19:34:22)</font> <b>ronnie_c:</b></font> &lt;&gt;<br/>
+<font color="#A82F2F"><font size="2">(19:34:22)</font> <b>totycro_:</b></font> are you tired or anything, or should we do all 3 topics that remain?<br/>
+<font color="#A82F2F"><font size="2">(19:34:32)</font> <b>Kilian]:</b></font> looks like chrisoelmueller is lost<br/>
+<font color="#A82F2F"><font size="2">(19:34:35)</font> <b>totycro_:</b></font> 4, actually<br/>
+<font size="2">(19:34:39)</font><b> GreyGhost_ heißt jetzt GreyGhost</b><br/>
+<font size="2">(19:34:59)</font><b> GreyGhost hat den Raum verlassen (quit: Changing host).</b><br/>
+<font size="2">(19:34:59)</font><b> GreyGhost [<em>~greyghost@unaffiliated/greyghost</em>] hat den Raum betreten.</b><br/>
+<font color="#A82F2F"><font size="2">(19:35:04)</font> <b>totycro_:</b></font> please post a short message indicating your motivational status :)<br/>
+<font color="#A82F2F"><font size="2">(19:35:11)</font> <b>gscai:</b></font> we can do the ones that don&apos;t depend a lot on chrisoelmueller<br/>
+<font color="#A82F2F"><font size="2">(19:35:17)</font> <b>GreyGhost:</b></font> go on i&apos;d say<br/>
+<font color="#A82F2F"><font size="2">(19:35:17)</font> <b>Kilian]:</b></font> iam alive, go further<br/>
+<font color="#A82F2F"><font size="2">(19:35:23)</font> <b>karottenreibe:</b></font> go on<br/>
+<font color="#A82F2F"><font size="2">(19:35:27)</font> <b>Andre_Re:</b></font> &lt;&gt;<br/>
+<font color="#A82F2F"><font size="2">(19:35:28)</font> <b>gscai:</b></font> janebot: are you alive?<br/>
+<font color="#A82F2F"><font size="2">(19:35:29)</font> <b>janebot:</b></font> gscai: Maybe I am, maybe I&apos;m not. <br/>
+<font color="#A82F2F"><font size="2">(19:35:36)</font> <b>totycro_:</b></font> #topic Compression for savegames/maps<br/>
+<font size="2">(19:35:36)</font><b> UH-Guard hat das Thema zu Compression for savegames/maps abgeändert</b><br/>
+<font color="#A82F2F"><font size="2">(19:35:49)</font> <b>Andre_Re:</b></font> good topic<br/>
+<font color="#A82F2F"><font size="2">(19:35:55)</font> <b>totycro_:</b></font> i guess that&apos;s most relevant for savegame, we don&apos;t have big maps so far<br/>
+<font color="#A82F2F"><font size="2">(19:36:01)</font> <b>Andre_Re:</b></font> we once talked about compressing the files using lzma<br/>
+<font color="#A82F2F"><font size="2">(19:36:03)</font> <b>totycro_:</b></font> savegames are 300K-1.5MB<br/>
+<font color="#A82F2F"><font size="2">(19:36:14)</font> <b>totycro_:</b></font> on slow connections, it still sucks to upload them<br/>
+<font color="#A82F2F"><font size="2">(19:36:22)</font> <b>totycro_:</b></font> bz2 is natively supported by python<br/>
+<font color="#A82F2F"><font size="2">(19:36:35)</font> <b>Andre_Re:</b></font> but then we moved that to the future becausde it&apos;s easier to work with the uncompressed files in that early stage of development<br/>
+<font color="#A82F2F"><font size="2">(19:36:57)</font> <b>gscai:</b></font> I&apos;m fine compression as long as I can still read/write non-compressed versions<br/>
+<font color="#A82F2F"><font size="2">(19:37:01)</font> <b>Andre_Re:</b></font> totycro_: I think we also added a lzma lib once<br/>
+<font color="#A82F2F"><font size="2">(19:37:09)</font> <b>Andre_Re:</b></font> there are at least some test files<br/>
+<font color="#A82F2F"><font size="2">(19:37:16)</font> <b>totycro_:</b></font> raw: 1.4M, bz2: 450K, xz: 266K<br/>
+<font color="#A82F2F"><font size="2">(19:37:26)</font> <b>Andre_Re:</b></font> xz is?<br/>
+<font color="#A82F2F"><font size="2">(19:37:37)</font> <b>totycro_:</b></font> that new great compression algo<br/>
+<font color="#A82F2F"><font size="2">(19:37:45)</font> <b>totycro_:</b></font> gscai: +1<br/>
+<font color="#A82F2F"><font size="2">(19:37:49)</font> <b>Kilian]:</b></font> did anyone tested lzma2 ?<br/>
+<font color="#A82F2F"><font size="2">(19:37:51)</font> <b>Andre_Re:</b></font> better then lzma?<br/>
+<font color="#A82F2F"><font size="2">(19:37:55)</font> <b>gscai:</b></font> my idea: read compressed/non-compressed versions, write according to the settings<br/>
+<font color="#A82F2F"><font size="2">(19:37:58)</font> <b>Kilian]:</b></font> xz is lzma<br/>
+<font color="#A82F2F"><font size="2">(19:38:11)</font> <b>Andre_Re:</b></font> ah, ok<br/>
+<font color="#A82F2F"><font size="2">(19:38:13)</font> <b>totycro_:</b></font> so anyone against this feature?<br/>
+<font color="#A82F2F"><font size="2">(19:38:17)</font> <b>GreyGhost:</b></font> totycro_, does it cause too much overhead compresssing or decompressing?<br/>
+<font color="#A82F2F"><font size="2">(19:38:17)</font> <b>Andre_Re:</b></font> but why xz?<br/>
+<font color="#A82F2F"><font size="2">(19:38:28)</font> <b>GreyGhost:</b></font> i mean that xz one<br/>
+<font color="#A82F2F"><font size="2">(19:38:42)</font> <b>totycro_:</b></font> GreyGhost: it would only be done once per save/load<br/>
+<font color="#A82F2F"><font size="2">(19:38:59)</font> <b>totycro_:</b></font> before selecting the algo, we should test the speed and check concerning distribution anyway<br/>
+<font color="#A82F2F"><font size="2">(19:39:06)</font> <b>totycro_:</b></font> which we don&apos;t have to discuss here, i think<br/>
+<font color="#A82F2F"><font size="2">(19:39:09)</font> <b>Kilian]:</b></font> Andre_Re: xz is an archiv file contain compressed data by lzma algo<br/>
+<font color="#A82F2F"><font size="2">(19:39:12)</font> <b>GreyGhost:</b></font> till its not too noticable it would be great <br/>
+<font color="#A82F2F"><font size="2">(19:39:25)</font> <b>Andre_Re:</b></font> totycro_: the speed should not be influenced too much<br/>
+<font color="#A82F2F"><font size="2">(19:39:26)</font> <b>GreyGhost:</b></font> and about logfiles ..<br/>
+<font color="#A82F2F"><font size="2">(19:39:28)</font> <b>totycro_:</b></font> GreyGhost: it probably will be disableable as developer setting<br/>
+<font color="#A82F2F"><font size="2">(19:39:29)</font> <b>Kilian]:</b></font> chrisoelmueller: told me lzma algo is really slow at his machine<br/>
+<font color="#A82F2F"><font size="2">(19:39:32)</font> <b>totycro_:</b></font> (i.e., not present in the gui)<br/>
+<font color="#A82F2F"><font size="2">(19:39:40)</font> <b>Andre_Re:</b></font> compressing a 2 MB file won&apos;t take more trhen half a second<br/>
+<font color="#A82F2F"><font size="2">(19:40:04)</font> <b>totycro_:</b></font> half a second is already very bad in a normal game (every ~5 min perhaps for autosave)<br/>
+<font color="#A82F2F"><font size="2">(19:40:10)</font> <b>GreyGhost:</b></font> totycro_, logfile compressin too disable.. cos i culdnt manage to extract the corrupted file last time :(<br/>
+<font color="#A82F2F"><font size="2">(19:40:15)</font> <b>gscai:</b></font> you can save an uncompressed file and then compress it in a separate process =&gt; no significant delay<br/>
+<font color="#A82F2F"><font size="2">(19:40:26)</font> <b>Kilian]:</b></font> and not everyone has a good machien at home<br/>
+<font color="#A82F2F"><font size="2">(19:40:28)</font> <b>totycro_:</b></font> GreyGhost: yes, that&apos;s the next subtopic<br/>
+<font color="#A82F2F"><font size="2">(19:40:30)</font> <b>Andre_Re:</b></font> gscai: right<br/>
+<font color="#A82F2F"><font size="2">(19:40:46)</font> <b>Andre_Re:</b></font> that should be the way we do it<br/>
+<font color="#A82F2F"><font size="2">(19:40:48)</font> <b>totycro_:</b></font> #agreed we want savegame compression, details will be worked out later<br/>
+<font color="#A82F2F"><font size="2">(19:40:57)</font> <b>Andre_Re:</b></font> &lt;&gt;<br/>
+<font color="#A82F2F"><font size="2">(19:41:00)</font> <b>Kilian]:</b></font> &lt;&gt;<br/>
+<font color="#A82F2F"><font size="2">(19:41:03)</font> <b>gscai:</b></font> &lt;&gt;<br/>
+<font color="#A82F2F"><font size="2">(19:41:08)</font> <b>totycro_:</b></font> #topic Compression of logfiles <br/>
+<font size="2">(19:41:08)</font><b> UH-Guard hat das Thema zu Compression of logfiles abgeändert</b><br/>
+<font color="#A82F2F"><font size="2">(19:41:25)</font> <b>totycro_:</b></font> that&apos;s already implemented, but can lead to problems at crashes it seems<br/>
+<font color="#A82F2F"><font size="2">(19:41:34)</font> <b>totycro_:</b></font> GreyGhost: do you still have the broken logfile?<br/>
+<font color="#A82F2F"><font size="2">(19:41:35)</font> <b>Andre_Re:</b></font> the question here is, if that would make any senswe<br/>
+<font color="#A82F2F"><font size="2">(19:41:42)</font> <b>gscai:</b></font> can -&gt; does<br/>
+<font color="#A82F2F"><font size="2">(19:41:43)</font> <b>Kilian]:</b></font> Andre_Re: sure<br/>
+<font color="#A82F2F"><font size="2">(19:41:52)</font> <b>Kilian]:</b></font> i have logs that are more then 750mb<br/>
+<font color="#A82F2F"><font size="2">(19:42:07)</font> <b>Andre_Re:</b></font> Kilian]: sure, but then should we compress them?<br/>
+<font color="#A82F2F"><font size="2">(19:42:22)</font> <b>totycro_:</b></font> wasn&apos;t there this instance, where one uncompressor couldn&apos;t handle the file but another one could?<br/>
+<font color="#A82F2F"><font size="2">(19:42:23)</font> <b>Andre_Re:</b></font> we can&apos;t do that after the game crashes<br/>
+<font color="#A82F2F"><font size="2">(19:42:47)</font> <b>gscai:</b></font> actually, we can do it after the game crashes<br/>
+<font color="#A82F2F"><font size="2">(19:42:50)</font> <b>GreyGhost:</b></font> totycro_, nope.. :(<br/>
+<font color="#A82F2F"><font size="2">(19:42:57)</font> <b>Andre_Re:</b></font> gscai: how?<br/>
+<font color="#A82F2F"><font size="2">(19:42:57)</font> <b>gscai:</b></font> as long as the os doesn&apos;t<br/>
+<font color="#A82F2F"><font size="2">(19:43:07)</font> <b>totycro_:</b></font> for segfaults, we can&apos;t<br/>
+<font color="#A82F2F"><font size="2">(19:43:15)</font> <b>gscai:</b></font> launch uh from within a logger program<br/>
+<font color="#A82F2F"><font size="2">(19:43:16)</font> <b>Andre_Re:</b></font> well, you could do it inside the batch or sh file<br/>
+<font color="#A82F2F"><font size="2">(19:43:17)</font> <b>totycro_:</b></font> python exceptions shouldn&apos;t be a problem<br/>
+<font color="#A82F2F"><font size="2">(19:43:26)</font> <b>gscai:</b></font> so the logger handles the log writing<br/>
+<font color="#A82F2F"><font size="2">(19:43:36)</font> <b>totycro_:</b></font> gscai: k, that would still work<br/>
+<font color="#A82F2F"><font size="2">(19:43:54)</font> <b>gscai:</b></font> if uh closes/crashes then the logger program finds out and closes the file<br/>
+<font color="#A82F2F"><font size="2">(19:44:14)</font> <b>Andre_Re:</b></font> which is the logger program?<br/>
+<font color="#A82F2F"><font size="2">(19:44:14)</font> <b>GreyGhost:</b></font> gscai, sounds good<br/>
+<font color="#A82F2F"><font size="2">(19:44:21)</font> <b>totycro_:</b></font> i&apos;d rather have that than no compression<br/>
+<font color="#A82F2F"><font size="2">(19:44:35)</font> <b>GreyGhost:</b></font> compression++<br/>
+<font color="#A82F2F"><font size="2">(19:44:42)</font> <b>totycro_:</b></font> we currently use a gzip stream compressor in python, maybe there&apos;s also a safe version<br/>
+<font color="#A82F2F"><font size="2">(19:44:56)</font> <b>totycro_:</b></font> any objections?<br/>
+<font color="#A82F2F"><font size="2">(19:45:09)</font> <b>gscai:</b></font> it would be nicer to have both but crash-proof compression would be better than nothing<br/>
+<font color="#A82F2F"><font size="2">(19:45:28)</font> <b>totycro_:</b></font> what do we do for 2011.3?<br/>
+<font color="#A82F2F"><font size="2">(19:46:00)</font> <b>Andre_Re:</b></font> when will the release be? remember, that we need enought time to test such a feature on different operating systems<br/>
+<font color="#A82F2F"><font size="2">(19:46:12)</font> <b>Kilian]:</b></font> brb<br/>
+<font color="#A82F2F"><font size="2">(19:46:22)</font> <b>Kilian]:</b></font> iam fine with gzip for now<br/>
+<font color="#A82F2F"><font size="2">(19:46:22)</font> <b>totycro_:</b></font> i guess we&apos;ll release it when it&apos;s done, could be in 7 days<br/>
+<font color="#A82F2F"><font size="2">(19:46:30)</font> <b>Kilian]:</b></font> lzma would need a new dep<br/>
+<font color="#A82F2F"><font size="2">(19:46:51)</font> <b>Andre_Re:</b></font> Kilian]: sure, but it compresses much higher<br/>
+<font color="#A82F2F"><font size="2">(19:46:56)</font> <b>gscai:</b></font> I don&apos;t think we can have (a properly tested) version for 2011.3<br/>
+<font color="#A82F2F"><font size="2">(19:47:03)</font> <b>totycro_:</b></font> for log compression, lzma is probably way too slow<br/>
+<font color="#A82F2F"><font size="2">(19:47:11)</font> <b>gscai:</b></font> so the question is default compressed or not<br/>
+<font color="#A82F2F"><font size="2">(19:47:28)</font> <b>totycro_:</b></font> how frequent are the issues with the logfiles?<br/>
+<font color="#A82F2F"><font size="2">(19:47:40)</font> <b>totycro_:</b></font> it seems to work fine here<br/>
+<font color="#A82F2F"><font size="2">(19:47:59)</font> <b>Andre_Re:</b></font> hm, we could also talk about deleting the log files if nothing happened during the game<br/>
+<font color="#A82F2F"><font size="2">(19:48:02)</font> <b>GreyGhost:</b></font> totycro_, are the corrupted files extractable forcefully?<br/>
+<font color="#A82F2F"><font size="2">(19:48:23)</font> <b>totycro_:</b></font> GreyGhost: i&apos;ve no idea<br/>
+<font color="#A82F2F"><font size="2">(19:48:32)</font> <b>gscai:</b></font> Andre_Re: if something weird but not a crash happens then it would be a pain<br/>
+<font color="#A82F2F"><font size="2">(19:49:12)</font> <b>Andre_Re:</b></font> gscai: right<br/>
+<font color="#A82F2F"><font size="2">(19:49:16)</font> <b>totycro_:</b></font> no one seems to have a strong opinion on the plan for 2011.3..<br/>
+<font color="#A82F2F"><font size="2">(19:49:17)</font> <b>nihathrael:</b></font> moin all<br/>
+<font color="#A82F2F"><font size="2">(19:49:23)</font> <b>GreyGhost:</b></font> anyway we should stick with present setup for 2011.3 i guess unless we can get it well tested before release..<br/>
+<font color="#A82F2F"><font size="2">(19:49:24)</font> <b>Andre_Re:</b></font> hi<br/>
+<font color="#A82F2F"><font size="2">(19:49:26)</font> <b>karottenreibe:</b></font> hi nihathrael<br/>
+<font color="#A82F2F"><font size="2">(19:49:30)</font> <b>GreyGhost:</b></font> hey nihathrael <br/>
+<font color="#16569E"><font size="2">(19:49:34)</font> <b>ronnie_c:</b></font> hi.<br/>
+<font color="#A82F2F"><font size="2">(19:49:40)</font> <b>totycro_:</b></font> nihathrael: what do you think about releasing 2011.3 with log compression?<br/>
+<font color="#A82F2F"><font size="2">(19:49:40)</font> <b>mihaibivol:</b></font> hi nihathrael <br/>
+<font color="#A82F2F"><font size="2">(19:49:46)</font> <b>StefanUH:</b></font> hi<br/>
+<font color="#A82F2F"><font size="2">(19:49:48)</font> <b>Andre_Re:</b></font> I would assign the compressing to 2012.1<br/>
+<font color="#A82F2F"><font size="2">(19:49:54)</font> <b>totycro_:</b></font> there are reports of corrupted logfiles<br/>
+<font color="#A82F2F"><font size="2">(19:50:29)</font> <b>totycro_:</b></font> if no one has any opinion, then i&apos;ll turn it off to be on the safe side<br/>
+<font color="#A82F2F"><font size="2">(19:50:43)</font> <b>gscai:</b></font> I&apos;m fine with that<br/>
+<font color="#A82F2F"><font size="2">(19:51:00)</font> <b>nihathrael:</b></font> corrupted logfiles are of no good to us<br/>
+<font color="#A82F2F"><font size="2">(19:51:17)</font> <b>totycro_:</b></font> &lt;&gt;<br/>
+<font color="#A82F2F"><font size="2">(19:51:19)</font> <b>nihathrael:</b></font> the question is if we can just enable it for everyone, because it will fillup peoples harddrive prettyb adly if they play for 2 hours<br/>
+<font color="#A82F2F"><font size="2">(19:51:31)</font> <b>Kilian]:</b></font> hi nihathrael<br/>
+<font color="#A82F2F"><font size="2">(19:51:38)</font> <b>totycro_:</b></font> what was the compression rate of gzip again?<br/>
+<font color="#A82F2F"><font size="2">(19:51:57)</font> <b>totycro_:</b></font> the situation is a bit better due to cutting of strings (~40% less as wild guess)<br/>
+<font color="#A82F2F"><font size="2">(19:52:02)</font> <b>Andre_Re:</b></font> what about deleting every log antry that is older then 30 minutes or so?<br/>
+<font color="#A82F2F"><font size="2">(19:52:05)</font> <b>totycro_:</b></font> if someone provides me with another logfile, i can recheck <br/>
+<font color="#A82F2F"><font size="2">(19:52:09)</font> <b>Kilian]:</b></font> totycro_: afaik 100mb log too 3mb<br/>
+<font color="#A82F2F"><font size="2">(19:52:42)</font> <b>totycro_:</b></font> it seems we don&apos;t have good data on how often corruptions appear<br/>
+<font color="#A82F2F"><font size="2">(19:52:58)</font> <b>karottenreibe:</b></font> Andre_Re: sounds like a job for logrotate<br/>
+<font color="#A82F2F"><font size="2">(19:53:01)</font> <b>Andre_Re:</b></font> lzma 18311 KB to 107 KB<br/>
+<font color="#A82F2F"><font size="2">(19:53:15)</font> <b>totycro_:</b></font> will logging be again enabled by default on win and disabled for everyone else?<br/>
+<font color="#A82F2F"><font size="2">(19:53:38)</font> <b>nihathrael:</b></font> that is the question<br/>
+<font color="#A82F2F"><font size="2">(19:53:42)</font> <b>GreyGhost:</b></font> why windows in particular?<br/>
+<font color="#A82F2F"><font size="2">(19:53:52)</font> <b>nihathrael:</b></font> on linux it is not<br/>
+<font color="#A82F2F"><font size="2">(19:53:56)</font> <b>Andre_Re:</b></font> bzip2 to 103 KB, but takes a lot more time<br/>
+<font color="#A82F2F"><font size="2">(19:53:58)</font> <b>totycro_:</b></font> because they don&apos;t work with the command line like the rest of the world..<br/>
+<font color="#A82F2F"><font size="2">(19:53:59)</font> <b>nihathrael:</b></font> but on windows we used to run uh with -d on releases<br/>
+<font color="#A82F2F"><font size="2">(19:54:00)</font> <b>Andre_Re:</b></font> (on windows)<br/>
+<font color="#A82F2F"><font size="2">(19:54:10)</font> <b>GreyGhost:</b></font> hmm oki<br/>
+<font color="#A82F2F"><font size="2">(19:54:33)</font> <b>Andre_Re:</b></font> 4 seconds (2 cores) vs 10 seconds (6 cores)<br/>
+<font color="#A82F2F"><font size="2">(19:54:41)</font> <b>nihathrael:</b></font> maybe we should provide a second shortcut in the menu, with uh-debug?<br/>
+<font color="#A82F2F"><font size="2">(19:54:42)</font> <b>Andre_Re:</b></font> right is bz2<br/>
+<font color="#A82F2F"><font size="2">(19:54:47)</font> <b>totycro_:</b></font> k, then deleting old logfiles? older than a few days?<br/>
+<font color="#A82F2F"><font size="2">(19:54:56)</font> <b>nihathrael:</b></font> which people can run if they run into trouble<br/>
+<font color="#A82F2F"><font size="2">(19:55:00)</font> <b>totycro_:</b></font> nihathrael: i don&apos;t think people would run that?<br/>
+<font color="#A82F2F"><font size="2">(19:55:12)</font> <b>Andre_Re:</b></font> totycro_: +1<br/>
+<font color="#A82F2F"><font size="2">(19:55:30)</font> <b>Andre_Re:</b></font> it&apos;s a nice feature but noone would actually use it<br/>
+<font color="#A82F2F"><font size="2">(19:55:52)</font> <b>GreyGhost:</b></font> extreme idea.. cut off the starting part of the log as it goes increasing in size..<br/>
+<font color="#A82F2F"><font size="2">(19:55:57)</font> <b>nihathrael:</b></font> it is so they can use it if we tell them too<br/>
+<font color="#A82F2F"><font size="2">(19:56:02)</font> <b>nihathrael:</b></font> when they come tous<br/>
+<font color="#A82F2F"><font size="2">(19:56:09)</font> <b>totycro_:</b></font> so, what about disabling compression, working a bit on the log string size and removing very old logfiles?<br/>
+<font color="#A82F2F"><font size="2">(19:56:14)</font> <b>Andre_Re:</b></font> GreyGhost: that&apos;s what I said<br/>
+<font color="#A82F2F"><font size="2">(19:56:24)</font> <b>nihathrael:</b></font> of course nobody will run with debug in normal mode, but noone on linux does that es well<br/>
+<font color="#A82F2F"><font size="2">(19:56:50)</font> <b>Kilian]:</b></font> yep, no player would do that<br/>
+<font color="#A82F2F"><font size="2">(19:57:00)</font> <b>GreyGhost:</b></font> Andre_Re, oh i missed that..<br/>
+<font color="#A82F2F"><font size="2">(19:57:22)</font> <b>Andre_Re:</b></font> I said something like cut everything that is older then 30 minutes or so<br/>
+<font color="#A82F2F"><font size="2">(19:57:46)</font> <b>nihathrael:</b></font> is there any reason we should force windows user to play in logfile mode, and not doing that with linux users?<br/>
+<font color="#A82F2F"><font size="2">(19:57:58)</font> <b>Kilian]:</b></font> no idea<br/>
+<font color="#A82F2F"><font size="2">(19:58:01)</font> <b>Andre_Re:</b></font> or limit the file to a size or x mb<br/>
+<font color="#A82F2F"><font size="2">(19:58:07)</font> <b>totycro_:</b></font> one aspect of it was that win users used to need the bat<br/>
+<font color="#A82F2F"><font size="2">(19:58:08)</font> <b>gscai:</b></font> nihathrael: no<br/>
+<font color="#A82F2F"><font size="2">(19:58:14)</font> <b>Andre_Re:</b></font> if it gets too big, the first lines are cut away<br/>
+<font color="#A82F2F"><font size="2">(19:58:36)</font> <b>nihathrael:</b></font> yes, so we can make two bats<br/>
+<font color="#A82F2F"><font size="2">(19:58:41)</font> <b>nihathrael:</b></font> and link both of them in the windows menu<br/>
+<font color="#A82F2F"><font size="2">(19:58:43)</font> <b>totycro_:</b></font> there have been bugs where we needed to go deep into the logfile<br/>
+<font color="#A82F2F"><font size="2">(19:58:44)</font> <b>Andre_Re:</b></font> totycro_: you don&apos;t need the bat file<br/>
+<font color="#A82F2F"><font size="2">(19:58:45)</font> <b>nihathrael:</b></font> so no problem to run in it on deman<br/>
+<font color="#A82F2F"><font size="2">(19:58:46)</font> <b>nihathrael:</b></font> d<br/>
+<font color="#A82F2F"><font size="2">(19:59:02)</font> <b>Andre_Re:</b></font> you can just doulbe click the py file and it works just as fine as with the bat<br/>
+<font color="#A82F2F"><font size="2">(19:59:13)</font> <b>gscai:</b></font> Andre_Re: system dependent<br/>
+<font color="#A82F2F"><font size="2">(19:59:20)</font> <b>totycro_:</b></font> clicking on the py file is without debug by default<br/>
+<font color="#A82F2F"><font size="2">(19:59:24)</font> <b>Andre_Re:</b></font> the problem is, however, that the dos box disappears, as soon as the program crashes<br/>
+<font color="#A82F2F"><font size="2">(19:59:52)</font> <b>gscai:</b></font> nihathrael: 2 bat files sounds good to me<br/>
+<font color="#A82F2F"><font size="2">(20:00:14)</font> <b>Andre_Re:</b></font> but we could also use a simple lnk file with the parameters to write the log<br/>
+<font color="#A82F2F"><font size="2">(20:00:40)</font> <b>totycro_:</b></font> #agreed logging will work without compression in 2011.3<br/>
+<font color="#A82F2F"><font size="2">(20:00:51)</font> <b>Andre_Re:</b></font> we could add to lnk files to the start menu, one with &quot;Debug Mode&quot;<br/>
+<font color="#A82F2F"><font size="2">(20:00:51)</font> <b>Kilian]:</b></font> &lt;&gt;<br/>
+<font color="#A82F2F"><font size="2">(20:00:56)</font> <b>gscai:</b></font> &lt;&gt;<br/>
+<font color="#A82F2F"><font size="2">(20:00:59)</font> <b>Andre_Re:</b></font> &lt;&gt;<br/>
+<font color="#A82F2F"><font size="2">(20:00:59)</font> <b>nihathrael:</b></font> &lt;&gt;<br/>
+<font color="#A82F2F"><font size="2">(20:01:00)</font> <b>totycro_:</b></font> #agreed for windows, we&apos;ll provide starting modes for with_logfile and without_logfiles<br/>
+<font color="#A82F2F"><font size="2">(20:01:11)</font> <b>GreyGhost:</b></font> &lt;&gt;<br/>
+<font color="#A82F2F"><font size="2">(20:01:15)</font> <b>StefanUH:</b></font> &lt;&gt;<br/>
+<font color="#A82F2F"><font size="2">(20:01:18)</font> <b>totycro_:</b></font> chrisoelmueller still seems to be not here, but i&apos;ll like to talk about<br/>
+<font color="#A82F2F"><font size="2">(20:01:26)</font> <b>totycro_:</b></font> #topic 2011.3 Crowdsourcing ideas<br/>
+<font size="2">(20:01:26)</font><b> UH-Guard hat das Thema zu 2011.3 Crowdsourcing ideas abgeändert</b><br/>
+<font color="#A82F2F"><font size="2">(20:01:28)</font> <b>totycro_:</b></font> at least brieflt<br/>
+<font color="#A82F2F"><font size="2">(20:01:34)</font> <b>totycro_:</b></font> *briefly<br/>
+<font color="#A82F2F"><font size="2">(20:01:41)</font> <b>Andre_Re:</b></font> what&apos;s the idea?<br/>
+<font color="#A82F2F"><font size="2">(20:01:45)</font> <b>totycro_:</b></font> we will need a video, and more voices would be nice<br/>
+<font color="#A82F2F"><font size="2">(20:01:56)</font> <b>totycro_:</b></font> the point is to make players do it<br/>
+<font color="#A82F2F"><font size="2">(20:02:03)</font> <b>Andre_Re:</b></font> video? you mean startup video?<br/>
+<font color="#A82F2F"><font size="2">(20:02:09)</font> <b>totycro_:</b></font> gameplay video<br/>
+<font color="#A82F2F"><font size="2">(20:02:25)</font> <b>totycro_:</b></font> for propaganda purposes<br/>
+<font color="#A82F2F"><font size="2">(20:02:36)</font> <b>Andre_Re:</b></font> ah, I thought ingame stuff<br/>
+<font color="#A82F2F"><font size="2">(20:02:51)</font> <b>GreyGhost:</b></font> yeah sounds good .. maybe even get a YouTube channel if we can and upload some good ones there<br/>
+<font color="#A82F2F"><font size="2">(20:02:56)</font> <b>Andre_Re:</b></font> propaganda is always great<br/>
+<font color="#A82F2F"><font size="2">(20:02:58)</font> <b>totycro_:</b></font> for the last 2 releases or so, we were unable to do that ourselves<br/>
+<font color="#A82F2F"><font size="2">(20:03:02)</font> <b>nihathrael:</b></font> we have a youtube channel :)<br/>
+<font color="#A82F2F"><font size="2">(20:03:13)</font> <b>Andre_Re:</b></font> GreyGhost: we could just feature them there<br/>
+<font color="#A82F2F"><font size="2">(20:03:21)</font> <b>totycro_:</b></font> my view is that someone would need to manage that<br/>
+<font color="#A82F2F"><font size="2">(20:03:23)</font> <b>GreyGhost:</b></font> ahh never knew that ..<br/>
+<font color="#A82F2F"><font size="2">(20:03:26)</font> <b>nihathrael:</b></font> yes i think it would be agreat idea if players could create some, we&apos;ll link them on our hp and on our youtube channel<br/>
+<font color="#A82F2F"><font size="2">(20:03:39)</font> <b>totycro_:</b></font> if we announce the video recording thing at the release annoucement, some players might already jump in<br/>
+<font color="#A82F2F"><font size="2">(20:03:40)</font> <b>Andre_Re:</b></font> GreyGhost: it&apos;s unknownhorizonsgame I think<br/>
+<font color="#A82F2F"><font size="2">(20:04:38)</font> <b>totycro_:</b></font> i&apos;m not sure what chrisoelmueller wanted to say exactly..<br/>
+<font color="#A82F2F"><font size="2">(20:05:04)</font> <b>totycro_:</b></font> who would care to take that into his/her hands?<br/>
+<font color="#A82F2F"><font size="2">(20:05:15)</font> <b>totycro_:</b></font> as in, answer questions of users about it<br/>
+<font color="#A82F2F"><font size="2">(20:05:22)</font> <b>totycro_:</b></font> put the videos online, watching them beforehand<br/>
+<font color="#A82F2F"><font size="2">(20:05:32)</font> <b>totycro_:</b></font> writing a short announcement<br/>
+<font color="#A82F2F"><font size="2">(20:05:36)</font> <b>Andre_Re:</b></font> the main problem is, that you cannot enforce people to make such videos<br/>
+<font color="#A82F2F"><font size="2">(20:06:00)</font> <b>totycro_:</b></font> i think it&apos;s worth a try, we&apos;ll see how it works out<br/>
+<font color="#A82F2F"><font size="2">(20:06:04)</font> <b>Andre_Re:</b></font> however, we already hade a few hands-on videos or video reviews<br/>
+<font color="#A82F2F"><font size="2">(20:06:04)</font> <b>Kilian]:</b></font> half of the vids at YT of UH arent made by us<br/>
+<font color="#A82F2F"><font size="2">(20:06:08)</font> <b>GreyGhost:</b></font> Andre_Re, yeah .. but there are usually enthusiatic ppl who will do it on their own..<br/>
+<font color="#A82F2F"><font size="2">(20:06:54)</font> <b>totycro_:</b></font> any more thoughts on this?<br/>
+<font color="#A82F2F"><font size="2">(20:06:57)</font> <b>Andre_Re:</b></font> by the way voice stuff<br/>
+<font color="#A82F2F"><font size="2">(20:07:09)</font> <b>Andre_Re:</b></font> what happend to this radio moderator?<br/>
+<font color="#A82F2F"><font size="2">(20:07:16)</font> <b>Andre_Re:</b></font> do we already have results?<br/>
+<font color="#A82F2F"><font size="2">(20:07:37)</font> <b>GreyGhost:</b></font> we can also start a forum topic where users can post their settlement screenshots ..<br/>
+<font color="#A82F2F"><font size="2">(20:07:50)</font> <b>totycro_:</b></font> i think we already did that once<br/>
+<font color="#16569E"><font size="2">(20:08:03)</font> <b>ronnie_c:</b></font> totycro_:  right<br/>
+<font color="#16569E"><font size="2">(20:08:08)</font> <b>ronnie_c:</b></font> totycro_:  i remember that<br/>
+<font color="#A82F2F"><font size="2">(20:08:10)</font> <b>Andre_Re:</b></font> GreyGhost: good idea, we already tried that a few years ago, but back then UH wasn&apos;t popular enough<br/>
+<font color="#A82F2F"><font size="2">(20:09:05)</font> <b>totycro_:</b></font> we could try to develop ideas in the next ideas, also with chrisoelmueller <br/>
+<font color="#A82F2F"><font size="2">(20:09:19)</font> <b>totycro_:</b></font> i think this doesn&apos;t need a meeting decision<br/>
+<font color="#A82F2F"><font size="2">(20:09:23)</font> <b>totycro_:</b></font> &lt;&gt;<br/>
+<font color="#A82F2F"><font size="2">(20:09:27)</font> <b>GreyGhost:</b></font> &lt;&gt;<br/>
+<font color="#A82F2F"><font size="2">(20:09:32)</font> <b>Andre_Re:</b></font> hm, we have bigh maps and big islands now<br/>
+<font color="#A82F2F"><font size="2">(20:09:43)</font> <b>Kilian]:</b></font> &lt;&gt;<br/>
+<font color="#A82F2F"><font size="2">(20:09:48)</font> <b>Andre_Re:</b></font> it shouldn&apos;t be too hard to built decent settlements<br/>
+<font color="#A82F2F"><font size="2">(20:10:06)</font> <b>Andre_Re:</b></font> I think a competition &quot;most beautiful settlement&quot; won&apos;t be too badf<br/>
+<font color="#A82F2F"><font size="2">(20:10:10)</font> <b>Andre_Re:</b></font> &lt;&gt;<br/>
+<font color="#A82F2F"><font size="2">(20:10:18)</font> <b>totycro_:</b></font> there&apos;s still 1 topic by chrisoelmueller, namely &quot;Extreme resolution brainstorming&quot;. tbh, i&apos;d like to move it to the next meeting<br/>
+<font color="#A82F2F"><font size="2">(20:10:25)</font> <b>nihathrael:</b></font> &lt;&gt;<br/>
+<font color="#A82F2F"><font size="2">(20:10:35)</font> <b>totycro_:</b></font> is anyone against that?<br/>
+<font color="#A82F2F"><font size="2">(20:10:38)</font> <b>GreyGhost:</b></font> totycro_, +1<br/>
+<font color="#A82F2F"><font size="2">(20:10:40)</font> <b>Kilian]:</b></font> totycro_: +1<br/>
+<font color="#A82F2F"><font size="2">(20:10:41)</font> <b>Andre_Re:</b></font> nope, proceed<br/>
+<font color="#A82F2F"><font size="2">(20:11:16)</font> <b>totycro_:</b></font> nihathrael: do you want to do a gfx report?<br/>
+<font color="#A82F2F"><font size="2">(20:11:30)</font> <b>totycro_:</b></font> (that should be a new permanent topic to focus on getting gfx for 2012.10<br/>
+<font color="#A82F2F"><font size="2">(20:11:35)</font> <b>nihathrael:</b></font> yes<br/>
+<font color="#A82F2F"><font size="2">(20:11:38)</font> <b>Andre_Re:</b></font> brb<br/>
+<font color="#A82F2F"><font size="2">(20:11:42)</font> <b>totycro_:</b></font> #topic Graphics report<br/>
+<font size="2">(20:11:42)</font><b> UH-Guard hat das Thema zu Graphics report abgeändert</b><br/>
+<font color="#A82F2F"><font size="2">(20:11:54)</font> <b>nihathrael:</b></font> ok so this topic is new this week<br/>
+<font color="#A82F2F"><font size="2">(20:12:10)</font> <b>nihathrael:</b></font> the idea is that we figured one of the most pressing thigns for the next releases is new graphics after all<br/>
+<font color="#A82F2F"><font size="2">(20:12:16)</font> <b>nihathrael:</b></font> to get more buildings into the game<br/>
+<font color="#A82F2F"><font size="2">(20:12:42)</font> <b>nihathrael:</b></font> we collected a number of ideas on how to obtain these graphics during gsoc mentor summit<br/>
+<font color="#A82F2F"><font size="2">(20:13:12)</font> <b>nihathrael:</b></font> one thing that was brought up by a blender member wsa, that most graphics artists don&apos;t know that open sourcpe projects that need graphics even exist<br/>
+<font color="#A82F2F"><font size="2">(20:13:16)</font> <b>nihathrael:</b></font> so, they will not come to us<br/>
+<font color="#A82F2F"><font size="2">(20:13:25)</font> <b>nihathrael:</b></font> because they don&apos;t know we need their help<br/>
+<font color="#A82F2F"><font size="2">(20:13:29)</font> <b>nihathrael:</b></font> -&gt; we need to go to them<br/>
+<font color="#A82F2F"><font size="2">(20:13:55)</font> <b>nihathrael:</b></font> before we can do this, we need some very strict lists of stuff that we need<br/>
+<font color="#A82F2F"><font size="2">(20:14:00)</font> <b>nihathrael:</b></font> which buildings/icons etc<br/>
+<font color="#A82F2F"><font size="2">(20:14:27)</font> <b>nihathrael:</b></font> then we need to document our graphics rendering setup (iirc there is a script somewhere that does in automatically, by oracdel)<br/>
+<font color="#A82F2F"><font size="2">(20:14:51)</font> <b>Kilian]:</b></font> we should a do metaticket called &quot;Needed gfx&quot; and link there deatild tickets for every small task<br/>
+<font color="#A82F2F"><font size="2">(20:14:58)</font> <b>nihathrael:</b></font> no, put it on the wiki<br/>
+<font color="#A82F2F"><font size="2">(20:15:02)</font> <b>nihathrael:</b></font> artists need wiki, not trac<br/>
+<font color="#A82F2F"><font size="2">(20:15:03)</font> <b>Kilian]:</b></font> and the atlas foo, i could do tahat<br/>
+<font color="#A82F2F"><font size="2">(20:15:10)</font> <b>Kilian]:</b></font> *that<br/>
+<font color="#A82F2F"><font size="2">(20:15:22)</font> <b>nihathrael:</b></font> we also need to try to move the graphics discussions to the forums<br/>
+<font color="#A82F2F"><font size="2">(20:15:38)</font> <b>nihathrael:</b></font> as that is the medium that artists are most familiar and comfortable with from what we heard<br/>
+<font color="#A82F2F"><font size="2">(20:15:47)</font> <b>GreyGhost:</b></font> and maybe a small description of what we want (maybe link  to existing gfx so they get idea of theme too)<br/>
+<font color="#A82F2F"><font size="2">(20:15:52)</font> <b>Kilian]:</b></font> ah, btw we can add a subforum for gfx there<br/>
+<font color="#A82F2F"><font size="2">(20:16:02)</font> <b>Kilian]:</b></font> GreyGhost: small description isnt enough<br/>
+<font color="#A82F2F"><font size="2">(20:16:02)</font> <b>nihathrael:</b></font> we need a &quot;contributions&quot; forum<br/>
+<font color="#A82F2F"><font size="2">(20:16:13)</font> <b>nihathrael:</b></font> i guess we can put all gfx stuff in there for now then<br/>
+<font color="#A82F2F"><font size="2">(20:17:05)</font> <b>nihathrael:</b></font> I&apos;ll try to start manageing the entire process a little this weke<br/>
+<font color="#A82F2F"><font size="2">(20:17:11)</font> <b>nihathrael:</b></font> and report here every week on how its going<br/>
+<font color="#A82F2F"><font size="2">(20:17:33)</font> <b>nihathrael:</b></font> judging from the next meeting page chrisoelmueller found some new possible menu backgrounds<br/>
+<font color="#A82F2F"><font size="2">(20:17:34)</font> <b>nihathrael:</b></font> http://minus.com/mGaSASUaD#1<br/>
+<font color="#A82F2F"><font size="2">(20:17:39)</font> <b>totycro_:</b></font> nihathrael: thx for that, it might really help with structuring it<br/>
+<font color="#A82F2F"><font size="2">(20:17:52)</font> <b>totycro_:</b></font> and especially linking gfx people into the dev process<br/>
+<font color="#A82F2F"><font size="2">(20:18:07)</font> <b>GreyGhost:</b></font> yeah i always wanted extra menu backgrounds.<br/>
+<font color="#A82F2F"><font size="2">(20:18:08)</font> <b>nihathrael:</b></font> we could allow multiple background images for the main menu<br/>
+<font color="#A82F2F"><font size="2">(20:18:11)</font> <b>nihathrael:</b></font> i think its a great idea<br/>
+<font color="#A82F2F"><font size="2">(20:18:28)</font> <b>nihathrael:</b></font> choosing a random one when the game starts sounds like a nice idea<br/>
+<font color="#A82F2F"><font size="2">(20:18:35)</font> <b>GreyGhost:</b></font> i had found some good ones while i was looking for present one .. will try n get my hands on them again..<br/>
+<font color="#A82F2F"><font size="2">(20:19:07)</font> <b>nihathrael:</b></font> i&apos;ll open a ticket for this on trac for 2012.1<br/>
+<font color="#A82F2F"><font size="2">(20:19:14)</font> <b>Kilian]:</b></font> http://forum.unknown-horizons.org/viewforum.php?f=38<br/>
+<font color="#A82F2F"><font size="2">(20:19:23)</font> <b>Kilian]:</b></font> created a new forum<br/>
+<font color="#A82F2F"><font size="2">(20:19:36)</font> <b>GreyGhost:</b></font> totycro_, we need to get those fish rendered with tile below it.. dont know where it goes.. trac ticket?<br/>
+<font color="#A82F2F"><font size="2">(20:19:53)</font> <b>totycro_:</b></font> GreyGhost: i don&apos;t know<br/>
+<font color="#A82F2F"><font size="2">(20:20:44)</font> <b>totycro_:</b></font> &lt;&gt;<br/>
+<font color="#A82F2F"><font size="2">(20:21:14)</font> <b>nihathrael:</b></font> Kilian]: great, thanks<br/>
+<font color="#A82F2F"><font size="2">(20:21:18)</font> <b>nihathrael:</b></font> &lt;&gt;<br/>
+<font color="#A82F2F"><font size="2">(20:21:28)</font> <b>nihathrael:</b></font> i&apos;ll keep you guys posted (and probably annoy you with boring tasks ;))<br/>
+<font color="#A82F2F"><font size="2">(20:21:38)</font> <b>GreyGhost:</b></font> nihathrael, also we will need to create a wiki page with where the news for &quot;gfx artists wanted&quot; should go.<br/>
+<font color="#A82F2F"><font size="2">(20:21:42)</font> <b>totycro_:</b></font> nihathrael: please do:)<br/>
+<font color="#A82F2F"><font size="2">(20:21:46)</font> <b>GreyGhost:</b></font> &lt;&gt;<br/>
+<font color="#A82F2F"><font size="2">(20:22:00)</font> <b>totycro_:</b></font> #topic Status update (including report of StefanUH) and Hallway chat<br/>
+<font size="2">(20:22:01)</font><b> UH-Guard hat das Thema zu Status update (including report of StefanUH) and Hallway chat abgeändert</b><br/>
+<font color="#A82F2F"><font size="2">(20:22:48)</font> <b>StefanUH:</b></font> wel my task is to chacnge how the diplomacy works<br/>
+<font color="#A82F2F"><font size="2">(20:22:53)</font> <b>totycro_:</b></font> i guess i did some fixes, the code should really be mature enough for the release now<br/>
+<font color="#A82F2F"><font size="2">(20:22:57)</font> <b>StefanUH:</b></font> looks, actually<br/>
+<font color="#A82F2F"><font size="2">(20:23:14)</font> <b>nihathrael:</b></font> #info Many fixes for the release were made this week<br/>
+<font color="#A82F2F"><font size="2">(20:23:22)</font> <b>nihathrael:</b></font> #info I&apos;ll build a new RC for windows this evening<br/>
+<font color="#A82F2F"><font size="2">(20:23:25)</font> <b>totycro_:</b></font> StefanUH: do you work with the design that&apos;s in the wiki?<br/>
+<font size="2">(20:23:30)</font><b> Beliar_ [<em>~Beliar@2001:0:5ef5:79fb:8000:eccd:a649:cea8</em>] hat den Raum betreten.</b><br/>
+<font size="2">(20:23:30)</font><b> Beliar hat den Raum verlassen (quit: Disconnected by services).</b><br/>
+<font size="2">(20:23:34)</font><b> Beliar_ heißt jetzt Beliar</b><br/>
+<font color="#A82F2F"><font size="2">(20:23:48)</font> <b>StefanUH:</b></font> totycro:yes<br/>
+<font color="#A82F2F"><font size="2">(20:23:48)</font> <b>GreyGhost:</b></font> i did couple of small bug fixes..<br/>
+<font color="#A82F2F"><font size="2">(20:24:08)</font> <b>totycro_:</b></font> StefanUH: what&apos;s your status now? have you run into any issues?<br/>
+<font color="#A82F2F"><font size="2">(20:24:15)</font> <b>StefanUH:</b></font> we managed to make the player emblems appear in a circle<br/>
+<font color="#A82F2F"><font size="2">(20:24:20)</font> <b>CIA-79:</b></font> <span style='font-weight: bold;'>unknown-horizons:</span> <span style='color: dark green;'>GreyGhost</span> <span style='color: orange;'>master</span> * r<span style='font-weight: bold;'>cd66a4b</span> <span style='color: teal;'></span>/ (2 files)<span style='font-weight: bold;'>:</span> <br/>
+<font color="#A82F2F"><font size="2">(20:24:21)</font> <b>CIA-79:</b></font> <span style='font-weight: bold;'>unknown-horizons:</span> Fix #1210<br/>
+<font color="#A82F2F"><font size="2">(20:24:22)</font> <b>CIA-79:</b></font> <span style='font-weight: bold;'>unknown-horizons:</span> Deselct everything while exiting selecition tool.<br/>
+<font color="#A82F2F"><font size="2">(20:24:22)</font> <b>CIA-79:</b></font> <span style='font-weight: bold;'>unknown-horizons:</span> Use deselect_on_end to handle cases where selection should be retained (AttackingTool) - http://git.io/Sz_GFw<br/>
+<font color="#A82F2F"><font size="2">(20:24:37)</font> <b>StefanUH:</b></font> in a duumy dialog like the log book<br/>
+<font color="#A82F2F"><font size="2">(20:24:43)</font> <b>StefanUH:</b></font> *dummy<br/>
+<font color="#A82F2F"><font size="2">(20:24:47)</font> <b>nihathrael:</b></font> #info I wrote a personal report about the history of UH from my perspective. You can find the report here: https://github.com/nihathrael/uh-history/blob/master/report.pdf?raw=true<br/>
+<font color="#A82F2F"><font size="2">(20:25:08)</font> <b>StefanUH:</b></font> *dialog that looks like the log book<br/>
+<font color="#A82F2F"><font size="2">(20:25:12)</font> <b>Kilian]:</b></font> can i move the GSOC2011 subforum to the Archiv ?<br/>
+<font color="#A82F2F"><font size="2">(20:25:20)</font> <b>nihathrael:</b></font> Kilian]: yes<br/>
+<font color="#A82F2F"><font size="2">(20:25:21)</font> <b>totycro_:</b></font> StefanUH: sounds nice<br/>
+<font color="#A82F2F"><font size="2">(20:25:25)</font> <b>totycro_:</b></font> where do you put the code?<br/>
+<font color="#A82F2F"><font size="2">(20:25:40)</font> <b>StefanUH:</b></font> we made a branch on github<br/>
+<font color="#A82F2F"><font size="2">(20:25:52)</font> <b>nihathrael:</b></font> StefanUH: great<br/>
+<font color="#A82F2F"><font size="2">(20:25:56)</font> <b>nihathrael:</b></font> can you #info the url?<br/>
+<font color="#A82F2F"><font size="2">(20:25:58)</font> <b>StefanUH:</b></font> it&apos;s called cdl<br/>
+<font color="#A82F2F"><font size="2">(20:26:33)</font> <b>totycro_:</b></font> or #link perhaps<br/>
+<font color="#A82F2F"><font size="2">(20:27:15)</font> <b>Kilian]:</b></font> nihathrael: nice work<br/>
+<font color="#A82F2F"><font size="2">(20:27:28)</font> <b>totycro_:</b></font> nihathrael: you could put that on the hp<br/>
+<font color="#A82F2F"><font size="2">(20:27:48)</font> <b>nihathrael:</b></font> totycro_: i was discussing that with chrisoelmueller, we might do that. We&apos;ll talk about that again this week i guess<br/>
+<font color="#A82F2F"><font size="2">(20:27:55)</font> <b>nihathrael:</b></font> or next meeting<br/>
+<font color="#A82F2F"><font size="2">(20:28:13)</font> <b>nihathrael:</b></font> we need to review it way more if we want to put it on the hp<br/>
+<font size="2">(20:28:20)</font><b> Beliar_ [<em>~Beliar@a89-182-49-87.net-htp.de</em>] hat den Raum betreten.</b><br/>
+<font size="2">(20:28:20)</font><b> Beliar hat den Raum verlassen (quit: Disconnected by services).</b><br/>
+<font color="#A82F2F"><font size="2">(20:28:22)</font> <b>totycro_:</b></font> or you could save it until we hit a dry spell concerning news posts<br/>
+<font size="2">(20:28:23)</font><b> Beliar_ heißt jetzt Beliar</b><br/>
+<font color="#A82F2F"><font size="2">(20:28:47)</font> <b>nihathrael:</b></font> then it wont be up to date anymore, but i guess i could update it if needed<br/>
+<font color="#A82F2F"><font size="2">(20:29:07)</font> <b>nihathrael:</b></font> StefanUH: is this your repository? https://github.com/WindRaven/unknown-horizons<br/>
+<font color="#A82F2F"><font size="2">(20:29:29)</font> <b>StefanUH:</b></font> yup :)<br/>
+<font color="#A82F2F"><font size="2">(20:29:42)</font> <b>nihathrael:</b></font> great<br/>
+<font color="#A82F2F"><font size="2">(20:30:11)</font> <b>nihathrael:</b></font> #link StefanUH&apos;s work can be found here: https://github.com/WindRaven/unknown-horizons/tree/cdl<br/>
+<font color="#A82F2F"><font size="2">(20:30:29)</font> <b>totycro_:</b></font> it might be a good idea to merge master into your branch regularly<br/>
+<font color="#A82F2F"><font size="2">(20:31:08)</font> <b>StefanUH:</b></font> you&apos;re right :)<br/>
+<font color="#A82F2F"><font size="2">(20:31:57)</font> <b>totycro_:</b></font> &lt;&gt;<br/>
+<font color="#A82F2F"><font size="2">(20:32:06)</font> <b>nihathrael:</b></font> &lt;&gt;<br/>
+<font color="#A82F2F"><font size="2">(20:32:12)</font> <b>Kilian]:</b></font> nihathrael: if its isnt final i would add in the conclusion the information from oloho how much money would be needed to rewrite UH<br/>
+<font color="#A82F2F"><font size="2">(20:32:34)</font> <b>nihathrael:</b></font> true, that would be interesting<br/>
+<font color="#A82F2F"><font size="2">(20:32:47)</font> <b>StefanUH:</b></font> i wanted to ask if we will keep the old diplomacy layout<br/>
+<font color="#A82F2F"><font size="2">(20:32:52)</font> <b>Kilian]:</b></font> nihathrael: http://www.ohloh.net/p/unknown-horizons/estimated_cost<br/>
+<font color="#A82F2F"><font size="2">(20:32:53)</font> <b>nihathrael:</b></font> it is final in the sense that i have commited it an the university, but that doesn&apos;t meen it can&apos;t be changed<br/>
+<font color="#A82F2F"><font size="2">(20:33:03)</font> <b>totycro_:</b></font> StefanUH: i think your design will replace the current one<br/>
+<font color="#A82F2F"><font size="2">(20:33:16)</font> <b>Kilian]:</b></font> $ 767,390 :D<br/>
+<font color="#A82F2F"><font size="2">(20:33:29)</font> <b>GreyGhost:</b></font> 14 person-years  .. impressive ..<br/>
+<font color="#A82F2F"><font size="2">(20:33:40)</font> <b>GreyGhost:</b></font> and that doesnt include the C version or the C++ version<br/>
+<font color="#A82F2F"><font size="2">(20:33:53)</font> <b>nihathrael:</b></font> &lt;&gt;<br/>
+<font color="#A82F2F"><font size="2">(20:33:55)</font> <b>StefanUH:</b></font> yes, but where will we put the ally ,neutral and enemy buttons?<br/>
+<font color="#A82F2F"><font size="2">(20:34:01)</font> <b>totycro_:</b></font> the numbers might be a bit optimistic, because they are supposed to be fun<br/>
+<font color="#A82F2F"><font size="2">(20:34:10)</font> <b>totycro_:</b></font> and a low number wouldn&apos;t be fund<br/>
+<font color="#A82F2F"><font size="2">(20:34:12)</font> <b>totycro_:</b></font> *fun<br/>
+<font color="#A82F2F"><font size="2">(20:34:17)</font> <b>totycro_:</b></font> &lt;&gt;<br/>
+<font color="#A82F2F"><font size="2">(20:34:28)</font> <b>totycro_:</b></font> StefanUH: isn&apos;t that in the design in the wiki?<br/>
+<font color="#A82F2F"><font size="2">(20:34:57)</font> <b>Andre_Re:</b></font> re<br/>
+<font color="#A82F2F"><font size="2">(20:35:51)</font> <b>Kilian]:</b></font> totycro_: StefanUH anyone the link <br/>
+<font color="#A82F2F"><font size="2">(20:35:52)</font> <b>UH-Guard:</b></font> <span style='font-weight: bold;'>New news from uhtrac: </span>Ticket #1178 (Resource deposits remain selected after being removed.) closed<span style='font-weight: bold;'> || </span>Ticket #1210 (Selections left behind after selecting tearing tool) closed<span style='font-weight: bold;'> || </span>Ticket #1212 (Support multiple background images in the main menu) created<br/>
+<font color="#A82F2F"><font size="2">(20:37:14)</font> <b>totycro_:</b></font> Kilian]: ccan&apos;t find it atm :(<br/>
+<font color="#A82F2F"><font size="2">(20:37:27)</font> <b>Kilian]:</b></font> same here<br/>
+<font color="#A82F2F"><font size="2">(20:37:48)</font> <b>totycro_:</b></font> StefanUH: do you know how it&apos;s called<br/>
+<font color="#A82F2F"><font size="2">(20:37:49)</font> <b>totycro_:</b></font> ?<br/>
+<font color="#A82F2F"><font size="2">(20:38:26)</font> <b>StefanUH:</b></font> totycro: sorry, i&apos;m wondering the same thing<br/>
+<font size="2">(20:38:43)</font><b> ketas-ts hat den Raum verlassen (quit: Ping timeout: 245 seconds).</b><br/>
+<font color="#A82F2F"><font size="2">(20:38:54)</font> <b>StefanUH:</b></font> totycro: i could log on linux, but i have to restart<br/>
+<font color="#A82F2F"><font size="2">(20:39:05)</font> <b>totycro_:</b></font> we could continue the talk next week or so with the image<br/>
+<font color="#A82F2F"><font size="2">(20:39:42)</font> <b>totycro_:</b></font> &lt;&gt;<br/>
+<font color="#A82F2F"><font size="2">(20:39:54)</font> <b>StefanUH:</b></font> i&apos;ll restart now, shouldn&apos;t take much<br/>
+<font color="#A82F2F"><font size="2">(20:39:56)</font> <b>totycro_:</b></font> btw: there&apos;s still the issue of how to vote on 2012.1 features<br/>
+<font color="#A82F2F"><font size="2">(20:40:04)</font> <b>totycro_:</b></font> (planned for after the meeting)<br/>
+<font color="#A82F2F"><font size="2">(20:40:26)</font> <b>Andre_Re:</b></font> wow, in just a few months we will reach the 1 million dollar mark<br/>
+<font color="#A82F2F"><font size="2">(20:40:48)</font> <b>totycro_:</b></font> gsoc probably gave us a big push in lines of code<br/>
+<font color="#A82F2F"><font size="2">(20:40:51)</font> <b>nihathrael:</b></font> we can discuss that outside the meeting totycro_<br/>
+<font color="#A82F2F"><font size="2">(20:41:00)</font> <b>totycro_:</b></font> i&apos;ll close it, k?<br/>
+<font color="#A82F2F"><font size="2">(20:41:06)</font> <b>Kilian]:</b></font> &lt;&gt;<br/>
+<font size="2">(20:41:35)</font><b> StefanUH hat den Raum verlassen (quit: Quit: Page closed).</b><br/>
+<font color="#A82F2F"><font size="2">(20:41:38)</font> <b>totycro_:</b></font> #endmeeting<br/>
+<font color="#A82F2F"><font size="2">(20:41:38)</font> <b>GreyGhost:</b></font> http://wiki.unknown-horizons.org/w/File:Diplomacy-adv.png<br/>
+<font size="2">(20:41:39)</font><b> UH-Guard hat das Thema zu Welcome to #unknown-horizons | <a href="http://www.unknown-horizons.org">www.unknown-horizons.org</a> | Read the FAQ: <a href="http://wiki.unknown-horizons.org/w/FAQ">http://wiki.unknown-horizons.org/w/FAQ</a> | News: Release coming up next week. Stay tuned! abgeändert</b><br/>
+<font color="#A82F2F"><font size="2">(20:41:39)</font> <b>UH-Guard:</b></font> Meeting ended Sun Nov  6 19:41:38 2011 UTC.  Information about MeetBot at http://wiki.debian.org/MeetBot . (v 0.1.4)<br/>
+<font color="#A82F2F"><font size="2">(20:41:39)</font> <b>UH-Guard:</b></font> Minutes:        http://meetings.christoph-egger.org/unknown-horizons/2011/unknown-horizons.2011-11-06-17.02.html<br/>
+<font color="#A82F2F"><font size="2">(20:41:39)</font> <b>UH-Guard:</b></font> Minutes (text): http://meetings.christoph-egger.org/unknown-horizons/2011/unknown-horizons.2011-11-06-17.02.txt<br/>
+<font color="#A82F2F"><font size="2">(20:41:39)</font> <b>UH-Guard:</b></font> Log:            http://meetings.christoph-egger.org/unknown-horizons/2011/unknown-horizons.2011-11-06-17.02.log.html<br/>
+<font color="#A82F2F"><font size="2">(20:41:40)</font> <b>GreyGhost:</b></font> no?<br/>
+<font color="#A82F2F"><font size="2">(20:42:00)</font> <b>totycro_:</b></font> GreyGhost: yeah, that&apos;s it<br/>
+<font color="#A82F2F"><font size="2">(20:42:18)</font> <b>totycro_:</b></font> ah, you have to search for multimedia<br/>
+<font color="#A82F2F"><font size="2">(20:42:21)</font> <b>GreyGhost:</b></font> wiki - &gt; special pages -&gt; recent uploads ;)<br/>
+<font color="#A82F2F"><font size="2">(20:42:48)</font> <b>totycro_:</b></font> the wiki search feature is really bad, if 1 out of 4 computer-savy people manages to work with it<br/>
+<font color="#A82F2F"><font size="2">(20:43:11)</font> <b>totycro_:</b></font> so, about the voting system<br/>
+<font color="#A82F2F"><font size="2">(20:43:20)</font> <b>totycro_:</b></font> how about we talk about it in 15 min?<br/>
+<font color="#A82F2F"><font size="2">(20:43:42)</font> <b>Kilian]:</b></font> okay<br/>
+<font color="#A82F2F"><font size="2">(20:43:43)</font> <b>Andre_Re:</b></font> which voting systems?<br/>
+<font color="#A82F2F"><font size="2">(20:43:57)</font> <b>nihathrael:</b></font> that sounds good, then i can (finally) take a shower, just came back from a 3 day hiking trip with out electricity and running water ;)<br/>
+<font color="#A82F2F"><font size="2">(20:44:03)</font> <b>totycro_:</b></font> to find out preferences about which features we want in 2012.1<br/>
+<font color="#A82F2F"><font size="2">(20:44:42)</font> <b>Andre_Re:</b></font> sounds great<br/>
+<font color="#A82F2F"><font size="2">(20:44:51)</font> <b>GreyGhost:</b></font> its 1:30 am here and i&apos;ve to go to get back up from sleep at 6:00 :P<br/>
+<font color="#A82F2F"><font size="2">(20:45:11)</font> <b>GreyGhost:</b></font> votes in forum ?<br/>
+<font size="2">(20:45:37)</font><b> StefanUH [<em>bc1af6ae@gateway/web/freenode/ip.188.26.246.174</em>] hat den Raum betreten.</b><br/>
+<font color="#A82F2F"><font size="2">(20:45:49)</font> <b>StefanUH:</b></font> found it<br/>
+<font color="#A82F2F"><font size="2">(20:45:53)</font> <b>totycro_:</b></font> StefanUH: GreyGhost did too: http://wiki.unknown-horizons.org/w/File:Diplomacy-adv.png<br/>
+<font color="#A82F2F"><font size="2">(20:46:09)</font> <b>totycro_:</b></font> GreyGhost: i&apos;ve no idea which program to use for the votes<br/>
+<font color="#A82F2F"><font size="2">(20:46:15)</font> <b>StefanUH:</b></font> thanks :)<br/>
+<font color="#A82F2F"><font size="2">(20:46:44)</font> <b>GreyGhost:</b></font> totycro_, i used to be the wiki translate guy when i joined remmebr.. learnt my way around the wiki bugs a bit ;)<br/>
+<font color="#A82F2F"><font size="2">(20:46:50)</font> <b>GreyGhost:</b></font> totycro_, program?<br/>
+<font color="#A82F2F"><font size="2">(20:47:00)</font> <b>totycro_:</b></font> StefanUH: we&apos;re discussing the voting thing in 15 min, i&apos;ll take a recess until then, but if you want to talk about diplo issues, any time later is fine<br/>
+<font color="#A82F2F"><font size="2">(20:47:14)</font> <b>totycro_:</b></font> GreyGhost: software<br/>
+<font color="#A82F2F"><font size="2">(20:47:28)</font> <b>Andre_Re:</b></font> by the way, is the german translation fully complete now?<br/>
+<font color="#A82F2F"><font size="2">(20:47:31)</font> <b>StefanUH:</b></font> sure, now i understood the design<br/>
+<font color="#A82F2F"><font size="2">(20:47:32)</font> <b>totycro_:</b></font> maybe there&apos;s sth like doodle, or the forum is powerful enough<br/>
+<font color="#A82F2F"><font size="2">(20:48:04)</font> <b>GreyGhost:</b></font> totycro_, i thought the forums usually have that lets u vote.. but now does it let u choose more than one?<br/>
+<font color="#A82F2F"><font size="2">(20:48:16)</font> <b>Kilian]:</b></font> Andre_Re: normally if chris adds an english string he also does the german translation<br/>
+<font color="#A82F2F"><font size="2">(20:48:24)</font> <b>totycro_:</b></font> that&apos;s what someone will have to investigate<br/>
+<font color="#A82F2F"><font size="2">(20:49:03)</font> <b>Kilian]:</b></font> GreyGhost: its possiblr<br/>
+<font color="#A82F2F"><font size="2">(20:49:28)</font> <b>Kilian]:</b></font> totycro_: we can use the forums<br/>
+<font color="#A82F2F"><font size="2">(20:49:46)</font> <b>GreyGhost:</b></font> totycro_, we just need something like 10 things to choose from and everyone gets to select 5 out of them? or do we neeed more?<br/>
+<font color="#A82F2F"><font size="2">(20:51:17)</font> <b>gscai:</b></font> can it represent opposition to an option?<br/>
+<font color="#A82F2F"><font size="2">(20:51:39)</font> <b>StefanUH:</b></font> brb<br/>
+<font color="#A82F2F"><font size="2">(20:51:49)</font> <b>Kilian]:</b></font> gscai: dont think so<br/>
+<font color="#A82F2F"><font size="2">(20:52:30)</font> <b>Andre_Re:</b></font> I found some untranslated parts<br/>
+<font color="#A82F2F"><font size="2">(20:52:40)</font> <b>Andre_Re:</b></font> let me check, if they are still there<br/>
+<font color="#A82F2F"><font size="2">(20:54:09)</font> <b>Kilian]:</b></font> http://pootle.unknown-horizons.org/<br/>
+<font color="#A82F2F"><font size="2">(20:54:18)</font> <b>Kilian]:</b></font> german is complete<br/>
+<font color="#A82F2F"><font size="2">(20:54:31)</font> <b>Kilian]:</b></font> if there are untranslate thibgs, create a ticket<br/>
+<font color="#A82F2F"><font size="2">(20:54:39)</font> <b>Kilian]:</b></font> btw you have to rebuild your translation files<br/>
+<font color="#A82F2F"><font size="2">(20:57:00)</font> <b>totycro_:</b></font> we could have 2 votes, one positive and one negative<br/>
+<font color="#A82F2F"><font size="2">(20:58:00)</font> <b>totycro_:</b></font> also, it might be more significant if it focuses on team members, as in people who actually do or want to do some work on uh<br/>
+<font size="2">(20:58:39)</font><b> Beliar_ [<em>~Beliar@a89-182-49-87.net-htp.de</em>] hat den Raum betreten.</b><br/>
+<font size="2">(20:58:39)</font><b> Beliar hat den Raum verlassen (quit: Disconnected by services).</b><br/>
+<font size="2">(20:58:43)</font><b> Beliar_ heißt jetzt Beliar</b><br/>
+<font color="#A82F2F"><font size="2">(21:00:10)</font> <b>totycro_:</b></font> what do you think about 2 votes and dev-onl?<br/>
+<font color="#A82F2F"><font size="2">(21:00:11)</font> <b>totycro_:</b></font> *only<br/>
+<font color="#A82F2F"><font size="2">(21:00:47)</font> <b>GreyGhost:</b></font> totycro_, +1<br/>
+<font color="#A82F2F"><font size="2">(21:00:50)</font> <b>GreyGhost:</b></font> for both :D<br/>
+<font color="#A82F2F"><font size="2">(21:00:55)</font> <b>gscai:</b></font> ^ same<br/>
+<font color="#A82F2F"><font size="2">(21:01:13)</font> <b>nihathrael:</b></font> totycro_: http://www.statpac.com/poll/instant_poll.htm<br/>
+<font color="#A82F2F"><font size="2">(21:01:49)</font> <b>totycro_:</b></font> wah, way too many steps<br/>
+<font color="#A82F2F"><font size="2">(21:01:54)</font> <b>gscai:</b></font> what about using the wiki?<br/>
+<font color="#A82F2F"><font size="2">(21:02:16)</font> <b>gscai:</b></font> * idea<br/>
+<font color="#A82F2F"><font size="2">(21:02:16)</font> <b>gscai:</b></font> ** for it: names<br/>
+<font color="#A82F2F"><font size="2">(21:02:16)</font> <b>gscai:</b></font> ** opposed: names<br/>
+<font color="#A82F2F"><font size="2">(21:02:18)</font> <b>totycro_:</b></font> k, i guess we&apos;re few enough to make sure about the constraints<br/>
+<font color="#A82F2F"><font size="2">(21:02:48)</font> <b>totycro_:</b></font> we could have &quot;separate&quot; polls on general features as well as buildings<br/>
+<font color="#A82F2F"><font size="2">(21:02:54)</font> <b>totycro_:</b></font> so basically editing here: http://wiki.unknown-horizons.org/w/2012.1_ideas<br/>
+<font color="#A82F2F"><font size="2">(21:03:04)</font> <b>totycro_:</b></font> and like 5 votes for features and 3 for buildings or so<br/>
+<font color="#A82F2F"><font size="2">(21:03:46)</font> <b>gscai:</b></font> some of these will need an explanation though<br/>
+<font color="#A82F2F"><font size="2">(21:04:04)</font> <b>totycro_:</b></font> some designs are actually missing<br/>
+<font color="#A82F2F"><font size="2">(21:04:30)</font> <b>totycro_:</b></font> but since the vote is just a survey, i think it need not be that accurate<br/>
+<font color="#A82F2F"><font size="2">(21:04:39)</font> <b>totycro_:</b></font> i&apos;ll remove the editor, that&apos;s decided already<br/>
+<font size="2">(21:05:08)</font><b> karottenreibe hat den Raum verlassen.</b><br/>
+<font color="#A82F2F"><font size="2">(21:05:13)</font> <b>totycro_:</b></font> new tile set is probably also decided, and new maps is blocked by the editor<br/>
+<font color="#A82F2F"><font size="2">(21:05:27)</font> <b>totycro_:</b></font> more diplomacy options is actually also cared for<br/>
+<font color="#A82F2F"><font size="2">(21:05:46)</font> <b>totycro_:</b></font> mihaibivol: ping<br/>
+<font color="#A82F2F"><font size="2">(21:06:08)</font> <b>GreyGhost:</b></font> is there a way of knowing which all buildings have settler level related tabs?<br/>
+<font color="#A82F2F"><font size="2">(21:06:13)</font> <b>Andre_Re:</b></font> should we start freom the top?<br/>
+<font color="#A82F2F"><font size="2">(21:06:33)</font> <b>totycro_:</b></font> GreyGhost: you could grep for settler_level<br/>
+<font color="#A82F2F"><font size="2">(21:06:47)</font> <b>totycro_:</b></font> but i don&apos;t think tabs actually depend on the settler_level<br/>
+<font color="#A82F2F"><font size="2">(21:07:07)</font> <b>GreyGhost:</b></font> totycro_, no i mean incode .. yeah me too .. they are simply added as tabs ..<br/>
+<font color="#A82F2F"><font size="2">(21:07:12)</font> <b>totycro_:</b></font> i&apos;d say we just edit there, but not all at once..<br/>
+<font color="#A82F2F"><font size="2">(21:07:12)</font> <b>GreyGhost:</b></font> *tabs = <br/>
+<font color="#A82F2F"><font size="2">(21:07:29)</font> <b>totycro_:</b></font> is that fine with everyone?<br/>
+<font color="#A82F2F"><font size="2">(21:07:36)</font> <b>totycro_:</b></font> and what about the 5/3 constraint?<br/>
+<font color="#A82F2F"><font size="2">(21:07:49)</font> <b>totycro_:</b></font> + 5/3 negatives (at most) perhaps<br/>
+<font color="#A82F2F"><font size="2">(21:08:00)</font> <b>totycro_:</b></font> (though i assume there will be few negative)<br/>
+<font color="#A82F2F"><font size="2">(21:08:29)</font> <b>nihathrael:</b></font> sounds good<br/>
+<font size="2">(21:08:30)</font><b> prock [<em>~prock@S01060014bf10a14c.wp.shawcable.net</em>] hat den Raum betreten.</b><br/>
+<font color="#A82F2F"><font size="2">(21:08:30)</font> <b>GreyGhost:</b></font> sounds good.. thats enuf work<br/>
+<font color="#A82F2F"><font size="2">(21:08:51)</font> <b>totycro_:</b></font> the wiki used to be bad at conflict handling, how about i do scheduling?<br/>
+<font color="#A82F2F"><font size="2">(21:09:18)</font> <b>totycro_:</b></font> or we do it consensually here <br/>
+<font color="#A82F2F"><font size="2">(21:09:25)</font> <b>totycro_:</b></font> who wants to start?<br/>
+<font color="#A82F2F"><font size="2">(21:11:31)</font> <b>nihathrael:</b></font> you start and thereby define the format :)<br/>
+<font color="#A82F2F"><font size="2">(21:11:59)</font> <b>totycro_:</b></font> i&apos;m hereby locking features<br/>
+<font color="#A82F2F"><font size="2">(21:13:02)</font> <b>totycro_:</b></font> ah, i&apos;m not sure if one of mihaibivol&apos;s people is working on ground unit transportation<br/>
+<font color="#A82F2F"><font size="2">(21:14:02)</font> <b>GreyGhost:</b></font> btw i have no idea who all the new names are ;)<br/>
+<font color="#A82F2F"><font size="2">(21:14:23)</font> <b>StefanUH:</b></font> yes, i think one of my colleagues is working on that<br/>
+<font color="#A82F2F"><font size="2">(21:14:35)</font> <b>StefanUH:</b></font> the unit transportation<br/>
+<font color="#A82F2F"><font size="2">(21:14:38)</font> <b>totycro_:</b></font> the lock is now released<br/>
+<font color="#A82F2F"><font size="2">(21:14:48)</font> <b>totycro_:</b></font> i&apos;ll remove transportation then<br/>
+<font color="#A82F2F"><font size="2">(21:14:52)</font> <b>totycro_:</b></font> (lock)<br/>
+<font color="#A82F2F"><font size="2">(21:15:22)</font> <b>totycro_:</b></font> yeah, just edit it now<br/>
+<font color="#A82F2F"><font size="2">(21:19:27)</font> <b>nihathrael:</b></font> editing no<br/>
+<font color="#A82F2F"><font size="2">(21:19:29)</font> <b>nihathrael:</b></font> w<br/>
+<font color="#A82F2F"><font size="2">(21:19:40)</font> <b>totycro_:</b></font> feel free to improve the layout<br/>
+<font color="#A82F2F"><font size="2">(21:20:03)</font> <b>nihathrael:</b></font> how many votes? 3 or 5?<br/>
+<font color="#A82F2F"><font size="2">(21:20:44)</font> <b>Andre_Re:</b></font> hun? is there a limited amount of votes per person?<br/>
+<font color="#A82F2F"><font size="2">(21:21:23)</font> <b>totycro_:</b></font> i proposed 5 for features and 3 for buildings<br/>
+<font color="#A82F2F"><font size="2">(21:21:36)</font> <b>totycro_:</b></font> same for negative ones<br/>
+<font color="#A82F2F"><font size="2">(21:21:40)</font> <b>CIA-79:</b></font> <span style='font-weight: bold;'>fife:</span> <span style='color: dark green;'>prock</span> * r<span style='font-weight: bold;'>3808</span> <span style='color: teal;'></span>/trunk/tools/editor/ (run.py scripts/editor.py scripts/plugin.py)<span style='font-weight: bold;'>:</span> * This patch allows the user to specify an additional plugin directory for the editor. Thanks to karottenreibe for the patch. fixes[o:fife, p:engine, s:trac, t:598, r:3808]<br/>
+<font color="#A82F2F"><font size="2">(21:21:43)</font> <b>Andre_Re:</b></font> ok<br/>
+<font color="#A82F2F"><font size="2">(21:22:24)</font> <b>nihathrael:</b></font> done<br/>
+<font color="#A82F2F"><font size="2">(21:22:27)</font> <b>Andre_Re:</b></font> I would just do it point for point<br/>
+<font color="#A82F2F"><font size="2">(21:23:43)</font> <b>mihaibivol:</b></font> totycro_, pong<br/>
+<font color="#A82F2F"><font size="2">(21:24:19)</font> <b>mihaibivol:</b></font> one student works on ground unit transportation, currently he has no experiece in python or OO and the start is quite hard, but i think that it will be done<br/>
+<font color="#A82F2F"><font size="2">(21:24:24)</font> <b>totycro_:</b></font> mihaibivol: so is it fixed now that one of your students does military unit transportation?<br/>
+<font color="#A82F2F"><font size="2">(21:24:37)</font> <b>totycro_:</b></font> k, i see<br/>
+<font color="#A82F2F"><font size="2">(21:24:38)</font> <b>mihaibivol:</b></font> yes<br/>
+<font color="#A82F2F"><font size="2">(21:25:02)</font> <b>totycro_:</b></font> i think the interface should be discussed here, please also make sure that the code meets certain quality criterias<br/>
+<font color="#A82F2F"><font size="2">(21:25:02)</font> <b>janebot:</b></font> <span style='font-weight: bold;'>Unknown Horizons Forums</span> | <span style='font-weight: bold;'>Common • Re: Unknown Horizons Does Not Work On Windows 7 Or Does It?</span> by <span style='color: dark green;'>Andre</span> [ <span style='color: grey;'>11-06-2011 22:20</span> ] [ http://forum.unknown-horizons.org/viewtopic.php?t=544&amp;p=1580#p1580 ]<br/>
+<font color="#A82F2F"><font size="2">(21:25:22)</font> <b>totycro_:</b></font> i know it&apos;s very hard for people who are new,<br/>
+<font color="#A82F2F"><font size="2">(21:25:40)</font> <b>mihaibivol:</b></font> for now, the attacking tool was refactored to unittool that manages mouse events for selected units<br/>
+<font color="#A82F2F"><font size="2">(21:26:26)</font> <b>mihaibivol:</b></font> i think the approach is better than inherit the attackingtool<br/>
+<font color="#A82F2F"><font size="2">(21:28:12)</font> <b>mihaibivol:</b></font> we will use components for loadable and loading instances<br/>
+<font color="#A82F2F"><font size="2">(21:28:31)</font> <b>totycro_:</b></font> nice<br/>
+<font size="2">(21:28:34)</font><b> prock hat den Raum verlassen (quit: Quit: Leaving).</b><br/>
+<font color="#A82F2F"><font size="2">(21:29:47)</font> <b>totycro_:</b></font> mihaibivol: do you show the units like res? how do you unload?<br/>
+<font color="#A82F2F"><font size="2">(21:30:00)</font> <b>mihaibivol:</b></font> another gui tab<br/>
+<font color="#A82F2F"><font size="2">(21:30:10)</font> <b>mihaibivol:</b></font> that will be similar to the multiunit tab<br/>
+<font color="#A82F2F"><font size="2">(21:30:29)</font> <b>mihaibivol:</b></font> i think it could be the mult unit tab + one button that signals unload<br/>
+<font color="#A82F2F"><font size="2">(21:30:44)</font> <b>totycro_:</b></font> could you present that at the next meeting, and also take feedback into account?<br/>
+<font color="#A82F2F"><font size="2">(21:31:38)</font> <b>mihaibivol:</b></font> i don&apos;t think i can make it on the meeting time, only 2 h later<br/>
+<font color="#A82F2F"><font size="2">(21:31:56)</font> <b>nihathrael:</b></font> that&apos;s ok<br/>
+<font color="#A82F2F"><font size="2">(21:31:59)</font> <b>totycro_:</b></font> then perhaps the meeting after that, or only the student?<br/>
+<font color="#A82F2F"><font size="2">(21:32:11)</font> <b>totycro_:</b></font> how&apos;s he/she called by the way?<br/>
+<font color="#A82F2F"><font size="2">(21:32:21)</font> <b>mihaibivol:</b></font> răzvan(razvan)<br/>
+<font color="#A82F2F"><font size="2">(21:32:39)</font> <b>mihaibivol:</b></font> btw, they have git repos for uh<br/>
+<font color="#A82F2F"><font size="2">(21:32:59)</font> <b>mihaibivol:</b></font> stefan has some commits from my account, because in the course he used my laptop<br/>
+<font color="#A82F2F"><font size="2">(21:33:50)</font> <b>mihaibivol:</b></font> https://github.com/WindRaven/unknown-horizons/tree/cdl<br/>
+<font color="#A82F2F"><font size="2">(21:34:25)</font> <b>mihaibivol:</b></font> currently the circle is drawn :)<br/>
+<font color="#A82F2F"><font size="2">(21:35:56)</font> <b>totycro_:</b></font> :)<br/>
+<font color="#A82F2F"><font size="2">(21:36:31)</font> <b>nihathrael:</b></font> great<br/>
+<font color="#A82F2F"><font size="2">(21:36:57)</font> <b>totycro_:</b></font> you can also vote on buildings now<br/>
+<font color="#A82F2F"><font size="2">(21:36:59)</font> <b>totycro_:</b></font> http://wiki.unknown-horizons.org/w/2012.1_ideas#New_buildings_planned<br/>
+<font color="#A82F2F"><font size="2">(21:38:03)</font> <b>nihathrael:</b></font> done vooting buildings<br/>
+<font color="#A82F2F"><font size="2">(21:38:29)</font> <b>totycro_:</b></font> what&apos;s alvearies?<br/>
+<font color="#A82F2F"><font size="2">(21:38:47)</font> <b>totycro_:</b></font> do you mean Aviary?<br/>
+<font color="#A82F2F"><font size="2">(21:38:57)</font> <b>totycro_:</b></font> (google redirects there)<br/>
+<font color="#A82F2F"><font size="2">(21:39:11)</font> <b>Andre_Re:</b></font> how many votes do I have now?<br/>
+<font color="#A82F2F"><font size="2">(21:39:22)</font> <b>totycro_:</b></font> i&apos;ll add it to the page, it&apos;s 5/3<br/>
+<font color="#A82F2F"><font size="2">(21:39:24)</font> <b>GreyGhost:</b></font> nihathrael, what is tile speed?<br/>
+<font color="#A82F2F"><font size="2">(21:39:36)</font> <b>Andre_Re:</b></font> so 3 for the buildings?<br/>
+<font color="#A82F2F"><font size="2">(21:39:37)</font> <b>totycro_:</b></font> or rather not, i hate those wiki editing conflicts<br/>
+<font color="#A82F2F"><font size="2">(21:39:41)</font> <b>totycro_:</b></font> Andre_Re: yes<br/>
+<font color="#A82F2F"><font size="2">(21:39:52)</font> <b>totycro_:</b></font> GreyGhost: different unit speed on different tiles<br/>
+<font color="#A82F2F"><font size="2">(21:39:56)</font> <b>nihathrael:</b></font> GreyGhost: how fast units move on certain tiles<br/>
+<font color="#A82F2F"><font size="2">(21:40:07)</font> <b>GreyGhost:</b></font> ahh oki<br/>
+<font color="#A82F2F"><font size="2">(21:40:14)</font> <b>GreyGhost:</b></font> roads will make sense then <br/>
+<font color="#A82F2F"><font size="2">(21:40:20)</font> <b>gscai:</b></font> 5 combined (for &amp; against) or separately?<br/>
+<font color="#A82F2F"><font size="2">(21:40:53)</font> <b>totycro_:</b></font> i don&apos;t know, i&apos;d say 5 against and 5 for<br/>
+<font color="#A82F2F"><font size="2">(21:40:59)</font> <b>GreyGhost:</b></font> i&apos;ll vote tomorrow.. 4 hours of sleep..<br/>
+<font color="#A82F2F"><font size="2">(21:41:26)</font> <b>GreyGhost:</b></font> gn.. hae  a nice day all..<br/>
+<font color="#A82F2F"><font size="2">(21:41:36)</font> <b>totycro_:</b></font> GreyGhost: gn8<br/>
+<font size="2">(21:41:37)</font><b> GreyGhost hat den Raum verlassen (quit: Quit: Leaving).</b><br/>
+<font color="#A82F2F"><font size="2">(21:43:53)</font> <b>Andre_Re:</b></font> ok, voted<br/>
+<font color="#A82F2F"><font size="2">(21:46:30)</font> <b>StefanUH:</b></font> totycro: right now we were thinking of putting both instances of the diplomacy(your relations and everybody else) on the pages of the logbook<br/>
+<font color="#A82F2F"><font size="2">(21:46:39)</font> <b>Andre_Re:</b></font> are there any plans when we will release?<br/>
+<font color="#A82F2F"><font size="2">(21:46:45)</font> <b>StefanUH:</b></font> totycro: is that ok<br/>
+<font color="#A82F2F"><font size="2">(21:47:38)</font> <b>StefanUH:</b></font> :)<br/>
+<font color="#A82F2F"><font size="2">(21:47:54)</font> <b>nihathrael:</b></font> sounds good to me<br/>
+<font color="#A82F2F"><font size="2">(21:50:28)</font> <b>StefanUH:</b></font> :)<br/>
+<font color="#A82F2F"><font size="2">(21:57:49)</font> <b>totycro_:</b></font> StefanUH: we could have that as a meeting topic soon<br/>
+<font color="#A82F2F"><font size="2">(21:58:03)</font> <b>totycro_:</b></font> so that more people have a chance to join the discussion<br/>
+<font color="#A82F2F"><font size="2">(21:58:27)</font> <b>totycro_:</b></font> the idea sounds fine to me, it&apos;s just that we usually discuss basically everything at the metting<br/>
+<font color="#A82F2F"><font size="2">(21:58:30)</font> <b>totycro_:</b></font> *meeting<br/>
+<font color="#A82F2F"><font size="2">(21:58:50)</font> <b>nihathrael:</b></font> you should also discuss this with chrisoelmueller when he returns, i&apos;m pretty sure he has a lot of ideas concerning this topic<br/>
+<font color="#A82F2F"><font size="2">(22:00:02)</font> <b>Andre_Re:</b></font> by the way, is the master server offline again?<br/>
+<font color="#A82F2F"><font size="2">(22:01:52)</font> <b>Andre_Re:</b></font> Hm, &quot;how you can help us&quot; is not translated<br/>
+<font color="#A82F2F"><font size="2">(22:02:37)</font> <b>Andre_Re:</b></font> gscai: there&apos;s kind of a bug in the ai selection<br/>
+<font color="#A82F2F"><font size="2">(22:02:57)</font> <b>Andre_Re:</b></font> you can select up to 8 ai players, but it should be only 7, to have 8 players per map<br/>
+<font color="#A82F2F"><font size="2">(22:03:11)</font> <b>Kilian]:</b></font> prosper alarm in #fife DONT feed the troll !<br/>
+<font color="#A82F2F"><font size="2">(22:03:26)</font> <b>Andre_Re:</b></font> do they have spam problems on fife?<br/>
+<font color="#A82F2F"><font size="2">(22:03:48)</font> <b>Kilian]:</b></font> onyl if you start talk to him<br/>
+<font color="#A82F2F"><font size="2">(22:04:01)</font> <b>Kilian]:</b></font> normally he stop his monologue after some minutes<br/>
+<font color="#A82F2F"><font size="2">(22:04:04)</font> <b>Andre_Re:</b></font> another bug: the player&apos;s name field has a bug<br/>
+<font color="#A82F2F"><font size="2">(22:04:12)</font> <b>gscai:</b></font> Andre_Re: I agree, I didn&apos;t set the limit though<br/>
+<font color="#A82F2F"><font size="2">(22:04:25)</font> <b>Andre_Re:</b></font> if I want to enter my full name &quot;André&quot;, it profuces something like &quot;Andr´e&quot;<br/>
+<font color="#A82F2F"><font size="2">(22:05:11)</font> <b>gscai:</b></font> is anyone opposed to making the player limit 8 (1 + 7 AI players)?<br/>
+<font color="#A82F2F"><font size="2">(22:06:01)</font> <b>Kilian]:</b></font> i thought the palyers limit is already 8 players<br/>
+<font color="#A82F2F"><font size="2">(22:06:14)</font> <b>Andre_Re:</b></font> Resource density is not translated<br/>
+<font color="#A82F2F"><font size="2">(22:06:21)</font> <b>gscai:</b></font> it is currently 1 human + 8 AI = 9<br/>
+<font color="#A82F2F"><font size="2">(22:06:29)</font> <b>Andre_Re:</b></font> Kilian]: you can add up to 8 AI players, which makes 9 players in the game<br/>
+<font color="#A82F2F"><font size="2">(22:06:53)</font> <b>Andre_Re:</b></font> also the game modes are not translated<br/>
+<font color="#A82F2F"><font size="2">(22:07:09)</font> <b>Kilian]:</b></font> I think noone will paly with this huge amount of AI&apos;s<br/>
+<font color="#A82F2F"><font size="2">(22:07:12)</font> <b>Kilian]:</b></font> iam fine with 7<br/>
+<font color="#A82F2F"><font size="2">(22:07:26)</font> <b>Kilian]:</b></font> but if you need 8 make 8<br/>
+<font color="#A82F2F"><font size="2">(22:07:45)</font> <b>Andre_Re:</b></font> Kilian]: I think, we should stick to our 8 playersd limit<br/>
+<font color="#062585"><font size="2">(22:10:20)</font> <b>***gscai</b></font> is a 70 AI game veteran<br/>
+<font size="2">(22:10:36)</font><b> scaaabi hat den Raum verlassen (quit: Quit: ( www.nnscript.com :: NoNameScript 4.22 :: www.esnation.com )).</b><br/>
+<font color="#A82F2F"><font size="2">(22:10:38)</font> <b>gscai:</b></font> but I agree about making the limit consistent<br/>
+<font color="#A82F2F"><font size="2">(22:11:31)</font> <b>gscai:</b></font> janebot: !ticket 1213<br/>
+<font color="#A82F2F"><font size="2">(22:11:31)</font> <b>janebot:</b></font> gscai: http://trac.unknown-horizons.org/t/ticket/1213<br/>
+<font color="#A82F2F"><font size="2">(22:11:32)</font> <b>janebot:</b></font> gscai:  #1213 (StorageCollector infinite loop) – Unknown Horizons <br/>
+<font color="#A82F2F"><font size="2">(22:15:38)</font> <b>Andre_Re:</b></font> who is responsible for the translations? wasn&apos;t it christoph_debian?<br/>
+<font color="#A82F2F"><font size="2">(22:15:54)</font> <b>CIA-79:</b></font> <span style='font-weight: bold;'>unknown-horizons:</span> <span style='color: dark green;'>gscai</span> <span style='color: orange;'>master</span> * r<span style='font-weight: bold;'>79cbd93</span> <span style='color: teal;'></span>/ horizons/gui/modules/aidataselection.py <span style='font-weight: bold;'>:</span> Make the player number limit consistent. - http://git.io/IorSSA<br/>
+<font color="#A82F2F"><font size="2">(22:16:31)</font> <b>StefanUH:</b></font> i&apos;ll go to sleep. Good night, all !<br/>
+<font color="#A82F2F"><font size="2">(22:16:33)</font> <b>nihathrael:</b></font> Andre_Re: no, chrisoelmueller is your go-to<br/>
+<font color="#A82F2F"><font size="2">(22:16:38)</font> <b>nihathrael:</b></font> gnight StefanUH<br/>
+<font size="2">(22:17:04)</font><b> StefanUH hat den Raum verlassen (quit: Quit: Page closed).</b><br/>
+<font color="#A82F2F"><font size="2">(22:17:28)</font> <b>Andre_Re:</b></font> chrisoelmueller: need some translation support<br/>
+<font color="#A82F2F"><font size="2">(22:25:44)</font> <b>Andre_Re:</b></font> there are definitely some translations missing<br/>
+<font color="#A82F2F"><font size="2">(22:26:02)</font> <b>Kilian]:</b></font> Andre_Re: did yo rebuilt your files ?<br/>
+<font color="#A82F2F"><font size="2">(22:26:02)</font> <b>Andre_Re:</b></font> we sould fix that before we release the game<br/>
+<font color="#A82F2F"><font size="2">(22:26:08)</font> <b>Andre_Re:</b></font> Kilian]: I did<br/>
+<font color="#A82F2F"><font size="2">(22:26:10)</font> <b>Kilian]:</b></font> k<br/>
+<font color="#A82F2F"><font size="2">(22:26:25)</font> <b>Kilian]:</b></font> chrisoelmueller: isnt around<br/>
+<font color="#A82F2F"><font size="2">(22:26:33)</font> <b>Kilian]:</b></font> Andre_Re: create a ticket plz<br/>
+<font color="#A82F2F"><font size="2">(22:28:06)</font> <b>Andre_Re:</b></font> I will<br/>
+<font size="2">(22:32:08)</font><b> inken hat den Raum verlassen (quit: Quit: Leaving.).</b><br/>
+<font color="#A82F2F"><font size="2">(22:36:24)</font> <b>UH-Guard:</b></font> <span style='font-weight: bold;'>New news from uhtrac: </span>Ticket #1213 (StorageCollector infinite loop) created<br/>
+<font size="2">(22:41:12)</font><b> mmaruseacph2 [<em>~mihai@188.27.106.158</em>] hat den Raum betreten.</b><br/>
+<font size="2">(22:43:25)</font><b> tuempl hat den Raum verlassen (quit: Read error: Connection reset by peer).</b><br/>
+<font size="2">(22:43:48)</font><b> tuempl [<em>~Miranda@213.47.93.188</em>] hat den Raum betreten.</b><br/>
+<font size="2">(22:46:15)</font><b> Beliar_ [<em>~Beliar@a89-182-49-87.net-htp.de</em>] hat den Raum betreten.</b><br/>
+<font size="2">(22:46:16)</font><b> Beliar hat den Raum verlassen (quit: Disconnected by services).</b><br/>
+<font size="2">(22:46:23)</font><b> Beliar_ heißt jetzt Beliar</b><br/>
+<font color="#A82F2F"><font size="2">(23:06:32)</font> <b>UH-Guard:</b></font> <span style='font-weight: bold;'>New news from uhtrac: </span>Ticket #1214 (Missing translations) created<br/>
+<font color="#A82F2F"><font size="2">(23:23:08)</font> <b>wentam:</b></font> http://pastebin.com/iiHmwk0n<br/>
+<font color="#A82F2F"><font size="2">(23:23:38)</font> <b>wentam:</b></font> game crashes ^<br/>
+<font color="#A82F2F"><font size="2">(23:23:42)</font> <b>Kilian]:</b></font> wentam: is your fife setup up2date ?<br/>
+<font color="#A82F2F"><font size="2">(23:23:59)</font> <b>wentam:</b></font> ....maybe...<br/>
+<font color="#A82F2F"><font size="2">(23:24:14)</font> <b>Kilian]:</b></font> change in the fife trunk folder<br/>
+<font color="#A82F2F"><font size="2">(23:24:21)</font> <b>Kilian]:</b></font> run svn up<br/>
+<font color="#A82F2F"><font size="2">(23:24:28)</font> <b>Kilian]:</b></font> after that scons fife-python<br/>
+<font color="#A82F2F"><font size="2">(23:24:34)</font> <b>wentam:</b></font> k<br/>
+<font color="#A82F2F"><font size="2">(23:27:37)</font> <b>wentam:</b></font> Kilian], same error still<br/>
+<font size="2">(23:27:38)</font><b> Beliar hat den Raum verlassen (quit: Quit: Leaving).</b><br/>
+<font color="#A82F2F"><font size="2">(23:27:56)</font> <b>Kilian]:</b></font> but fife build fine ?<br/>
+<font color="#A82F2F"><font size="2">(23:28:08)</font> <b>wentam:</b></font> Kilian], though it appears I have fife 3.2.2 installed with my package manager<br/>
+<font color="#A82F2F"><font size="2">(23:28:08)</font> <b>wentam:</b></font> yea<br/>
+<font color="#A82F2F"><font size="2">(23:28:30)</font> <b>Kilian]:</b></font> you have two different versions of fife ?<br/>
+<font color="#A82F2F"><font size="2">(23:28:53)</font> <b>wentam:</b></font> one from my package manager, one from version control<br/>
+<font color="#A82F2F"><font size="2">(23:29:14)</font> <b>wentam:</b></font> and I updated all packages yesterday<br/>
+<font color="#A82F2F"><font size="2">(23:29:21)</font> <b>wentam:</b></font> so I&apos;ll just get rid of the package manager one<br/>
+<font color="#A82F2F"><font size="2">(23:29:32)</font> <b>wentam:</b></font> yay, works.<br/>
+<font color="#A82F2F"><font size="2">(23:30:11)</font> <b>Kilian]:</b></font> nice<br/>
+<font color="#A82F2F"><font size="2">(23:31:57)</font> <b>wentam:</b></font> game sure crashes alot though<br/>
+<font color="#A82F2F"><font size="2">(23:32:08)</font> <b>Kilian]:</b></font> please paste the crash<br/>
+<font color="#A82F2F"><font size="2">(23:32:13)</font> <b>wentam:</b></font> k<br/>
+<font color="#A82F2F"><font size="2">(23:32:44)</font> <b>wentam:</b></font> http://pastebin.com/A8nvpKzA<br/>
+<font color="#A82F2F"><font size="2">(23:32:52)</font> <b>wentam:</b></font> that one was during the war_tutorial thing<br/>
+<font color="#A82F2F"><font size="2">(23:33:11)</font> <b>wentam:</b></font> http://pastebin.com/<br/>
+<font color="#A82F2F"><font size="2">(23:33:15)</font> <b>wentam:</b></font> that one during normal tutorial<br/>
+<font color="#A82F2F"><font size="2">(23:33:19)</font> <b>Kilian]:</b></font> your uh is up2date too ?<br/>
+<font color="#A82F2F"><font size="2">(23:33:22)</font> <b>wentam:</b></font> yes<br/>
+<font color="#A82F2F"><font size="2">(23:33:26)</font> <b>wentam:</b></font> I just updated it<br/>
+<font color="#A82F2F"><font size="2">(23:33:39)</font> <b>Kilian]:</b></font> the second link isnt correct<br/>
+<font color="#A82F2F"><font size="2">(23:33:45)</font> <b>wentam:</b></font> ....woops<br/>
+<font color="#A82F2F"><font size="2">(23:33:58)</font> <b>wentam:</b></font> ..<br/>
+<font color="#A82F2F"><font size="2">(23:34:05)</font> <b>wentam:</b></font> it showed up as a paste but left the url as that..<br/>
+<font color="#A82F2F"><font size="2">(23:34:28)</font> <b>wentam:</b></font> http://pastebin.com/88BFNLPE<br/>
+<font color="#A82F2F"><font size="2">(23:35:05)</font> <b>wentam:</b></font> ....also: UH is useing 100% of two of my cpu cores just for the menu...<br/>
+<font color="#A82F2F"><font size="2">(23:35:29)</font> <b>wentam:</b></font> ...owait<br/>
+<font color="#A82F2F"><font size="2">(23:35:30)</font> <b>wentam:</b></font> just one<br/>
+<font color="#A82F2F"><font size="2">(23:35:32)</font> <b>Kilian]:</b></font> hm, for me uh uses 50 - 60% of both cores<br/>
+<font color="#A82F2F"><font size="2">(23:35:36)</font> <b>Kilian]:</b></font> 2,8 ghz<br/>
+<font color="#A82F2F"><font size="2">(23:35:54)</font> <b>wentam:</b></font> apparently the android SDK decided it hated me<br/>
+<font color="#A82F2F"><font size="2">(23:36:02)</font> <b>wentam:</b></font> phenom II quad 3.4 ghz<br/>
+<font color="#A82F2F"><font size="2">(23:36:17)</font> <b>Kilian]:</b></font> trouble with android ask, what kind ?<br/>
+<font color="#A82F2F"><font size="2">(23:36:25)</font> <b>wentam:</b></font> none<br/>
+<font color="#A82F2F"><font size="2">(23:36:33)</font> <b>Kilian]:</b></font> btw i know your problem ^^<br/>
+<font color="#A82F2F"><font size="2">(23:36:36)</font> <b>wentam:</b></font> it just appears the emulator is a bit cpu intensive<br/>
+<font color="#A82F2F"><font size="2">(23:37:09)</font> <b>Kilian]:</b></font> yes, but you can reload the app to the emulator without restaring<br/>
+<font color="#A82F2F"><font size="2">(23:37:16)</font> <b>Kilian]:</b></font> it makes testing much faster<br/>
+<font color="#A82F2F"><font size="2">(23:37:22)</font> <b>wentam:</b></font> yup<br/>
+<font color="#A82F2F"><font size="2">(23:37:24)</font> <b>Kilian]:</b></font> and adding more mem to the emulator<br/>
+<font size="2">(23:38:04)</font><b> mmaruseacph2_ [<em>~mihai@188.27.106.158</em>] hat den Raum betreten.</b><br/>
+<font color="#A82F2F"><font size="2">(23:38:17)</font> <b>Kilian]:</b></font> the problem with the fife release is, there are some changes in the repo, that arent adopted in the UH code<br/>
+<font color="#A82F2F"><font size="2">(23:38:24)</font> <b>wentam:</b></font> ah<br/>
+<font size="2">(23:39:32)</font><b> barra_home hat den Raum verlassen (quit: Read error: Connection reset by peer).</b><br/>
+<font color="#A82F2F"><font size="2">(23:40:11)</font> <b>Kilian]:</b></font> make a svn update -r 3784 in fife trunk<br/>
+<font color="#A82F2F"><font size="2">(23:40:19)</font> <b>wentam:</b></font> for fife?<br/>
+<font color="#A82F2F"><font size="2">(23:40:21)</font> <b>Kilian]:</b></font> and then do NOT run scons ^^<br/>
+<font color="#A82F2F"><font size="2">(23:40:23)</font> <b>Kilian]:</b></font> yes<br/>
+<font color="#A82F2F"><font size="2">(23:40:30)</font> <b>wentam:</b></font> k<br/>
+<font color="#A82F2F"><font size="2">(23:41:17)</font> <b>Kilian]:</b></font> i hope this will work<br/>
+<font color="#A82F2F"><font size="2">(23:43:03)</font> <b>wentam:</b></font> seems to have<br/>
+<font color="#A82F2F"><font size="2">(23:43:12)</font> <b>wentam:</b></font> how does it help?<br/>
+<font color="#A82F2F"><font size="2">(23:43:35)</font> <b>Kilian]:</b></font> i will downgrade your files to a specific revision<br/>
+<font color="#A82F2F"><font size="2">(23:43:41)</font> <b>Kilian]:</b></font> the last one which works<br/>
+<font color="#A82F2F"><font size="2">(23:43:53)</font> <b>wentam:</b></font> cept you had me not run scons<br/>
+<font color="#A82F2F"><font size="2">(23:44:09)</font> <b>Kilian]:</b></font> but it includes all the changes above this commit too the c++ files<br/>
+<font color="#A82F2F"><font size="2">(23:44:22)</font> <b>Kilian]:</b></font> so onyl the related pythonfiles have the old revision<br/>
+<font color="#A82F2F"><font size="2">(23:44:30)</font> <b>wentam:</b></font> I see<br/>
+<font color="#A82F2F"><font size="2">(23:46:03)</font> <b>wentam:</b></font> mouse-edge scrolling on the bottom and right sides of the screen don&apos;t work all the time..<br/>
+<font color="#A82F2F"><font size="2">(23:46:13)</font> <b>wentam:</b></font> ...uh<br/>
+<font color="#A82F2F"><font size="2">(23:46:15)</font> <b>wentam:</b></font> oh*<br/>
+<font color="#A82F2F"><font size="2">(23:46:20)</font> <b>wentam:</b></font> I have the window floating<br/>
+<font color="#A82F2F"><font size="2">(23:46:21)</font> <b>wentam:</b></font> nvm<br/>
+<font color="#A82F2F"><font size="2">(23:46:21)</font> <b>Kilian]:</b></font> i think you ahve to enable it in the settings<br/>
+<font color="#A82F2F"><font size="2">(23:46:55)</font> <b>wentam:</b></font> floating window + mouse edge scrolling = not so nice<br/>
+<font size="2">(23:47:19)</font><b> mmaruseacph2_ hat den Raum verlassen (quit: Quit: Bye for now).</b><br/>
+<font color="#A82F2F"><font size="2">(23:48:56)</font> <b>gscai:</b></font> Kilian]: there is a special branch for the fife release, isn&apos;t there?<br/>
+<font color="#A82F2F"><font size="2">(23:49:41)</font> <b>Kilian]:</b></font> ah, yes<br/>
+<font color="#A82F2F"><font size="2">(23:50:29)</font> <b>Kilian]:</b></font> svn co http://fife.svn.cvsdude.com/engine/branches/active/0.3.3r2<br/>
+<font size="2">(00:03:26)</font><b> mmaruseacph2 hat den Raum verlassen (quit: Read error: Connection reset by peer).</b><br/>
+<font size="2">(00:03:36)</font><b> mmaruseacph2 [<em>~mihai@188.27.106.158</em>] hat den Raum betreten.</b><br/>
+<font size="2">(00:04:45)</font><b> Kilian] hat den Raum verlassen (quit: Quit: Leaving.).</b><br/>
+<font size="2">(00:12:44)</font><b> mihaibivol hat den Raum verlassen (quit: Remote host closed the connection).</b><br/>
+<font size="2">(00:14:18)</font><b> spq [<em>~spq@dslb-188-100-049-170.pools.arcor-ip.net</em>] hat den Raum betreten.</b><br/>
+<font size="2">(00:21:13)</font><b> mmaruseacph2 hat den Raum verlassen (quit: Ping timeout: 256 seconds).</b><br/>
+<font size="2">(00:44:15)</font><b> prock [<em>~prock@S01060014bf10a14c.wp.shawcable.net</em>] hat den Raum betreten.</b><br/>
+</body></html>
