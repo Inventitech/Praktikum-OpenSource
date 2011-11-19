@@ -1,9 +1,0 @@
-Conversation with #unknown-horizons at Thu 03 Nov 2011 01:23:25 PM CET on karottenreibe@irc.freenode.net (irc)
-(01:23:25 PM) #unknown-horizons: The topic for #unknown-horizons is: Welcome to #unknown-horizons | www.unknown-horizons.org | Read the FAQ: http://wiki.unknown-horizons.org/w/FAQ[1] | News: Release coming up next week. Stay tuned!
-(01:23:25 PM) List of 29 users: [ ChanServ ][ UH-Guard ][ abeaumont ][ cassmodiah ][ chrisoelmueller ][ christoph_debian ][ CIA-79 ][ GreyGhost ][ gscai ][ hagabaka ][ inken ][ janebot ][ janus ][ josch ][ karottenreibe ][ ketas ][ ketas-ts ][ lolcat ][ manue| ][ Meldrian ][ Nightraven ][ nihathrael ][ rudi_s ][ scaabi ][ shadowmaster ][ skelet ][ spq ][ totycro_ ][ wentam ]
-(01:41:55 PM) GreyGhost left the room (quit: Ping timeout: 260 seconds).
-(01:43:39 PM) nihathrael: btw has anyone ever thought about moving all the ticketing to github?
-(01:44:45 PM) totycro_: github has a bug tracker?
-(01:44:54 PM) nihathrael: yes
-(01:45:03 PM) nihathrael: i'll disable for a few minutes so everyone can take a look
-(01:45:10 PM) nihathrael: it also has a wiki btw ;)

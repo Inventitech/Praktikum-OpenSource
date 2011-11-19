@@ -1,9 +1,0 @@
-Conversation with #unknown-horizons at Thu 27 Oct 2011 02:59:13 PM CEST on karottenreibe@irc.freenode.net (irc)
-(02:59:13 PM) #unknown-horizons: The topic for #unknown-horizons is: Welcome to #unknown-horizons | www.unknown-horizons.org | Read the FAQ: http://wiki.unknown-horizons.org/w/FAQ[1] | News: Release coming up next week. Stay tuned!
-(02:59:13 PM) List of 32 users: [ ChanServ ][ UH-Guard ][ abeaumont ][ cassmodiah ][ chrisoelmueller ][ christoph_debian ][ CIA-79 ][ Gambit ][ GreyGhost ][ gscai ][ Guest97904 ][ janebot ][ janus ][ josch ][ karottenreibe ][ ketas-av ][ ketas-li ][ Kilian] ][ lolcat ][ manue|_ ][ Meldrian ][ nayr ][ Nightraven ][ nihathrael ][ rudi_s ][ scaaabi ][ shadowmaster ][ skelet ][ slopes ][ spq ][ totycro ][ wentam ]
-(03:06:36 PM) Guest97904 left the room (quit: Remote host closed the connection).
-(03:06:59 PM) Guest97904 [~s@210.212.49.5] entered the room.
-(03:11:53 PM) Kilian] left the room (quit: Quit: Leaving.).
-(03:12:00 PM) ronnie_c [~moritz@0022fbc7feb6.dfn.mwn.de] entered the room.
-(03:12:19 PM) ronnie_c: karottenreibe: hi
-(03:12:42 PM) karottenreibe: ronnie_c: hi
