@@ -1,0 +1,792 @@
+<html><head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><title>Conversation with #unknown-horizons at So 27 Nov 2011 17:54:32 CET on ronnie_c@irc.freenode.net (irc)</title></head><body><h3>Conversation with #unknown-horizons at So 27 Nov 2011 17:54:32 CET on ronnie_c@irc.freenode.net (irc)</h3>
+<font size="2">(17:54:32)</font><b> Das Thema für #unknown-horizons ist: Welcome to #unknown-horizons | <a href="http://www.unknown-horizons.org">www.unknown-horizons.org</a> | Read the FAQ: <a href="http://wiki.unknown-horizons.org/w/FAQ">http://wiki.unknown-horizons.org/w/FAQ</a> | News: 2011.3 Released! Get in on our homepage!</b><br/>
+<font color="#A82F2F"><font size="2">(17:54:38)</font> <b>gscai:</b></font> at least the first profile file doesn&apos;t seem to include any functions from the aiplayer<br/>
+<font color="#A82F2F"><font size="2">(17:54:46)</font> <b>Nihathrael:</b></font> back<br/>
+<font color="#16569E"><font size="2">(17:54:52)</font> <b>ronnie_c:</b></font> hi<br/>
+<font color="#A82F2F"><font size="2">(17:54:56)</font> <b>gscai:</b></font> the AI calculates the utilisation differently<br/>
+<font color="#A82F2F"><font size="2">(17:55:10)</font> <b>gscai:</b></font> but based on the same raw data<br/>
+<font size="2">(17:55:16)</font><b> LinuxDonald [<em>~LinuxDona@85.183.47.221</em>] hat den Raum betreten.</b><br/>
+<font color="#A82F2F"><font size="2">(17:56:03)</font> <b>totycro_:</b></font> what do have to enter as client_id again to get an ai player?<br/>
+<font color="#A82F2F"><font size="2">(17:56:10)</font> <b>totycro_:</b></font> it currently says AIPlayerNOOOOOOOOO<br/>
+<font color="#A82F2F"><font size="2">(17:56:11)</font> <b>gscai:</b></font> AIPlayer<br/>
+<font color="#A82F2F"><font size="2">(17:56:37)</font> <b>totycro_:</b></font> thx<br/>
+<font color="#A82F2F"><font size="2">(17:56:59)</font> <b>gscai:</b></font> what do you think about the callback idea?<br/>
+<font color="#A82F2F"><font size="2">(17:57:37)</font> <b>totycro_:</b></font> i guess it would work, but it&apos;s very specialised<br/>
+<font color="#A82F2F"><font size="2">(17:58:14)</font> <b>gscai:</b></font> that&apos;s what lets it be fast :P<br/>
+<font color="#A82F2F"><font size="2">(17:58:17)</font> <b>chrisoelmueller:</b></font> Kilian]: do you have an excerpt of djot&apos;s mail for your meeting topic?<br/>
+<font color="#A82F2F"><font size="2">(17:58:23)</font> <b>chrisoelmueller:</b></font> not everybody has access to it i guess<br/>
+<font size="2">(17:58:25)</font><b> Beliar heißt jetzt Beliar|AFK</b><br/>
+<font color="#A82F2F"><font size="2">(17:58:30)</font> <b>totycro_:</b></font> true<br/>
+<font color="#A82F2F"><font size="2">(17:58:39)</font> <b>totycro_:</b></font> i&apos;d kind of like it if the value is always accessible<br/>
+<font color="#A82F2F"><font size="2">(17:59:04)</font> <b>Kilian]:</b></font> chrisoelmueller: give me some min<br/>
+<font color="#A82F2F"><font size="2">(17:59:07)</font> <b>lmg:</b></font> could someone gimme the link to the agenda .. nvm.. janebot mentioned it.<br/>
+<font color="#A82F2F"><font size="2">(17:59:37)</font> <b>Nihathrael:</b></font> have the new fishs already been added?<br/>
+<font color="#A82F2F"><font size="2">(17:59:46)</font> <b>Nihathrael:</b></font> fish *slaps himself*<br/>
+<font color="#A82F2F"><font size="2">(17:59:49)</font> <b>lmg:</b></font> Nihathrael: dunno. but you can test &apos;em<br/>
+<font color="#A82F2F"><font size="2">(18:00:03)</font> <b>chrisoelmueller:</b></font> janebot: thanks for being with us, i love your work :)<br/>
+<font color="#A82F2F"><font size="2">(18:00:04)</font> <b>janebot:</b></font> chrisoelmueller: No way. <br/>
+<font color="#A82F2F"><font size="2">(18:00:05)</font> <b>totycro_:</b></font> Nihathrael: not yet<br/>
+<font color="#A82F2F"><font size="2">(18:00:27)</font> <b>chrisoelmueller:</b></font> (whatever i do ...  :&lt; )<br/>
+<font color="#A82F2F"><font size="2">(18:00:41)</font> <b>lmg:</b></font> Nihathrael: http://kishalmi.servus.at/tmp/UH_fish_v02-idle.zip<br/>
+<font color="#A82F2F"><font size="2">(18:01:00)</font> <b>gscai:</b></font> totycro_: it feels like there should be a fast-ish way to do it in case you actually need it all the time<br/>
+<font color="#A82F2F"><font size="2">(18:01:02)</font> <b>chrisoelmueller:</b></font> oh i see helios fixed my sdl issues?<br/>
+<font color="#A82F2F"><font size="2">(18:01:04)</font> <b>lmg:</b></font> imho still needs a frame-offset for each instance tho<br/>
+<font color="#A82F2F"><font size="2">(18:01:04)</font> <b>chrisoelmueller:</b></font> rebuildinggggg<br/>
+<font color="#A82F2F"><font size="2">(18:01:18)</font> <b>gscai:</b></font> perhaps using a hacked segment tree<br/>
+<font color="#A82F2F"><font size="2">(18:01:55)</font> <b>gscai:</b></font> but I don&apos;t know the exact solution for that <br/>
+<font color="#A82F2F"><font size="2">(18:02:16)</font> <b>Nihathrael:</b></font> lmg: those fish look awesome!<br/>
+<font color="#062585"><font size="2">(18:02:31)</font> <b>***lmg</b></font> smiles happily<br/>
+<font color="#A82F2F"><font size="2">(18:02:52)</font> <b>lmg:</b></font> they kinda fit the setting of UH nicely<br/>
+<font color="#A82F2F"><font size="2">(18:03:03)</font> <b>lmg:</b></font> *** meeting time *** ?<br/>
+<font color="#A82F2F"><font size="2">(18:03:37)</font> <b>chrisoelmueller:</b></font> UH-Guard: pingall meeting<br/>
+<font color="#A82F2F"><font size="2">(18:03:38)</font> <b>UH-Guard:</b></font> meeting<br/>
+<font color="#A82F2F"><font size="2">(18:03:38)</font> <b>UH-Guard:</b></font> abeaumont Atomim bddn Beliar|AFK BladeFreak cassmodiah ChanServ chrisoelmueller christoph_debian CIA-28 Entvex Gambit GreyGhost gscai hagabaka inken janebot janus josch ketas ketas-ts Kilian] LinuxDonald lmg lolcat lordhughes manue| mmaruseacph2 ngc92 Nightraven <br/>
+<font color="#A82F2F"><font size="2">(18:03:38)</font> <b>UH-Guard:</b></font> Nihathrael ronnie_c rudi_s scaabi shadowmaster totycro_ tuempl UH-Guard wart___ wentam yonathan <br/>
+<font color="#A82F2F"><font size="2">(18:03:38)</font> <b>UH-Guard:</b></font> meeting<br/>
+<font color="#A82F2F"><font size="2">(18:03:54)</font> <b>Nihathrael:</b></font> would you like to have your name mentioned in the credits?<br/>
+<font color="#A82F2F"><font size="2">(18:03:59)</font> <b>Nihathrael:</b></font> i&apos;ll start the meeting in a sec<br/>
+<font color="#A82F2F"><font size="2">(18:04:12)</font> <b>totycro_:</b></font> gscai: the current implementation is already very fast, i&apos;m not sure if it&apos;s worth implementing another data structure in python here<br/>
+<font color="#A82F2F"><font size="2">(18:04:18)</font> <b>Nihathrael:</b></font> if so, only nickname or realname (in which case i&apos;d need that)<br/>
+<font color="#A82F2F"><font size="2">(18:04:29)</font> <b>totycro_:</b></font> gscai: but i&apos;ve never worked with segment trees, so i&apos;m not sure<br/>
+<font color="#A82F2F"><font size="2">(18:04:35)</font> <b>Nihathrael:</b></font> #startmeeting<br/>
+<font color="#A82F2F"><font size="2">(18:04:35)</font> <b>UH-Guard:</b></font> Meeting started Sun Nov 27 17:04:35 2011 UTC.  The chair is Nihathrael. Information about MeetBot at http://wiki.debian.org/MeetBot.<br/>
+<font color="#A82F2F"><font size="2">(18:04:35)</font> <b>UH-Guard:</b></font> Useful Commands: #action #agreed #help #info #idea #link #topic.<br/>
+<font color="#A82F2F"><font size="2">(18:04:41)</font> <b>Nihathrael:</b></font> welcome everyone<br/>
+<font color="#A82F2F"><font size="2">(18:04:49)</font> <b>Nihathrael:</b></font> #topic Usibility of Tradewidget - Kilian]<br/>
+<font size="2">(18:04:50)</font><b> UH-Guard hat das Thema zu Usibility of Tradewidget - Kilian] abgeändert</b><br/>
+<font color="#A82F2F"><font size="2">(18:05:05)</font> <b>Kilian]:</b></font> next plz<br/>
+<font color="#A82F2F"><font size="2">(18:05:22)</font> <b>Kilian]:</b></font> iam nor ready for this today, sorry<br/>
+<font color="#A82F2F"><font size="2">(18:06:03)</font> <b>CIA-28:</b></font> <span style='font-weight: bold;'>unknown-horizons:</span> <span style='color: dark green;'>Christopher Oelmueller</span> <span style='color: orange;'>master</span> * r<span style='font-weight: bold;'>8f9d872</span> <span style='color: teal;'></span>/ (2 files in 2 dirs)<span style='font-weight: bold;'>:</span> * Minimap positioning fixes - http://git.io/4mUL-Q<br/>
+<font color="#A82F2F"><font size="2">(18:06:10)</font> <b>Nihathrael:</b></font> #topic Slow gui interactions - totycro_<br/>
+<font size="2">(18:06:11)</font><b> UH-Guard hat das Thema zu Slow gui interactions - totycro_ abgeändert</b><br/>
+<font color="#A82F2F"><font size="2">(18:06:33)</font> <b>totycro_:</b></font> well, this is just a question to you<br/>
+<font color="#A82F2F"><font size="2">(18:06:43)</font> <b>totycro_:</b></font> are there any ingame actions that feel particularly slow?<br/>
+<font color="#A82F2F"><font size="2">(18:06:50)</font> <b>totycro_:</b></font> i really do mean felt performance here<br/>
+<font color="#A82F2F"><font size="2">(18:07:03)</font> <b>chrisoelmueller:</b></font> accessing the pause menu for the first time per game freezes for like 5 seconds here<br/>
+<font color="#A82F2F"><font size="2">(18:07:09)</font> <b>totycro_:</b></font> e.g. the ai planning the settlement is known, but that&apos;s very hard to make faster<br/>
+<font color="#A82F2F"><font size="2">(18:07:54)</font> <b>totycro_:</b></font> ok, anything else?<br/>
+<font color="#A82F2F"><font size="2">(18:08:21)</font> <b>totycro_:</b></font> @people who&apos;ve never been online at our meetings: please just shout out anything that fits to the current topic<br/>
+<font color="#A82F2F"><font size="2">(18:08:36)</font> <b>chrisoelmueller:</b></font> i have not played a lot recently, but i guess my machine would be a nice test case :p<br/>
+<font color="#A82F2F"><font size="2">(18:09:30)</font> <b>totycro_:</b></font> can someone confirm the pause menu thing?<br/>
+<font color="#A82F2F"><font size="2">(18:09:33)</font> <b>gscai:</b></font> I would suggest looking at the memory usage jump associated with opening the pause menu<br/>
+<font color="#A82F2F"><font size="2">(18:09:38)</font> <b>Nihathrael:</b></font> sec<br/>
+<font color="#A82F2F"><font size="2">(18:09:40)</font> <b>chrisoelmueller:</b></font> did rotating the map get faster as of recently? i remember it was a rather annoying thing<br/>
+<font color="#A82F2F"><font size="2">(18:09:50)</font> <b>lmg:</b></font> just started a game. how do I pause?<br/>
+<font color="#A82F2F"><font size="2">(18:09:54)</font> <b>gscai:</b></font> but on my machine it isn&apos;t really a problem<br/>
+<font color="#A82F2F"><font size="2">(18:10:00)</font> <b>totycro_:</b></font> the minimap recalulation is faster, so also map rotation<br/>
+<font color="#A82F2F"><font size="2">(18:10:03)</font> <b>totycro_:</b></font> lmg: esc<br/>
+<font color="#A82F2F"><font size="2">(18:10:06)</font> <b>lmg:</b></font> [P] worked<br/>
+<font color="#062585"><font size="2">(18:10:13)</font> <b>***Kilian]</b></font> can not confirm this<br/>
+<font color="#A82F2F"><font size="2">(18:10:15)</font> <b>Nihathrael:</b></font> workes here<br/>
+<font color="#A82F2F"><font size="2">(18:10:19)</font> <b>lmg:</b></font> not a bit of delay.<br/>
+<font color="#A82F2F"><font size="2">(18:10:25)</font> <b>lmg:</b></font> instant pause/unpause<br/>
+<font color="#A82F2F"><font size="2">(18:10:27)</font> <b>totycro_:</b></font> i have a very slight delay<br/>
+<font color="#A82F2F"><font size="2">(18:10:34)</font> <b>totycro_:</b></font> anyway, any other issues?<br/>
+<font color="#A82F2F"><font size="2">(18:10:35)</font> <b>chrisoelmueller:</b></font> alright then it is related to the mem consumption (i have close to now swap as well)<br/>
+<font size="2">(18:10:44)</font><b> Andre_Re [<em>~Andre@dslb-178-002-209-215.pools.arcor-ip.net</em>] hat den Raum betreten.</b><br/>
+<font color="#A82F2F"><font size="2">(18:10:45)</font> <b>lordhughes:</b></font> I remember getting a small amount of delay but nowhere near 5 seconds<br/>
+<font color="#A82F2F"><font size="2">(18:10:56)</font> <b>Andre_Re:</b></font> hi guys<br/>
+<font color="#A82F2F"><font size="2">(18:11:03)</font> <b>Andre_Re:</b></font> sorry, &apos;m a liittle late<br/>
+<font color="#062585"><font size="2">(18:11:08)</font> <b>***Kilian]</b></font> has 12gb now<br/>
+<font color="#A82F2F"><font size="2">(18:11:44)</font> <b>lmg:</b></font> totycro_: remind me of a selection glitch I just discovered - after meeting.<br/>
+<font color="#A82F2F"><font size="2">(18:12:43)</font> <b>chrisoelmueller:</b></font> #help please report all gui interactions that feel slow to you (profiling them is hard)<br/>
+<font color="#A82F2F"><font size="2">(18:13:00)</font> <b>Kilian]:</b></font> ai build settlement<br/>
+<font color="#A82F2F"><font size="2">(18:13:28)</font> <b>Andre_Re:</b></font> yeah, as soon as the ai creates a new settlement, the game stops for half a seconf<br/>
+<font color="#A82F2F"><font size="2">(18:13:30)</font> <b>totycro_:</b></font> i guess that&apos;s all now, so we could move on now then<br/>
+<font color="#A82F2F"><font size="2">(18:13:30)</font> <b>Andre_Re:</b></font> *d<br/>
+<font color="#A82F2F"><font size="2">(18:13:44)</font> <b>Kilian]:</b></font> &lt;&gt;<br/>
+<font color="#A82F2F"><font size="2">(18:13:56)</font> <b>Nihathrael:</b></font> #topic Meeting introduction<br/>
+<font size="2">(18:13:57)</font><b> UH-Guard hat das Thema zu Meeting introduction abgeändert</b><br/>
+<font color="#A82F2F"><font size="2">(18:14:08)</font> <b>Nihathrael:</b></font> since there are a number of new people here i&apos;d like to just quickly recall how this works<br/>
+<font color="#A82F2F"><font size="2">(18:14:23)</font> <b>Nihathrael:</b></font> generally we have a predefined set of topic as set on http://wiki.unknown-horizons.org/w/Next_meeting <br/>
+<font color="#A82F2F"><font size="2">(18:14:31)</font> <b>Nihathrael:</b></font> this can be edited _before_ the meeting<br/>
+<font color="#A82F2F"><font size="2">(18:14:33)</font> <b>Nihathrael:</b></font> by anyone<br/>
+<font color="#A82F2F"><font size="2">(18:15:06)</font> <b>Nihathrael:</b></font> during the meeting we try to discuss every topic and get to some agreed conclusion if the topic allows it, usually prefixed by #agreed<br/>
+<font color="#A82F2F"><font size="2">(18:15:22)</font> <b>Nihathrael:</b></font> everyone is welcome to leave a comment after the topic owner has introduced the topic<br/>
+<font color="#A82F2F"><font size="2">(18:15:48)</font> <b>Nihathrael:</b></font> at the end we have some general topics that we cover every meeting<br/>
+<font color="#A82F2F"><font size="2">(18:15:53)</font> <b>Nihathrael:</b></font> mostly for information exchange<br/>
+<font color="#A82F2F"><font size="2">(18:16:07)</font> <b>Nihathrael:</b></font> in status update and hallway chat we present what we did on UH the past week<br/>
+<font color="#A82F2F"><font size="2">(18:16:09)</font> <b>Nihathrael:</b></font> by using #info<br/>
+<font color="#A82F2F"><font size="2">(18:16:15)</font> <b>Nihathrael:</b></font> so #info &apos;I created new fish images&apos;<br/>
+<font color="#A82F2F"><font size="2">(18:16:17)</font> <b>Nihathrael:</b></font> for example<br/>
+<font color="#A82F2F"><font size="2">(18:16:22)</font> <b>Nihathrael:</b></font> without the quotes actually<br/>
+<font color="#A82F2F"><font size="2">(18:16:31)</font> <b>Nihathrael:</b></font> questions?<br/>
+<font color="#A82F2F"><font size="2">(18:16:50)</font> <b>chrisoelmueller:</b></font> &lt;&gt;<br/>
+<font color="#A82F2F"><font size="2">(18:16:57)</font> <b>Nihathrael:</b></font> We generall signal that we are doen commenting a topic by using a simple &lt;&gt;<br/>
+<font color="#062585"><font size="2">(18:16:58)</font> <b>***lmg</b></font> wonders who else is new<br/>
+<font color="#A82F2F"><font size="2">(18:17:11)</font> <b>Nihathrael:</b></font> &lt;&gt;<br/>
+<font color="#A82F2F"><font size="2">(18:17:11)</font> <b>totycro_:</b></font> &lt;&gt;<br/>
+<font color="#16569E"><font size="2">(18:17:18)</font> <b>ronnie_c:</b></font> &lt;&gt;<br/>
+<font color="#A82F2F"><font size="2">(18:17:24)</font> <b>Nihathrael:</b></font> #topic Trade route minimap design - Andre_Re<br/>
+<font size="2">(18:17:25)</font><b> UH-Guard hat das Thema zu Trade route minimap design - Andre_Re abgeändert</b><br/>
+<font color="#A82F2F"><font size="2">(18:17:40)</font> <b>Andre_Re:</b></font> Ok, my topic<br/>
+<font color="#A82F2F"><font size="2">(18:17:56)</font> <b>Andre_Re:</b></font> #info The minimap inside the trade widget looks really humble right now. We should add a little bit more color to it like in this example. <br/>
+<font color="#A82F2F"><font size="2">(18:18:05)</font> <b>Andre_Re:</b></font> #info http://uh.otinn.com/trade.jpg<br/>
+<font color="#A82F2F"><font size="2">(18:18:18)</font> <b>Andre_Re:</b></font> #info Expecially on smaller maps, the minimaps can look really chiseled right  now. We should think about some concepts to improove that. <br/>
+<font color="#A82F2F"><font size="2">(18:18:43)</font> <b>Andre_Re:</b></font> Any ideas how we could improove that?<br/>
+<font color="#A82F2F"><font size="2">(18:19:15)</font> <b>gscai:</b></font> in general you could reuse the curves of the ground tiles<br/>
+<font color="#A82F2F"><font size="2">(18:19:37)</font> <b>Andre_Re:</b></font> i think, we are currently rendering squares, don&apos;t we?<br/>
+<font color="#A82F2F"><font size="2">(18:19:42)</font> <b>gscai:</b></font> yes<br/>
+<font color="#A82F2F"><font size="2">(18:19:44)</font> <b>totycro_:</b></font> pixels in fact<br/>
+<font color="#A82F2F"><font size="2">(18:20:11)</font> <b>Andre_Re:</b></font> how big is the basic image? is it fixed in size, or does it scale to the size of the map?<br/>
+<font color="#A82F2F"><font size="2">(18:20:24)</font> <b>totycro_:</b></font> it&apos;s arbitrarily big<br/>
+<font color="#A82F2F"><font size="2">(18:20:52)</font> <b>totycro_:</b></font> the minimap calculates itself for arbitrary maps<br/>
+<font color="#A82F2F"><font size="2">(18:20:54)</font> <b>Andre_Re:</b></font> ok, so no relation to the map size<br/>
+<font color="#A82F2F"><font size="2">(18:21:06)</font> <b>chrisoelmueller:</b></font> what basic image?<br/>
+<font color="#A82F2F"><font size="2">(18:21:34)</font> <b>Andre_Re:</b></font> chrisoelmueller: well, the minimap has a basic image where we place the pixels on<br/>
+<font color="#A82F2F"><font size="2">(18:21:41)</font> <b>chrisoelmueller:</b></font> it has?<br/>
+<font color="#A82F2F"><font size="2">(18:21:48)</font> <b>Andre_Re:</b></font> this image is scaled by the pychan to fit the icon size<br/>
+<font color="#A82F2F"><font size="2">(18:21:56)</font> <b>chrisoelmueller:</b></font> i thought that exactly was removed<br/>
+<font size="2">(18:22:11)</font><b> karottenreibe [<em>~karottenr@mnch-4d04c327.pool.mediaWays.net</em>] hat den Raum betreten.</b><br/>
+<font color="#A82F2F"><font size="2">(18:22:14)</font> <b>totycro_:</b></font> just a side-thought: there was currently only one person who was working on the minimap, and that one feels he&apos;s done enough for now, so if you&apos;re planning something fancy, please make sure someone is actually willing to implement it<br/>
+<font color="#A82F2F"><font size="2">(18:22:17)</font> <b>Andre_Re:</b></font> chrisoelmueller: well, we are still rendering pixels to some area, don&apos;t we?<br/>
+<font color="#A82F2F"><font size="2">(18:22:45)</font> <b>chrisoelmueller:</b></font> but no background image exists, just a background color<br/>
+<font color="#A82F2F"><font size="2">(18:23:08)</font> <b>chrisoelmueller:</b></font> totycro_: you did a lot of cool things there already! :)<br/>
+<font color="#A82F2F"><font size="2">(18:23:19)</font> <b>Andre_Re:</b></font> however, there are some pixels placed on a bitmap of a specific size<br/>
+<font color="#A82F2F"><font size="2">(18:23:50)</font> <b>totycro_:</b></font> i wasn&apos;t fishing for compliments there, but i really think we have to be realistic with this design<br/>
+<font color="#A82F2F"><font size="2">(18:23:52)</font> <b>Andre_Re:</b></font> and if pychan resizes that, or if the map size is too small, the minimap doesn&apos;t look really good<br/>
+<font color="#A82F2F"><font size="2">(18:24:08)</font> <b>totycro_:</b></font> especially since this feature isn&apos;t critical<br/>
+<font color="#A82F2F"><font size="2">(18:24:16)</font> <b>Andre_Re:</b></font> totycro_: what do you mean by that?<br/>
+<font color="#A82F2F"><font size="2">(18:24:46)</font> <b>Andre_Re:</b></font> so you mean, we should move the rework to the future?<br/>
+<font color="#A82F2F"><font size="2">(18:25:36)</font> <b>totycro_:</b></font> Andre_Re: the image you posted looks nice and fancy, and if we want something similiar, someone has to use many hours of his/her time, and we should match the available time to the amount of work required for the design<br/>
+<font color="#A82F2F"><font size="2">(18:26:03)</font> <b>totycro_:</b></font> the minimap currently assumes that it is smaller than the actual map, so it will get slow if the minimap icon is huge<br/>
+<font color="#A82F2F"><font size="2">(18:26:23)</font> <b>totycro_:</b></font> (actual maps are sometimes smaller than 300x300)<br/>
+<font color="#A82F2F"><font size="2">(18:26:53)</font> <b>gscai:</b></font> 300x300 tiles?<br/>
+<font color="#A82F2F"><font size="2">(18:26:55)</font> <b>totycro_:</b></font> so are there some concrete, doable proposals?<br/>
+<font color="#A82F2F"><font size="2">(18:27:15)</font> <b>chrisoelmueller:</b></font> i volunteer to create some background images (also overlay images if that&apos;s possible)<br/>
+<font color="#A82F2F"><font size="2">(18:27:19)</font> <b>totycro_:</b></font> tbh, i&apos;ve no idea how big our maps are, i only know that i had a minimap once that was bigger than the map<br/>
+<font color="#A82F2F"><font size="2">(18:27:21)</font> <b>chrisoelmueller:</b></font> but do not expect any of this to happen soon<br/>
+<font color="#A82F2F"><font size="2">(18:27:49)</font> <b>gscai:</b></font> 250x250 is the maximum reasonable size for now<br/>
+<font color="#A82F2F"><font size="2">(18:27:59)</font> <b>totycro_:</b></font> background image would currently mean only visible on water<br/>
+<font color="#A82F2F"><font size="2">(18:27:59)</font> <b>chrisoelmueller:</b></font> Andre_Re: did you ask for any specific solutions to issues?<br/>
+<font color="#A82F2F"><font size="2">(18:28:06)</font> <b>chrisoelmueller:</b></font> yeah that was what i meant<br/>
+<font color="#A82F2F"><font size="2">(18:28:27)</font> <b>Andre_Re:</b></font> totycro_: the basic idea would be adding some color and round the edges<br/>
+<font color="#A82F2F"><font size="2">(18:28:35)</font> <b>chrisoelmueller:</b></font> also fancy border graphics for the trade route widget, but i have other priorities here tbh<br/>
+<font color="#A82F2F"><font size="2">(18:28:40)</font> <b>Andre_Re:</b></font> that would improove the wohle look of the map much<br/>
+<font color="#A82F2F"><font size="2">(18:29:24)</font> <b>totycro_:</b></font> i guess both of these points are fine as long as the color stay unobstrusive and rounding the edges doesn&apos;t take too long<br/>
+<font color="#A82F2F"><font size="2">(18:29:39)</font> <b>Andre_Re:</b></font> totycro_: would it be possible to render the map rgba?<br/>
+<font color="#A82F2F"><font size="2">(18:29:57)</font> <b>chrisoelmueller:</b></font> just displaying an image on top of that icon could also cover &apos;rounding the edges&apos;<br/>
+<font color="#A82F2F"><font size="2">(18:29:59)</font> <b>Andre_Re:</b></font> so that we could set the transparency of the overlaying pixels?<br/>
+<font color="#A82F2F"><font size="2">(18:30:05)</font> <b>chrisoelmueller:</b></font> but this will lead deep into focus trouble.<br/>
+<font color="#A82F2F"><font size="2">(18:30:16)</font> <b>chrisoelmueller:</b></font> so i advise to better not do this :o<br/>
+<font color="#A82F2F"><font size="2">(18:30:24)</font> <b>totycro_:</b></font> Andre_Re: i guess so, but maybe we shouldn&apos;t discuss such details at the meeting<br/>
+<font color="#A82F2F"><font size="2">(18:30:35)</font> <b>chrisoelmueller:</b></font> what&apos;s the general point of the topic?<br/>
+<font color="#A82F2F"><font size="2">(18:30:35)</font> <b>Andre_Re:</b></font> sure<br/>
+<font color="#A82F2F"><font size="2">(18:30:40)</font> <b>Andre_Re:</b></font> what about my first point?<br/>
+<font color="#A82F2F"><font size="2">(18:30:47)</font> <b>Andre_Re:</b></font> adding some color to the trading map?<br/>
+<font color="#A82F2F"><font size="2">(18:30:58)</font> <b>Andre_Re:</b></font> the regular minimap should stay as it is<br/>
+<font color="#A82F2F"><font size="2">(18:31:00)</font> <b>Nihathrael:</b></font> where do you want to add color?<br/>
+<font color="#A82F2F"><font size="2">(18:31:01)</font> <b>totycro_:</b></font> sure, as long as it doesn&apos;t look clown-style<br/>
+<font color="#A82F2F"><font size="2">(18:31:17)</font> <b>Andre_Re:</b></font> it won&apos;t<br/>
+<font color="#A82F2F"><font size="2">(18:31:39)</font> <b>Andre_Re:</b></font> the idea is to take some water texture as a background, and then add some green tiles for land on it<br/>
+<font color="#A82F2F"><font size="2">(18:31:49)</font> <b>Andre_Re:</b></font> or gray for mountains, dark green for trees<br/>
+<font color="#A82F2F"><font size="2">(18:32:14)</font> <b>Nihathrael:</b></font> how does that help the trade map?<br/>
+<font color="#A82F2F"><font size="2">(18:32:24)</font> <b>Andre_Re:</b></font> if you haven&apos;t changed too much, this wouldn&apos;t be too hard to implement<br/>
+<font color="#A82F2F"><font size="2">(18:32:46)</font> <b>Andre_Re:</b></font> it&apos;s just a quesion of design<br/>
+<font color="#A82F2F"><font size="2">(18:33:17)</font> <b>Andre_Re:</b></font> the current map doesn&apos;t look really good in this book<br/>
+<font color="#A82F2F"><font size="2">(18:33:34)</font> <b>Nihathrael:</b></font> ok, how about you create a wiki page for that and select some ideas on coloring<br/>
+<font color="#A82F2F"><font size="2">(18:33:37)</font> <b>Andre_Re:</b></font> it would even help to remove the background color<br/>
+<font color="#A82F2F"><font size="2">(18:33:37)</font> <b>Nihathrael:</b></font> then we can discuss that next week<br/>
+<font color="#A82F2F"><font size="2">(18:33:39)</font> <b>totycro_:</b></font> one last thought: please really also keep performance in mind, 300*300 = 90000, and this many calls/iterations take a while in pytho<br/>
+<font color="#A82F2F"><font size="2">(18:33:54)</font> <b>chrisoelmueller:</b></font> and any other language i guess<br/>
+<font color="#A82F2F"><font size="2">(18:34:47)</font> <b>totycro_:</b></font> &lt;&gt;<br/>
+<font color="#A82F2F"><font size="2">(18:34:55)</font> <b>Andre_Re:</b></font> for now, would it be possible to remove the bg color?<br/>
+<font color="#A82F2F"><font size="2">(18:35:09)</font> <b>Andre_Re:</b></font> so that the book texture would shine through?<br/>
+<font size="2">(18:35:20)</font><b> Beliar_ [<em>~Beliar@a89-182-57-192.net-htp.de</em>] hat den Raum betreten.</b><br/>
+<font color="#A82F2F"><font size="2">(18:35:23)</font> <b>Andre_Re:</b></font> same on the regular minimap<br/>
+<font size="2">(18:35:26)</font><b> Beliar_ heißt jetzt Beliar</b><br/>
+<font color="#A82F2F"><font size="2">(18:35:33)</font> <b>totycro_:</b></font> sure, all coloring is of course arbitrary<br/>
+<font color="#A82F2F"><font size="2">(18:35:57)</font> <b>chrisoelmueller:</b></font> &lt;&gt;<br/>
+<font color="#A82F2F"><font size="2">(18:36:08)</font> <b>Andre_Re:</b></font> so we could make it transparent, too?<br/>
+<font color="#A82F2F"><font size="2">(18:37:19)</font> <b>totycro_:</b></font> just check the fife docu or ask the fife people, this does&apos;nt need to be discussed at the meeting<br/>
+<font color="#A82F2F"><font size="2">(18:37:22)</font> <b>Nihathrael:</b></font> Andre_Re: can you create a wiki page with proposals on what to change so that we can discuss these cahnges<br/>
+<font size="2">(18:37:31)</font><b> LinuxDonald hat den Raum verlassen (quit: Read error: Connection reset by peer).</b><br/>
+<font color="#A82F2F"><font size="2">(18:37:33)</font> <b>Nihathrael:</b></font> this is taking way to long this way<br/>
+<font color="#A82F2F"><font size="2">(18:37:34)</font> <b>Andre_Re:</b></font> yes, I can<br/>
+<font color="#A82F2F"><font size="2">(18:37:36)</font> <b>Nihathrael:</b></font> great<br/>
+<font color="#A82F2F"><font size="2">(18:37:52)</font> <b>Andre_Re:</b></font> could you set an agreement?<br/>
+<font color="#A82F2F"><font size="2">(18:37:54)</font> <b>Nihathrael:</b></font> #agreed Andre_Re will create a wiki page with proposals for the trade/minimap design<br/>
+<font color="#A82F2F"><font size="2">(18:37:59)</font> <b>Andre_Re:</b></font> :D<br/>
+<font color="#A82F2F"><font size="2">(18:37:59)</font> <b>Nihathrael:</b></font> &lt;&gt;<br/>
+<font color="#A82F2F"><font size="2">(18:38:03)</font> <b>Andre_Re:</b></font> &lt;&gt;<br/>
+<font size="2">(18:38:13)</font><b> Beliar|AFK hat den Raum verlassen (quit: Ping timeout: 240 seconds).</b><br/>
+<font color="#A82F2F"><font size="2">(18:38:13)</font> <b>Nihathrael:</b></font> Pipette tool for building selection - lmg/totycro<br/>
+<font color="#A82F2F"><font size="2">(18:38:19)</font> <b>Nihathrael:</b></font> #topic Pipette tool for building selection - lmg/totycro<br/>
+<font size="2">(18:38:19)</font><b> UH-Guard hat das Thema zu Pipette tool for building selection - lmg/totycro abgeändert</b><br/>
+<font color="#A82F2F"><font size="2">(18:38:49)</font> <b>lmg:</b></font> so.. uhm, guess I triggered this :)<br/>
+<font color="#A82F2F"><font size="2">(18:39:08)</font> <b>lmg:</b></font> the idea is to have a copy+build tool<br/>
+<font color="#A82F2F"><font size="2">(18:39:33)</font> <b>lmg:</b></font> init either by button or key, let&apos;s assume [C] for now.<br/>
+<font color="#A82F2F"><font size="2">(18:39:45)</font> <b>lmg:</b></font> you hit [C] -&gt; copy mode.<br/>
+<font color="#A82F2F"><font size="2">(18:40:12)</font> <b>lmg:</b></font> you click any structure (road, tent, store) -&gt; you are building that structure now.<br/>
+<font color="#A82F2F"><font size="2">(18:40:22)</font> <b>lmg:</b></font> (like if you clicked it in the building menu)<br/>
+<font color="#A82F2F"><font size="2">(18:40:27)</font> <b>lmg:</b></font> as simple as that.<br/>
+<font color="#A82F2F"><font size="2">(18:40:38)</font> <b>totycro_:</b></font> i guess it&apos;s nice as a hotkey<br/>
+<font color="#A82F2F"><font size="2">(18:40:53)</font> <b>totycro_:</b></font> not sure how many users will actually use it, but as a hotkey, it wouldn&apos;t hurt in any case<br/>
+<font color="#A82F2F"><font size="2">(18:41:12)</font> <b>Nihathrael:</b></font> i think its a great idea and should be really usefull<br/>
+<font color="#A82F2F"><font size="2">(18:41:26)</font> <b>chrisoelmueller:</b></font> i don&apos;t think we need a button for this as it is quite special, but certainly like the idea behind<br/>
+<font color="#A82F2F"><font size="2">(18:41:34)</font> <b>lmg:</b></font> might also have ctrl+LMB, shift.. whatever modifier floats your boat.<br/>
+<font color="#A82F2F"><font size="2">(18:41:35)</font> <b>Nihathrael:</b></font> hotkey is probably good<br/>
+<font color="#A82F2F"><font size="2">(18:41:36)</font> <b>chrisoelmueller:</b></font> and i&apos;d also use this regularly i imagine<br/>
+<font color="#A82F2F"><font size="2">(18:41:57)</font> <b>lmg:</b></font> it&apos;s very nice for quickly building a road, or extending some production line.<br/>
+<font color="#A82F2F"><font size="2">(18:42:11)</font> <b>Nihathrael:</b></font> so, can we open a ticket for this and then somebody sometime can build it<br/>
+<font color="#A82F2F"><font size="2">(18:42:40)</font> <b>Nihathrael:</b></font> lmg: can you create a ticket at trac, where you in explain the idea in the description once more <br/>
+<font color="#A82F2F"><font size="2">(18:42:48)</font> <b>chrisoelmueller:</b></font> lmg: there&apos;s a hotkey  R  for building a road already<br/>
+<font color="#A82F2F"><font size="2">(18:42:50)</font> <b>Andre_Re:</b></font> well, I don&apos;t think a buttomn for that would be useful, because not many people would use it anyway, but the hotkey really doesn&apos;t hurt<br/>
+<font color="#A82F2F"><font size="2">(18:42:53)</font> <b>chrisoelmueller:</b></font> iirc it&apos;s R that is<br/>
+<font color="#A82F2F"><font size="2">(18:43:11)</font> <b>Andre_Re:</b></font> if there is someone who want&apos;s to implement that, I wouldn&apos;t vote against<br/>
+<font color="#A82F2F"><font size="2">(18:43:24)</font> <b>Andre_Re:</b></font> but we shouldn&apos;t put too much priority into it<br/>
+<font color="#A82F2F"><font size="2">(18:43:27)</font> <b>lmg:</b></font> indeed so, thanks chrisoelmueller!<br/>
+<font color="#A82F2F"><font size="2">(18:43:53)</font> <b>totycro_:</b></font> it would be trivial to implement, i could look into it later<br/>
+<font color="#A82F2F"><font size="2">(18:44:02)</font> <b>Andre_Re:</b></font> ok<br/>
+<font color="#A82F2F"><font size="2">(18:44:09)</font> <b>Andre_Re:</b></font> so I agree<br/>
+<font color="#A82F2F"><font size="2">(18:44:12)</font> <b>Nihathrael:</b></font> #agreed totycro will take a look at ipmlementing the pipette tool<br/>
+<font color="#A82F2F"><font size="2">(18:44:21)</font> <b>lmg:</b></font> one more thing..<br/>
+<font color="#A82F2F"><font size="2">(18:44:22)</font> <b>Nihathrael:</b></font> please create a ticket if you don&apos;t have enough time to finish it<br/>
+<font color="#A82F2F"><font size="2">(18:44:34)</font> <b>lmg:</b></font> is shift+LMB used already?<br/>
+<font color="#A82F2F"><font size="2">(18:44:41)</font> <b>chrisoelmueller:</b></font> well we could use a special cursor here<br/>
+<font color="#A82F2F"><font size="2">(18:44:42)</font> <b>lmg:</b></font> (except when already in build mode)<br/>
+<font color="#A82F2F"><font size="2">(18:44:46)</font> <b>chrisoelmueller:</b></font> so a ticket is nice in any case<br/>
+<font color="#A82F2F"><font size="2">(18:44:58)</font> <b>Nihathrael:</b></font> lmg: i don&apos;t think so<br/>
+<font color="#A82F2F"><font size="2">(18:45:08)</font> <b>Andre_Re:</b></font> lmg: yes, it should be for selecting more then one unit<br/>
+<font color="#A82F2F"><font size="2">(18:45:10)</font> <b>gscai:</b></font> it is used for attackin<br/>
+<font color="#A82F2F"><font size="2">(18:45:26)</font> <b>Andre_Re:</b></font> I would rather say C+LMB<br/>
+<font color="#A82F2F"><font size="2">(18:45:46)</font> <b>Andre_Re:</b></font> while holding the C key, we could also change the cursor<br/>
+<font color="#A82F2F"><font size="2">(18:46:02)</font> <b>lmg:</b></font> details.. you guys figure that out ;)<br/>
+<font color="#A82F2F"><font size="2">(18:46:05)</font> <b>gscai:</b></font> I don&apos;t see why it couldn&apos;t be like a normal mode where c just turns it on or off<br/>
+<font color="#A82F2F"><font size="2">(18:46:16)</font> <b>Andre_Re:</b></font> or that, why not?<br/>
+<font color="#A82F2F"><font size="2">(18:46:27)</font> <b>Nihathrael:</b></font> I agree, we should start with an on/off mode<br/>
+<font color="#A82F2F"><font size="2">(18:46:30)</font> <b>Andre_Re:</b></font> that&apos;s a matter of taste, we shouldn&apos;t discuss that here<br/>
+<font color="#A82F2F"><font size="2">(18:46:30)</font> <b>CIA-28:</b></font> <span style='font-weight: bold;'>fife:</span> <span style='color: dark green;'>helios2000</span> * r<span style='font-weight: bold;'>3814</span> <span style='color: teal;'></span>/trunk/engine/core/ (6 files in 2 dirs)<span style='font-weight: bold;'>:</span> (log message trimmed)<br/>
+<font color="#A82F2F"><font size="2">(18:46:30)</font> <b>CIA-28:</b></font> <span style='font-weight: bold;'>fife:</span> * Added a InstanceDeleteListener to the InstanceRenderer and to RendererNode. It<br/>
+<font color="#A82F2F"><font size="2">(18:46:30)</font> <b>CIA-28:</b></font> <span style='font-weight: bold;'>fife:</span> removes the effects (outline, coloring...) if the instance gets deleted or in<br/>
+<font color="#A82F2F"><font size="2">(18:46:30)</font> <b>CIA-28:</b></font> <span style='font-weight: bold;'>fife:</span> case of RendererNode it set the instance to null. fixes[o:fife, p:engine,<br/>
+<font color="#A82F2F"><font size="2">(18:46:30)</font> <b>CIA-28:</b></font> <span style='font-weight: bold;'>fife:</span> s:trac, t:602, r:3814]<br/>
+<font color="#A82F2F"><font size="2">(18:46:30)</font> <b>CIA-28:</b></font> <span style='font-weight: bold;'>fife:</span> * Changed the effect image creation in InstanceRenderer. The images are now<br/>
+<font color="#A82F2F"><font size="2">(18:46:31)</font> <b>CIA-28:</b></font> <span style='font-weight: bold;'>fife:</span> owned by the ImageManager. If the image is unused it gets added to a list that<br/>
+<font color="#A82F2F"><font size="2">(18:46:34)</font> <b>totycro_:</b></font> c is chat, but we can fix sth later<br/>
+<font color="#A82F2F"><font size="2">(18:46:46)</font> <b>Nihathrael:</b></font> then we can easily change it to something else, its  just a keybinding<br/>
+<font color="#A82F2F"><font size="2">(18:46:52)</font> <b>Nihathrael:</b></font> &lt;&gt;<br/>
+<font color="#A82F2F"><font size="2">(18:46:55)</font> <b>gscai:</b></font> &lt;&gt;<br/>
+<font color="#A82F2F"><font size="2">(18:46:59)</font> <b>chrisoelmueller:</b></font> okay, cool request! &lt;&gt;<br/>
+<font color="#A82F2F"><font size="2">(18:47:01)</font> <b>Andre_Re:</b></font> &lt;&gt;<br/>
+<font color="#A82F2F"><font size="2">(18:47:24)</font> <b>lmg:</b></font> &lt;&gt;<br/>
+<font color="#A82F2F"><font size="2">(18:47:25)</font> <b>Nihathrael:</b></font> #topic Graphics report - Nihathrael<br/>
+<font size="2">(18:47:26)</font><b> UH-Guard hat das Thema zu Graphics report - Nihathrael abgeändert</b><br/>
+<font color="#A82F2F"><font size="2">(18:47:41)</font> <b>Nihathrael:</b></font> #info I created a topic that we need help with graphics at blend.polis, no responses yet<br/>
+<font color="#A82F2F"><font size="2">(18:47:55)</font> <b>Nihathrael:</b></font> #info lmg created great new fish today, they will be comitted after the meeting<br/>
+<font color="#A82F2F"><font size="2">(18:47:59)</font> <b>Nihathrael:</b></font> &lt;&gt;<br/>
+<font color="#A82F2F"><font size="2">(18:48:09)</font> <b>Nihathrael:</b></font> i will take a look at more blender forums this weke<br/>
+<font color="#A82F2F"><font size="2">(18:48:15)</font> <b>lmg:</b></font> may I? -&gt; http://imagebin.org/185942<br/>
+<font color="#A82F2F"><font size="2">(18:48:52)</font> <b>Nihathrael:</b></font> #topic Status update and Hallway chat - Everyone <br/>
+<font size="2">(18:48:52)</font><b> UH-Guard hat das Thema zu Status update and Hallway chat - Everyone abgeändert</b><br/>
+<font color="#A82F2F"><font size="2">(18:49:14)</font> <b>Nihathrael:</b></font> #info [Component Branch] I made loading units from yaml possible this week, now working on buildings<br/>
+<font color="#A82F2F"><font size="2">(18:50:21)</font> <b>karottenreibe:</b></font> #info the map editor is now an the `editor` branch of the unknown-horizons repository at github (thanks to Nihathrael^^)<br/>
+<font color="#16569E"><font size="2">(18:50:22)</font> <b>ronnie_c:</b></font> #info [Editor Branch] karottenreibe and I really got going on the editor feature now. With a lot things sorted out in the FIFE part, we can hopefully focus on implmenting things for UH now.<br/>
+<font color="#A82F2F"><font size="2">(18:50:36)</font> <b>chrisoelmueller:</b></font> #info I updated our PR wiki page. I need help with updating the remaining wiki entries / forum posts. please pick a few for which you&apos;d like to be responsible (and by all means add everything you stumble upon!)<br/>
+<font color="#A82F2F"><font size="2">(18:50:42)</font> <b>chrisoelmueller:</b></font> http://wiki.unknown-horizons.org/w/PR &lt;== Link to PR wiki page<br/>
+<font color="#A82F2F"><font size="2">(18:51:05)</font> <b>chrisoelmueller:</b></font> ronnie_c: karottenreibe: how can we test / any introduction planned?<br/>
+<font color="#16569E"><font size="2">(18:51:25)</font> <b>ronnie_c:</b></font> chrisoelmueller: well, first checkout our branch<br/>
+<font color="#A82F2F"><font size="2">(18:51:30)</font> <b>Andre_Re:</b></font> #info During last week, we had more then 8000 visitors on the home page – this is the biggest peek in the history of UH.<br/>
+<font color="#16569E"><font size="2">(18:51:41)</font> <b>ronnie_c:</b></font> you can find the editor under editor/editor.py<br/>
+<font color="#A82F2F"><font size="2">(18:52:08)</font> <b>Andre_Re:</b></font> #And for times as much as usually<br/>
+<font color="#A82F2F"><font size="2">(18:52:14)</font> <b>totycro_:</b></font> #info i did some general optimisations and minimap improvements<br/>
+<font color="#A82F2F"><font size="2">(18:52:15)</font> <b>lmg:</b></font> is this the topic where I say &apos;hi&apos; to everyone?<br/>
+<font color="#A82F2F"><font size="2">(18:52:15)</font> <b>karottenreibe:</b></font> chrisoelmueller: also you will need to have the lastest fife and apply this patch: http://fife.trac.cvsdude.com/engine/attachment/ticket/609/fix_extensions.3.patch<br/>
+<font color="#A82F2F"><font size="2">(18:52:29)</font> <b>totycro_:</b></font> status icons are still needed<br/>
+<font color="#16569E"><font size="2">(18:52:32)</font> <b>ronnie_c:</b></font> atm I would not recommend doing that as there are some crucial patches waiting to be applied, not only the one pointed out be karottenreibe<br/>
+<font color="#A82F2F"><font size="2">(18:52:34)</font> <b>chrisoelmueller:</b></font> lmg: sure :)<br/>
+<font color="#A82F2F"><font size="2">(18:52:46)</font> <b>totycro_:</b></font> #info tile ownership is now saved, not recalculated<br/>
+<font color="#A82F2F"><font size="2">(18:52:50)</font> <b>totycro_:</b></font> (on load0<br/>
+<font color="#A82F2F"><font size="2">(18:52:55)</font> <b>karottenreibe:</b></font> ronnie_c: the map editor will not work at all without that patch...<br/>
+<font color="#A82F2F"><font size="2">(18:53:02)</font> <b>karottenreibe:</b></font> ronnie_c: just tried it ;-)<br/>
+<font color="#16569E"><font size="2">(18:53:18)</font> <b>ronnie_c:</b></font> karottenreibe: i know<br/>
+<font color="#A82F2F"><font size="2">(18:53:22)</font> <b>totycro_:</b></font> #info ships can now be sent via minimap, attacking is possible in the attack_via_minimap<br/>
+<font color="#A82F2F"><font size="2">(18:53:33)</font> <b>totycro_:</b></font> you can check it out and to see if you like it<br/>
+<font color="#16569E"><font size="2">(18:53:35)</font> <b>ronnie_c:</b></font> karottenreibe: and there's another patch just as important for the saver<br/>
+<font color="#16569E"><font size="2">(18:53:50)</font> <b>ronnie_c:</b></font> that'd be ticket 610 <br/>
+<font color="#A82F2F"><font size="2">(18:53:50)</font> <b>Kilian]:</b></font> totycro_: the really nice feature<br/>
+<font color="#A82F2F"><font size="2">(18:53:57)</font> <b>chrisoelmueller:</b></font> #info We got some more new languages available on pootle. for any more requests, just tell me. Danish was included as translation #20 -- Yay!<br/>
+<font color="#A82F2F"><font size="2">(18:54:17)</font> <b>Nihathrael:</b></font> chrisoelmueller: we should probably have a news post about that<br/>
+<font color="#A82F2F"><font size="2">(18:54:19)</font> <b>totycro_:</b></font> #info main square is now walkable and behaves like a road<br/>
+<font color="#A82F2F"><font size="2">(18:54:27)</font> <b>chrisoelmueller:</b></font> and i like it very much<br/>
+<font color="#A82F2F"><font size="2">(18:54:28)</font> <b>Nihathrael:</b></font> together with the fish ;D<br/>
+<font color="#A82F2F"><font size="2">(18:54:35)</font> <b>totycro_:</b></font> what do you think about the walkable main square btw?<br/>
+<font color="#A82F2F"><font size="2">(18:54:39)</font> <b>chrisoelmueller:</b></font> and i like it very much<br/>
+<font color="#A82F2F"><font size="2">(18:54:57)</font> <b>chrisoelmueller:</b></font> lmg: the fish also looks great :)<br/>
+<font color="#A82F2F"><font size="2">(18:54:57)</font> <b>Andre_Re:</b></font> chrisoelmueller: We should think about ways to make non latin based scripts possible<br/>
+<font color="#A82F2F"><font size="2">(18:55:09)</font> <b>chrisoelmueller:</b></font> Andre_Re: as in Cyrillic?<br/>
+<font color="#A82F2F"><font size="2">(18:55:15)</font> <b>lmg:</b></font> thank you kindly, chrisoelmueller <br/>
+<font color="#A82F2F"><font size="2">(18:55:23)</font> <b>Entvex:</b></font> what language is uh in ? c++ maybe ?<br/>
+<font color="#A82F2F"><font size="2">(18:55:25)</font> <b>chrisoelmueller:</b></font> i&apos;m in contact with fife but there&apos;s some more stuff to be done first<br/>
+<font color="#A82F2F"><font size="2">(18:55:38)</font> <b>chrisoelmueller:</b></font> as in a more flexible font management system<br/>
+<font color="#A82F2F"><font size="2">(18:55:41)</font> <b>totycro_:</b></font> chrisoelmueller: i got that, but since it changes the structure of the settlement, it would be nice to have more opinions..<br/>
+<font color="#A82F2F"><font size="2">(18:55:42)</font> <b>Kilian]:</b></font> Entvex: python<br/>
+<font size="2">(18:55:49)</font><b> Beliar hat den Raum verlassen (quit: Ping timeout: 240 seconds).</b><br/>
+<font color="#A82F2F"><font size="2">(18:55:56)</font> <b>Nihathrael:</b></font> totycro_: so far i like it<br/>
+<font color="#A82F2F"><font size="2">(18:56:04)</font> <b>Nihathrael:</b></font> maybe we can have a forum pos tabou thi<br/>
+<font color="#A82F2F"><font size="2">(18:56:05)</font> <b>Nihathrael:</b></font> this*<br/>
+<font size="2">(18:56:24)</font><b> mihaibivol [<em>~mihai@188.26.56.130</em>] hat den Raum betreten.</b><br/>
+<font color="#A82F2F"><font size="2">(18:56:28)</font> <b>chrisoelmueller:</b></font> heya mihaibivol <br/>
+<font color="#A82F2F"><font size="2">(18:56:35)</font> <b>Andre_Re:</b></font> chrisoelmueller: Cyrillic is, in fact, a latin-based script<br/>
+<font color="#A82F2F"><font size="2">(18:56:37)</font> <b>mihaibivol:</b></font> hi chrisoelmueller <br/>
+<font color="#A82F2F"><font size="2">(18:56:45)</font> <b>chrisoelmueller:</b></font> Andre_Re: so you mean CJK and RTL?<br/>
+<font color="#A82F2F"><font size="2">(18:56:53)</font> <b>totycro_:</b></font> mihaibivol: we&apos;re just having the status update topic, could you give a brief update as well?<br/>
+<font color="#A82F2F"><font size="2">(18:57:24)</font> <b>chrisoelmueller:</b></font> that is one of the issues in need to be started at fife, i am not going to hack this stuff into UH if guichan has no proper support<br/>
+<font color="#A82F2F"><font size="2">(18:57:27)</font> <b>Andre_Re:</b></font> chrisoelmueller: east asian scripts, hindi, ...<br/>
+<font color="#A82F2F"><font size="2">(18:57:33)</font> <b>chrisoelmueller:</b></font> i am *so* not going to :P<br/>
+<font color="#A82F2F"><font size="2">(18:57:46)</font> <b>Kilian]:</b></font> [INFO] iam not able to attend next weeks meeting, so all the topics have to be moved again<br/>
+<font color="#A82F2F"><font size="2">(18:57:53)</font> <b>Andre_Re:</b></font> chrisoelmueller: fife can handle that<br/>
+<font color="#A82F2F"><font size="2">(18:58:00)</font> <b>Andre_Re:</b></font> +however you must replace the font<br/>
+<font color="#A82F2F"><font size="2">(18:58:02)</font> <b>mihaibivol:</b></font> totycro_, I&apos;ll do a short one<br/>
+<font color="#A82F2F"><font size="2">(18:58:15)</font> <b>chrisoelmueller:</b></font> Andre_Re: well, how would we do that on runtime?<br/>
+<font color="#A82F2F"><font size="2">(18:58:23)</font> <b>chrisoelmueller:</b></font> let&apos;s perhaps check that after the meeting?<br/>
+<font color="#A82F2F"><font size="2">(18:58:26)</font> <b>Andre_Re:</b></font> we would have to implement a possibility to change the fonts on the fly<br/>
+<font color="#A82F2F"><font size="2">(18:58:39)</font> <b>Andre_Re:</b></font> chrisoelmueller: kk<br/>
+<font color="#A82F2F"><font size="2">(18:59:33)</font> <b>chrisoelmueller:</b></font> #info I added a section Packagers to our credits. any feedback?<br/>
+<font color="#A82F2F"><font size="2">(18:59:42)</font> <b>Andre_Re:</b></font> &lt;&gt;<br/>
+<font color="#A82F2F"><font size="2">(18:59:49)</font> <b>Nihathrael:</b></font> chrisoelmueller: cool<br/>
+<font color="#A82F2F"><font size="2">(19:00:04)</font> <b>lmg:</b></font> may I add another feature request - that is re-introduction if I understood totycro_ correctly<br/>
+<font color="#A82F2F"><font size="2">(19:00:19)</font> <b>totycro_:</b></font> chrisoelmueller: good idea<br/>
+<font color="#A82F2F"><font size="2">(19:00:21)</font> <b>chrisoelmueller:</b></font> also, i fixed some minor translation stuff pointed out in djot&apos;s mail (we got another huge one) in a spare hour, nothing of importance<br/>
+<font size="2">(19:00:25)</font><b> Beliar [<em>~Beliar@a89-182-57-192.net-htp.de</em>] hat den Raum betreten.</b><br/>
+<font color="#A82F2F"><font size="2">(19:00:32)</font> <b>Entvex:</b></font> can any of you recommend a good ide for python?<br/>
+<font color="#A82F2F"><font size="2">(19:00:37)</font> <b>totycro_:</b></font> lmg: sure<br/>
+<font color="#A82F2F"><font size="2">(19:00:40)</font> <b>Nihathrael:</b></font> Entvex: wingide<br/>
+<font color="#A82F2F"><font size="2">(19:00:42)</font> <b>lmg:</b></font> * moving the map with mouse<br/>
+<font color="#A82F2F"><font size="2">(19:00:52)</font> <b>totycro_:</b></font> it&apos;s known here as the MMB iisue<br/>
+<font color="#A82F2F"><font size="2">(19:00:55)</font> <b>totycro_:</b></font> *issue<br/>
+<font color="#062585"><font size="2">(19:01:03)</font> <b>***lmg</b></font> nods<br/>
+<font color="#A82F2F"><font size="2">(19:01:03)</font> <b>chrisoelmueller:</b></font> janebot: !ticket 582<br/>
+<font color="#A82F2F"><font size="2">(19:01:04)</font> <b>janebot:</b></font> chrisoelmueller: http://trac.unknown-horizons.org/t/ticket/582<br/>
+<font color="#A82F2F"><font size="2">(19:01:06)</font> <b>janebot:</b></font> chrisoelmueller:  #582 (Enable Middle Mouse Button again) – Unknown Horizons <br/>
+<font color="#A82F2F"><font size="2">(19:01:12)</font> <b>chrisoelmueller:</b></font> lmg: that one<br/>
+<font color="#A82F2F"><font size="2">(19:01:14)</font> <b>lmg:</b></font> +1<br/>
+<font color="#A82F2F"><font size="2">(19:01:15)</font> <b>Nihathrael:</b></font> yea, we should probably try to get that goint<br/>
+<font color="#A82F2F"><font size="2">(19:01:16)</font> <b>Entvex:</b></font> Nihathrael did you pay for that ?<br/>
+<font color="#A82F2F"><font size="2">(19:01:32)</font> <b>Nihathrael:</b></font> Entvex: no, if you are established member of an open source project you cna get the pro version for free<br/>
+<font color="#A82F2F"><font size="2">(19:01:37)</font> <b>lmg:</b></font> the first (and besides the fish) only thing that was a bit annoying<br/>
+<font color="#A82F2F"><font size="2">(19:01:37)</font> <b>Nihathrael:</b></font> (for non commercial use of course)<br/>
+<font color="#A82F2F"><font size="2">(19:01:50)</font> <b>Nihathrael:</b></font> Eclipse pydev is pretty good as well I hear<br/>
+<font color="#A82F2F"><font size="2">(19:02:10)</font> <b>lmg:</b></font> depending on how much files you&apos;re dealing with..<br/>
+<font color="#A82F2F"><font size="2">(19:02:13)</font> <b>chrisoelmueller:</b></font> lmg: you may check the ticket history for some evil bugs and crashes related to the MMB<br/>
+<font color="#A82F2F"><font size="2">(19:02:16)</font> <b>lmg:</b></font> SciTE for small amounts<br/>
+<font color="#A82F2F"><font size="2">(19:02:27)</font> <b>chrisoelmueller:</b></font> in general i&apos;d also like to have it again<br/>
+<font color="#A82F2F"><font size="2">(19:02:27)</font> <b>lmg:</b></font> qtcreator for large<br/>
+<font color="#A82F2F"><font size="2">(19:02:58)</font> <b>lmg:</b></font> must have for not playing fullscreen<br/>
+<font color="#A82F2F"><font size="2">(19:03:16)</font> <b>lmg:</b></font> (which I wouldn&apos;t want to @3840x1200 ;)<br/>
+<font color="#A82F2F"><font size="2">(19:03:52)</font> <b>lmg:</b></font> proportional edge-scrolling might help, but the way it&apos;s implemented now.. I turned it off.<br/>
+<font color="#A82F2F"><font size="2">(19:03:52)</font> <b>Nihathrael:</b></font> &lt;&gt;<br/>
+<font color="#A82F2F"><font size="2">(19:04:07)</font> <b>lmg:</b></font> sorry for chatting away loosely during the meeting &lt;&gt;<br/>
+<font color="#A82F2F"><font size="2">(19:04:24)</font> <b>chrisoelmueller:</b></font> no issue at all during hallway chat :)<br/>
+<font color="#A82F2F"><font size="2">(19:04:26)</font> <b>totycro_:</b></font> lmg: in this topic, it&apos;s no big deal<br/>
+<font color="#A82F2F"><font size="2">(19:04:48)</font> <b>lmg:</b></font> alrighty :)<br/>
+<font color="#A82F2F"><font size="2">(19:04:53)</font> <b>Entvex:</b></font> do any one have a link to trac ?<br/>
+<font color="#A82F2F"><font size="2">(19:04:59)</font> <b>Nihathrael:</b></font> trac.unknown-horizons.org<br/>
+<font color="#A82F2F"><font size="2">(19:05:13)</font> <b>Entvex:</b></font> thanks<br/>
+<font color="#A82F2F"><font size="2">(19:05:33)</font> <b>chrisoelmueller:</b></font> christoph_debian: ping<br/>
+<font color="#A82F2F"><font size="2">(19:05:39)</font> <b>lmg:</b></font> slow UI interaction report: switching farms quickly<br/>
+<font size="2">(19:06:30)</font><b> inken1 [<em>~inken@217.199.197.2</em>] hat den Raum betreten.</b><br/>
+<font color="#A82F2F"><font size="2">(19:07:03)</font> <b>lmg:</b></font> may I suggest a topic guys?<br/>
+<font size="2">(19:07:07)</font><b> inken hat den Raum verlassen (quit: Ping timeout: 260 seconds).</b><br/>
+<font color="#A82F2F"><font size="2">(19:07:12)</font> <b>Nihathrael:</b></font> go ahead<br/>
+<font color="#A82F2F"><font size="2">(19:07:24)</font> <b>Entvex:</b></font> to get on the team do i need to fix a bug or can i just pick any thing on trac ?<br/>
+<font color="#A82F2F"><font size="2">(19:07:27)</font> <b>lmg:</b></font> iso in 4x 90? and lighting<br/>
+<font color="#A82F2F"><font size="2">(19:07:45)</font> <b>lmg:</b></font> when I rendered those fish today..<br/>
+<font color="#A82F2F"><font size="2">(19:07:52)</font> <b>totycro_:</b></font> Entvex: there is no real definition of team at uh<br/>
+<font color="#A82F2F"><font size="2">(19:07:54)</font> <b>lmg:</b></font> I noticed you guys might have a problem there..<br/>
+<font color="#A82F2F"><font size="2">(19:08:10)</font> <b>totycro_:</b></font> if you do anything that&apos;s beneficial for uh, you&apos;re in the team :)<br/>
+<font color="#A82F2F"><font size="2">(19:08:18)</font> <b>Nihathrael:</b></font> lmg: yea its not really possible to create consistent lightning<br/>
+<font color="#A82F2F"><font size="2">(19:08:20)</font> <b>lmg:</b></font> you rotate the sun (+ ray-shadow lamp, tho I don&apos;t see why those are even seperate) along with the camera<br/>
+<font color="#A82F2F"><font size="2">(19:08:23)</font> <b>Nihathrael:</b></font> because we rotate the buildings on create<br/>
+<font color="#A82F2F"><font size="2">(19:08:24)</font> <b>Entvex:</b></font> i see.<br/>
+<font color="#A82F2F"><font size="2">(19:08:28)</font> <b>Entvex:</b></font> i wanna code<br/>
+<font color="#A82F2F"><font size="2">(19:08:30)</font> <b>lmg:</b></font> yeah well..<br/>
+<font color="#A82F2F"><font size="2">(19:08:32)</font> <b>Andre_Re:</b></font> Shouldn&apos;t we end the meeting?<br/>
+<font color="#A82F2F"><font size="2">(19:08:46)</font> <b>lmg:</b></font> that is a conceptual problem<br/>
+<font color="#A82F2F"><font size="2">(19:09:07)</font> <b>lmg:</b></font> either you &quot;rotate the sun&quot; along with the map<br/>
+<font color="#A82F2F"><font size="2">(19:09:13)</font> <b>lmg:</b></font> or you don&apos;t.<br/>
+<font color="#A82F2F"><font size="2">(19:09:27)</font> <b>lmg:</b></font> in which case you&apos;d need 4x4 images for every building<br/>
+<font color="#A82F2F"><font size="2">(19:09:36)</font> <b>Nihathrael:</b></font> for correct lgihtning we would need 4 renderings for each rotations<br/>
+<font color="#A82F2F"><font size="2">(19:09:36)</font> <b>Entvex:</b></font> maybe i could Refactor setup.py<br/>
+<font color="#A82F2F"><font size="2">(19:09:40)</font> <b>lmg:</b></font> 4x orientation x4 light<br/>
+<font color="#A82F2F"><font size="2">(19:09:42)</font> <b>Entvex:</b></font> for a start<br/>
+<font color="#A82F2F"><font size="2">(19:09:45)</font> <b>totycro_:</b></font> Entvex: that would be great<br/>
+<font color="#A82F2F"><font size="2">(19:09:55)</font> <b>Nihathrael:</b></font> mihaibivol: ?<br/>
+<font color="#A82F2F"><font size="2">(19:09:59)</font> <b>Entvex:</b></font> :)<br/>
+<font color="#A82F2F"><font size="2">(19:10:00)</font> <b>lmg:</b></font> Nihathrael: exactly. not an option.<br/>
+<font color="#A82F2F"><font size="2">(19:10:25)</font> <b>lmg:</b></font> it&apos;s not too bad with the buildings<br/>
+<font color="#A82F2F"><font size="2">(19:10:26)</font> <b>totycro_:</b></font> Entvex: it&apos;s currently hard to quickly see what happens at which lin<br/>
+<font color="#A82F2F"><font size="2">(19:10:27)</font> <b>totycro_:</b></font> e<br/>
+<font color="#A82F2F"><font size="2">(19:10:28)</font> <b>mihaibivol:</b></font> Nihathrael, here<br/>
+<font color="#A82F2F"><font size="2">(19:10:29)</font> <b>Entvex:</b></font> do any of you used this http://www.jetbrains.com/pycharm/ ?<br/>
+<font size="2">(19:10:31)</font><b> Beliar heißt jetzt Beliar|AFK</b><br/>
+<font color="#A82F2F"><font size="2">(19:10:39)</font> <b>Entvex:</b></font> i am just trying to find an ide i like<br/>
+<font color="#A82F2F"><font size="2">(19:10:39)</font> <b>lmg:</b></font> but the ships.. just look awkward<br/>
+<font color="#A82F2F"><font size="2">(19:10:46)</font> <b>Entvex:</b></font> okay totycro_ :)<br/>
+<font color="#A82F2F"><font size="2">(19:10:49)</font> <b>Nihathrael:</b></font> mihaibivol: are you doing a status report? otherwise i&apos;d close the meeting<br/>
+<font color="#A82F2F"><font size="2">(19:10:49)</font> <b>chrisoelmueller:</b></font> Entvex: don&apos;t pick a task that you do not want to work on though (setup can be frustrating in my experience) <br/>
+<font color="#A82F2F"><font size="2">(19:10:58)</font> <b>mihaibivol:</b></font> sure, just waiting for the cue<br/>
+<font color="#A82F2F"><font size="2">(19:11:03)</font> <b>Nihathrael:</b></font> its your turn<br/>
+<font color="#A82F2F"><font size="2">(19:11:25)</font> <b>Entvex:</b></font> ahh okay chrisoelmueller<br/>
+<font color="#A82F2F"><font size="2">(19:11:33)</font> <b>Nihathrael:</b></font> (we&apos;re doing general status updates)<br/>
+<font color="#A82F2F"><font size="2">(19:11:34)</font> <b>mihaibivol:</b></font> #info the diplomacy overview is moving forward, i think this will be done by the end of the course<br/>
+<font color="#A82F2F"><font size="2">(19:11:42)</font> <b>totycro_:</b></font> Entvex: pycharm appears to be implemented in java..<br/>
+<font color="#A82F2F"><font size="2">(19:12:00)</font> <b>totycro_:</b></font> it&apos;s also free for open source projects though<br/>
+<font color="#A82F2F"><font size="2">(19:12:03)</font> <b>Entvex:</b></font> yeah, but jetbrains make killer ides :)<br/>
+<font color="#A82F2F"><font size="2">(19:12:38)</font> <b>Entvex:</b></font> i have used IntelliJ IDEA a lot<br/>
+<font color="#A82F2F"><font size="2">(19:12:45)</font> <b>Nihathrael:</b></font> yea, its very powerful<br/>
+<font color="#A82F2F"><font size="2">(19:12:49)</font> <b>Entvex:</b></font> but that&apos;s for java<br/>
+<font color="#A82F2F"><font size="2">(19:13:07)</font> <b>Nihathrael:</b></font> ok everybody done for the meeting?<br/>
+<font color="#A82F2F"><font size="2">(19:13:09)</font> <b>Nihathrael:</b></font> &lt;&gt;<br/>
+<font color="#A82F2F"><font size="2">(19:13:13)</font> <b>mihaibivol:</b></font> #info, the student who was doing loadable ships and units had some problems and the progress isn&apos;t quite good, but i hope this will be done soon<br/>
+<font color="#A82F2F"><font size="2">(19:13:24)</font> <b>totycro_:</b></font> &lt;&gt;<br/>
+<font color="#A82F2F"><font size="2">(19:13:33)</font> <b>lmg:</b></font> ^ the lighting thing.. - if that is still meeting material.<br/>
+<font color="#A82F2F"><font size="2">(19:13:36)</font> <b>lmg:</b></font> otherwise &lt;&gt;<br/>
+<font color="#A82F2F"><font size="2">(19:14:05)</font> <b>mihaibivol:</b></font> i just want to add if you would like to see how diplomacy overview is looking just go here<br/>
+<font color="#A82F2F"><font size="2">(19:14:45)</font> <b>mihaibivol:</b></font> https://github.com/WindRaven/unknown-horizons<br/>
+<font color="#A82F2F"><font size="2">(19:14:54)</font> <b>mihaibivol:</b></font> the branch is called cdl<br/>
+<font color="#A82F2F"><font size="2">(19:15:56)</font> <b>mihaibivol:</b></font> after Stefan finishes with the exams, he will add buttons for each player and also the other players overview. Given that he didn&apos;t have great experience with python i think this is a good start :)<br/>
+<font color="#A82F2F"><font size="2">(19:16:03)</font> <b>mihaibivol:</b></font> &lt;&gt;<br/>
+<font color="#A82F2F"><font size="2">(19:16:06)</font> <b>Nihathrael:</b></font> #endmeeting<br/>
+<font size="2">(19:16:08)</font><b> UH-Guard hat das Thema zu Welcome to #unknown-horizons | <a href="http://www.unknown-horizons.org">www.unknown-horizons.org</a> | Read the FAQ: <a href="http://wiki.unknown-horizons.org/w/FAQ">http://wiki.unknown-horizons.org/w/FAQ</a> | News: 2011.3 Released! Get in on our homepage! abgeändert</b><br/>
+<font color="#A82F2F"><font size="2">(19:16:08)</font> <b>UH-Guard:</b></font> Meeting ended Sun Nov 27 18:16:07 2011 UTC.  Information about MeetBot at http://wiki.debian.org/MeetBot . (v 0.1.4)<br/>
+<font color="#A82F2F"><font size="2">(19:16:08)</font> <b>UH-Guard:</b></font> Minutes:        http://meetings.christoph-egger.org/unknown-horizons/2011/unknown-horizons.2011-11-27-17.04.html<br/>
+<font color="#A82F2F"><font size="2">(19:16:08)</font> <b>UH-Guard:</b></font> Minutes (text): http://meetings.christoph-egger.org/unknown-horizons/2011/unknown-horizons.2011-11-27-17.04.txt<br/>
+<font color="#A82F2F"><font size="2">(19:16:08)</font> <b>UH-Guard:</b></font> Log:            http://meetings.christoph-egger.org/unknown-horizons/2011/unknown-horizons.2011-11-27-17.04.log.html<br/>
+<font color="#A82F2F"><font size="2">(19:16:14)</font> <b>Nihathrael:</b></font> mihaibivol: great, thanks for the update<br/>
+<font color="#A82F2F"><font size="2">(19:16:30)</font> <b>Nihathrael:</b></font> lmg: so would you suggest that instead we just don&apos;t rotate the sun with the map?<br/>
+<font color="#A82F2F"><font size="2">(19:16:36)</font> <b>Entvex:</b></font> are you using git or github ?<br/>
+<font color="#A82F2F"><font size="2">(19:16:42)</font> <b>chrisoelmueller:</b></font> both<br/>
+<font color="#A82F2F"><font size="2">(19:16:45)</font> <b>Nihathrael:</b></font> github (which uses git ;))<br/>
+<font color="#A82F2F"><font size="2">(19:16:45)</font> <b>mihaibivol:</b></font> hope that on the 10th of December some pull requests will be made :)<br/>
+<font color="#A82F2F"><font size="2">(19:16:51)</font> <b>Nihathrael:</b></font> mihaibivol: nice :)<br/>
+<font color="#A82F2F"><font size="2">(19:17:26)</font> <b>totycro_:</b></font> does anyone happen to know very fast implementations for distance between shapes, especially between rects?<br/>
+<font color="#A82F2F"><font size="2">(19:17:35)</font> <b>totycro_:</b></font> we currently have this: 		return ((max(self.left - other.right, 0, other.left - self.right) ** 2) + (max(self.top - other.bottom, 0, other.top - self.bottom) ** 2)) ** 0.5<br/>
+<font color="#A82F2F"><font size="2">(19:17:41)</font> <b>Kilian]:</b></font> can anyone please test if renaming a ship works for him/her ?<br/>
+<font color="#A82F2F"><font size="2">(19:18:06)</font> <b>lmg:</b></font> Kilian]: cannot rename by clicking.<br/>
+<font color="#A82F2F"><font size="2">(19:18:18)</font> <b>totycro_:</b></font> Kilian]: works fine here<br/>
+<font color="#A82F2F"><font size="2">(19:18:23)</font> <b>totycro_:</b></font> lmg: you have to click on the ship name<br/>
+<font color="#A82F2F"><font size="2">(19:18:36)</font> <b>gscai:</b></font> totycro_: in general it might be faster if we used squares of distances<br/>
+<font color="#A82F2F"><font size="2">(19:18:47)</font> <b>Kilian]:</b></font> theres the tooltip but i cant click<br/>
+<font color="#A82F2F"><font size="2">(19:19:04)</font> <b>totycro_:</b></font> which tooltip?<br/>
+<font color="#A82F2F"><font size="2">(19:19:26)</font> <b>lmg:</b></font> &quot;click to rename&quot;<br/>
+<font color="#A82F2F"><font size="2">(19:19:39)</font> <b>totycro_:</b></font> the tooltip doesn&apos;t really work it, it appears once in a wihle<br/>
+<font color="#A82F2F"><font size="2">(19:20:02)</font> <b>totycro_:</b></font> when it appears, renaming is disabled<br/>
+<font color="#A82F2F"><font size="2">(19:20:18)</font> <b>chrisoelmueller:</b></font> does not work for me (tooltip always appears)<br/>
+<font color="#A82F2F"><font size="2">(19:20:27)</font> <b>chrisoelmueller:</b></font> thus renaming fails<br/>
+<font color="#A82F2F"><font size="2">(19:20:54)</font> <b>Kilian]:</b></font> chrisoelmueller: same here<br/>
+<font color="#062585"><font size="2">(19:20:56)</font> <b>***lmg</b></font> seconds that<br/>
+<font size="2">(19:21:02)</font><b> mihaibivol hat den Raum verlassen (quit: Quit: Leaving).</b><br/>
+<font color="#A82F2F"><font size="2">(19:21:47)</font> <b>totycro_:</b></font> gscai: good point, i guess it&apos;s applicable in many cases<br/>
+<font color="#A82F2F"><font size="2">(19:21:54)</font> <b>totycro_:</b></font> i&apos;ll test it for get_providers_in_range<br/>
+<font color="#A82F2F"><font size="2">(19:22:10)</font> <b>lmg:</b></font> Nihathrael: not sure (re: lighting)..<br/>
+<font color="#A82F2F"><font size="2">(19:22:12)</font> <b>totycro_:</b></font> that method is ~8% of the overall running time<br/>
+<font color="#A82F2F"><font size="2">(19:22:14)</font> <b>totycro_:</b></font> (without ai)<br/>
+<font color="#A82F2F"><font size="2">(19:22:19)</font> <b>lmg:</b></font> I&apos;ll have to think this through.<br/>
+<font color="#A82F2F"><font size="2">(19:22:34)</font> <b>hagabaka:</b></font> are sides of the rectangles always paralell?<br/>
+<font color="#A82F2F"><font size="2">(19:22:46)</font> <b>totycro_:</b></font> yes<br/>
+<font color="#A82F2F"><font size="2">(19:22:49)</font> <b>Entvex:</b></font> can any one be nice and help me with git =)<br/>
+<font color="#A82F2F"><font size="2">(19:22:55)</font> <b>Entvex:</b></font> pretty please<br/>
+<font color="#A82F2F"><font size="2">(19:22:56)</font> <b>totycro_:</b></font> Entvex: sure<br/>
+<font color="#A82F2F"><font size="2">(19:23:03)</font> <b>lmg:</b></font> git clone stuff.git ? :)<br/>
+<font color="#A82F2F"><font size="2">(19:23:26)</font> <b>Entvex:</b></font> i am using this trac.unknown-horizons.org<br/>
+<font color="#A82F2F"><font size="2">(19:23:33)</font> <b>Entvex:</b></font> https://github.com/unknown-horizons/unknown-horizons.git<br/>
+<font color="#A82F2F"><font size="2">(19:23:53)</font> <b>lmg:</b></font> Nihathrael: one more thing.. since I might call it a day any soon..<br/>
+<font color="#A82F2F"><font size="2">(19:24:19)</font> <b>lmg:</b></font> what&apos;s the current pirate-ship model? dauerflucher/units* one?<br/>
+<font color="#A82F2F"><font size="2">(19:24:52)</font> <b>Entvex:</b></font> totycro_ is that the right path ?<br/>
+<font color="#A82F2F"><font size="2">(19:24:59)</font> <b>Entvex:</b></font> i am only used svn<br/>
+<font color="#A82F2F"><font size="2">(19:25:07)</font> <b>Entvex:</b></font> i have only used svn<br/>
+<font color="#A82F2F"><font size="2">(19:25:10)</font> <b>totycro_:</b></font> just do &quot;git clone https://github.com/unknown-horizons/unknown-horizons.git&quot;<br/>
+<font color="#A82F2F"><font size="2">(19:25:14)</font> <b>totycro_:</b></font> that&apos;s like svn co<br/>
+<font color="#A82F2F"><font size="2">(19:25:42)</font> <b>lmg:</b></font> `svn up` -&gt; `git pull`<br/>
+<font color="#A82F2F"><font size="2">(19:25:44)</font> <b>Entvex:</b></font> maybe the problem is that my ide can&apos;t do it beacuse it is missing git<br/>
+<font color="#A82F2F"><font size="2">(19:25:55)</font> <b>chrisoelmueller:</b></font> lmg: http://wiki.unknown-horizons.org/w/User:Eoc/gfx<br/>
+<font color="#A82F2F"><font size="2">(19:26:04)</font> <b>chrisoelmueller:</b></font> lmg: that&apos;s only a reference though<br/>
+<font color="#A82F2F"><font size="2">(19:26:46)</font> <b>lmg:</b></font> k, thanks chrisoelmueller. so I have the right one.<br/>
+<font color="#A82F2F"><font size="2">(19:26:53)</font> <b>lmg:</b></font> gonna do some tests with that<br/>
+<font color="#A82F2F"><font size="2">(19:26:53)</font> <b>Entvex:</b></font> totycro_ i think i found the problem<br/>
+<font color="#A82F2F"><font size="2">(19:27:28)</font> <b>hagabaka:</b></font> shouldn&apos;t it be ((self.left + self.right - other.left - other.right)**2 + (self.top + self.bottom - other.top - other.bottom)**2)**0.5 / 2<br/>
+<font color="#A82F2F"><font size="2">(19:27:37)</font> <b>lmg:</b></font> Nihathrael: in general you&apos;ll always have the rotated buildings vs. units rotating in motion problem.<br/>
+<font color="#A82F2F"><font size="2">(19:27:40)</font> <b>hagabaka:</b></font> the distance between their centers<br/>
+<font color="#A82F2F"><font size="2">(19:28:21)</font> <b>Nihathrael:</b></font> is that a problem if we have a fixed sun relativ to the rotation?<br/>
+<font color="#A82F2F"><font size="2">(19:28:34)</font> <b>lmg:</b></font> yeah still<br/>
+<font color="#A82F2F"><font size="2">(19:28:36)</font> <b>totycro_:</b></font> hagabaka: it should be the length of the shortest line connecting the rects<br/>
+<font color="#A82F2F"><font size="2">(19:28:43)</font> <b>Nihathrael:</b></font> lmg: why<br/>
+<font color="#A82F2F"><font size="2">(19:28:49)</font> <b>hagabaka:</b></font> oh<br/>
+<font color="#A82F2F"><font size="2">(19:29:00)</font> <b>totycro_:</b></font> it&apos;s kind of an odd specification concerning geometry, but it makes sense in uh<br/>
+<font color="#A82F2F"><font size="2">(19:29:07)</font> <b>chrisoelmueller:</b></font> Nihathrael: because the units moving have a different interial center<br/>
+<font color="#A82F2F"><font size="2">(19:29:08)</font> <b>lmg:</b></font> fixed sun -&gt; easy units<br/>
+<font color="#A82F2F"><font size="2">(19:29:14)</font> <b>lmg:</b></font> rotating sun -&gt; easy buildings<br/>
+<font color="#A82F2F"><font size="2">(19:29:16)</font> <b>chrisoelmueller:</b></font> inertial*<br/>
+<font color="#A82F2F"><font size="2">(19:29:26)</font> <b>chrisoelmueller:</b></font> i do see the problem<br/>
+<font color="#A82F2F"><font size="2">(19:29:28)</font> <b>Nihathrael:</b></font> i don&apos;t understand that<br/>
+<font color="#A82F2F"><font size="2">(19:29:53)</font> <b>Nihathrael:</b></font> if you always say the sun is at the top right, no matter how your building/unit is rotated, it should always look the same<br/>
+<font color="#A82F2F"><font size="2">(19:30:25)</font> <b>lmg:</b></font> re-read what I said :)<br/>
+<font color="#A82F2F"><font size="2">(19:30:28)</font> <b>lmg:</b></font> that is, wrote<br/>
+<font color="#A82F2F"><font size="2">(19:30:35)</font> <b>lmg:</b></font> that is true for buildings<br/>
+<font color="#A82F2F"><font size="2">(19:30:35)</font> <b>hagabaka:</b></font> totycro_, then the 0&apos;s in max( ) should be unnecessary<br/>
+<font color="#A82F2F"><font size="2">(19:30:59)</font> <b>lmg:</b></font> but if you render your pirate ship with the sun bein in its aft for _every_ angle<br/>
+<font color="#A82F2F"><font size="2">(19:31:20)</font> <b>lmg:</b></font> it will still look awkward if it&apos;s rotated 180? in a 45? map<br/>
+<font color="#A82F2F"><font size="2">(19:31:22)</font> <b>lmg:</b></font> with me? :)<br/>
+<font color="#A82F2F"><font size="2">(19:31:27)</font> <b>totycro_:</b></font> hagabaka: can&apos;t this be negative if the rects overlap?<br/>
+<font color="#A82F2F"><font size="2">(19:31:46)</font> <b>Nihathrael:</b></font> look awkward because you have the feeling the sun is switched around?<br/>
+<font color="#A82F2F"><font size="2">(19:31:58)</font> <b>lmg:</b></font> around the ship only<br/>
+<font color="#A82F2F"><font size="2">(19:32:19)</font> <b>lmg:</b></font> hangon<br/>
+<font color="#A82F2F"><font size="2">(19:32:28)</font> <b>Nihathrael:</b></font> i don&apos;t see a difference between a house and a unit<br/>
+<font color="#A82F2F"><font size="2">(19:32:28)</font> <b>lmg:</b></font> might have a brainfart here<br/>
+<font color="#A82F2F"><font size="2">(19:32:30)</font> <b>Nihathrael:</b></font> still<br/>
+<font size="2">(19:32:32)</font><b> hagabaka hat den Raum verlassen (quit: Quit: Leaving).</b><br/>
+<font color="#A82F2F"><font size="2">(19:32:38)</font> <b>Nihathrael:</b></font> its just an image  wtih thesun coming from up riht for example<br/>
+<font color="#A82F2F"><font size="2">(19:32:41)</font> <b>Nihathrael:</b></font> no matter how much you rotate<br/>
+<font color="#A82F2F"><font size="2">(19:32:45)</font> <b>lmg:</b></font> chrisoelmueller: Nihathrael does have a valid point here<br/>
+<font color="#A82F2F"><font size="2">(19:32:45)</font> <b>Nihathrael:</b></font> it will always come from up right<br/>
+<font color="#A82F2F"><font size="2">(19:32:57)</font> <b>Entvex:</b></font> totycro_ it works :D!<br/>
+<font color="#A82F2F"><font size="2">(19:33:07)</font> <b>lmg:</b></font> static sun _does_ solve it. for both buildings and units<br/>
+<font size="2">(19:33:08)</font><b> hagabaka [<em>~hagabaka@cblmdm24-53-178-92.buckeyecom.net</em>] hat den Raum betreten.</b><br/>
+<font size="2">(19:33:08)</font><b> hagabaka hat den Raum verlassen (quit: Changing host).</b><br/>
+<font size="2">(19:33:08)</font><b> hagabaka [<em>~hagabaka@unaffiliated/hagabaka</em>] hat den Raum betreten.</b><br/>
+<font color="#A82F2F"><font size="2">(19:33:23)</font> <b>hagabaka:</b></font> oh yeah, never mind<br/>
+<font color="#A82F2F"><font size="2">(19:33:29)</font> <b>chrisoelmueller:</b></font> we do not have that right now, do we?<br/>
+<font color="#A82F2F"><font size="2">(19:33:33)</font> <b>lmg:</b></font> nah<br/>
+<font color="#A82F2F"><font size="2">(19:33:44)</font> <b>lmg:</b></font> the rig rotates the sun + shadows around the model<br/>
+<font color="#A82F2F"><font size="2">(19:33:50)</font> <b>totycro_:</b></font> hagabaka: i&apos;m not really great with geometrical algos, but i think this implementation is correct<br/>
+<font color="#A82F2F"><font size="2">(19:34:01)</font> <b>totycro_:</b></font> but it&apos;s still quite slow in python, partly due to 2 function calls to max<br/>
+<font color="#A82F2F"><font size="2">(19:34:48)</font> <b>lmg:</b></font> oh wow.. non-rotating minimap is killing me<br/>
+<font color="#A82F2F"><font size="2">(19:35:02)</font> <b>lmg:</b></font> rotating minimap is kicking me while down already :)<br/>
+<font color="#A82F2F"><font size="2">(19:35:42)</font> <b>lmg:</b></font> anyways.. I&apos;ll think this through in detail tomorrow<br/>
+<font color="#A82F2F"><font size="2">(19:35:53)</font> <b>lmg:</b></font> make a proper rig and report back to you Nihathrael<br/>
+<font color="#A82F2F"><font size="2">(19:35:58)</font> <b>lmg:</b></font> now.. I need a beer :)<br/>
+<font color="#A82F2F"><font size="2">(19:36:03)</font> <b>lmg:</b></font> have a nice evening guys o/<br/>
+<font size="2">(19:36:23)</font><b> lmg heißt jetzt lmGoneOut</b><br/>
+<font color="#A82F2F"><font size="2">(19:37:26)</font> <b>hagabaka:</b></font> how about math.sqrt or http://docs.python.org/library/math.html#math.hypot ? they might be more optimized<br/>
+<font color="#A82F2F"><font size="2">(19:37:36)</font> <b>Nihathrael:</b></font> lmGoneOut: have a great one!<br/>
+<font color="#A82F2F"><font size="2">(19:41:02)</font> <b>Entvex:</b></font> totycro_ is it allways slow at checking out ?<br/>
+<font color="#A82F2F"><font size="2">(19:41:14)</font> <b>totycro_:</b></font> hagabaka: hmm.. i just tried it, for some reason, it&apos;s both  0.02 usec for small integers<br/>
+<font color="#A82F2F"><font size="2">(19:41:21)</font> <b>totycro_:</b></font> Entvex: sometimes<br/>
+<font color="#A82F2F"><font size="2">(19:41:32)</font> <b>Nihathrael:</b></font> Entvex: usually git is pretty fast, but github sometimes is slow<br/>
+<font color="#A82F2F"><font size="2">(19:41:33)</font> <b>Entvex:</b></font> okay<br/>
+<font color="#A82F2F"><font size="2">(19:41:35)</font> <b>totycro_:</b></font> hagabaka: but that&apos;s strange, i&apos;d have expected that to be faster as well<br/>
+<font color="#A82F2F"><font size="2">(19:42:09)</font> <b>Entvex:</b></font> okay it just saying working but the console don&apos;t show any thing<br/>
+<font color="#A82F2F"><font size="2">(19:44:41)</font> <b>chrisoelmueller:</b></font> Kilian]: ping?<br/>
+<font color="#A82F2F"><font size="2">(19:44:54)</font> <b>Entvex:</b></font> yes it&apos;s downloading!<br/>
+<font color="#A82F2F"><font size="2">(19:45:59)</font> <b>CIA-28:</b></font> <span style='font-weight: bold;'>unknown-horizons:</span> <span style='color: dark green;'>totycro</span> <span style='color: orange;'>master</span> * r<span style='font-weight: bold;'>fb24f33</span> <span style='color: teal;'></span>/ (3 files in 3 dirs)<span style='font-weight: bold;'>:</span> Optimised get_providers_in_range - http://git.io/DTbsug<br/>
+<font size="2">(19:46:14)</font><b> wart___ hat den Raum verlassen.</b><br/>
+<font color="#A82F2F"><font size="2">(19:46:22)</font> <b>totycro_:</b></font> it&apos;s nearly twice as fast, but i all i did was optimisations, that the compiler could have done as well<br/>
+<font color="#A82F2F"><font size="2">(19:47:30)</font> <b>Kilian]:</b></font> chrisoelmueller: pong<br/>
+<font color="#A82F2F"><font size="2">(19:47:44)</font> <b>Entvex:</b></font> Nihathrael do you have a coding style i need to follow ?<br/>
+<font color="#A82F2F"><font size="2">(19:48:05)</font> <b>totycro_:</b></font> Entvex: something like pep-8, but with tabs<br/>
+<font color="#A82F2F"><font size="2">(19:48:12)</font> <b>Entvex:</b></font> i see<br/>
+<font size="2">(19:50:50)</font><b> Beliar|AFK heißt jetzt Beliar</b><br/>
+<font color="#A82F2F"><font size="2">(19:52:57)</font> <b>Entvex:</b></font> totycro_ ?<br/>
+<font color="#A82F2F"><font size="2">(19:53:17)</font> <b>Entvex:</b></font> do you know any thing about the http://trac.unknown-horizons.org/t/ticket/1261<br/>
+<font size="2">(19:53:19)</font><b> lordhughes hat den Raum verlassen (quit: Quit: Leaving).</b><br/>
+<font color="#A82F2F"><font size="2">(19:54:00)</font> <b>totycro_:</b></font> yes, all maps are just invalid<br/>
+<font color="#A82F2F"><font size="2">(19:54:07)</font> <b>totycro_:</b></font> because of a new tile system<br/>
+<font color="#A82F2F"><font size="2">(19:54:21)</font> <b>Entvex:</b></font> is that a easy one to start off with ?<br/>
+<font color="#A82F2F"><font size="2">(19:54:34)</font> <b>totycro_:</b></font> it&apos;s basically only configuration<br/>
+<font color="#A82F2F"><font size="2">(19:54:40)</font> <b>Entvex:</b></font> i don&apos;t know any of the code yet<br/>
+<font color="#A82F2F"><font size="2">(19:54:48)</font> <b>Entvex:</b></font> okay but i think i&apos;ll try and do it<br/>
+<font color="#A82F2F"><font size="2">(19:54:52)</font> <b>totycro_:</b></font> the war tutorial needs any map with 2 players and a few ships<br/>
+<font color="#A82F2F"><font size="2">(19:54:55)</font> <b>Entvex:</b></font> can you help me get started ?<br/>
+<font color="#A82F2F"><font size="2">(19:55:11)</font> <b>totycro_:</b></font> yes, you could try the incode tutorial<br/>
+<font color="#A82F2F"><font size="2">(19:55:23)</font> <b>totycro_:</b></font> it&apos;s kind of outdated by now<br/>
+<font color="#A82F2F"><font size="2">(19:55:33)</font> <b>totycro_:</b></font> we were trying to fix it, but no one did so far<br/>
+<font color="#A82F2F"><font size="2">(19:55:55)</font> <b>chrisoelmueller:</b></font> okay i just achieved to have one more spare hour<br/>
+<font color="#A82F2F"><font size="2">(19:56:03)</font> <b>chrisoelmueller:</b></font> any GUI requests?<br/>
+<font color="#A82F2F"><font size="2">(19:56:06)</font> <b>Entvex:</b></font> do you know the path of the incode tutoiral ?<br/>
+<font color="#A82F2F"><font size="2">(19:56:13)</font> <b>Entvex:</b></font> tutorial*<br/>
+<font color="#A82F2F"><font size="2">(19:56:17)</font> <b>chrisoelmueller:</b></font> it starts in run_uh.py i think<br/>
+<font color="#A82F2F"><font size="2">(19:56:24)</font> <b>Entvex:</b></font> okay<br/>
+<font color="#A82F2F"><font size="2">(19:56:29)</font> <b>totycro_:</b></font> yes, you can grep for TUTORIAL if you get lost<br/>
+<font color="#A82F2F"><font size="2">(19:56:44)</font> <b>totycro_:</b></font> so if you have any questions about the code, just ask<br/>
+<font color="#A82F2F"><font size="2">(19:56:49)</font> <b>Entvex:</b></font> i don&apos;t use linux mate =)<br/>
+<font color="#A82F2F"><font size="2">(19:57:36)</font> <b>Entvex:</b></font> but i miss grep<br/>
+<font color="#A82F2F"><font size="2">(19:57:41)</font> <b>Entvex:</b></font> but i like powershell<br/>
+<font color="#A82F2F"><font size="2">(19:57:53)</font> <b>chrisoelmueller:</b></font> windows still has no grep/ack?<br/>
+<font color="#A82F2F"><font size="2">(19:57:55)</font> <b>Entvex:</b></font> maybe it has something like grep<br/>
+<font color="#A82F2F"><font size="2">(19:58:04)</font> <b>Entvex:</b></font> i think powershell has<br/>
+<font color="#A82F2F"><font size="2">(19:58:06)</font> <b>gscai:</b></font> msys has grep on windows<br/>
+<font color="#A82F2F"><font size="2">(19:58:17)</font> <b>chrisoelmueller:</b></font> how do they keep their admins in good mood?<br/>
+<font color="#A82F2F"><font size="2">(19:58:52)</font> <b>totycro_:</b></font> they don&apos;t need to, they have a monopoly<br/>
+<font color="#A82F2F"><font size="2">(19:58:56)</font> <b>gscai:</b></font> chrisoelmueller: http://xkcd.com/323/<br/>
+<font color="#A82F2F"><font size="2">(19:59:11)</font> <b>chrisoelmueller:</b></font> haha yeah<br/>
+<font color="#A82F2F"><font size="2">(19:59:12)</font> <b>totycro_:</b></font> ^^<br/>
+<font color="#A82F2F"><font size="2">(19:59:53)</font> <b>Entvex:</b></font> ahah<br/>
+<font color="#A82F2F"><font size="2">(19:59:57)</font> <b>Entvex:</b></font> that is funny<br/>
+<font color="#A82F2F"><font size="2">(20:00:31)</font> <b>CIA-28:</b></font> <span style='font-weight: bold;'>unknown-horizons:</span> <span style='color: dark green;'>nihathrael</span> <span style='color: orange;'>master</span> * r<span style='font-weight: bold;'>ff3da6c</span> <span style='color: teal;'></span>/ (123 files in 6 dirs)<span style='font-weight: bold;'>:</span> Added new fish by lmg. Thanks for this great contribution! - http://git.io/UtNyvg<br/>
+<font color="#A82F2F"><font size="2">(20:00:36)</font> <b>Entvex:</b></font> do you have a wiki page on the new tile system ?<br/>
+<font color="#A82F2F"><font size="2">(20:00:42)</font> <b>Entvex:</b></font> or the tile system ?<br/>
+<font color="#A82F2F"><font size="2">(20:01:05)</font> <b>Nihathrael:</b></font> yea, no, not really<br/>
+<font color="#A82F2F"><font size="2">(20:01:12)</font> <b>Entvex:</b></font> hehe<br/>
+<font color="#A82F2F"><font size="2">(20:01:17)</font> <b>chrisoelmueller:</b></font> does a mailing list posting count?<br/>
+<font color="#A82F2F"><font size="2">(20:01:17)</font> <b>Nihathrael:</b></font> i&apos;m the wiki page i guess<br/>
+<font color="#A82F2F"><font size="2">(20:01:32)</font> <b>Entvex:</b></font> Nihathrael how do the tile system work<br/>
+<font color="#A82F2F"><font size="2">(20:01:36)</font> <b>chrisoelmueller:</b></font> wait we have a page<br/>
+<font color="#A82F2F"><font size="2">(20:01:39)</font> <b>chrisoelmueller:</b></font> the SoC idea page<br/>
+<font color="#062585"><font size="2">(20:01:39)</font> <b>***Entvex</b></font> looks at the API <br/>
+<font color="#A82F2F"><font size="2">(20:01:53)</font> <b>gscai:</b></font> #1261 could be done without any coding<br/>
+<font color="#A82F2F"><font size="2">(20:01:53)</font> <b>CIA-28:</b></font> <span style='font-weight: bold;'>unknown-horizons:</span> <span style='color: dark green;'>Moritz Beller</span> <span style='color: orange;'>editor</span> * r<span style='font-weight: bold;'>f336115</span> <span style='color: teal;'></span>/ (322 files in 62 dirs)<span style='font-weight: bold;'>:</span> Merge branch &apos;master&apos; into editor (+8 more commits...) - http://git.io/Wuusiw<br/>
+<font color="#A82F2F"><font size="2">(20:02:14)</font> <b>Nihathrael:</b></font> the new fish are seriously awesome<br/>
+<font color="#A82F2F"><font size="2">(20:02:19)</font> <b>chrisoelmueller:</b></font> true<br/>
+<font color="#A82F2F"><font size="2">(20:02:28)</font> <b>Entvex:</b></font> is http://epydoc.unknown-horizons.org/ up 2 date<br/>
+<font color="#A82F2F"><font size="2">(20:02:40)</font> <b>Nihathrael:</b></font> Generated by Epydoc 3.0.1 on Sun Nov 27 03:15:48 2011<br/>
+<font color="#A82F2F"><font size="2">(20:02:41)</font> <b>Nihathrael:</b></font> yep<br/>
+<font color="#A82F2F"><font size="2">(20:02:52)</font> <b>Nihathrael:</b></font> what do you want to do with the tilesystem<br/>
+<font color="#A82F2F"><font size="2">(20:02:57)</font> <b>Nihathrael:</b></font> it works similar to the action sets<br/>
+<font color="#A82F2F"><font size="2">(20:03:01)</font> <b>Nihathrael:</b></font> i think for those we have a wiik pake<br/>
+<font color="#A82F2F"><font size="2">(20:03:06)</font> <b>Entvex:</b></font> how gscai do i do it ?<br/>
+<font color="#A82F2F"><font size="2">(20:03:17)</font> <b>Nihathrael:</b></font> http://wiki.unknown-horizons.org/w/Action_sets<br/>
+<font color="#A82F2F"><font size="2">(20:03:32)</font> <b>gscai:</b></font> choose a new suitable map and move the ships to suitable positions<br/>
+<font color="#A82F2F"><font size="2">(20:03:34)</font> <b>Nihathrael:</b></font> janebot: !ticket 1261<br/>
+<font color="#A82F2F"><font size="2">(20:03:35)</font> <b>janebot:</b></font> Nihathrael: http://trac.unknown-horizons.org/t/ticket/1261<br/>
+<font color="#A82F2F"><font size="2">(20:03:36)</font> <b>janebot:</b></font> Nihathrael:  #1261 (War tutorial broken) – Unknown Horizons <br/>
+<font color="#A82F2F"><font size="2">(20:03:49)</font> <b>chrisoelmueller:</b></font> (perhaps not all in the same corner)<br/>
+<font size="2">(20:03:51)</font><b> karottenreibe hat den Raum verlassen (quit: Remote host closed the connection).</b><br/>
+<font color="#A82F2F"><font size="2">(20:04:03)</font> <b>gscai:</b></font> the later would require using something like sqlite manager<br/>
+<font color="#A82F2F"><font size="2">(20:04:43)</font> <b>Entvex:</b></font> gscai is the map made in python or how do you make them<br/>
+<font color="#A82F2F"><font size="2">(20:04:48)</font> <b>Entvex:</b></font> do you have a sample ?<br/>
+<font color="#A82F2F"><font size="2">(20:05:16)</font> <b>gscai:</b></font> I would suggest saving a nice random map<br/>
+<font size="2">(20:05:22)</font><b> ngc92 hat den Raum verlassen (quit: Ping timeout: 244 seconds).</b><br/>
+<font color="#A82F2F"><font size="2">(20:05:39)</font> <b>Entvex:</b></font> gscai and they try to edit it ?<br/>
+<font color="#A82F2F"><font size="2">(20:05:49)</font> <b>gscai:</b></font> you don&apos;t need to edit the map<br/>
+<font color="#A82F2F"><font size="2">(20:05:58)</font> <b>gscai:</b></font> just the saved game (scenario)<br/>
+<font color="#A82F2F"><font size="2">(20:06:15)</font> <b>gscai:</b></font> that&apos;s what sets the ship locations<br/>
+<font color="#A82F2F"><font size="2">(20:06:24)</font> <b>Entvex:</b></font> ahh so i just need to use the in-game tools to make a new scenario?<br/>
+<font color="#A82F2F"><font size="2">(20:06:50)</font> <b>CIA-28:</b></font> <span style='font-weight: bold;'>unknown-horizons:</span> <span style='color: dark green;'>Christopher Oelmueller</span> <span style='color: orange;'>master</span> * r<span style='font-weight: bold;'>181740f</span> <span style='color: teal;'></span>/ horizons/constants.py <span style='font-weight: bold;'>:</span> <br/>
+<font color="#A82F2F"><font size="2">(20:06:50)</font> <b>CIA-28:</b></font> <span style='font-weight: bold;'>unknown-horizons:</span> * Increment savegame revision (related to new maps)<br/>
+<font color="#A82F2F"><font size="2">(20:06:50)</font> <b>CIA-28:</b></font> <span style='font-weight: bold;'>unknown-horizons:</span> This does not actually invalidate old savegames created after the merge<br/>
+<font color="#A82F2F"><font size="2">(20:06:50)</font> <b>CIA-28:</b></font> <span style='font-weight: bold;'>unknown-horizons:</span> of development into master. - http://git.io/Ejm44w<br/>
+<font color="#A82F2F"><font size="2">(20:07:11)</font> <b>chrisoelmueller:</b></font> sorry for being this nitpicky about this number :)<br/>
+<font color="#A82F2F"><font size="2">(20:07:48)</font> <b>gscai:</b></font> the scenario itself exists<br/>
+<font color="#A82F2F"><font size="2">(20:07:48)</font> <b>gscai:</b></font> you would have to choose a map and save it (shift + f12)<br/>
+<font color="#A82F2F"><font size="2">(20:07:48)</font> <b>gscai:</b></font> and then edit the saved game that contains the ship locations (sqlite database modification)<br/>
+<font color="#A82F2F"><font size="2">(20:08:08)</font> <b>Entvex:</b></font> okay okay<br/>
+<font color="#16569E"><font size="2">(20:08:09)</font> <b>ronnie_c:</b></font> Entvex: that's one of the issues. There is no map editor atm. But we are working on it :-)<br/>
+<font color="#A82F2F"><font size="2">(20:08:50)</font> <b>Entvex:</b></font> okay ronnie_c maybe i could help on that after this task<br/>
+<font color="#A82F2F"><font size="2">(20:09:03)</font> <b>Entvex:</b></font> i like coding ^.^<br/>
+<font color="#16569E"><font size="2">(20:09:25)</font> <b>ronnie_c:</b></font> Entvex: it's nice that you want to help<br/>
+<font color="#A82F2F"><font size="2">(20:09:32)</font> <b>Entvex:</b></font> thanks :)<br/>
+<font color="#A82F2F"><font size="2">(20:09:59)</font> <b>Entvex:</b></font> chrisoelmueller can you help be get the dev version of the game started ?<br/>
+<font color="#16569E"><font size="2">(20:09:59)</font> <b>ronnie_c:</b></font> Entvex: and we really appreciate your offer. However, karottenreibe and I am doing that as a university project, which will be graded.<br/>
+<font color="#A82F2F"><font size="2">(20:10:18)</font> <b>Entvex:</b></font> cool i am at uni too<br/>
+<font color="#A82F2F"><font size="2">(20:10:38)</font> <b>Entvex:</b></font> computer science<br/>
+<font color="#A82F2F"><font size="2">(20:10:46)</font> <b>chrisoelmueller:</b></font> Entvex: what do you need to get working?<br/>
+<font color="#16569E"><font size="2">(20:10:50)</font> <b>ronnie_c:</b></font> Entvex: cool, where?<br/>
+<font color="#A82F2F"><font size="2">(20:11:07)</font> <b>Entvex:</b></font> ronnie_c in aahus, Denmark<br/>
+<font color="#A82F2F"><font size="2">(20:11:39)</font> <b>Entvex:</b></font> chrisoelmueller i need to start the game so i can make a new save game, and then edit it<br/>
+<font color="#16569E"><font size="2">(20:11:55)</font> <b>ronnie_c:</b></font> Entvex: nice, do you happen to know Anders Moller and dk.brics.automaton? I used it for my bachelor's thesis.<br/>
+<font color="#A82F2F"><font size="2">(20:12:25)</font> <b>Entvex:</b></font> no it don&apos;t ring any bells<br/>
+<font color="#A82F2F"><font size="2">(20:14:28)</font> <b>Nihathrael:</b></font> have a nice one guys, off for today<br/>
+<font size="2">(20:15:08)</font><b> ngc92 [<em>~chatzilla@p57B6506B.dip.t-dialin.net</em>] hat den Raum betreten.</b><br/>
+<font color="#A82F2F"><font size="2">(20:15:13)</font> <b>Entvex:</b></font> do i need to install<br/>
+<font color="#A82F2F"><font size="2">(20:15:16)</font> <b>Entvex:</b></font> FIFE ?<br/>
+<font color="#A82F2F"><font size="2">(20:15:22)</font> <b>Entvex:</b></font> to get uh running ?<br/>
+<font color="#16569E"><font size="2">(20:15:38)</font> <b>ronnie_c:</b></font> Entvex: yes<br/>
+<font size="2">(20:15:47)</font><b> GreyGhost hat den Raum verlassen (quit: Quit: Leaving).</b><br/>
+<font color="#A82F2F"><font size="2">(20:16:56)</font> <b>Entvex:</b></font> ronnie_c okay<br/>
+<font color="#A82F2F"><font size="2">(20:17:03)</font> <b>Entvex:</b></font> where do i drop it ?<br/>
+<font color="#A82F2F"><font size="2">(20:17:27)</font> <b>Kilian]:</b></font> Entvex: in an extra folder<br/>
+<font color="#A82F2F"><font size="2">(20:17:56)</font> <b>Kilian]:</b></font> you need to checkout there repository too<br/>
+<font color="#A82F2F"><font size="2">(20:18:04)</font> <b>Kilian]:</b></font> they offer an subversion repo<br/>
+<font color="#A82F2F"><font size="2">(20:18:05)</font> <b>Entvex:</b></font> FIFE: 0.3.3rc ?<br/>
+<font color="#A82F2F"><font size="2">(20:18:26)</font> <b>Kilian]:</b></font> but theres an git repo too<br/>
+<font color="#A82F2F"><font size="2">(20:18:49)</font> <b>gscai:</b></font> Entvex: you will need fife trunk<br/>
+<font color="#A82F2F"><font size="2">(20:19:06)</font> <b>Entvex:</b></font> do you of you have a link to the rep ?<br/>
+<font color="#A82F2F"><font size="2">(20:19:53)</font> <b>Kilian]:</b></font> http://www.unknown-horizons.org/download/sources/s-windows/<br/>
+<font color="#A82F2F"><font size="2">(20:20:33)</font> <b>Kilian]:</b></font> this is the git repo https://github.com/tschroefel/fife-git<br/>
+<font color="#A82F2F"><font size="2">(20:21:26)</font> <b>Entvex:</b></font> Kilian] yes then i don&apos;t need to download svn too!<br/>
+<font color="#A82F2F"><font size="2">(20:21:39)</font> <b>Kilian]:</b></font> Entvex: correct<br/>
+<font color="#A82F2F"><font size="2">(20:22:56)</font> <b>Entvex:</b></font> Kilian] where in uh do i check it out ?<br/>
+<font color="#A82F2F"><font size="2">(20:23:08)</font> <b>Entvex:</b></font> i can&apos;t find extra<br/>
+<font color="#A82F2F"><font size="2">(20:23:10)</font> <b>Kilian]:</b></font> Entvex: in an extra folder<br/>
+<font color="#A82F2F"><font size="2">(20:23:18)</font> <b>Kilian]:</b></font> ah :D<br/>
+<font color="#A82F2F"><font size="2">(20:23:24)</font> <b>Entvex:</b></font> at the top ?<br/>
+<font color="#A82F2F"><font size="2">(20:23:27)</font> <b>Kilian]:</b></font> i mean a in new folder<br/>
+<font color="#A82F2F"><font size="2">(20:23:31)</font> <b>Entvex:</b></font> ahhh<br/>
+<font color="#A82F2F"><font size="2">(20:23:53)</font> <b>Entvex:</b></font> do you have it in the same folder as the game or another one ?<br/>
+<font color="#A82F2F"><font size="2">(20:24:07)</font> <b>Kilian]:</b></font> in a another one<br/>
+<font color="#A82F2F"><font size="2">(20:24:11)</font> <b>Kilian]:</b></font> Like:<br/>
+<font color="#A82F2F"><font size="2">(20:24:15)</font> <b>Entvex:</b></font> okay i&apos;ll do that aswell then<br/>
+<font color="#A82F2F"><font size="2">(20:24:24)</font> <b>Kilian]:</b></font> repos/uh<br/>
+<font color="#A82F2F"><font size="2">(20:24:27)</font> <b>Kilian]:</b></font> repos/fife<br/>
+<font color="#16569E"><font size="2">(20:24:51)</font> <b>ronnie_c:</b></font> alternatively you can uh with --fife-dir=&lt;XXX&gt;<br/>
+<font size="2">(20:25:49)</font><b> UH-Guest_6 [<em>5293bbca@gateway/web/freenode/ip.82.147.187.202</em>] hat den Raum betreten.</b><br/>
+<font color="#A82F2F"><font size="2">(20:25:56)</font> <b>Entvex:</b></font> checking out<br/>
+<font color="#A82F2F"><font size="2">(20:26:30)</font> <b>Entvex:</b></font> done<br/>
+<font color="#A82F2F"><font size="2">(20:26:48)</font> <b>Kilian]:</b></font> do you use windows or linux ?<br/>
+<font color="#A82F2F"><font size="2">(20:27:00)</font> <b>Kilian]:</b></font> hi UH-Guest_6<br/>
+<font color="#A82F2F"><font size="2">(20:27:09)</font> <b>Entvex:</b></font> i am using windows 7 32bit<br/>
+<font color="#A82F2F"><font size="2">(20:27:32)</font> <b>Entvex:</b></font> how do i tell fife where uh is ?<br/>
+<font color="#A82F2F"><font size="2">(20:27:56)</font> <b>CIA-28:</b></font> <span style='font-weight: bold;'>unknown-horizons:</span> <span style='color: dark green;'>Christopher Oelmueller</span> <span style='color: orange;'>master</span> * r<span style='font-weight: bold;'>b3ce870</span> <span style='color: teal;'></span>/ (content/gui/xml/mainmenu/credits/credits2.xml doc/AUTHORS)<span style='font-weight: bold;'>:</span> * Update AUTHORS and credits - http://git.io/zSdIjQ<br/>
+<font color="#A82F2F"><font size="2">(20:28:32)</font> <b>Kilian]:</b></font> Entvex: you have to compile fife cause its c++ code<br/>
+<font color="#A82F2F"><font size="2">(20:28:33)</font> <b>Kilian]:</b></font> http://www.unknown-horizons.org/download/sources/s-windows/<br/>
+<font size="2">(20:28:42)</font><b> UH-Guest_6 heißt jetzt vaikus</b><br/>
+<font color="#A82F2F"><font size="2">(20:28:45)</font> <b>Kilian]:</b></font> read the section about scons/compile<br/>
+<font color="#A82F2F"><font size="2">(20:28:57)</font> <b>Kilian]:</b></font> you need a compiler<br/>
+<font size="2">(20:28:59)</font><b> vaikus heißt jetzt vaikuseraas</b><br/>
+<font color="#A82F2F"><font size="2">(20:29:16)</font> <b>chrisoelmueller:</b></font> heya vaikuseraas <br/>
+<font color="#A82F2F"><font size="2">(20:29:24)</font> <b>vaikuseraas:</b></font> hi chrisoelmueller <br/>
+<font size="2">(20:30:30)</font><b> tuempl hat den Raum verlassen (quit: Read error: Connection reset by peer).</b><br/>
+<font color="#A82F2F"><font size="2">(20:30:40)</font> <b>vaikuseraas:</b></font> can enyone help my to get started in ubuntu 10.10.. have problems to start game<br/>
+<font size="2">(20:30:53)</font><b> tuempl [<em>~Miranda@213.47.93.188</em>] hat den Raum betreten.</b><br/>
+<font color="#A82F2F"><font size="2">(20:30:56)</font> <b>Kilian]:</b></font> hi vaikuseraas<br/>
+<font color="#A82F2F"><font size="2">(20:30:57)</font> <b>chrisoelmueller:</b></font> sure, what&apos;s the problem?<br/>
+<font color="#A82F2F"><font size="2">(20:32:13)</font> <b>chrisoelmueller:</b></font> [INFO] Finnish translation of UH almost completed last week, thanks alluk. and heze0!<br/>
+<font color="#A82F2F"><font size="2">(20:32:33)</font> <b>vaikuseraas:</b></font> hard to say, i will but ~10 row what &apos;m get after i but commant to command line<br/>
+<font color="#A82F2F"><font size="2">(20:32:35)</font> <b>Entvex:</b></font> Kilian] wow 77mb :D<br/>
+<font color="#A82F2F"><font size="2">(20:34:33)</font> <b>vaikuseraas:</b></font> that may say something to anybody?: &quot;  File &quot;/usr/lib/pymodules/python2.6/fife/fife.py&quot;, line 54, in _swig_getattr     raise AttributeError(name) AttributeError: getImageManager AL lib: ALc.c:1879: exit(): closing 1 Device AL lib: ALc.c:1808: alcCloseDevice(): destroying 1 Context(s)&quot;<br/>
+<font color="#A82F2F"><font size="2">(20:38:46)</font> <b>Entvex:</b></font> hi vaikuseraas have you used the ubunto music store ?<br/>
+<font color="#A82F2F"><font size="2">(20:38:58)</font> <b>vaikuseraas:</b></font> no<br/>
+<font color="#A82F2F"><font size="2">(20:39:09)</font> <b>Kilian]:</b></font> vaikuseraas: do you installed it via ppa ?<br/>
+<font color="#A82F2F"><font size="2">(20:39:11)</font> <b>Entvex:</b></font> dam :) i like to know if it was cheap<br/>
+<font color="#A82F2F"><font size="2">(20:39:55)</font> <b>vaikuseraas:</b></font> Kilian]: no via apt-get<br/>
+<font color="#A82F2F"><font size="2">(20:40:09)</font> <b>Kilian]:</b></font> k<br/>
+<font color="#A82F2F"><font size="2">(20:40:35)</font> <b>Kilian]:</b></font> did you had an older version of unknown horizons before ?<br/>
+<font color="#A82F2F"><font size="2">(20:40:45)</font> <b>Kilian]:</b></font> then there could be trouble with an old settingsfile<br/>
+<font color="#A82F2F"><font size="2">(20:41:26)</font> <b>vaikuseraas:</b></font> i&apos;m try last week and last releast, and get same error<br/>
+<font color="#A82F2F"><font size="2">(20:42:27)</font> <b>Kilian]:</b></font> hm<br/>
+<font color="#A82F2F"><font size="2">(20:42:42)</font> <b>Kilian]:</b></font> it crashs while starting ?<br/>
+<font color="#A82F2F"><font size="2">(20:44:25)</font> <b>vaikuseraas:</b></font> yes<br/>
+<font color="#A82F2F"><font size="2">(20:44:37)</font> <b>totycro_:</b></font> gscai: concerning the capac util thing: i think i&apos;ll try simple optimisations, i can probably reduce it to a third of the current time or so<br/>
+<font color="#A82F2F"><font size="2">(20:44:54)</font> <b>Entvex:</b></font> Kilian] and chrisoelmueller do we have any windows devs ?<br/>
+<font color="#A82F2F"><font size="2">(20:44:56)</font> <b>vaikuseraas:</b></font> i add those 2 entry&apos;s but nothing new<br/>
+<font color="#A82F2F"><font size="2">(20:45:01)</font> <b>totycro_:</b></font> gscai: except if you have another idea that would be easy to implement<br/>
+<font color="#A82F2F"><font size="2">(20:45:15)</font> <b>totycro_:</b></font> for the future, we could keep the time estimation approach in mind<br/>
+<font color="#A82F2F"><font size="2">(20:45:17)</font> <b>Kilian]:</b></font> vaikuseraas: looks simliar to this http://forum.unknown-horizons.org/viewtopic.php?f=29&amp;t=563&amp;p=1549&amp;hilit=_swig_getattr#p1549<br/>
+<font color="#A82F2F"><font size="2">(20:46:31)</font> <b>UH-Guard:</b></font> <span style='font-weight: bold;'>New news from uhtrac: </span>Ticket #1109 (lower part of minimap not clickable) closed<br/>
+<font color="#A82F2F"><font size="2">(20:46:32)</font> <b>Kilian]:</b></font> maybe something with the package is wrong<br/>
+<font color="#A82F2F"><font size="2">(20:46:37)</font> <b>gscai:</b></font> totycro_: I&apos;m not aware of any much better solutions that would be easy to implement<br/>
+<font color="#A82F2F"><font size="2">(20:46:38)</font> <b>Kilian]:</b></font> ping christoph_debian<br/>
+<font color="#A82F2F"><font size="2">(20:47:06)</font> <b>vaikuseraas:</b></font> Kilian]: not the same but similar<br/>
+<font color="#A82F2F"><font size="2">(20:47:13)</font> <b>Kilian]:</b></font> Entvex: GreyGhost and gscai working with windows<br/>
+<font color="#A82F2F"><font size="2">(20:47:33)</font> <b>Entvex:</b></font> okay i need to talk to them then<br/>
+<font color="#A82F2F"><font size="2">(20:47:41)</font> <b>Kilian]:</b></font> vaikuseraas: he interrupted the build process while building from source, cause he thought warnings are errors<br/>
+<font color="#A82F2F"><font size="2">(20:47:51)</font> <b>Kilian]:</b></font> Entvex: whats you problem ?<br/>
+<font color="#A82F2F"><font size="2">(20:48:06)</font> <b>Entvex:</b></font> i am trying to get fife working so i can compile it<br/>
+<font color="#A82F2F"><font size="2">(20:48:18)</font> <b>Entvex:</b></font> but it seems like the install bat file won&apos;t work<br/>
+<font color="#A82F2F"><font size="2">(20:48:30)</font> <b>Kilian]:</b></font> of the sdk ?<br/>
+<font color="#A82F2F"><font size="2">(20:48:53)</font> <b>Entvex:</b></font> maybe it&apos;s beacuse i installed python in a non default localtion<br/>
+<font color="#A82F2F"><font size="2">(20:49:12)</font> <b>Kilian]:</b></font> Entvex: you need active python 2.7 btw<br/>
+<font color="#A82F2F"><font size="2">(20:49:13)</font> <b>gscai:</b></font> totycro_: in my opinion using the time estimation at least partially would significantly reduce the usage though<br/>
+<font color="#A82F2F"><font size="2">(20:49:16)</font> <b>Entvex:</b></font> Kilian] yeah<br/>
+<font color="#A82F2F"><font size="2">(20:49:36)</font> <b>gscai:</b></font> for example if the utilisation is at 90% then it won&apos;t drop under 50% in the net 30 seconds<br/>
+<font color="#A82F2F"><font size="2">(20:49:37)</font> <b>Entvex:</b></font> Kilian] what&apos;s the difference ?<br/>
+<font color="#A82F2F"><font size="2">(20:50:06)</font> <b>Kilian]:</b></font> vaikuseraas: for me it looks like there are problems with the fife package, lets see what the package manager have to say<br/>
+<font color="#A82F2F"><font size="2">(20:50:10)</font> <b>gscai:</b></font> that would allow you to skip 15 refreshes<br/>
+<font color="#062585"><font size="2">(20:50:10)</font> <b>***Entvex</b></font> downloads active python <br/>
+<font color="#A82F2F"><font size="2">(20:50:43)</font> <b>Kilian]:</b></font> Entvex: dont ask me ^^ <br/>
+<font color="#A82F2F"><font size="2">(20:51:16)</font> <b>totycro_:</b></font> gscai: do you know how to find out the max decrease per tick?<br/>
+<font color="#A82F2F"><font size="2">(20:51:56)</font> <b>gscai:</b></font> max utilisation interval = 100%<br/>
+<font color="#A82F2F"><font size="2">(20:52:41)</font> <b>gscai:</b></font> it is fixed length (except in the beginning when there is not enough data)<br/>
+<font color="#A82F2F"><font size="2">(20:53:05)</font> <b>gscai:</b></font> but you might want to skip showing such icons at that stage anyway<br/>
+<font color="#A82F2F"><font size="2">(20:53:38)</font> <b>vaikuseraas:</b></font> Kilian]: what i need to do?<br/>
+<font color="#A82F2F"><font size="2">(20:53:44)</font> <b>totycro_:</b></font> yes, it currently counts the time it is producing, maybe i can count the time it is not not producing<br/>
+<font color="#A82F2F"><font size="2">(20:53:56)</font> <b>Kilian]:</b></font> nothing, i pinged him already<br/>
+<font color="#A82F2F"><font size="2">(20:54:18)</font> <b>gscai:</b></font> totycro_: it actually stores the lengths of all different statuses<br/>
+<font color="#A82F2F"><font size="2">(20:54:24)</font> <b>Kilian]:</b></font> christoph_debian: http://pastebin.com/SBivi5WA<br/>
+<font color="#A82F2F"><font size="2">(20:54:26)</font> <b>gscai:</b></font> this is necessary for the AI<br/>
+<font color="#A82F2F"><font size="2">(20:54:54)</font> <b>gscai:</b></font> because it doesn&apos;t care about the productivity while paused<br/>
+<font color="#16569E"><font size="2">(20:56:03)</font> <b>ronnie_c:</b></font> over and outa here<br/>
+<font color="#A82F2F"><font size="2">(20:56:10)</font> <b>Kilian]:</b></font> Entvex: in general ActivePythin includes some additional packages<br/>
+<font color="#A82F2F"><font size="2">(20:56:12)</font> <b>gscai:</b></font> in theory one could use it to tell the user why the utilisation was low as well<br/>
+</body></html>
