@@ -89,8 +89,18 @@ Folglich musste zunächst einmal die MapSaver Infrastruktur an die der MapLoader
 implementiert werden.
 
 \subsection{Plugin zum Laden von UH Objekten}
+Damit mit dem Editor neue Objekte auf einer Map platziert werden können (z.B. Gebäude oder Bodentiles),
+muss dieser alle in UH verfügbaren Objekte kennen. Hierzu wird ein Plugin benötigt, das diese
+Objekte beim Editorstart lädt und diesem bereitstellt.
+
 \subsection{Plugin zum Laden von UH Karten}
+Zusätzlich zu diesem Plugin ist ein weiters erforderlich, das den oben erwähnten MapLoader
+zur verfügung stellt, der die SQLite Datenbanken einlesen kann, in denen die Daten der
+UH Maps gespeichert sind. Wenn diese Daten eingelesen wurden, müssen mit ihnen FIFE Objekte
+erzeugt werden, die der Editor darstellen und bearbeiten kann.
+
 \subsection{Plugin zum Speichern von UH Karten}
-
-
+Um diesen Prozess umzukehren muss ein Plugin erstellt werden, das die FIFE Objekte aus der
+Engine auslesen und sie in Daten des UH Map Formats umwandeln kann. Anschließend müssen diese
+Daten in eine SQLite Datenbank geschrieben werden.
 
