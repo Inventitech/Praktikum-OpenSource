@@ -1,0 +1,123 @@
+Conversation with #unknown-horizons at Tue 17 Jan 2012 11:04:09 AM CET on karottenreibe@irc.freenode.net (irc)
+(11:04:09 AM) #unknown-horizons: The topic for #unknown-horizons is: Welcome to #unknown-horizons | www.unknown-horizons.org | Read the FAQ: http://wiki.unknown-horizons.org/w/FAQ[1] | News: -
+(11:04:09 AM) List of 28 users: [ ChanServ ][ abeaumont ][ Atomim_ ][ BladeFreak ][ cassmodiah ][ chrisoelmueller ][ CIA-29 ][ gscai ][ hagabaka ][ janebot ][ janus ][ josch ][ karottenreibe ][ ketas ][ ketas-ts ][ lolcat___ ][ LV_MM_EG106 ][ manue| ][ MasterofJOKers ][ Nightraven ][ nihathrael ][ rudi_s ][ spq ][ squiddy ][ totycro_ ][ uh-ci ][ UH-Guard` ][ yonathan_ ]
+(11:04:14 AM) karottenreibe: morning
+(11:04:50 AM) totycro_: hi karottenreibe 
+(11:05:06 AM) totycro_: could you perhaps give an update at one of the next meetings?
+(11:05:20 AM) karottenreibe: sure
+(11:05:29 AM) karottenreibe: we're porting to the new component architecture right now
+(11:05:50 AM) karottenreibe: BTW has anyone ever gotten an error 22 when trying to use the YamlCache?
+(11:06:00 AM) karottenreibe: it seems that the dbm can't open the cache db for some reason
+(11:06:04 AM) totycro_: keyerror 22?
+(11:06:13 AM) karottenreibe: no, error 22 invalid argument
+(11:06:16 AM) totycro_: place save and post the traceback when you get that
+(11:06:44 AM) karottenreibe: found this: http://mail.python.org/pipermail/python-list/2010-February/1236404.html
+(11:06:48 AM) karottenreibe: seems to be OS dependant
+(11:07:15 AM) karottenreibe: I can't give you a save, it's from the editor code, but i'll give you a traceback, mom
+(11:07:53 AM) karottenreibe: http://pastie.org/3200313
+(11:08:49 AM) karottenreibe: and this is what i get when i start UH and click on singleplayer: http://pastie.org/3200319
+(11:08:55 AM) karottenreibe: OS is ArchLinux
+(11:11:29 AM) totycro_: so the error really is in the shelve code
+(11:11:51 AM) karottenreibe: seems like it. no idea why though
+(11:12:47 AM) karottenreibe: what kind of DB is that anyways?
+(11:12:49 AM) CIA-29: unknown-horizons: Moritz Beller editor * r63e7dcd / editor/plugins/UHMapSaver.py : fixes saver plugin - http://git.io/azYRmA
+(11:13:21 AM) totycro_: we only use a high level interface, that should be guaranteed to have something nice below 
+(11:13:30 AM) totycro_: http://docs.python.org/library/shelve.html[1]
+(11:13:34 AM) uh-ci: Project uh-tests build #275: STILL UNSTABLE in 40 sec: http://aviamo.de/jenkins/job/uh-tests/275/[1]
+(11:13:35 AM) uh-ci: Failed tests:
+(11:13:35 AM) uh-ci: tests.game.test_status_icons.tests.game.test_status_icons.test_decommissioned: http://aviamo.de/jenkins/job/uh-tests/275/testReport/junit/junit/tests.game/test_status_icons/tests_game_test_status_icons_test_decommissioned[1]
+(11:13:36 AM) uh-ci: tests.game.test_status_icons.tests.game.test_status_icons.test_productivity_low: http://aviamo.de/jenkins/job/uh-tests/275/testReport/junit/junit/tests.game/test_status_icons/tests_game_test_status_icons_test_productivity_low[1]
+(11:13:40 AM) Meldrian [~Michael@p578b6cd0.dip0.t-ipconnect.de] entered the room.
+(11:14:12 AM) totycro_: so i don't know what to do, could you either open a ticket or fix the error?
+(11:18:32 AM) karottenreibe: I'll google for a bit
+(11:18:56 AM) wentam [~wentam@76-236-8-125.lightspeed.gdrpmi.sbcglobal.net] entered the room.
+(11:19:55 AM) karottenreibe: hm, maybe i'm missing a package? what dbm packages do you have installed?
+(11:20:21 AM) karottenreibe: it seems the underlying implementation is anydbm, so it should be either bsddb, gdbm, dbm or dumbdbm
+(11:21:52 AM) totycro_: well i seem to have gdbm
+(11:22:20 AM) karottenreibe: hm, ok
+(11:22:31 AM) karottenreibe: i deleted the cache file and now it runs fine...
+(11:22:48 AM) totycro_: we once had this issues:
+(11:22:50 AM) totycro_:       # Some python distributions used to use the bsddb module as underlying shelve.
+(11:22:53 AM) totycro_:       # The bsddb module is now deprecated since 2.6 and is not present in some 2.7 distributions.
+(11:22:56 AM) totycro_:       # Therefore, the line above will yield an ImportError if it has been executed with
+(11:22:59 AM) totycro_:       # a python supporting bsddb and now is executed again with python with no support for it.
+(11:23:02 AM) totycro_:       # Since this may also be caused by a different error, we just try again once.
+(11:23:06 AM) totycro_: could it also be some 2.6/2.7 versioning thing for you?
+(11:23:13 AM) karottenreibe: possible
+(11:23:32 AM) karottenreibe: so, I'll just ignore that?
+(11:23:48 AM) totycro_: we could catch the error and delete the cache
+(11:23:56 AM) Kris_CZ [~Kris_CZ@nezmar.jabbim.cz] entered the room.
+(11:24:44 AM) totycro_: do you want to do it or should i?
+(11:24:45 AM) CIA-29: unknown-horizons: karottenreibe editor * r13ec330 / editor/plugins/UHMapSaver.py : Merge branch 'editor' of github.com:unknown-horizons/unknown-horizons into editor - http://git.io/glFaxA
+(11:24:45 AM) CIA-29: unknown-horizons: karottenreibe editor * r4213f9c / editor/plugins/UHObjectLoader.py : using YamlCache to load buildings more efficiently - http://git.io/pLrNdg
+(11:24:55 AM) Kris_CZ left the room.
+(11:25:18 AM) karottenreibe: I'll do it
+(11:25:29 AM) totycro_: k, great
+(11:25:36 AM) uh-ci: Project uh-tests build #276: STILL UNSTABLE in 44 sec: http://aviamo.de/jenkins/job/uh-tests/276/[1]
+(11:25:37 AM) uh-ci: Failed tests:
+(11:25:37 AM) uh-ci: tests.game.test_status_icons.tests.game.test_status_icons.test_decommissioned: http://aviamo.de/jenkins/job/uh-tests/276/testReport/junit/junit/tests.game/test_status_icons/tests_game_test_status_icons_test_decommissioned[1]
+(11:25:38 AM) uh-ci: tests.game.test_status_icons.tests.game.test_status_icons.test_productivity_low: http://aviamo.de/jenkins/job/uh-tests/276/testReport/junit/junit/tests.game/test_status_icons/tests_game_test_status_icons_test_productivity_low[1]
+(11:26:01 AM) karottenreibe: well, I'll do it if you tell me what error I have to catch there
+(11:26:05 AM) karottenreibe: doesn't say the class name
+(11:26:16 AM) tuempl [~Miranda@e208-030.eduroam.tuwien.ac.at] entered the room.
+(11:26:26 AM) totycro_: class error(Exception): pass
+(11:26:31 AM) totycro_: that's from anydbm.py
+(11:26:42 AM) karottenreibe: ah ok
+(11:26:54 AM) totycro_: an odd construction
+(11:27:05 AM) hagabaka left the room (quit: Ping timeout: 240 seconds).
+(11:27:17 AM) karottenreibe: so I have to import anydbm and then except anydbm.error?
+(11:28:16 AM) totycro_: you could also catch all exceptions
+(11:28:46 AM) totycro_: if removing the cache fixes the error, then fine, and if not, the error will be reproduced, also fine
+(11:29:32 AM) karottenreibe: great
+(11:32:58 AM) karottenreibe: yup, seems to work
+(11:34:51 AM) CIA-29: unknown-horizons: karottenreibe master * r384b4fb / horizons/util/yamlcache.py : fixed obscure exception when opening old cache files after dbm packages were upgraded - http://git.io/v-kCsA
+(11:35:09 AM) CIA-29: unknown-horizons: karottenreibe editor * r384b4fb / horizons/util/yamlcache.py : fixed obscure exception when opening old cache files after dbm packages were upgraded - http://git.io/v-kCsA
+(11:35:10 AM) CIA-29: unknown-horizons: karottenreibe editor * rb5c8cc5 / horizons/util/yamlcache.py : Merge branch 'master' into editor - http://git.io/03Ofzg
+(11:35:15 AM) karottenreibe: done
+(11:35:36 AM) uh-ci: Project uh-tests build #277: STILL UNSTABLE in 40 sec: http://aviamo.de/jenkins/job/uh-tests/277/[1]
+(11:35:37 AM) uh-ci: git: fixed obscure exception when opening old cache files after dbm packages were upgraded
+(11:35:37 AM) uh-ci: Failed tests:
+(11:35:38 AM) uh-ci: tests.game.test_status_icons.tests.game.test_status_icons.test_decommissioned: http://aviamo.de/jenkins/job/uh-tests/277/testReport/junit/junit/tests.game/test_status_icons/tests_game_test_status_icons_test_decommissioned[1]
+(11:35:38 AM) uh-ci: tests.game.test_status_icons.tests.game.test_status_icons.test_productivity_low: http://aviamo.de/jenkins/job/uh-tests/277/testReport/junit/junit/tests.game/test_status_icons/tests_game_test_status_icons_test_productivity_low[1]
+(11:36:20 AM) uh-ci: Project uh-tests build #278: STILL UNSTABLE in 43 sec: http://aviamo.de/jenkins/job/uh-tests/278/[1]
+(11:36:20 AM) uh-ci: Failed tests:
+(11:36:21 AM) uh-ci: tests.game.test_status_icons.tests.game.test_status_icons.test_decommissioned: http://aviamo.de/jenkins/job/uh-tests/278/testReport/junit/junit/tests.game/test_status_icons/tests_game_test_status_icons_test_decommissioned[1]
+(11:36:21 AM) uh-ci: tests.game.test_status_icons.tests.game.test_status_icons.test_productivity_low: http://aviamo.de/jenkins/job/uh-tests/278/testReport/junit/junit/tests.game/test_status_icons/tests_game_test_status_icons_test_productivity_low[1]
+(11:48:43 AM) CIA-29: unknown-horizons: karottenreibe editor * r38c453b / editor/plugins/UHObjectLoader.py : code cleanup - http://git.io/BaFTpg
+(11:48:43 AM) CIA-29: unknown-horizons: karottenreibe editor * r447eb75 / editor/editor.py : forcing our plugins to always be enabled so the editor works OOTB - http://git.io/NiMcpw
+(11:49:29 AM) uh-ci: Project uh-tests build #279: STILL UNSTABLE in 40 sec: http://aviamo.de/jenkins/job/uh-tests/279/[1]
+(11:49:29 AM) uh-ci: Failed tests:
+(11:49:30 AM) uh-ci: tests.game.test_status_icons.tests.game.test_status_icons.test_decommissioned: http://aviamo.de/jenkins/job/uh-tests/279/testReport/junit/junit/tests.game/test_status_icons/tests_game_test_status_icons_test_decommissioned[1]
+(11:49:30 AM) uh-ci: tests.game.test_status_icons.tests.game.test_status_icons.test_productivity_low: http://aviamo.de/jenkins/job/uh-tests/279/testReport/junit/junit/tests.game/test_status_icons/tests_game_test_status_icons_test_productivity_low[1]
+(11:51:16 AM) totycro_: karottenreibe: i guess generally, for user acceptance, it would be very beneficial if as many people as possible test the editor before the merge
+(11:51:37 AM) totycro_: so that probably has to be an effort on both your side as devs and of users
+(11:54:39 AM) scaabi [~scaabi@p5483B025.dip.t-dialin.net] entered the room.
+(11:58:57 AM) karottenreibe: who would be users?
+(11:59:13 AM) karottenreibe: in terms of specific people
+(11:59:34 AM) totycro_: for the editor, i guess primarily the uh team
+(12:06:44 PM) totycro_: i'm just saying that people like a software better if they are somehow involved in the dev process, even if they don't actually change sth
+(12:07:29 PM) uh-ci: Project uh-gui-tests build #40: STILL UNSTABLE in 2 min 48 sec: http://aviamo.de/jenkins/job/uh-gui-tests/40/[1]
+(12:07:30 PM) uh-ci: git: fixed obscure exception when opening old cache files after dbm packages were upgraded
+(12:15:49 PM) karottenreibe: totycro_: yeah, that's probably so. as long as people keep in mind that the current state is still, let's call it, "raw" ;-)
+(12:16:17 PM) totycro_: k :)
+(12:16:18 PM) karottenreibe: how would we arrange for that? just tell people to check it out during the next meeting and then give feedback directly to us?
+(12:16:55 PM) totycro_: well, seeing that we mostly communicate here, it should also be directed here
+(12:17:03 PM) totycro_: but it can be very informal
+(12:17:30 PM) totycro_: as in "hey, i just implemented that, wanna check it out?"
+(12:17:38 PM) karottenreibe: alright
+(12:18:09 PM) totycro_: your benefit is that everything that no one complains about you can safely release
+(12:18:17 PM) karottenreibe: then we'll work on fixing the bugs from the component change an then we'll let you guys know
+(12:18:22 PM) karottenreibe: indeed :D
+(12:19:39 PM) totycro_: i don't know how much time you have to hang around here, but it usually happens that feedback just appears at any unforseeable point
+(12:19:54 PM) totycro_: you could also try to do that via forum if you like
+(12:21:00 PM) karottenreibe: hehe
+(12:21:14 PM) karottenreibe: I'll keep that in mind
+(12:21:17 PM) karottenreibe: thx
+(12:22:47 PM) totycro_: np :)
+(12:24:08 PM) nihathrael: 3moin all
+(12:25:33 PM) tuempl left the room (quit: Quit: Miranda IM! Smaller, Faster, Easier. http://miranda-im.org).
+(12:28:17 PM) totycro_: hi nihathrael 
+(12:29:43 PM) karottenreibe: moin
+(12:38:47 PM) scaabi left the room (quit: Ping timeout: 244 seconds).
+(12:50:09 PM) LV_MM_EG106 left the room (quit: Ping timeout: 248 seconds).
+(12:51:04 PM) LV_MM_EG106 [~mihai@141.85.37.249] entered the room.

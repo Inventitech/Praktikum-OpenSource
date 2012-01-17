@@ -1,0 +1,29 @@
+Conversation with #fife at Tue 10 Jan 2012 09:44:36 PM CET on karottenreibe@irc.freenode.net (irc)
+(09:44:36 PM) List of 19 users: [ ChanServ ][ cassmodiah ][ christoph_debian ][ CIA-29 ][ Crisco ][ doobeh ][ gscai ][ Guest77439 ][ helios2k ][ karottenreibe ][ Kilian] ][ LinuxDonald_ ][ Nightraven ][ nihathrael ][ prock ][ TankBo ][ Tonux ][ totycro_ ][ UH-Guard ]
+(09:44:40 PM) prock: oh
+(09:44:41 PM) karottenreibe: hi prock
+(09:44:43 PM) prock: hi karottenreibe 
+(09:44:50 PM) karottenreibe: nihathrael said you needed something
+(09:45:08 PM) prock: the ticket you posted about the editor paths
+(09:45:13 PM) prock: the filebrowser
+(09:45:15 PM) karottenreibe: ah right
+(09:45:22 PM) prock: the patch you posted doesn't work for me
+(09:45:40 PM) prock: but it kindof points out that the filebroswer is a bit more broken than I thought
+(09:46:03 PM) karottenreibe: really? hm. it fixed the problems for me, but then again i didn't do a very thorough check^^ just the stuff that was broken for me
+(09:46:40 PM) prock: right.. it seems that if you run the FIFE editor from the editor's directory it wont allow you to browse bast th eeditor's root directory
+(09:46:51 PM) karottenreibe: oh not very good
+(09:47:20 PM) karottenreibe: yeah it's kinda weird that the editor takes the VFS root directories as its basis for the file browser and mixes them all together
+(09:47:27 PM) prock: I'm going to look into it a bit more..  but if you have a chance to play around with it some more andd find something out feel free to post it in the ticket
+(09:47:33 PM) prock: I have to run for a few mins...  bbiab
+(09:47:35 PM) prock is now known as prock|afk
+(09:47:41 PM) karottenreibe: alright
+(09:47:54 PM) karottenreibe: well, I think the VFS stuff is a bit broken from what i remember so far
+(09:48:24 PM) karottenreibe: I won't have any time soon, uni is pretty stressful right now. maybe in a week or something
+(09:49:35 PM) karottenreibe: one thing you could try is adding "/" as a root directory to VFS, but I don't know how that will fare on windows ;-)
+(09:50:06 PM) karottenreibe: anyways, I'm pretty shagged out, I'm gonna hit the telly. if you need anything more, I'll stick around in the channel a bit longer ;-)
+(10:12:37 PM) prock|afk: back
+(10:12:40 PM) prock|afk is now known as prock
+(10:12:47 PM) prock: karottenreibe: no worries.. I'll dig more into it
+(10:13:20 PM) prock: thanks for the info and making the ticket to bring it to our attention
+(11:24:42 PM) karottenreibe: no problem, I'm off for tonight
+(11:24:44 PM) karottenreibe: cya

@@ -1,0 +1,12 @@
+Conversation with #fife at Thu 08 Dec 2011 01:17:22 PM CET on karottenreibe@irc.freenode.net (irc)
+(01:17:22 PM) List of 15 users: [ ChanServ ][ 15SAAI18M ][ cassmodiah ][ chrisoelmueller ][ christoph_debian ][ Crisco ][ doobeh ][ GreyGhost ][ gscai ][ karottenreibe ][ Nightraven ][ nihathrael ][ TankBo ][ totycro_ ][ UH-Guard ]
+(01:42:35 PM) GreyGhost left the room (quit: Ping timeout: 240 seconds).
+(02:07:02 PM) 15SAAI18M: unknown-horizons: karottenreibe editor * rb88e8e6 / run_uh.py : 
+(02:07:02 PM) 15SAAI18M: unknown-horizons: fixed faulty parameter name that caused endless loops when FIFE was not
+(02:07:02 PM) 15SAAI18M: unknown-horizons: found - http://git.io/Sf21rQ
+(02:07:03 PM) 15SAAI18M: unknown-horizons: karottenreibe editor * rda04826 / (3 files in 2 dirs): Merge branch 'editor' of github.com:unknown-horizons/unknown-horizons into editor - http://git.io/fB9irg
+(02:11:30 PM) GreyGhost [~GreyGhost@triband-mum-59.183.54.2.mtnl.net.in] entered the room.
+(02:11:30 PM) GreyGhost left the room (quit: Changing host).
+(02:11:30 PM) GreyGhost [~GreyGhost@unaffiliated/greyghost] entered the room.
+(02:24:00 PM) Wr4i7h [~abc@a89-154-41-86.cpe.netcabo.pt] entered the room.
+(02:27:04 PM) 15SAAI18M: unknown-horizons: GreyGhost master * r6207539 / (3 files): Make Info widgets scrollable - http://git.io/MlvtEw

@@ -1,0 +1,505 @@
+Conversation with #unknown-horizons at Sun 27 Nov 2011 06:33:32 PM CET on karottenreibe@irc.freenode.net (irc)
+(06:33:33 PM) #unknown-horizons: The topic for #unknown-horizons is: Trade route minimap design - Andre_Re
+(06:33:33 PM) List of 43 users: [ ChanServ ][ UH-Guard ][ abeaumont ][ Andre_Re ][ Atomim ][ bddn ][ Beliar|AFK ][ BladeFreak ][ cassmodiah ][ chrisoelmueller ][ christoph_debian ][ CIA-28 ][ Entvex ][ Gambit ][ GreyGhost ][ gscai ][ hagabaka ][ inken ][ janebot ][ janus ][ josch ][ karottenreibe ][ ketas ][ ketas-ts ][ Kilian] ][ LinuxDonald ][ lmg ][ lolcat ][ lordhughes ][ manue| ][ mmaruseacph2 ][ ngc92 ][ Nightraven ][ Nihathrael ][ ronnie_c ][ rudi_s ][ scaabi ][ shadowmaster ][ totycro_ ][ tuempl ][ wart___ ][ wentam ][ yonathan ]
+(06:33:35 PM) totycro_: just a side-thought: there was currently only one person who was working on the minimap, and that one feels he's done enough for now, so if you're planning something fancy, please make sure someone is actually willing to implement it
+(06:33:38 PM) Andre_Re: chrisoelmueller: well, we are still rendering pixels to some area, don't we?
+(06:34:06 PM) chrisoelmueller: but no background image exists, just a background color
+(06:34:29 PM) chrisoelmueller: totycro_: you did a lot of cool things there already! :)
+(06:34:40 PM) Andre_Re: however, there are some pixels placed on a bitmap of a specific size
+(06:35:11 PM) totycro_: i wasn't fishing for compliments there, but i really think we have to be realistic with this design
+(06:35:14 PM) Andre_Re: and if pychan resizes that, or if the map size is too small, the minimap doesn't look really good
+(06:35:29 PM) totycro_: especially since this feature isn't critical
+(06:35:37 PM) Andre_Re: totycro_: what do you mean by that?
+(06:36:07 PM) Andre_Re: so you mean, we should move the rework to the future?
+(06:37:05 PM) totycro_: Andre_Re: the image you posted looks nice and fancy, and if we want something similiar, someone has to use many hours of his/her time, and we should match the available time to the amount of work required for the design
+(06:37:24 PM) totycro_: the minimap currently assumes that it is smaller than the actual map, so it will get slow if the minimap icon is huge
+(06:37:44 PM) totycro_: (actual maps are sometimes smaller than 300x300)
+(06:38:14 PM) gscai: 300x300 tiles?
+(06:38:17 PM) totycro_: so are there some concrete, doable proposals?
+(06:38:36 PM) chrisoelmueller: i volunteer to create some background images (also overlay images if that's possible)
+(06:38:40 PM) totycro_: tbh, i've no idea how big our maps are, i only know that i had a minimap once that was bigger than the map
+(06:38:42 PM) chrisoelmueller: but do not expect any of this to happen soon
+(06:39:11 PM) gscai: 250x250 is the maximum reasonable size for now
+(06:39:19 PM) totycro_: background image would currently mean only visible on water
+(06:39:20 PM) chrisoelmueller: Andre_Re: did you ask for any specific solutions to issues?
+(06:39:27 PM) chrisoelmueller: yeah that was what i meant
+(06:39:48 PM) Andre_Re: totycro_: the basic idea would be adding some color and round the edges
+(06:39:56 PM) chrisoelmueller: also fancy border graphics for the trade route widget, but i have other priorities here tbh
+(06:40:01 PM) Andre_Re: that would improove the wohle look of the map much
+(06:40:45 PM) totycro_: i guess both of these points are fine as long as the color stay unobstrusive and rounding the edges doesn't take too long
+(06:41:00 PM) Andre_Re: totycro_: would it be possible to render the map rgba?
+(06:41:18 PM) chrisoelmueller: just displaying an image on top of that icon could also cover 'rounding the edges'
+(06:41:20 PM) Andre_Re: so that we could set the transparency of the overlaying pixels?
+(06:41:26 PM) chrisoelmueller: but this will lead deep into focus trouble.
+(06:41:37 PM) chrisoelmueller: so i advise to better not do this :o
+(06:41:45 PM) totycro_: Andre_Re: i guess so, but maybe we shouldn't discuss such details at the meeting
+(06:41:56 PM) chrisoelmueller: what's the general point of the topic?
+(06:41:56 PM) Andre_Re: sure
+(06:42:01 PM) Andre_Re: what about my first point?
+(06:42:08 PM) Andre_Re: adding some color to the trading map?
+(06:42:19 PM) Andre_Re: the regular minimap should stay as it is
+(06:42:21 PM) Nihathrael: where do you want to add color?
+(06:42:22 PM) totycro_: sure, as long as it doesn't look clown-style
+(06:42:38 PM) Andre_Re: it won't
+(06:43:00 PM) Andre_Re: the idea is to take some water texture as a background, and then add some green tiles for land on it
+(06:43:10 PM) Andre_Re: or gray for mountains, dark green for trees
+(06:43:35 PM) Nihathrael: how does that help the trade map?
+(06:43:45 PM) Andre_Re: if you haven't changed too much, this wouldn't be too hard to implement
+(06:44:07 PM) Andre_Re: it's just a quesion of design
+(06:44:38 PM) Andre_Re: the current map doesn't look really good in this book
+(06:44:55 PM) Nihathrael: ok, how about you create a wiki page for that and select some ideas on coloring
+(06:44:58 PM) Andre_Re: it would even help to remove the background color
+(06:44:58 PM) Nihathrael: then we can discuss that next week
+(06:45:00 PM) totycro_: one last thought: please really also keep performance in mind, 300*300 = 90000, and this many calls/iterations take a while in pytho
+(06:45:15 PM) chrisoelmueller: and any other language i guess
+(06:46:08 PM) totycro_: <>
+(06:46:16 PM) Andre_Re: for now, would it be possible to remove the bg color?
+(06:46:30 PM) Andre_Re: so that the book texture would shine through?
+(06:46:41 PM) Beliar_ [~Beliar@a89-182-57-192.net-htp.de] entered the room.
+(06:46:43 PM) Andre_Re: same on the regular minimap
+(06:46:47 PM) Beliar_ is now known as Beliar
+(06:46:54 PM) totycro_: sure, all coloring is of course arbitrary
+(06:47:18 PM) chrisoelmueller: <>
+(06:47:29 PM) Andre_Re: so we could make it transparent, too?
+(06:48:40 PM) totycro_: just check the fife docu or ask the fife people, this does'nt need to be discussed at the meeting
+(06:48:43 PM) Nihathrael: Andre_Re: can you create a wiki page with proposals on what to change so that we can discuss these cahnges
+(06:48:52 PM) LinuxDonald left the room (quit: Read error: Connection reset by peer).
+(06:48:55 PM) Nihathrael: this is taking way to long this way
+(06:48:55 PM) Andre_Re: yes, I can
+(06:48:58 PM) Nihathrael: great
+(06:49:13 PM) Andre_Re: could you set an agreement?
+(06:49:17 PM) Nihathrael: #agreed Andre_Re will create a wiki page with proposals for the trade/minimap design
+(06:49:20 PM) Andre_Re: :D
+(06:49:22 PM) Nihathrael: <>
+(06:49:24 PM) Andre_Re: <>
+(06:49:34 PM) Beliar|AFK left the room (quit: Ping timeout: 240 seconds).
+(06:49:36 PM) Nihathrael: Pipette tool for building selection - lmg/totycro
+(06:49:40 PM) Nihathrael: #topic Pipette tool for building selection - lmg/totycro
+(06:49:48 PM) UH-Guard!~unknown-h@cl-1281.dus-01.de.sixxs.net: UH-Guard has changed the topic to: Pipette tool for building selection - lmg/totycro
+(06:50:10 PM) lmg: so.. uhm, guess I triggered this :)
+(06:50:29 PM) lmg: the idea is to have a copy+build tool
+(06:50:54 PM) lmg: init either by button or key, let's assume [C] for now.
+(06:51:06 PM) lmg: you hit [C] -> copy mode.
+(06:51:33 PM) lmg: you click any structure (road, tent, store) -> you are building that structure now.
+(06:51:43 PM) lmg: (like if you clicked it in the building menu)
+(06:51:47 PM) lmg: as simple as that.
+(06:51:59 PM) totycro_: i guess it's nice as a hotkey
+(06:52:14 PM) totycro_: not sure how many users will actually use it, but as a hotkey, it wouldn't hurt in any case
+(06:52:33 PM) Nihathrael: i think its a great idea and should be really usefull
+(06:52:47 PM) chrisoelmueller: i don't think we need a button for this as it is quite special, but certainly like the idea behind
+(06:52:55 PM) lmg: might also have ctrl+LMB, shift.. whatever modifier floats your boat.
+(06:52:58 PM) Nihathrael: hotkey is probably good
+(06:52:58 PM) chrisoelmueller: and i'd also use this regularly i imagine
+(06:53:18 PM) lmg: it's very nice for quickly building a road, or extending some production line.
+(06:53:32 PM) Nihathrael: so, can we open a ticket for this and then somebody sometime can build it
+(06:54:01 PM) Nihathrael: lmg: can you create a ticket at trac, where you in explain the idea in the description once more 
+(06:54:09 PM) chrisoelmueller: lmg: there's a hotkey  R  for building a road already
+(06:54:11 PM) Andre_Re: well, I don't think a buttomn for that would be useful, because not many people would use it anyway, but the hotkey really doesn't hurt
+(06:54:14 PM) chrisoelmueller: iirc it's R that is
+(06:54:32 PM) Andre_Re: if there is someone who want's to implement that, I wouldn't vote against
+(06:54:45 PM) Andre_Re: but we shouldn't put too much priority into it
+(06:54:48 PM) lmg: indeed so, thanks chrisoelmueller!
+(06:55:14 PM) totycro_: it would be trivial to implement, i could look into it later
+(06:55:23 PM) Andre_Re: ok
+(06:55:30 PM) Andre_Re: so I agree
+(06:55:33 PM) Nihathrael: #agreed totycro will take a look at ipmlementing the pipette tool
+(06:55:42 PM) lmg: one more thing..
+(06:55:46 PM) Nihathrael: please create a ticket if you don't have enough time to finish it
+(06:55:55 PM) lmg: is shift+LMB used already?
+(06:56:02 PM) chrisoelmueller: well we could use a special cursor here
+(06:56:03 PM) lmg: (except when already in build mode)
+(06:56:07 PM) chrisoelmueller: so a ticket is nice in any case
+(06:56:19 PM) Nihathrael: lmg: i don't think so
+(06:56:29 PM) Andre_Re: lmg: yes, it should be for selecting more then one unit
+(06:56:31 PM) gscai: it is used for attackin
+(06:56:47 PM) Andre_Re: I would rather say C+LMB
+(06:57:07 PM) Andre_Re: while holding the C key, we could also change the cursor
+(06:57:23 PM) lmg: details.. you guys figure that out ;)
+(06:57:26 PM) gscai: I don't see why it couldn't be like a normal mode where c just turns it on or off
+(06:57:37 PM) Andre_Re: or that, why not?
+(06:57:48 PM) Nihathrael: I agree, we should start with an on/off mode
+(06:57:52 PM) Andre_Re: that's a matter of taste, we shouldn't discuss that here
+(06:57:52 PM) CIA-28: fife: helios2000 * r3814 /trunk/engine/core/ (6 files in 2 dirs): (log message trimmed)
+(06:57:52 PM) CIA-28: fife: * Added a InstanceDeleteListener to the InstanceRenderer and to RendererNode. It
+(06:57:52 PM) CIA-28: fife: removes the effects (outline, coloring...) if the instance gets deleted or in
+(06:57:52 PM) CIA-28: fife: case of RendererNode it set the instance to null. fixes[o:fife, p:engine,
+(06:57:52 PM) CIA-28: fife: s:trac, t:602, r:3814]
+(06:57:52 PM) CIA-28: fife: * Changed the effect image creation in InstanceRenderer. The images are now
+(06:57:55 PM) CIA-28: fife: owned by the ImageManager. If the image is unused it gets added to a list that
+(06:57:55 PM) totycro_: c is chat, but we can fix sth later
+(06:58:07 PM) Nihathrael: then we can easily change it to something else, its  just a keybinding
+(06:58:13 PM) Nihathrael: <>
+(06:58:16 PM) gscai: <>
+(06:58:20 PM) chrisoelmueller: okay, cool request! <>
+(06:58:23 PM) Andre_Re: <>
+(06:58:45 PM) lmg: <>
+(06:58:47 PM) Nihathrael: #topic Graphics report - Nihathrael
+(06:58:47 PM) UH-Guard!~unknown-h@cl-1281.dus-01.de.sixxs.net: UH-Guard has changed the topic to: Graphics report - Nihathrael
+(06:59:02 PM) Nihathrael: #info I created a topic that we need help with graphics at blend.polis, no responses yet
+(06:59:16 PM) Nihathrael: #info lmg created great new fish today, they will be comitted after the meeting
+(06:59:20 PM) Nihathrael: <>
+(06:59:30 PM) Nihathrael: i will take a look at more blender forums this weke
+(06:59:36 PM) lmg: may I? -> http://imagebin.org/185942
+(07:00:13 PM) Nihathrael: #topic Status update and Hallway chat - Everyone 
+(07:00:13 PM) UH-Guard!~unknown-h@cl-1281.dus-01.de.sixxs.net: UH-Guard has changed the topic to: Status update and Hallway chat - Everyone
+(07:00:35 PM) Nihathrael: #info [Component Branch] I made loading units from yaml possible this week, now working on buildings
+(07:01:38 PM) karottenreibe: #info the map editor is now an the `editor` branch of the unknown-horizons repository at github (thanks to Nihathrael^^)
+(07:01:43 PM) ronnie_c: #info [Editor Branch] karottenreibe and I really got going on the editor feature now. With a lot things sorted out in the FIFE part, we can hopefully focus on implmenting things for UH now.
+(07:01:57 PM) chrisoelmueller: #info I updated our PR wiki page. I need help with updating the remaining wiki entries / forum posts. please pick a few for which you'd like to be responsible (and by all means add everything you stumble upon!)
+(07:02:02 PM) chrisoelmueller: http://wiki.unknown-horizons.org/w/PR[1] <== Link to PR wiki page
+(07:02:26 PM) chrisoelmueller: ronnie_c: karottenreibe: how can we test / any introduction planned?
+(07:02:46 PM) ronnie_c: chrisoelmueller: well, first checkout our branch
+(07:02:51 PM) Andre_Re: #info During last week, we had more then 8000 visitors on the home page – this is the biggest peek in the history of UH.
+(07:03:02 PM) ronnie_c: you can find the editor under editor/editor.py
+(07:03:30 PM) Andre_Re: #And for times as much as usually
+(07:03:34 PM) karottenreibe: chrisoelmueller: also you will need to have the lastest fife and apply this patch: http://fife.trac.cvsdude.com/engine/attachment/ticket/609/fix_extensions.3.patch
+(07:03:35 PM) totycro_: #info i did some general optimisations and minimap improvements
+(07:03:37 PM) lmg: is this the topic where I say 'hi' to everyone?
+(07:03:50 PM) totycro_: status icons are still needed
+(07:03:54 PM) ronnie_c: atm I would not recommend doing that as there are some crucial patches waiting to be applied, not only the one pointed out be karottenreibe
+(07:03:57 PM) chrisoelmueller: lmg: sure :)
+(07:04:07 PM) totycro_: #info tile ownership is now saved, not recalculated
+(07:04:11 PM) totycro_: (on load0
+(07:04:14 PM) karottenreibe: ronnie_c: the map editor will not work at all without that patch...
+(07:04:20 PM) karottenreibe: ronnie_c: just tried it ;-)
+(07:04:39 PM) ronnie_c: karottenreibe: i know
+(07:04:43 PM) totycro_: #info ships can now be sent via minimap, attacking is possible in the attack_via_minimap
+(07:04:54 PM) totycro_: you can check it out and to see if you like it
+(07:04:57 PM) ronnie_c: karottenreibe: and there's another patch just as important for the saver
+(07:05:11 PM) Kilian]: totycro_: the really nice feature
+(07:05:14 PM) ronnie_c: that'd be ticket 610 
+(07:05:18 PM) chrisoelmueller: #info We got some more new languages available on pootle. for any more requests, just tell me. Danish was included as translation #20 -- Yay!
+(07:05:38 PM) Nihathrael: chrisoelmueller: we should probably have a news post about that
+(07:05:40 PM) totycro_: #info main square is now walkable and behaves like a road
+(07:05:48 PM) chrisoelmueller: and i like it very much
+(07:05:49 PM) Nihathrael: together with the fish ;D
+(07:05:56 PM) totycro_: what do you think about the walkable main square btw?
+(07:06:00 PM) chrisoelmueller: and i like it very much
+(07:06:18 PM) chrisoelmueller: lmg: the fish also looks great :)
+(07:06:19 PM) Andre_Re: chrisoelmueller: We should think about ways to make non latin based scripts possible
+(07:06:30 PM) chrisoelmueller: Andre_Re: as in Cyrillic?
+(07:06:36 PM) lmg: thank you kindly, chrisoelmueller 
+(07:06:44 PM) Entvex: what language is uh in ? c++ maybe ?
+(07:06:46 PM) chrisoelmueller: i'm in contact with fife but there's some more stuff to be done first
+(07:06:59 PM) chrisoelmueller: as in a more flexible font management system
+(07:07:02 PM) totycro_: chrisoelmueller: i got that, but since it changes the structure of the settlement, it would be nice to have more opinions..
+(07:07:05 PM) Kilian]: Entvex: python
+(07:07:10 PM) Beliar left the room (quit: Ping timeout: 240 seconds).
+(07:07:16 PM) Nihathrael: totycro_: so far i like it
+(07:07:25 PM) Nihathrael: maybe we can have a forum pos tabou thi
+(07:07:26 PM) Nihathrael: this*
+(07:07:45 PM) mihaibivol [~mihai@188.26.56.130] entered the room.
+(07:07:49 PM) chrisoelmueller: heya mihaibivol 
+(07:07:56 PM) Andre_Re: chrisoelmueller: Cyrillic is, in fact, a latin-based script
+(07:07:59 PM) mihaibivol: hi chrisoelmueller 
+(07:08:06 PM) chrisoelmueller: Andre_Re: so you mean CJK and RTL?
+(07:08:14 PM) totycro_: mihaibivol: we're just having the status update topic, could you give a brief update as well?
+(07:08:50 PM) chrisoelmueller: that is one of the issues in need to be started at fife, i am not going to hack this stuff into UH if guichan has no proper support
+(07:08:50 PM) Andre_Re: chrisoelmueller: east asian scripts, hindi, ...
+(07:08:54 PM) chrisoelmueller: i am *so* not going to :P
+(07:09:07 PM) Kilian]: [INFO] iam not able to attend next weeks meeting, so all the topics have to be moved again
+(07:09:14 PM) Andre_Re: chrisoelmueller: fife can handle that
+(07:09:21 PM) Andre_Re: +however you must replace the font
+(07:09:23 PM) mihaibivol: totycro_, I'll do a short one
+(07:09:36 PM) chrisoelmueller: Andre_Re: well, how would we do that on runtime?
+(07:09:44 PM) chrisoelmueller: let's perhaps check that after the meeting?
+(07:09:47 PM) Andre_Re: we would have to implement a possibility to change the fonts on the fly
+(07:10:00 PM) Andre_Re: chrisoelmueller: kk
+(07:10:54 PM) chrisoelmueller: #info I added a section Packagers to our credits. any feedback?
+(07:11:03 PM) Andre_Re: <>
+(07:11:10 PM) Nihathrael: chrisoelmueller: cool
+(07:11:25 PM) lmg: may I add another feature request - that is re-introduction if I understood totycro_ correctly
+(07:11:40 PM) totycro_: chrisoelmueller: good idea
+(07:11:42 PM) chrisoelmueller: also, i fixed some minor translation stuff pointed out in djot's mail (we got another huge one) in a spare hour, nothing of importance
+(07:11:46 PM) Beliar [~Beliar@a89-182-57-192.net-htp.de] entered the room.
+(07:11:53 PM) Entvex: can any of you recommend a good ide for python?
+(07:11:58 PM) totycro_: lmg: sure
+(07:12:01 PM) Nihathrael: Entvex: wingide
+(07:12:03 PM) lmg: * moving the map with mouse
+(07:12:13 PM) totycro_: it's known here as the MMB iisue
+(07:12:16 PM) totycro_: *issue
+(07:12:24 PM) ***lmg nods
+(07:12:24 PM) chrisoelmueller: janebot: !ticket 582
+(07:12:25 PM) janebot: chrisoelmueller: http://trac.unknown-horizons.org/t/ticket/582[1]
+(07:12:26 PM) janebot: chrisoelmueller:  #582 (Enable Middle Mouse Button again) – Unknown Horizons 
+(07:12:34 PM) chrisoelmueller: lmg: that one
+(07:12:35 PM) lmg: +1
+(07:12:37 PM) Nihathrael: yea, we should probably try to get that goint
+(07:12:37 PM) Entvex: Nihathrael did you pay for that ?
+(07:12:53 PM) Nihathrael: Entvex: no, if you are established member of an open source project you cna get the pro version for free
+(07:12:58 PM) lmg: the first (and besides the fish) only thing that was a bit annoying
+(07:13:02 PM) Nihathrael: (for non commercial use of course)
+(07:13:11 PM) Nihathrael: Eclipse pydev is pretty good as well I hear
+(07:13:31 PM) lmg: depending on how much files you're dealing with..
+(07:13:34 PM) chrisoelmueller: lmg: you may check the ticket history for some evil bugs and crashes related to the MMB
+(07:13:37 PM) lmg: SciTE for small amounts
+(07:13:48 PM) chrisoelmueller: in general i'd also like to have it again
+(07:13:51 PM) lmg: qtcreator for large
+(07:14:19 PM) lmg: must have for not playing fullscreen
+(07:14:37 PM) lmg: (which I wouldn't want to @3840x1200 ;)
+(07:15:13 PM) lmg: proportional edge-scrolling might help, but the way it's implemented now.. I turned it off.
+(07:15:13 PM) Nihathrael: <>
+(07:15:28 PM) lmg: sorry for chatting away loosely during the meeting <>
+(07:15:45 PM) chrisoelmueller: no issue at all during hallway chat :)
+(07:15:48 PM) totycro_: lmg: in this topic, it's no big deal
+(07:16:09 PM) lmg: alrighty :)
+(07:16:14 PM) Entvex: do any one have a link to trac ?
+(07:16:20 PM) Nihathrael: trac.unknown-horizons.org
+(07:16:34 PM) Entvex: thanks
+(07:16:54 PM) chrisoelmueller: christoph_debian: ping
+(07:17:00 PM) lmg: slow UI interaction report: switching farms quickly
+(07:17:51 PM) inken1 [~inken@217.199.197.2] entered the room.
+(07:18:24 PM) lmg: may I suggest a topic guys?
+(07:18:28 PM) inken left the room (quit: Ping timeout: 260 seconds).
+(07:18:33 PM) Nihathrael: go ahead
+(07:18:45 PM) Entvex: to get on the team do i need to fix a bug or can i just pick any thing on trac ?
+(07:18:49 PM) lmg: iso in 4x 90? and lighting
+(07:19:06 PM) lmg: when I rendered those fish today..
+(07:19:15 PM) totycro_: Entvex: there is no real definition of team at uh
+(07:19:18 PM) lmg: I noticed you guys might have a problem there..
+(07:19:30 PM) totycro_: if you do anything that's beneficial for uh, you're in the team :)
+(07:19:39 PM) Nihathrael: lmg: yea its not really possible to create consistent lightning
+(07:19:41 PM) lmg: you rotate the sun (+ ray-shadow lamp, tho I don't see why those are even seperate) along with the camera
+(07:19:44 PM) Nihathrael: because we rotate the buildings on create
+(07:19:47 PM) Entvex: i see.
+(07:19:51 PM) Entvex: i wanna code
+(07:19:53 PM) lmg: yeah well..
+(07:19:54 PM) Andre_Re: Shouldn't we end the meeting?
+(07:20:07 PM) lmg: that is a conceptual problem
+(07:20:29 PM) lmg: either you "rotate the sun" along with the map
+(07:20:34 PM) lmg: or you don't.
+(07:20:48 PM) lmg: in which case you'd need 4x4 images for every building
+(07:20:57 PM) Nihathrael: for correct lgihtning we would need 4 renderings for each rotations
+(07:20:57 PM) Entvex: maybe i could Refactor setup.py
+(07:21:01 PM) lmg: 4x orientation x4 light
+(07:21:03 PM) Entvex: for a start
+(07:21:06 PM) totycro_: Entvex: that would be great
+(07:21:16 PM) Nihathrael: mihaibivol: ?
+(07:21:20 PM) Entvex: :)
+(07:21:21 PM) lmg: Nihathrael: exactly. not an option.
+(07:21:48 PM) lmg: it's not too bad with the buildings
+(07:21:48 PM) totycro_: Entvex: it's currently hard to quickly see what happens at which lin
+(07:21:48 PM) totycro_: e
+(07:21:52 PM) mihaibivol: Nihathrael, here
+(07:21:52 PM) Entvex: do any of you used this http://www.jetbrains.com/pycharm/[1] ?
+(07:21:52 PM) Beliar is now known as Beliar|AFK
+(07:22:00 PM) Entvex: i am just trying to find an ide i like
+(07:22:03 PM) lmg: but the ships.. just look awkward
+(07:22:07 PM) Entvex: okay totycro_ :)
+(07:22:10 PM) Nihathrael: mihaibivol: are you doing a status report? otherwise i'd close the meeting
+(07:22:12 PM) chrisoelmueller: Entvex: don't pick a task that you do not want to work on though (setup can be frustrating in my experience) 
+(07:22:19 PM) mihaibivol: sure, just waiting for the cue
+(07:22:24 PM) Nihathrael: its your turn
+(07:22:46 PM) Entvex: ahh okay chrisoelmueller
+(07:22:54 PM) Nihathrael: (we're doing general status updates)
+(07:22:56 PM) mihaibivol: #info the diplomacy overview is moving forward, i think this will be done by the end of the course
+(07:23:03 PM) totycro_: Entvex: pycharm appears to be implemented in java..
+(07:23:21 PM) totycro_: it's also free for open source projects though
+(07:23:24 PM) Entvex: yeah, but jetbrains make killer ides :)
+(07:23:59 PM) Entvex: i have used IntelliJ IDEA a lot
+(07:24:06 PM) Nihathrael: yea, its very powerful
+(07:24:10 PM) Entvex: but that's for java
+(07:24:28 PM) Nihathrael: ok everybody done for the meeting?
+(07:24:30 PM) Nihathrael: <>
+(07:24:33 PM) mihaibivol: #info, the student who was doing loadable ships and units had some problems and the progress isn't quite good, but i hope this will be done soon
+(07:24:45 PM) totycro_: <>
+(07:24:54 PM) lmg: ^ the lighting thing.. - if that is still meeting material.
+(07:24:57 PM) lmg: otherwise <>
+(07:25:26 PM) mihaibivol: i just want to add if you would like to see how diplomacy overview is looking just go here
+(07:26:05 PM) mihaibivol: https://github.com/WindRaven/unknown-horizons[1]
+(07:26:15 PM) mihaibivol: the branch is called cdl
+(07:27:17 PM) mihaibivol: after Stefan finishes with the exams, he will add buttons for each player and also the other players overview. Given that he didn't have great experience with python i think this is a good start :)
+(07:27:24 PM) mihaibivol: <>
+(07:27:27 PM) Nihathrael: #endmeeting
+(07:27:28 PM) UH-Guard!~unknown-h@cl-1281.dus-01.de.sixxs.net: UH-Guard has changed the topic to: Welcome to #unknown-horizons | www.unknown-horizons.org | Read the FAQ: http://wiki.unknown-horizons.org/w/FAQ[1] | News: 2011.3 Released! Get in on our homepage!
+(07:27:29 PM) UH-Guard: Meeting ended Sun Nov 27 18:16:07 2011 UTC.  Information about MeetBot at http://wiki.debian.org/MeetBot[1] . (v 0.1.4)
+(07:27:29 PM) UH-Guard: Minutes:        http://meetings.christoph-egger.org/unknown-horizons/2011/unknown-horizons.2011-11-27-17.04.html[1]
+(07:27:29 PM) UH-Guard: Minutes (text): http://meetings.christoph-egger.org/unknown-horizons/2011/unknown-horizons.2011-11-27-17.04.txt[1]
+(07:27:29 PM) UH-Guard: Log:            http://meetings.christoph-egger.org/unknown-horizons/2011/unknown-horizons.2011-11-27-17.04.log.html[1]
+(07:27:35 PM) Nihathrael: mihaibivol: great, thanks for the update
+(07:27:51 PM) Nihathrael: lmg: so would you suggest that instead we just don't rotate the sun with the map?
+(07:27:57 PM) Entvex: are you using git or github ?
+(07:28:03 PM) chrisoelmueller: both
+(07:28:06 PM) Nihathrael: github (which uses git ;))
+(07:28:06 PM) mihaibivol: hope that on the 10th of December some pull requests will be made :)
+(07:28:13 PM) Nihathrael: mihaibivol: nice :)
+(07:28:47 PM) totycro_: does anyone happen to know very fast implementations for distance between shapes, especially between rects?
+(07:28:56 PM) totycro_: we currently have this:   return ((max(self.left - other.right, 0, other.left - self.right) ** 2) + (max(self.top - other.bottom, 0, other.top - self.bottom) ** 2)) ** 0.5
+(07:29:02 PM) Kilian]: can anyone please test if renaming a ship works for him/her ?
+(07:29:27 PM) lmg: Kilian]: cannot rename by clicking.
+(07:29:39 PM) totycro_: Kilian]: works fine here
+(07:29:43 PM) totycro_: lmg: you have to click on the ship name
+(07:29:57 PM) gscai: totycro_: in general it might be faster if we used squares of distances
+(07:30:08 PM) Kilian]: theres the tooltip but i cant click
+(07:30:25 PM) totycro_: which tooltip?
+(07:30:46 PM) lmg: "click to rename"
+(07:30:59 PM) totycro_: the tooltip doesn't really work it, it appears once in a wihle
+(07:31:23 PM) totycro_: when it appears, renaming is disabled
+(07:31:45 PM) chrisoelmueller: does not work for me (tooltip always appears)
+(07:31:48 PM) chrisoelmueller: thus renaming fails
+(07:32:15 PM) Kilian]: chrisoelmueller: same here
+(07:32:18 PM) ***lmg seconds that
+(07:32:23 PM) mihaibivol left the room (quit: Quit: Leaving).
+(07:33:08 PM) totycro_: gscai: good point, i guess it's applicable in many cases
+(07:33:15 PM) totycro_: i'll test it for get_providers_in_range
+(07:33:31 PM) lmg: Nihathrael: not sure (re: lighting)..
+(07:33:33 PM) totycro_: that method is ~8% of the overall running time
+(07:33:35 PM) totycro_: (without ai)
+(07:33:39 PM) lmg: I'll have to think this through.
+(07:33:55 PM) hagabaka: are sides of the rectangles always paralell?
+(07:34:07 PM) totycro_: yes
+(07:34:10 PM) Entvex: can any one be nice and help me with git =)
+(07:34:16 PM) Entvex: pretty please
+(07:34:17 PM) totycro_: Entvex: sure
+(07:34:24 PM) lmg: git clone stuff.git ? :)
+(07:34:47 PM) Entvex: i am using this trac.unknown-horizons.org
+(07:34:54 PM) Entvex: https://github.com/unknown-horizons/unknown-horizons.git[1]
+(07:35:14 PM) lmg: Nihathrael: one more thing.. since I might call it a day any soon..
+(07:35:40 PM) lmg: what's the current pirate-ship model? dauerflucher/units* one?
+(07:36:13 PM) Entvex: totycro_ is that the right path ?
+(07:36:20 PM) Entvex: i am only used svn
+(07:36:28 PM) Entvex: i have only used svn
+(07:36:31 PM) totycro_: just do "git clone https://github.com/unknown-horizons/unknown-horizons.git[1]"
+(07:36:35 PM) totycro_: that's like svn co
+(07:37:03 PM) lmg: `svn up` -> `git pull`
+(07:37:06 PM) Entvex: maybe the problem is that my ide can't do it beacuse it is missing git
+(07:37:16 PM) chrisoelmueller: lmg: http://wiki.unknown-horizons.org/w/User:Eoc/gfx[1]
+(07:37:25 PM) chrisoelmueller: lmg: that's only a reference though
+(07:38:07 PM) lmg: k, thanks chrisoelmueller. so I have the right one.
+(07:38:13 PM) lmg: gonna do some tests with that
+(07:38:16 PM) Entvex: totycro_ i think i found the problem
+(07:38:49 PM) hagabaka: shouldn't it be ((self.left + self.right - other.left - other.right)**2 + (self.top + self.bottom - other.top - other.bottom)**2)**0.5 / 2
+(07:38:58 PM) lmg: Nihathrael: in general you'll always have the rotated buildings vs. units rotating in motion problem.
+(07:39:01 PM) hagabaka: the distance between their centers
+(07:39:42 PM) Nihathrael: is that a problem if we have a fixed sun relativ to the rotation?
+(07:39:55 PM) lmg: yeah still
+(07:39:57 PM) totycro_: hagabaka: it should be the length of the shortest line connecting the rects
+(07:40:04 PM) Nihathrael: lmg: why
+(07:40:10 PM) hagabaka: oh
+(07:40:20 PM) totycro_: it's kind of an odd specification concerning geometry, but it makes sense in uh
+(07:40:28 PM) chrisoelmueller: Nihathrael: because the units moving have a different interial center
+(07:40:29 PM) lmg: fixed sun -> easy units
+(07:40:35 PM) lmg: rotating sun -> easy buildings
+(07:40:37 PM) chrisoelmueller: inertial*
+(07:40:47 PM) chrisoelmueller: i do see the problem
+(07:40:49 PM) Nihathrael: i don't understand that
+(07:41:14 PM) Nihathrael: if you always say the sun is at the top right, no matter how your building/unit is rotated, it should always look the same
+(07:41:46 PM) lmg: re-read what I said :)
+(07:41:49 PM) lmg: that is, wrote
+(07:41:56 PM) lmg: that is true for buildings
+(07:41:56 PM) hagabaka: totycro_, then the 0's in max( ) should be unnecessary
+(07:42:20 PM) lmg: but if you render your pirate ship with the sun bein in its aft for _every_ angle
+(07:42:41 PM) lmg: it will still look awkward if it's rotated 180? in a 45? map
+(07:42:43 PM) lmg: with me? :)
+(07:42:48 PM) totycro_: hagabaka: can't this be negative if the rects overlap?
+(07:43:07 PM) Nihathrael: look awkward because you have the feeling the sun is switched around?
+(07:43:19 PM) lmg: around the ship only
+(07:43:40 PM) lmg: hangon
+(07:43:49 PM) Nihathrael: i don't see a difference between a house and a unit
+(07:43:56 PM) lmg: might have a brainfart here
+(07:43:56 PM) Nihathrael: still
+(07:43:59 PM) hagabaka left the room (quit: Quit: Leaving).
+(07:43:59 PM) Nihathrael: its just an image  wtih thesun coming from up riht for example
+(07:44:03 PM) Nihathrael: no matter how much you rotate
+(07:44:06 PM) lmg: chrisoelmueller: Nihathrael does have a valid point here
+(07:44:08 PM) Nihathrael: it will always come from up right
+(07:44:18 PM) Entvex: totycro_ it works :D!
+(07:44:28 PM) lmg: static sun _does_ solve it. for both buildings and units
+(07:44:31 PM) hagabaka [~hagabaka@cblmdm24-53-178-92.buckeyecom.net] entered the room.
+(07:44:31 PM) hagabaka left the room (quit: Changing host).
+(07:44:31 PM) hagabaka [~hagabaka@unaffiliated/hagabaka] entered the room.
+(07:44:44 PM) hagabaka: oh yeah, never mind
+(07:44:49 PM) chrisoelmueller: we do not have that right now, do we?
+(07:44:54 PM) lmg: nah
+(07:45:05 PM) lmg: the rig rotates the sun + shadows around the model
+(07:45:11 PM) totycro_: hagabaka: i'm not really great with geometrical algos, but i think this implementation is correct
+(07:45:23 PM) totycro_: but it's still quite slow in python, partly due to 2 function calls to max
+(07:46:08 PM) lmg: oh wow.. non-rotating minimap is killing me
+(07:46:23 PM) lmg: rotating minimap is kicking me while down already :)
+(07:47:03 PM) lmg: anyways.. I'll think this through in detail tomorrow
+(07:47:14 PM) lmg: make a proper rig and report back to you Nihathrael
+(07:47:19 PM) lmg: now.. I need a beer :)
+(07:47:24 PM) lmg: have a nice evening guys o/
+(07:47:44 PM) lmg is now known as lmGoneOut
+(07:48:47 PM) hagabaka: how about math.sqrt or http://docs.python.org/library/math.html#math.hypot[1] ? they might be more optimized
+(07:48:57 PM) Nihathrael: lmGoneOut: have a great one!
+(07:52:23 PM) Entvex: totycro_ is it allways slow at checking out ?
+(07:52:34 PM) totycro_: hagabaka: hmm.. i just tried it, for some reason, it's both  0.02 usec for small integers
+(07:52:41 PM) totycro_: Entvex: sometimes
+(07:52:53 PM) Nihathrael: Entvex: usually git is pretty fast, but github sometimes is slow
+(07:52:54 PM) Entvex: okay
+(07:52:56 PM) totycro_: hagabaka: but that's strange, i'd have expected that to be faster as well
+(07:53:30 PM) Entvex: okay it just saying working but the console don't show any thing
+(07:56:02 PM) chrisoelmueller: Kilian]: ping?
+(07:56:14 PM) Entvex: yes it's downloading!
+(07:57:20 PM) CIA-28: unknown-horizons: totycro master * rfb24f33 / (3 files in 3 dirs): Optimised get_providers_in_range - http://git.io/DTbsug
+(07:57:35 PM) wart___ left the room.
+(07:57:43 PM) totycro_: it's nearly twice as fast, but i all i did was optimisations, that the compiler could have done as well
+(07:58:51 PM) Kilian]: chrisoelmueller: pong
+(07:59:05 PM) Entvex: Nihathrael do you have a coding style i need to follow ?
+(07:59:25 PM) totycro_: Entvex: something like pep-8, but with tabs
+(07:59:33 PM) Entvex: i see
+(08:02:11 PM) Beliar|AFK is now known as Beliar
+(08:04:18 PM) Entvex: totycro_ ?
+(08:04:38 PM) Entvex: do you know any thing about the http://trac.unknown-horizons.org/t/ticket/1261[1]
+(08:04:40 PM) lordhughes left the room (quit: Quit: Leaving).
+(08:05:21 PM) totycro_: yes, all maps are just invalid
+(08:05:27 PM) totycro_: because of a new tile system
+(08:05:41 PM) Entvex: is that a easy one to start off with ?
+(08:05:54 PM) totycro_: it's basically only configuration
+(08:06:00 PM) Entvex: i don't know any of the code yet
+(08:06:09 PM) Entvex: okay but i think i'll try and do it
+(08:06:13 PM) totycro_: the war tutorial needs any map with 2 players and a few ships
+(08:06:16 PM) Entvex: can you help me get started ?
+(08:06:31 PM) totycro_: yes, you could try the incode tutorial
+(08:06:44 PM) totycro_: it's kind of outdated by now
+(08:06:54 PM) totycro_: we were trying to fix it, but no one did so far
+(08:07:16 PM) chrisoelmueller: okay i just achieved to have one more spare hour
+(08:07:24 PM) chrisoelmueller: any GUI requests?
+(08:07:27 PM) Entvex: do you know the path of the incode tutoiral ?
+(08:07:33 PM) Entvex: tutorial*
+(08:07:38 PM) chrisoelmueller: it starts in run_uh.py i think
+(08:07:44 PM) Entvex: okay
+(08:07:49 PM) totycro_: yes, you can grep for TUTORIAL if you get lost
+(08:08:04 PM) totycro_: so if you have any questions about the code, just ask
+(08:08:10 PM) Entvex: i don't use linux mate =)
+(08:08:57 PM) Entvex: but i miss grep
+(08:09:02 PM) Entvex: but i like powershell
+(08:09:14 PM) chrisoelmueller: windows still has no grep/ack?
+(08:09:16 PM) Entvex: maybe it has something like grep
+(08:09:25 PM) Entvex: i think powershell has
+(08:09:28 PM) gscai: msys has grep on windows
+(08:09:38 PM) chrisoelmueller: how do they keep their admins in good mood?
+(08:10:13 PM) totycro_: they don't need to, they have a monopoly
+(08:10:17 PM) gscai: chrisoelmueller: http://xkcd.com/323/
+(08:10:32 PM) chrisoelmueller: haha yeah
+(08:10:33 PM) totycro_: ^^
+(08:11:14 PM) Entvex: ahah
+(08:11:18 PM) Entvex: that is funny
+(08:11:52 PM) CIA-28: unknown-horizons: nihathrael master * rff3da6c / (123 files in 6 dirs): Added new fish by lmg. Thanks for this great contribution! - http://git.io/UtNyvg
+(08:11:57 PM) Entvex: do you have a wiki page on the new tile system ?
+(08:12:03 PM) Entvex: or the tile system ?
+(08:12:26 PM) Nihathrael: yea, no, not really
+(08:12:33 PM) Entvex: hehe
+(08:12:38 PM) chrisoelmueller: does a mailing list posting count?
+(08:12:38 PM) Nihathrael: i'm the wiki page i guess
+(08:12:52 PM) Entvex: Nihathrael how do the tile system work
+(08:12:57 PM) chrisoelmueller: wait we have a page
+(08:13:00 PM) chrisoelmueller: the SoC idea page
+(08:13:00 PM) ***Entvex looks at the API 
+(08:13:14 PM) gscai: #1261 could be done without any coding
+(08:13:14 PM) CIA-28: unknown-horizons: Moritz Beller editor * rf336115 / (322 files in 62 dirs): Merge branch 'master' into editor (+8 more commits...) - http://git.io/Wuusiw
+(08:13:35 PM) Nihathrael: the new fish are seriously awesome
+(08:13:40 PM) chrisoelmueller: true
+(08:13:49 PM) Entvex: is http://epydoc.unknown-horizons.org/[1] up 2 date
+(08:14:01 PM) Nihathrael: Generated by Epydoc 3.0.1 on Sun Nov 27 03:15:48 2011
+(08:14:10 PM) Nihathrael: yep
+(08:14:13 PM) Nihathrael: what do you want to do with the tilesystem
+(08:14:18 PM) Nihathrael: it works similar to the action sets
+(08:14:22 PM) Nihathrael: i think for those we have a wiik pake
+(08:14:27 PM) Entvex: how gscai do i do it ?
+(08:14:37 PM) Nihathrael: http://wiki.unknown-horizons.org/w/Action_sets[1]
+(08:14:53 PM) gscai: choose a new suitable map and move the ships to suitable positions
+(08:14:55 PM) Nihathrael: janebot: !ticket 1261
+(08:14:55 PM) janebot: Nihathrael: http://trac.unknown-horizons.org/t/ticket/1261[1]
+(08:14:57 PM) janebot: Nihathrael:  #1261 (War tutorial broken) – Unknown Horizons 

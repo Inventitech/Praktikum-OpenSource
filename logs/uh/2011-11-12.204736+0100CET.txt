@@ -1,0 +1,16 @@
+Conversation with #unknown-horizons at Sat 12 Nov 2011 08:47:36 PM CET on karottenreibe@irc.freenode.net (irc)
+(08:47:37 PM) #unknown-horizons: The topic for #unknown-horizons is: Welcome to #unknown-horizons | www.unknown-horizons.org | Read the FAQ: http://wiki.unknown-horizons.org/w/FAQ[1] | News: Release coming up next week. Stay tuned!
+(08:47:37 PM) List of 36 users: [ ChanServ ][ UH-Guard ][ abeaumont ][ Andre_Re ][ Beliar ][ cassmodiah ][ chrisoelmueller ][ christoph_debian ][ CIA-28 ][ Gambit ][ GreyGhost_ ][ gscai ][ inken ][ janebot ][ janus ][ josch ][ karottenreibe ][ kaschte ][ ketas ][ ketas-ts ][ Kilian]_afk ][ LinuxDonald ][ lolcat ][ manue| ][ mmaruseacph2 ][ Nightraven ][ Nihathrael ][ nmarques ][ prock ][ rudi_s ][ shadowmaster ][ skelet ][ spq ][ totycro_ ][ tuempl ][ wentam ]
+(08:48:10 PM) gscai: I'm going to guess that the problems with the sound system aren't fixed largely because developers are likely to turn sounds off at some point and then almost never turn them back on
+(08:48:43 PM) GreyGhost_: hehe
+(08:49:02 PM) GreyGhost_: imo that guy should continue speaking ..
+(08:55:44 PM) gscai: GreyGhost_: you could create a ticket about it if it doesn't already exist
+(08:56:05 PM) qubodup [~qubodup@46.115.25.62] entered the room.
+(08:56:10 PM) qubodup: hi
+(08:56:12 PM) GreyGhost_: gscai, ki
+(08:56:16 PM) GreyGhost_: qubodup, hey
+(08:56:52 PM) qubodup: I installed fife-svn on my arch linux 64bit but can't play uh from git using neither py2.5, 2.6, 2.7 nor 3
+(08:57:31 PM) qubodup: fife r3706
+(08:59:24 PM) gscai: qubodup: do you get an error message?
+(09:03:24 PM) qubodup: oh, sorry. py3 of course complains about syntax, py2x says FIFE was not found
+(09:03:31 PM) qubodup: I'll reinstall latest fife release now
