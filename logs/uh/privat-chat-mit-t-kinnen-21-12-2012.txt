@@ -1,0 +1,291 @@
+hehehe
+tileset loader oder was?
+
+för ungefär en timme sedanMauritz Bella
+ah, kannst du den leuten vlt. mal sagen, dass sie mit experimenten am mapfileformat aufhören sollen?
+
+för ungefär en timme sedanThomas Kinnen
+ich mach die
+die experimente 
+und was du meinst ist das savegame format
+
+för ungefär en timme sedanMauritz Bella
+vor allem so späße wie die template.sqlite in template.sql umbenenn und dann auch noch sql statements drauß machen die keine abfragen haben ob die zu createnten tabellen schon existieren
+
+för ungefär en timme sedanThomas Kinnen
+
+das das vom format her geändert wurde war etwas lästig in der tat
+
+för ungefär en timme sedanMauritz Bella
+ist jetzt das zweite mal dass ich meinen saver neu schreiben musste und langsam wirds lästig 
+die andere sache ist die mit den groundtiles
+der intialisierungscode dafür ist ungefähr so als wolle man 100000 groundtiles laden
+was an sich ja ok ist
+aber
+bei buildings wird neben der id auch der name gespeichert in der tabelle
+bei ground tiles nicht
+wieso?
+und können wir das ändern?
+
+för ungefär en timme sedanThomas Kinnen
+da hatte ich im component branch auch gut spaß
+in welcher db
+welche namen
+wofür brauchst du die?
+
+för ungefär en timme sedanMauritz Bella
+mapping id <-> name
+bspw. 0 <-> ts_beach0
+diese zuordnung exisitiert seltsamerweise für die buildings
+(ist im grunde aber redundant in der tabelle, gehört da also eignetlich nicht hin)
+für die groundtiles aber nicht
+bei den groundtiles ist dies sinnigerweise in cls.id (!!!) gespeichert
+
+för ungefär en timme sedanThomas Kinnen
+welch e zuordnung denn?
+
+för ungefär en timme sedanMauritz Bella
+die zuordnung id <-> name
+
+för ungefär en timme sedanThomas Kinnen
+was fürn name? sowas wie "lumberjack"?
+
+för ungefär en timme sedanMauritz Bella
+mach halt ma ne db auf die spalten heißen doch genauso
+in tabelle ground gibt es nur spalte ground_id
+
+för ungefär en timme sedanThomas Kinnen
+grounds haben keinen namen
+
+för ungefär en timme sedanMauritz Bella
+doch
+sowas wie 'ts_beach0'
+
+för ungefär en timme sedanThomas Kinnen
+das ist kein name
+das ist ein tileset was benutzt wird
+
+för ungefär en timme sedanMauritz Bella
+für mich schon
+
+för ungefär en timme sedanThomas Kinnen
+man kann auch auf eine ids mehrere tilesets zuordnen
+
+för ungefär en timme sedanMauritz Bella
+jedenfalls wird das für fife äquivalent wie der name benutzt
+
+för ungefär en timme sedanThomas Kinnen
+du kannst 0 -> ts_beach0, 0-> ts_beach1 usw machen
+
+för ungefär en timme sedanMauritz Bella
+und was soll das bringen?
+(und wird doch btw. auch nicht so gemacht)
+
+för 59 minuter sedanThomas Kinnen
+erwähnte ich bereits das die sqlite tabellen für die buildings demnächst eh nichtig werden?
+
+för 59 minuter sedanMauritz Bella
+nö
+dann baut ihr den editor aber selbst um 
+
+för 59 minuter sedanThomas Kinnen
+ground.py
+for (tile_set_id,) in db("SELECT set_id FROM tile_set WHERE ground_id=?", cls.id):
+
+för 58 minuter sedanMauritz Bella
+jo dieses meisterstück an programmierskunst hab ich mir schon angeshene 
+
+för 58 minuter sedanThomas Kinnen
+-> mehrere tiles_sets pro id
+
+för 58 minuter sedanMauritz Bella
+nö
+printe mal raus
+wirste sehen das genau das nicht der fall ist
+
+för 57 minuter sedanThomas Kinnen
+ja weils noch nicht mehr gibt
+^^
+
+för 57 minuter sedanMauritz Bella
+haha du komiker
+
+för 57 minuter sedanThomas Kinnen
+siehe tabelle
+
+för 57 minuter sedanMauritz Bella
+
+
+för 57 minuter sedanThomas Kinnen
+
+nur weil es nicht mehr gibt heisst das nicht das der code das nicht macht
+
+för 56 minuter sedanMauritz Bella
+haste dir mal den editor angesehen?
+der funktioniert mittlerweile schon sau gut
+
+för 56 minuter sedanThomas Kinnen
+wann denn
+kann ich mal machen jetzt eigentlich
+
+för 56 minuter sedanMauritz Bella
+das einzige problem ist das rotieren
+irgendwie kriegen wir das nicht hin
+
+för 56 minuter sedanMauritz Bella
+der editor hat ne integrierte rotate funktion
+wir haben neulich rotateted loading eingebaut
+karten sehen also jetzt so aus wie in uh 1:1 
+aber man kann eure objekte im editor nicht rotieren
+und wir haben keine ahnung wieso
+scheints als macht ihr das irgendwie anders als in fife vorgesehen??? vermuten wir mal
+
+för 55 minuter sedanThomas Kinnen
+das ist weil das animierte objekte sind
+die haben ne facing position
+also ne position die sie "angucken"
+
+för 55 minuter sedanMauritz Bella
+weil mit den xml fife karten geht rotieren und wir setzen auch einfach setRotation
+
+för 55 minuter sedanThomas Kinnen
+und anhand von der lget sich die rotation fest
+
+för 54 minuter sedanMauritz Bella
+benutzt ihr setrotation?
+kann sein dass wir das rotation ding dann nicht implementieren können
+wenn das im editor verdrahtet ist und der das anders macht als ihr
+
+för 52 minuter sedanThomas Kinnen
+ne ich glaub nicht das wir setrotation benutzen
+
+för 52 minuter sedanMauritz Bella
+ohje
+
+för 52 minuter sedanThomas Kinnen
+aber da bin ich mir grad nicht so ganz sicher
+
+för 52 minuter sedanMauritz Bella
+dann wirds wohl nicht gehen
+ok
+
+för 52 minuter sedanThomas Kinnen
+muss ich mir morgen mal den code angucken
+
+för 52 minuter sedanMauritz Bella
+das wäre super 
+
+för 52 minuter sedanThomas Kinnen
+"pull"
+ich sag dir
+die 2h arbeiten
+lohnen sich!
+
+för 51 minuter sedanMauritz Bella
+^^
+
+för 51 minuter sedanThomas Kinnen
+174kb/s
+*kotz*
+
+för 51 minuter sedanMauritz Bella
+warhscheinlich lahmt github halt mal wieder
+hatte ich neulich auch
+sau nervig ihr habt irgendwie neue grafiken reingehauen
+konnte 1h nicht mit arbeiten anfangen
+naja ^^
+
+för 50 minuter sedanThomas Kinnen
+Invalid plugin: UHMapSaver
+Traceback (most recent call last):
+File "/home/nihathrael/projects/fife/tools/editor/scripts/plugin.py", line 68, in __init__
+plugin = __import__(f)
+File "/home/nihathrael/projects/unknown-horizons/editor/plugins/UHMapSaver.py", line 23, in <module>
+from horizons.util.dbreader import DbReader
+File "/home/nihathrael/projects/unknown-horizons/horizons/util/__init__.py", line 27, in <module>
+from color import Color
+File "/home/nihathrael/projects/unknown-horizons/horizons/util/color.py", line 22, in <module>
+import horizons.main
+File "/home/nihathrael/projects/unknown-horizons/horizons/main.py", line 44, in <module>
+from horizons.util import ActionSetLoader, DifficultySettings, TileSetLoader, Color, parse_port, DbReader
+
+för 50 minuter sedanThomas Kinnen
+btw
+
+för 50 minuter sedanMauritz Bella
+hast du in .fife aktiviert?
+fife ist die neueste?
+wir mussten einiges patchen ...
+
+för 48 minuter sedanThomas Kinnen
+hm da könnte was fehlen
+mal gucken
+ja aktiviert hab ichs
+
+för 48 minuter sedanMauritz Bella
+also ~/.fife da musste die plugins aktiverien
+komisch
+kp
+bei mir und fabi gehts ^^
+
+för 47 minuter sedanThomas Kinnen
+http://pastebin.com/wNyw3nhw
+hm das hört sich echt komisch an
+ich hab ne idee
+moment
+ok das wars nicht
+
+för 45 minuter sedanMauritz Bella
+gibts doch gar nicht
+python2 editor/editor.py
+neuestes fife kompiliert?
+und wird auch wirklich verwendet?
+
+för 45 minuter sedanThomas Kinnen
+ja
+ja
+siehe erste zeile
+
+för 44 minuter sedanMauritz Bella
+ja gut da seh ich ja nicht welche revision du ausgecheckt hast
+
+för 43 minuter sedanThomas Kinnen
+grad geupdated und neu kompiliert
+läuft also beides afu head
+
+för 43 minuter sedanMauritz Bella
+hm, mist
+mach mal pull und probier nochmal
+
+för 40 minuter sedanThomas Kinnen
+nope
+diese util dinger
+die gehen mir auch ständig auf den sack
+irgendwann bau ich die mal alle afu absolut import um
+
+för 39 minuter sedanMauritz Bella
+hm
+was ist jetzt die fhelermeldung?
+
+för 39 minuter sedanThomas Kinnen
+genau das selbe
+
+för 39 minuter sedanMauritz Bella
+die import zeile war unnötig
+kann nicht sein
+hab ich gerade gelöscht
+
+
+för 38 minuter sedanThomas Kinnen
+http://pastebin.com/7TrXXY4b
+ok nicht genau das selbe
+
+för 38 minuter sedanMauritz Bella
+ok
+irgendwie scheint deiner ein problem mit dne paths zu haben
+
+för 37 minuter sedanThomas Kinnen
+hm, vielleicht ist auch mein checkout im racsh oder so
+
+för 37 minuter sedanMauritz Bella
+sieht fast so aus
