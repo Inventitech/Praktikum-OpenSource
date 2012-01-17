@@ -41,7 +41,16 @@ auf neu geschrieben werden muss. Zum anderen muss die Funktionsweise von FIFE-Pl
 verstanden werden.
 
 \subsection{Der FIFE Editor}
-% TODO editor plugins müssen hier beschrieben werden!
+Die FIFE Graphikengine besitzt bereits einen eigenen MapEditor, der in Python geschrieben
+wurde. Dieser kann Maps unter
+Verwendung der Engine darstellen, kreieren und verändern. Er bietet grundsätzliche
+Funktionalitäten wie das setzen, löschen und bearbeiten von Objekten auf der Map,
+die Organisation von Objekten in verschiedene Ebenen und das Setzen von Mapeinstellungen.
+
+Zusätzlich kann der Editor um weitere Funktionalität erweitert werden. Dies geschieht,
+indem man Python Plugins schreibt, die vom Editor beim Starten geladen werden. Dieser
+Mechanismus wurde von uns genutzt, um den bestehenden Editor-Kern um UH-spezifische
+Funktionen zu erweitern.
 
 \subsection{Integration in die UH Codebase}
 %TODO
