@@ -53,7 +53,15 @@ Mechanismus wurde von uns genutzt, um den bestehenden Editor-Kern um UH-spezifis
 Funktionen zu erweitern.
 
 \subsection{Integration in die UH Codebase}
-%TODO
+Der neue Editor muss in die bestehende Infrastruktur des UH Projekts integriert werden.
+In früheren Versionen wurde der gesamte Code des FIFE Editors in das UH Repository
+in ein Unterverzeichnis kopiert. Mit Hilfe der Plugin-Funktionalität der neuen Versionen
+des Editors ist dies jedoch nicht mehr nötig. Da eine Duplizierung des Editor-Codes
+beträchtliche Folgen für die Wartbarkeit und einen nicht zu unterschätzenden Aufwand
+bei zukünftigen Aktualisierungen oder Bugfixes des Editors bedeutet, werden im UH
+Repository nur die UH-spezifischen Code-Teile gehostet. Dies bedeutet, dass ein
+zusätzliches Skript erstellt werden muss, der den Editor aus einem UH Unterverzeichnis
+heraus starten kann und die UH Plugins in diesen integriert.
 
 \subsection{Kommandozeilen-Parameter}
 
