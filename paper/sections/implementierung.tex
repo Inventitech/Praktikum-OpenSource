@@ -1,0 +1,43 @@
+
+\subsection{Eigene Beiträge}
+Momentan ist es in UH nur möglich, Karten zufällig zu generieren. Da eine
+Kampagnenfunktion geplant ist (geplant für das 2012.2 Release Mitte 2012, siehe
+Roadmap [1]), benötigt UH einen Karten Editor. FIFE bietet bereits einen solchen Editor.
+Dieser kann jedoch momentan nicht für UH eingesetzt werden, da UH ein anderes Format
+zum Speichern der Karten benutzt. Zudem ist er von einem Usability-Standpunkt aus
+verbesserungswürdig.
+Um das UH-Kartenformat im Editor benutzen zu können, muss dieser ein Plugin-System
+anbieten, mit dem neue Kartenformate gelesen und gespeichert werden können. Diese
+Plugin-Infrastruktur existiert momentan nur für das Laden, für das Speichern fehlt sie
+noch. Der Code für die Lade-Infrastruktur kann hierbei als Vorlage genutzt werden, so
+dass dies nicht den Hauptteil der Arbeit einnimmt.
+Zusätzlich benötigt der FIFE Editor eine Funktion, um einen zusätzlichen Plugin-Ordner
+bestimmen zu können. Momentan lädt der Editor nur Plugins aus einem fest kodierten
+Standardordner. Dies ist allerdings für die Integration mit UH nicht ausreichend. Dies ist
+eine kleine Erweiterung des bestehenden Editor-Codes.
+Sobald die Infrastruktur des Editors implementiert ist, müssen entsprechende Plugins für
+das UH-Kartenformat geschrieben werden. Dies umfasst drei wesentliche Teile:
+1. Es muss ein Plugin erstellt werden, das die von UH bereitgestellten Objekte
+(Bodentiles und Gebäude) laden kann, um sie im Editor bereitzustellen
+2. Es muss ein Plugin erstellt werden, das bestehende UH Maps laden kann
+3. Es muss ein Plugin erstellt werden, das im Editor erstellte oder durch den Editor
+veränderte Karten im UH Map Format speichern kann
+Dies wird die Hauptarbeit des Projekts sein, da hierzu zum einen die Funktionsweise vieler
+UH-Klassen sowie das Map Format verstanden, als auch der Großteil des Codes von Grund
+auf neu geschrieben werden muss. Zum anderen muss die Funktionsweise von FIFE-
+Plugins verstanden werden.
+Wir steuern daher Folgendes zu den Projekten bei:
+
+FIFE
+• Plugin-Infrastruktur für Speichern erstellen, um Speicherfunktionalität für
+verschiedene Formate implementieren zu können
+• Kommandozeilen-Parameter, um Plugins aus einem zusätzlichen Ordner laden zu
+können
+
+UH
+• Plugin zum Laden von UH Objekten
+• Plugin zum Laden von UH Karten
+• Plugin zum Speichern von UH Karten
+
+
+

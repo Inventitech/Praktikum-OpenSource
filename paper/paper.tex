@@ -1,23 +1,35 @@
-\documentclass[german]{article}
+\documentclass[german]{scrartcl}
 \usepackage[ngerman]{babel}
+\usepackage[babel,german=quotes]{csquotes}
 
 \usepackage{paper}
 
 \author{Moritz Marc Beller \& Fabian Streitel \\ Technische Universität München}
 \title{Masterpraktikum im Wintersemester 2011 \\
 Open-Source Praktikum \\
-\textit{Ein MapEditor für Unknown Horizons}}
+\textit{Ein Mapeditor für Unknown Horizons}}
 \date{\today} % TODO adjust?
 
 \begin{document}
 \maketitle{}
 
-\begin{abstract}
-\input{sections/abstract.tex}
-\end{abstract}
+\section{Einleitung}
+\input{sections/einleitung.tex}
 
-\section{section}
-\include{sections/section.tex}
+\section{Unknown Horizons und FIFE}
+\input{sections/uh_fife.tex}
+
+\section{Implementierung}
+\input{sections/implementierung.tex}
+
+\section{Vorgehen}
+\input{sections/vorgehen.tex}
+
+\section{Erfahrungen}
+\input{sections/erfahrungen.tex}
+
+% TODO dummy cite
+\cite{test}
 
 \bibliography{paper}{}
 \end{document}
