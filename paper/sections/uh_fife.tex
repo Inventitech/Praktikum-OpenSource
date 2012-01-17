@@ -1,24 +1,30 @@
-„Unknown Horizons“ (UH) ist ein in Python geschriebenes Open Source Aufbaustra-
+„Unknown Horizons“ (UH) \cite{uh} ist ein in Python geschriebenes Open Source Aufbaustra-
 tegiespiel. Es basiert auf der in C++
 verfassten FIFE Graphikengine. Die Ansicht ist isometrisch mit vorgerenderten 3D-Modellen,
 die auf Kachel-basierten Karten dargestellt werden. Es wird circa alle drei Monate eine neue Version
 veröffentlicht. Das aktuelle Projekt baut auf einer Reihe von Vorgängern auf, welche
 in C++ geschrieben wurden, deren Entwicklung jedoch eingestellt ist.
-
-\subsection{Die Beziehung zwischen UH und FIFE}
+% TODO cite!
 
 \subsection{Die UH Community}
 UH besitzt eine sehr aktive internationale Community von Entwicklern, Spieldesignern und Graphikern, die
 sich der Weiterentwicklung und Verbesserung des Spiels widmen.
 Es finden regelmäßig Treffen zum Brainstorming, Wochenrückblick
 und zur Planung im IRC sonntäglich um 19.00 Uhr MEZ statt. Von diesen Meetings existieren
-öffentliche Logs.
+öffentliche Logs \cite{uhlogs}.
 Diese Meetings dienen als Haupt-Kommunikationsmittel zwischen den einzelnen Projektteilnehmern,
 es findet jedoch auch außerhalb der Meetingzeiten ein Austausch über den  IRC-Channel statt.
 Dieser ist somit das
- Hauptkommunikationsmittel des Projekt. Daneben existieren noch ein Forum
+Hauptkommunikationsmittel des Projekt. Daneben existieren noch ein Forum
 und eine Mailingliste. Das Projekt verwendet Git zur Versionskontrolle und Trac für
 Bugtracking.
 
-\subsection{Die FIFE Community}
+\subsection{Die Beziehung zwischen UH und FIFE}
+Die \enquote{Flexible Isometric Free Engine} (FIFE) \cite{fife} ist eine in C++ geschriebenes Framework
+zum Erstellen von verschiedenen Spieltypen. Sie dient als Grundlage von UH und übernimmt das Rendern
+der Spielgrafik.
+
+Die beiden Projekte sind zwar separat, jedoch besteht eine enge Beziehung zwischen ihnen. Zum einen
+engagieren sich viele der UH Entwickler auch im FIFE Projekt und verbessern die Engine nach Bedarf.
+Zum andern ist UH das Vorzeigeprojekt von FIFE, das als Demonstration der Engine hergenommen wird.
 
