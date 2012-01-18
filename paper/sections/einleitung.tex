@@ -1,9 +1,9 @@
-Ein integraler Bestandteil eines jeden Spiels ist die Möglichkeit, effizient die Spielinhalte
-editieren zu können. Hierzu wird in vielen Spielen ein sogenannter Mapeditor verwendet.
+Ein integraler Bestandteil eines jeden größeren Computerspiels ist die
+Möglichkeit, effizient die Spielinhalte editieren zu können. Hierzu wird in vielen Spielen ein sogenannter Mapeditor verwendet.
 Dieser ermöglicht es, die Dateien zu editieren, die die Spielinhalte enthalten, wie etwa
 die Landschaft, Gebäude, Akteure und vieles mehr.
-Ohne ein solches Werkzeug ist das erstellen von Spielinhalten mühsam oder gar
-völlig unmöglich.
+Ohne ein solches Werkzeug ist das gezielte Erstellen von Spielinhalten mühsam
+oder gar völlig unmöglich.
 
 \enquote{Unknown Horizons} (UH) ist ein Open Source
 Aufbaustrategiespiel nach dem Vorbild der Anno-Serie von Sunflowers.
@@ -12,14 +12,19 @@ besonders interessant, da es nur wenige Open Source Spiele mit einer aktiven
 Community und einem solchen Reifengrad gibt. Als Folge konnte UH drei Teilnehmer des
 Google Summer of Code dieses Jahres für sich gewinnen.
 
-Auch für Unknown Horizons ist ein Mapeditor von besonderer Wichtigkeit. Zwar kann das
-Spiel zufällige Karten generieren, jedoch benötigen die Entwickler für wiederkehrende
-Tests, als auch für statische Spielelemente, wie z.B. einen Kampangenmodus oder vorgegebene
-Karten mit einem festgelegten Schwierigkeitsgrad.
+Auch für Unknown Horizons ist ein Mapeditor im aktuellen Stadium von besonderer
+Wichtigkeit.
+Zwar kann das Spiel zufällige Karten generieren, dies genügt jedoch den
+Ansprüchen des Spiels nicht mehr. Einerseits benötigen die Entwickler für
+wiederkehrende Tests vorgegebene Karten mit bestimmten Eigenschaften.
+Andererseits ist es ein Editor für das gezielte Designen von statischen
+Spielelementen, wie z.B. der kürzlich integrierte
+Kampangenmodus, unabdingbar. Auch können nur so vorgegebene Karten mit einem
+festgelegten Schwierigkeitsgrad erzeugt werden.
 
-Daher benötigt auch UH einen solchen Editor. Im Folgenden beschreiben wir unser Vorgehen
-bei der Planung und Entwicklung eines UH Mapeditors. Hierzu geben wir zunächst einen
-detaillierteren Überblick über UH und das Entwicklungsteam, das hinter dem Projekt steht.
+Im Folgenden beschreiben wir unser Vorgehen bei der Planung und Entwicklung
+eines Mapeditors für UH. Hierzu geben wir zunächst einen detaillierteren
+Überblick über UH und das Entwicklungsteam, das hinter dem Projekt steht.
 Anschließend beschreiben wir die softwaretechnischen Aspekte der Implementierung, gefolgt
 von einer Beschreibung unseres Vorgehens bei der Umsetzung der Software. Abschließend
 geben wir unsere persönlichen Erfahrungen und Eindrücke zum Ablauf und Ergebnis des Projekts

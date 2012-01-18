@@ -1,8 +1,10 @@
-Momentan ist es in UH nur möglich, Karten zufällig zu generieren. Da eine
-Kampagnenfunktion geplant ist \footnote{geplant für das 2012.2 Release Mitte 2012, vgl.
-\cite{roadmap}}, benötigt UH einen Karten Editor. FIFE bietet bereits einen solchen Editor.
-Dieser kann jedoch momentan nicht für UH eingesetzt werden, da UH ein anderes Format
-zum Speichern der Karten benutzt.
+Vor Beginn dieses Projektes war es in UH nur möglich, Karten zufällig zu
+generieren.
+Da eine Kampagnenfunktion geplant ist \footnote{geplant für das 2012.2 Release Mitte 2012, vgl.
+\cite{roadmap}}, benötigt UH einen Karten Editor. FIFE bietet bereits einen
+solchen generischen Editor.
+Dieser konnte jedoch zunächst nicht für UH eingesetzt werden, da UH ein
+anderes Format zum Speichern der Karten benutzt.
 
 Das Ziel des Projekts war es, einen funktionierenden Mapeditor mit Basisfunktionalität
 zum Laden, Editieren und Speichern von UH Maps zu implementieren. Hierfür wurde
@@ -29,16 +31,16 @@ zu entfernen
 Die FIFE Graphikengine besitzt bereits einen eigenen MapEditor, der in Python geschrieben
 wurde. Dieser kann Maps unter
 Verwendung der Engine darstellen, kreieren und verändern. Er bietet grundsätzliche
-Funktionalitäten wie das setzen, löschen und bearbeiten von Objekten auf der Map,
-die Organisation von Objekten in verschiedene Ebenen und das Setzen von Mapeinstellungen.
+Funktionalitäten wie das Setzen, Löschen und Bearbeiten von Objekten auf der
+Map, die Organisation von Objekten in verschiedene Ebenen und das Setzen von Mapeinstellungen.
 
 Zusätzlich kann der Editor um weitere Funktionalität erweitert werden. Dies geschieht,
-indem man Python Plugins schreibt, die vom Editor beim Starten geladen werden. Dieser
-Mechanismus wurde von uns genutzt, um den bestehenden Editor-Kern um UH-spezifische
-Funktionen zu erweitern.
+indem man Python Plugins schreibt, die vom Editor beim Starten dynamisch geladen
+werden. Dieser Mechanismus wurde von uns genutzt, um den bestehenden Editor-Kern
+um UH-spezifische Funktionen zu erweitern.
 
 \subsection{Probleme}
-Im folgenden werden die oben beschriebenen Probleme in Unterprobleme unterteilt
+Im Folgenden werden die oben beschriebenen Probleme in Unterprobleme unterteilt
 und detailliert beschrieben.
 
 \subsubsection{Integration in die UH Codebase}
@@ -52,14 +54,19 @@ Repository nur die UH-spezifischen Code-Teile gehostet. Dies bedeutet, dass ein
 zusätzliches Skript erstellt werden muss, der den Editor aus einem UH Unterverzeichnis
 heraus starten kann und die UH Plugins in diesen integriert.
 
+Durch die gewählte Integration in die bestehende Codebase belaufen sich unnötige
+Code Duplizierungen auf ein Minimum.
+
 % TODO separate problemstellung and implementierung better
 
 \subsubsection{Kommandozeilen-Parameter}
-Um ein Skript wie oben beschrieben erstellen zu können, ist es vonnöten, dass der FIFE
-Editor um einen zusätzlichen Kommandozeilen-Parameter erweitert wird, der es erlaubt, ein
-Verzeichnis anzugeben, aus dem zur Laufzeit Plugins geladen werden. Dies ist notwendig, da
-der FIFE Editor standardmäßig nur Plugins aus seinen eigenen Verzeichnissen liest, die UH
-Plugins jedoch im UH Repository gehostet werden.
+Um ein Skript wie oben beschrieben erstellen zu können, ist es vonnöten, dass
+der FIFE Editor um einen zusätzlichen Kommandozeilen-Parameter erweitert wird,
+der es erlaubt, ein Verzeichnis anzugeben, aus dem zur Laufzeit Plugins geladen
+werden.
+Standardmäßig liest der FIFE Editor nur Plugins aus seinen eigenen
+Verzeichnissen ein, die UH Plugins liegen jedoch im UH Repository getrennt von
+diesen.
 
 \subsubsection{Plugin-Infrastruktur}
 Der FIFE Editor ist bereits ein vollwertiger Mapeditor, allerdings für ein spezielles XML Format,
@@ -69,27 +76,34 @@ Funktionalität ergänzt werden, die es ihm erlaubt, diese Datenbanken korrekt z
 
 Dieser Use-Case ist im FIFE Editor bereits vorgesehen. Hierzu wurde eine Infrastruktur geschaffen, die
 es einem Editor-Plugin erlauben, einen eigenen MapLoader zu registrieren. Dieser übernimmt die
-Aufgabe, Maps eines bestimmten Dateityps zu laden. Betrachtet man den bestehenden Code, so wird klar,
-dass dies auch für MapSavers vorgesehen war, also Klassen, die editierte Maps in einem fremden Format
-speichern können. Jedoch wurde diese Infrastruktur nicht vollständig implementiert und so ist es
-nicht möglich, einen eigenen MapSaver zu registrieren.
+Aufgabe, Maps eines bestimmten Dateityps zu laden. Diese Struktur sollte analog
+auch für MapSavers vorhanden sein, also Plugins, die editierte Maps in einem
+fremden Format speichern können. Jedoch wurde die Infrastruktur für
+MapSavers---im Gegensatz zu der Loaders-Struktur---nicht 
+implementiert und so war es nicht möglich, einen eigenen MapSaver zu
+registrieren.
 
-Folglich musste zunächst einmal die MapSaver Infrastruktur an die der MapLoader angeglichen und vollständig
-implementiert werden.
+Folglich mussten wir zunächst die MapSaver Infrastruktur bereitstellten. Wir
+entwickelten sie analog zur MapLoader-Struktur.
 
 \subsubsection{Plugin zum Laden von UH Objekten}
-Damit mit dem Editor neue Objekte auf einer Map platziert werden können (z.B. Gebäude oder Bodentiles),
-muss dieser alle in UH verfügbaren Objekte kennen. Hierzu wird ein Plugin benötigt, das diese
-Objekte beim Editorstart lädt und diesem bereitstellt.
+Damit der User mit dem Editor neue Objekte auf einer Map platzieren kann (z.B.
+Gebäude oder Bodentiles), muss der Editor alle in UH verfügbaren Objekte kennen.
+Hierzu wird ein Plugin benötigt, das diese Objekte beim Editorstart lädt und
+diesem bereitstellt. \\
+{\tt UHObjectLoader.py}
 
 \subsubsection{Plugin zum Laden von UH Karten}
 Zusätzlich zu diesem Plugin ist ein weiters erforderlich, das den oben erwähnten MapLoader
 zur verfügung stellt, der die SQLite Datenbanken einlesen kann, in denen die Daten der
 UH Maps gespeichert sind. Wenn diese Daten eingelesen wurden, müssen mit ihnen FIFE Objekte
-erzeugt werden, die der Editor darstellen und bearbeiten kann.
+erzeugt werden, die der Editor darstellen und bearbeiten kann. \\
+{\tt UHMapLoader.py}
+
 
 \subsubsection{Plugin zum Speichern von UH Karten}
 Um diesen Prozess umzukehren muss ein Plugin erstellt werden, das die FIFE Objekte aus der
 Engine auslesen und sie in Daten des UH Map Formats umwandeln kann. Anschließend müssen diese
-Daten in eine SQLite Datenbank geschrieben werden.
+Daten in eine SQLite Datenbank geschrieben werden. \\
+{\tt UHMapSaver.py}
 
