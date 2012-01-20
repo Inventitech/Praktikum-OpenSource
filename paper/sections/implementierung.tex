@@ -129,6 +129,17 @@ auf der Map. Diese Position erhält man, wenn man die aus der Datenbank
 gelesene Position des Tiles relativ zur Position der Insel verschiebt.
 
 \subsubsection{Gebäude}
+Um die Gebäude zu laden, wird aus der ursprünglichen Map-Datenbank
+die Tabelle \code{building} ausgelesen. Diese enthält den Typ des Gebäudes,
+sowie seine Position und Rotation.
+
+Mit Hilfe dieser Informationen wird anschließend ein \code{Object}, eine
+\code{Instance} und ein \code{InstanceVisual} erstellt. Abschließend
+wird die \code{Instance} angewiesen, eine Animation auszuführen.
+
+Beim Erstellen der Instance werden zum einen die Koordinaten des Gebäudes
+gesetzt und zum andern das Gebäude rotiert. Dies ist ein aufwändiger
+Prozess, da das Gebäude beim Rotieren wiederum verschoben wird.
 
 
 \subsection{Plugin zum Speichern von UH Karten (UH)}
