@@ -7,9 +7,9 @@
 %
 \begin{figure}[htbp]
   \centering
-  
+
     \includegraphics[width=0.7\textwidth]{gfx/klassendiagramm-UHSaveGame.png}
-  
+
   \caption{UML Diagramm des Kartenformates von UH.}
   \label{figure:automaton-intersection}
 \end{figure}
@@ -19,7 +19,7 @@ Editor relevanten Elementen:
 \begin{itemize}
   \item Allgemeinen Karteninformationen
   \item Die auf der Karte plazierten Objekte (wie Gebäude etc.)
-  \item Verweise auf Island-Files. \\ 
+  \item Verweise auf Island-Files. \\
   Ein Island-File ist eine SQLite-Datenbank,
   die die Informationen über die Bodenbeschaffenheit einer zusammengehörenden
   Inseln enthält:
@@ -27,7 +27,7 @@ Editor relevanten Elementen:
     \item Allgemeine Islandinformationen
     \item Alle zu einem Island gehörenden Groundtiles
   \end{itemize}
-\end{itemize} 
+\end{itemize}
 
 \subsection{Kommandozeilen-Parameter (FIFE)}
 \subsection{Schaffung der Plugin-Infrastruktur (FIFE)}
@@ -45,10 +45,15 @@ gehören. Dabei sind die Grafiken für animierte Objekte auf mehrere Dateien
 aufgeteilt, die in sogenannte ActionSets gruppiert werden.
 \end{description}
 
-UH bietet Klassen an, um diese Daten einzulesen und sie dem Editor
-verfügbar zu machen. Mithilfe dieser Klassen war es uns möglich, ein
+UH bietet Klassen an, um diese Daten einzulesen.
+Mithilfe dieser Klassen war es uns möglich, ein
 Plugin für den FIFE Editor zu erstellen, das alle Gebäude und Bodentiles
 laden und dem Editor zur Verfügung stellen kann.
+
+Es war jedoch vonnöten, einige UH-Klassen vom Editor aus zu
+modifizieren oder nachzuahmen, da die genutzten Klassen teilweise
+globale Objekt erwarten, die das Spiel bereitstellt, die im Editor
+jedoch nicht vorhanden sind.
 
 Das Plugin besteht aus einer einzigen Klasse: \code{UHObjectLoader}. Diese
 Klasse wird vom Editor geladen und anschließend wird ihre \code{enable()} Methode
@@ -74,20 +79,71 @@ der Engine zu registrieren.
 
 
 \subsection{Plugin zum Laden von UH Karten (UH)}
+Um eine Map mit dem FIFE Editor öffnen zu können, muss zunächst die
+Dateierweitung mit einem sogenannten \code{MapLoader} verknüpft werden.
+Hierzu wird folgender Code
+aufgerufen, der die Klasse \code{MapLoader} des \code{UHMapLoader} Plugins
+als Loader für Dateien mit der Erweiterung \code{.sqlite} registriert:
+
+\begin{lstlisting}
+fife.extensions.loaders.addMapLoader('sqlite', MapLoader)
+\end{lstlisting}
+
+Sobald die daraufhin eine Map mit \code{.sqlite} Erweiterung im Editor geöffnet
+wird, instantiiert dieser die \code{MapLoader} Klasse und ruft folgende Methode
+auf:
+
+\begin{lstlisting}
+loadResource(self, path)
+\end{lstlisting}
+
+Daraufhin beginnt der \code{MapLoader} mit dem Einlesen der Map.
+
+\subsubsection{Allgemeine Initialisierung}
+Zunächst werden einige Map-unabhängige Initialisierung vorgenommen:
+Der Loader erstellt eine \code{Map} in der Engine und darauf ein
+\code{Grid}, auf dem später die einzelnen Tiles platziert werden.
+Anschließend werden zwei \code{Layer} erstellt -- einer für Groundtiles
+und einer für Gebäude. Dies ist notwendig, da die Engine pro Koordinate
+und Layer nur ein Tile platzieren kann. D.h. wenn auf dem selben Layer
+ein Gebäude über ein Groundtile platziert wird, so wird das Groundtile
+überschrieben.
+Abschließend wird noch eine \code{Camera} erstellt, die festlegt, aus
+welcher Perspektive die Karte im Editor dargestellt wird.
+
+\subsubsection{Inseln}
+Als nächstes werden die Inseln der Map geladen. Hierzu wird zum ersten
+Mal auf die SQLite Datenbank zugegriffen. Diese enthält eine Tabelle
+namens \code{island}, die die Koordinaten jeder Insel enthalten, sowie
+den Dateinamen der SQLite Datenbank, die die Inseldefinition enthält.
+
+Für jede der ausgelesenen Inseln wird eine Subroutine aufgerufen, die
+die Insel aus ihrer SQLite Datei ausliest. Hierbei werden aus der
+\code{ground} Tabelle die Positionen und die Rotation der einzelnen
+Groundtiles ausgelesen. Anschließend wird ein solches Groundtile
+auf der \code{Map} in der Engine platziert.
+
+Dies geschieht, indem eine \code{Instance} und ein \code{InstanceVisual}
+erstellt werden. Die \code{Instance} speichert die Position des Tiles
+auf der Map. Diese Position erhält man, wenn man die aus der Datenbank
+gelesene Position des Tiles relativ zur Position der Insel verschiebt.
+
+\subsubsection{Gebäude}
+
+
 \subsection{Plugin zum Speichern von UH Karten (UH)}
 Das Plugin zum Speichern weist die Schwierigkeit auf, dass der Editor nicht die
 Interna des UH Spielmodells kennen kann. Der Editor ``zeichnet'' einfach nur
 Elemente wie Bodentiles und Gebäude auf die verschiedenen Layer-Schichten, das
-Saver-Plugin muss diese im UH-Modell speichern. 
-
+Saver-Plugin muss diese im UH-Modell speichern.
 
 Die Layer-Schichten enthalten vor dem Speichern die Instanzen aller vom User
-gesetzen Gebäude und Bodentiles. 
+gesetzen Gebäude und Bodentiles.
 
 Der Algorithmus geht dabei den Groundlayer vom Urpsrung des Koordinatensystems
-Origo (0, 0) nach rechts unten ab. Durch diese Traversierungsstrategie muss nur
+(0, 0) nach rechts unten ab. Durch diese Traversierungsstrategie muss nur
 nach oben und nach links auf zu verbindenden Islands überprüft werden. Findet
-sich ein direkt angrenzendes Groundtiles, so wird das akutelle Groundtiles (rot
+sich ein direkt angrenzendes Groundtile, so wird das akutelle Groundtile (rot
 hinterlegt) mit dem bestehenden vereinigt, indem es dessen Insel-ID übernimmt.
 
 %
@@ -95,9 +151,9 @@ hinterlegt) mit dem bestehenden vereinigt, indem es dessen Insel-ID übernimmt.
 %
 \begin{figure}[htbp]
   \centering
-  
+
     \includegraphics[width=0.7\textwidth]{gfx/merge_algorithm.png}
-  
+
   \caption{Der Partitionierungsalgorithmus für die Islands. Die gelben Pfeile
   geben an, welche Gitterflächen auf das Vorhandensein von Tiles überprüft
   werden. Der Algorithmus traversiert die Tiles von oben links nach unten
