@@ -14,7 +14,7 @@
   \label{figure:automaton-intersection}
 \end{figure}
 
-UHs Kartenformat im SQLite besteht grob aus den folgenden Elementen für den
+UHs Kartenformat in SQLite besteht grob aus den folgenden Elementen für den
 Editor relevanten Elementen:
 \begin{itemize}
   \item Allgemeinen Karteninformationen
@@ -33,6 +33,46 @@ Editor relevanten Elementen:
 \subsection{Schaffung der Plugin-Infrastruktur (FIFE)}
 
 \subsection{Plugin zum Laden von UH Objekten (UH)}
+UH speichert alle dem Spiel zur Verfügung stehenden Objekte in mehreren Dateien
+und Verzeichnissen:
+
+\begin{description}
+\item[content/objects] Dieser Ordner enthält mehrere Unterordner, die wiederum
+YAML-Dateien\footnote{Ein Dateiformat, siehe \cite{yaml}} enthalten. Jede
+dieser Dateien definiert ein Objekt und seine zugehörigen Eigenschaften.
+\item[content/gfx] Dieser Ordner enthält die Grafiken, die zu den Objekten
+gehören. Dabei sind die Grafiken für animierte Objekte auf mehrere Dateien
+aufgeteilt, die in sogenannte ActionSets gruppiert werden.
+\end{description}
+
+UH bietet Klassen an, um diese Daten einzulesen und sie dem Editor
+verfügbar zu machen. Mithilfe dieser Klassen war es uns möglich, ein
+Plugin für den FIFE Editor zu erstellen, das alle Gebäude und Bodentiles
+laden und dem Editor zur Verfügung stellen kann.
+
+Das Plugin besteht aus einer einzigen Klasse: \code{UHObjectLoader}. Diese
+Klasse wird vom Editor geladen und anschließend wird ihre \code{enable()} Methode
+aufgerufen. Diese lädt anschließend erst alle Groundtiles und dann alle Gebäude.
+Sobald die Objekte der Engine bekannt sind, können diese mittels der vom Editor
+bereitgestellten Werkzeuge auf Maps platziert werden.
+
+\subsubsection{Groundtiles}
+Um die Groundtiles zu laden wird die UH-Klasse \code{GroundTileLoader} benutzt,
+die alle vorhandenen Groundtiles einliest und als Liste zurückgibt. Anschließend
+wird für jedes der Tiles ein \code{Object} und ein \code{InstanceVisual} in der
+Engine erstellt, sowie mehrere \code{Action}s und \code{ActionVisual}s, um Animationen darzustellen.
+Alle diese Objekte benötigt die Engine, um die Tiles später im Editor korrekt
+darstellen zu können.
+
+\subsubsection{Gebäude}
+Für die Gebäude müssen zunächst die XML-Deskriptoren ausgelesen werden, die
+zusätzliche Informationen zu jedem Gebäude enthalten, wie z.B. dessen Größe.
+
+Anschließend werden wiederum ein \code{Object}, \code{InstanceVisual} und
+mehrere \code{Action}s und \code{ActionVisual}s erstellt, um das Gebäude in
+der Engine zu registrieren.
+
+
 \subsection{Plugin zum Laden von UH Karten (UH)}
 \subsection{Plugin zum Speichern von UH Karten (UH)}
 Das Plugin zum Speichern weist die Schwierigkeit auf, dass der Editor nicht die
