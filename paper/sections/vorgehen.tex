@@ -1,3 +1,10 @@
+Während des Projekts arbeiteten wir meist separat. Die gesamte anstehende
+Arbeit wurde in mehrere Unteraufgaben aufgeteilt, die wir zumeist einzeln
+erledigten. Wir trafen uns jedoch einmal die Woche, um unseren Fortschritt festzustellen
+und gemeinsam am Projekt weiterzuarbeiten.
+
+% TODO fix time for all sentences here!
+
 Zu Beginn des Projektes haben wir zunächst mit den UH-Entwicklern gesprochen,
 um festzustellen, welche Anforderungen der Editor erfüllen sollte. Hierzu
 haben wir uns informell mit einigen der Entwicklern im IRC unterhalten und
@@ -35,11 +42,39 @@ Editor-Projekts geplant waren und nicht verschoben werden konnten. Da wir bereit
 auf einem weiter fortgeschrittenen Branch des Git-Repositories gearbeitet hatten, war der
 Umfang der nötigen Änderungen noch angemessen.
 
-- Loader split
-- Plugin Infrastruktur
-- Saver bauen
-- Rotation fixen
-- Umbau wegen components
+Im Anschluss daran machten wir uns an die Arbeit, den MapLoader zu bauen. Da die Menge an
+Code im Loader Plugin daraufhin relativ stark anwuchs, entschlossen wir uns, den ObjectLoader
+vom MapLoader zu trennen und beide mit einem eigenen Plugin auszustatten. Wenig später konnten
+wir die Arbeit am MapLoader weitestgehend fertigstellen. Dieser konnte nun die wichtigsten Teile
+einer UH-Karte laden.
+
+Da als nächstes der Saver anstand, mussten wir uns nun wieder FIFE zuwenden. Hier war es nötig,
+die Plugin Infrastruktur wie oben beschrieben zu erweitern.
+% TODO Moritz, hier musst du noch mehr schreiben, da weiß ich zu wenig drüber
+
+Im Anschluss hieran bauten wir den MapSaver.
+% TODO Moritz, hier musst du noch mehr schreiben, da weiß ich zu wenig drüber
+
+Ein großer Punkt war jedoch zu diesem Zeitpunkt noch offen: Die Rotation von Objekten auf der Karte.
+Bisher lud der MapLoader die Objekte noch ohne Rotation, sie zeigten folglich alle in die gleiche
+Richtung. Auch der MapSaver speicherte keine Rotationsdaten. Nach einiger Recherche und ein paar
+erfolglosen Versuchen, die Rotation der Gebäude richtig zu setzen, wandten wir uns an die UH-Entwickler.
+Wie sich herausstellte war der Code-Abschnitt, der im Spiel die Gebäude rotiert relativ alt und
+niemand konnte sich mehr erinnern, wie er funktioniert. Es gab auch keine Dokumentation zu diesem
+Punkt.
+
+Daraufhin entschlossen wir uns, das Problem in einer Pair-Programming-Sitzung anzugehen. Dies hatte
+den Vorteil, dass wir das Problem gleichzeitig und mit zwei unterschiedlichen Sichtweisen betrachten
+konnten, während wir zusammen aktiv an einer Lösung arbeiteten. Hierdurch gelang es uns, eine funktionierende
+Rotation der Objekte im MapLoader zu implementieren.
+
+Über die Weihnachtszeit erfolgte dann ein weiterer großer Umbau der Architektur von UH. Das gesamte
+Design aller auf der Karte platzierten Objekte wurde umgestellt, woraufhin unser Edior-Code zunächst
+nicht mehr funktionstüchtig war. Nach einem vollen Tag an Arbeit waren die Plugins jedoch wieder
+einsatzfähig.
+
+%TODO Moritz, hier müsste was über den Island saver stehen
+
 - Island saver
 - Fixes vor merge
 - Merge
