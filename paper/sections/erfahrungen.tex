@@ -26,8 +26,23 @@ und die einzigen Änderungen am Spiel, die Auswirkungen auf unseren Code hatten,
 waren groß angelegte Refactorings der Architektur.
 
 \subsection{Negative Erfahrungen}
-- immer wieder umstellen des map-formates (dreimal!)
-- für zwei projekte gearbeitet: fife und uh => mehr aufwand
+Es gab jedoch auch Probleme bei der Umsetzung unseres Vorhabens.
+So gingen die oben genannten Änderungen an der Spielarchitektur nicht spurlos
+an uns vorbei. Es waren einige Anpassungen nötig, wie in den vorangegangenen Kapiteln
+beschrieben, um unseren Editor-Code wieder funktionstüchtig zu machen.
+Diese Umstellung der Architektur wurden uns leider nicht ausführlich genug
+kommuniziert, wahrscheinlich auch deshalb, weil keinem der Entwickler klar war,
+dass dies auch Auswirkungen auf unseren Code haben könnte.
+
+Des weiteren änderte sich einmal während der Entwicklungszeit das Format der
+Maps geringfügig, wodurch einige Anpassungen in unserem Loader und Saver vonnöten
+waren. Auch hier wurde uns vorher keine Mitteilung gemacht.
+
+Schließlich gab es noch einige kleinere Stolpersteine, die dadurch entstanden,
+dass wir nicht nur für UH gearbeitet haben, sondern teilweise auch Code
+für das FIFE Projekt geschrieben haben, da wir deren Editor verwendeten.
+Dies bedingte, dass wir doppelten Koordinationsaufwand hatten: Zum einen mit
+den UH Entwicklern und zum andern mit dem FIFE Team.
 
 \subsection{Schlüsse}
 - Bessere koordination durch mehr aktives nachfragen
