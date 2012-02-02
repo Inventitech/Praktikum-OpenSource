@@ -35,7 +35,10 @@ dass dies auch Auswirkungen auf unseren Code haben könnte.
 
 Des weiteren änderte sich einmal während der Entwicklungszeit das Format der
 Maps geringfügig, wodurch einige Anpassungen in unserem Loader und Saver vonnöten
-waren. Auch hier wurde uns vorher keine Mitteilung gemacht.
+waren. Auch hier wurde uns vorher keine Mitteilung gemacht. Grundsätzlich
+verläuft die Kommunikation also nach dem ``pull''-Prinzip. Das gesamte UH Team
+war zwar sehr nett, in Anbetracht der Arbeit, die wir dort geleistet haben, wäre
+etwas mehr Gratifikation jedoch wünschenswert.
 
 Schließlich gab es noch einige kleinere Stolpersteine, die dadurch entstanden,
 dass wir nicht nur für UH gearbeitet haben, sondern teilweise auch Code
@@ -43,13 +46,6 @@ für das FIFE Projekt geschrieben haben, da wir deren Editor verwendeten.
 Dies bedingte, dass wir doppelten Koordinationsaufwand hatten: Zum einen mit
 den UH Entwicklern und zum andern mit dem FIFE Team.
 
-Schlussendlich wurde durch ein FIFE-Update das Rückgeben von Koordinatenwerten
-im Editor ungenau: Statt $[45^\circ, 135^\circ, 225^\circ, 315^\circ]$ wurden
-nun Werte wie $44^\circ, 46^\circ$ etc. von der {\tt getRotation()}-Methode des
-Editors zurückgegeben.
-Da UH grundsätzlich gegen den FIFE trunk kompiliert wird, mussten wir hierfür
-zusätzlich eine Korrekturfunktion schreiben. Allein das Debugging nahm Stunden
-in Anspruch.
 
 \subsection{Schlüsse}
 Aus den gemachten Erfahrungen konnten wir einige Lehren ziehen, die nicht nur

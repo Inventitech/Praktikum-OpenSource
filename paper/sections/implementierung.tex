@@ -1,5 +1,29 @@
-\subsection{Integration in die UH Codebase}
-\subsubsection{Das Kartenformat}
+In diesem Kapitel beschreiben wir die geleistete Implementierungsarbeit im
+Detail. Wir trennen die Änderungen dabei in bei FIFE und bei UH geleistete
+Arbeit auf, wobei der Fokus auf UH liegt. 
+
+
+\subsection{Kommandozeilen-Parameter (FIFE)}
+Normalerweise sucht der FIFE-Editor Plugins nur in einem Unterordner relativ zu
+seinem Ordner. Dort können Plugins aus UH naturgemäß nicht abgelegt werden. Wir
+benötigen daher einen Kommandozeilen-Parameter {\tt --plugin-dir=PLUGIN\_DIR},
+der es ermöglicht, manuell einen PATH zum Durchsuchen auf Plugins vorzugeben. 
+
+Da der FIFE-Filbrowser kaum benutzbar ist, und um ein schnelles Laden von Karten
+ohne viele Benutzerinteraktionen zu ermöglichen, implementierten wir im FIFE
+Editor die Möglichkeit, Karten mittels Kommandozeilenargument zu laden. 
+
+
+
+\subsection{Schaffung der Plugin-Infrastruktur (FIFE)}
+Die Saver-Infrastruktur musste zunächst über das Anlegen mehrer C++
+``Interfaces'' grundsätzlich in FIFE bereitgestellt werden. Erst dann standen
+diese via SWIG (cf.
+\cite{swig}) auch im Python-Teil von FIFE zur Verfügung. Damit konnte dann in
+Python die Infrastruktur zum Registrieren von beliebigen MapSavers geschaffen
+werden.
+
+\subsection{Das Kartenformat}
 \label{kartenformat}
 
 %
@@ -29,8 +53,6 @@ Editor relevanten Elementen:
   \end{itemize}
 \end{itemize}
 
-\subsection{Kommandozeilen-Parameter (FIFE)}
-\subsection{Schaffung der Plugin-Infrastruktur (FIFE)}
 
 \subsection{Plugin zum Laden von UH Objekten (UH)}
 UH speichert alle dem Spiel zur Verfügung stehenden Objekte in mehreren Dateien

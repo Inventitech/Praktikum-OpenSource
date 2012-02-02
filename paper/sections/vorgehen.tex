@@ -1,9 +1,15 @@
-Während des Projekts arbeiteten wir meist separat. Die gesamte anstehende Arbeit
-wurde in mehrere Unteraufgaben aufgeteilt, die wir zumeist einzeln erledigten.
-Wir trafen uns jedoch einmal die Woche, um unseren Fortschritt festzustellen und
-gemeinsam am Projekt weiterzuarbeiten. In einer einfachen Textdatei wurden
-Milestones definiert und festgelegt, bis wann von wem welche Funktion
-implementiert sein sollte (vgl. Bild~\ref{figure:assignee}).
+In diesem Kapitel beschreiben wir zunächst, welche grundlegenden Arbeitsprozesse
+wir verwendet haben. Anschließend schildern wir den zeitlichen Ablauf des
+Projektes.
+
+\subsection{Grundlegende Arbeitsweise und -aufteilung}
+Die gesamte anstehende Arbeit wurde in mehrere Unteraufgaben aufgeteilt, die wir
+zumeist einzeln erledigten.
+In besonderen Fällen wichen wir jedoch auf Pair Programming aus. Wir trafen uns
+regelmäßig einmal die Woche, um unseren Fortschritt festzustellen und gemeinsam
+am Projekt weiterzuarbeiten. In einer einfachen Textdatei wurden Milestones
+definiert und festgelegt, bis wann von wem welche Funktion implementiert sein
+sollte (vgl. Bild~\ref{figure:assignee}).
 
 \begin{figure}[htbp]
   \centering
@@ -20,16 +26,21 @@ haben wir uns informell mit einigen der Entwicklern im IRC unterhalten und
 festgestellt, dass der bestehende FIFE-Editor eine gute Basis für den Map
 Editor darstellt.
 
-Anschließend haben wir uns in den bestehenden Code des Editors und den Ladeprozess
-von UH eingelesen, um herauszufinden, welche Schwierigkeiten bei der Implementierung
-bestehen könnten und wie eine funktionstüchtige Architektur aussehen könnte.
+Anschließend haben wir uns in den bestehenden Code des Editors und den
+Ladeprozess von UH eingelesen, um herauszufinden, welche Schwierigkeiten bei der
+Implementierung bestehen könnten und wie eine funktionstüchtige Architektur
+aussehen könnte.
 In einer kurzen Diskussion im FIFE IRC-Channel haben wir herausgefunden, dass
-derzeit am FIFE-Editor gearbeitet wird, um die Integration von anderen Kartenformaten
-zu ermöglichen, dass dieser Prozess jedoch noch nicht abgeschlossen ist.
+derzeit am FIFE-Editor gearbeitet wird, um die Integration von anderen
+Kartenformaten zu ermöglichen, dass dieser Prozess jedoch noch nicht
+abgeschlossen ist. Nach gründlicher Überlegung haben wir damit begonnen,
+grundsätzliche Probleme zu identifizieren, bevor wir mit der eigentlichen Arbeit
+-- dem Implementieren der Loader und Saver Plugins -- beginnen konnten. Die sich
+abzeichnenden Aufgaben strukturierten wir und hielten sie in einer Roadmap fest
+(siehe Bild~\ref{figure:assigneeq}).
 
-Nach gründlicher Überlegung haben wir damit begonnen, grundsätzliche Probleme zu
-identifizieren, bevor wir mit der eigentlichen Arbeit -- dem Implementieren der
-Loader und Saver Plugins -- beginnen konnten. Es stellte sich heraus, dass
+\subsection{Zeitlicher Ablauf des Projekts}
+ Es stellte sich heraus, dass
 prinzipiell mit dem Loader-Plugin direkt begonnen werden konnte, das MapSaver
 Plugin jedoch einige Vorarbeit an FIFE selbst erforderte. Grundsätzlich fuhren
 wir ab da die Entwicklung des MapLoaders und MapSavers Plugin weitgehend
@@ -40,13 +51,9 @@ Während unserer Arbeit an den Plugins stellten sich einige Unzulänglichkeiten
 des FIFE Editors heraus. Um diese zu beheben, schrieben wir etliche Patches für
 FIFE, die z.B.
 Bugs im Dateiauswahldialog des Editors behoben. Für das Saver-Plugin fehlte die
-Infrastruktur-Unterstützung durch FIFE komplett. Die Saver-Infrastruktur musste
-zunächst über das Anlegen mehrer C++ ``Interfaces'' grundsätzlich in FIFE
-bereitgestellt werden. Somit standen diese via SWIG (cf.
-\cite{swig}) auch im Python-Teil von FIFE zur Verfügung. Damit konnte dann in
-Python die Infrastruktur zum Registrieren von beliebigen MapSavers geschaffen
-werden. Diese Patches haben wir anschließend in den FIFE Bugtracker gestellt,
-von wo sie von einem der FIFE Entwickler gemerged wurden.
+Infrastruktur-Unterstützung durch FIFE komplett und musste eigens erstellt
+werden. Die resultierenden Patches haben wir anschließend in den FIFE Bugtracker
+gestellt, von wo sie von einem der FIFE Entwickler gemerged wurden.
 
 
 Um Laden UH Objekte zu laden, war eine weitere intensive Beschäftigung mit dem
@@ -79,7 +86,7 @@ Nach einiger Recherche und ein paar erfolglosen Versuchen, die Rotation der
 Gebäude richtig zu setzen, wandten wir uns an die UH-Entwickler.
 Wie sich herausstellte war der Code-Abschnitt, der im Spiel die Gebäude rotiert
 relativ alt und niemand konnte sich mehr erinnern, wie er funktioniert
-(Original-Kommentar ``\# nobody actually knows how the code below works.'').
+(Original-Kommentar ``nobody actually knows how the code below works.'').
 Es gab auch keine Dokumentation zu diesem Punkt. Leider stolperten wir sehr oft
 über genau diesen Code.
 
