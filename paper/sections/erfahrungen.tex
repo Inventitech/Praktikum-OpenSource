@@ -3,7 +3,7 @@ gemacht. Diese legen wir im Folgenden dar.
 
 \subsection{Positive Erfahrungen}
 Grundsätzlich gesteltate sich die Zusammenarbeit mit den anderen Beteiligten
-des UH Projekts als äußerst locker unde einfach. Durch die ständige Anwesenheit
+des UH Projekts als äußerst locker und einfach. Durch die ständige Anwesenheit
 von Personen im IRC Channel und die Aufgeschlossenheit, Hilfsbereitschaft und
 Geduld der Entwickler des UH Teams wurde unsere Arbeit deutlich erleichtert,
 sei es beim Verstehen komplizierter Zusammenhänge und Vorgänge oder beim
@@ -15,15 +15,14 @@ und Feedback aus der Entwicklergemeinde einholen konnten. Dies führte dazu,
 dass unser Projekt innerhalb eines akzeptablen Rahmens blieb und gleichzeitig
 vom UH Team ohne große Probleme übernommen wurde.
 
-Ein weiterer Punkt, der hierzu beigetragen hat ist die Tatsache, dass der
-Editor Code vom restlichen Code des Spiels in großen Teilen unabhängig ist.
-Hierdurch waren wir auch durch große Änderungen am Spiel selbst nur
-mäßig betroffen und konnten unser Projekt unabhängig von der Entwicklung
-des Spiels selbst gestalten. Daraus resultierend kam es während der gesamten
-Entwicklung zu keinem einzigen Merge-Konflikt
-% TODO Moritz: hattest du auch keinen?
-und die einzigen Änderungen am Spiel, die Auswirkungen auf unseren Code hatten,
-waren groß angelegte Refactorings der Architektur.
+Ein weiterer Punkt, der hierzu beigetragen hat ist die Tatsache, dass der Editor
+Code vom restlichen Code des Spiels in großen Teilen unabhängig ist.
+Hierdurch waren wir auch durch große Änderungen am Spiel selbst nur mäßig
+betroffen und konnten unser Projekt unabhängig von der Entwicklung des Spiels
+selbst gestalten. Daraus resultierend kam es während der gesamten Entwicklung zu
+keinem einzigen Merge-Konflikt und die einzigen Änderungen am Spiel, die
+Auswirkungen auf unseren Code hatten, waren groß angelegte Refactorings der
+Architektur. Hier war der Zeitpunkt für die Editorerstellung ungünstig.
 
 \subsection{Negative Erfahrungen}
 Es gab jedoch auch Probleme bei der Umsetzung unseres Vorhabens.
@@ -43,6 +42,14 @@ dass wir nicht nur für UH gearbeitet haben, sondern teilweise auch Code
 für das FIFE Projekt geschrieben haben, da wir deren Editor verwendeten.
 Dies bedingte, dass wir doppelten Koordinationsaufwand hatten: Zum einen mit
 den UH Entwicklern und zum andern mit dem FIFE Team.
+
+Schlussendlich wurde durch ein FIFE-Update das Rückgeben von Koordinatenwerten
+im Editor ungenau: Statt $[45^\circ, 135^\circ, 225^\circ, 315^\circ]$ wurden
+nun Werte wie $44^\circ, 46^\circ$ etc. von der {\tt getRotation()}-Methode des
+Editors zurückgegeben.
+Da UH grundsätzlich gegen den FIFE trunk kompiliert wird, mussten wir hierfür
+zusätzlich eine Korrekturfunktion schreiben. Allein das Debugging nahm Stunden
+in Anspruch.
 
 \subsection{Schlüsse}
 Aus den gemachten Erfahrungen konnten wir einige Lehren ziehen, die nicht nur
@@ -71,6 +78,6 @@ Verzeichnisstruktur abgelegt.
 Das wichtigste bei der Auswahl eines guten Projektes ist die Relevanz des
 bearbeiteten Themas und das Bedürfnis des Projekts für das erstellte Feature.
 In unserem Fall wird der Map-Editor dringend gebraucht. Dies bedeutet, dass
-unsere Implementierung auf jeden Fall angenommen wird, auch wenn noch
-einige wenige Defizite in der Umsetzung bestehen.
+unsere Implementierung auf jeden Fall angenommen wird, auch wenn noch Defizite
+in der Umsetzung bestehen.
 

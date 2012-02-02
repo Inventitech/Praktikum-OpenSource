@@ -14,7 +14,7 @@
   \label{figure:automaton-intersection}
 \end{figure}
 
-UHs Kartenformat in SQLite besteht grob aus den folgenden Elementen für den
+UHs Kartenformat in SQLite besteht grob aus den folgenden für den
 Editor relevanten Elementen:
 \begin{itemize}
   \item Allgemeinen Karteninformationen
@@ -79,6 +79,7 @@ der Engine zu registrieren.
 
 
 \subsection{Plugin zum Laden von UH Karten (UH)}
+\label{sec:registerMapLoader}
 Um eine Map mit dem FIFE Editor öffnen zu können, muss zunächst die
 Dateierweitung mit einem sogenannten \code{MapLoader} verknüpft werden.
 Hierzu wird folgender Code
@@ -86,7 +87,7 @@ aufgerufen, der die Klasse \code{MapLoader} des \code{UHMapLoader} Plugins
 als Loader für Dateien mit der Erweiterung \code{.sqlite} registriert:
 
 \begin{lstlisting}
-fife.extensions.loaders.addMapLoader('sqlite', MapLoader)
+fife.extensions.loaders.addMapLoader('sqlite', UHMapLoader)
 \end{lstlisting}
 
 Sobald die daraufhin eine Map mit \code{.sqlite} Erweiterung im Editor geöffnet
@@ -143,18 +144,63 @@ Prozess, da das Gebäude beim Rotieren wiederum verschoben wird.
 
 
 \subsection{Plugin zum Speichern von UH Karten (UH)}
-Das Plugin zum Speichern weist die Schwierigkeit auf, dass der Editor nicht die
-Interna des UH Spielmodells kennen kann. Der Editor ``zeichnet'' einfach nur
-Elemente wie Bodentiles und Gebäude auf die verschiedenen Layer-Schichten, das
-Saver-Plugin muss diese im UH-Modell speichern.
+Um eine Map mit dem FIFE Editor öffnen zu können, muss
+zunächst die Dateierweitung mit einem sogenannten \code{MapSaver} verknüpft
+werden. Dieses Vorgehen ist analog zu Abschnitt~\ref{sec:registerMapLoader}. Die
+dafür nötige Infrastruktur und wurde von uns wie in
+Abschnitt~\ref{plugininfrastruktur} beschrieben in den FIFE-Editor
+implementiert.
+
+Registrieren des MapSavers
+
+\begin{lstlisting}
+fife.extensions.loaders.addMapLoader('sqlite', UHMapSaver)
+\end{lstlisting}
+
+Sobald die daraufhin eine Map mit \code{.sqlite} Erweiterung im Editor
+gespeichert wird, instantiiert dieser die \code{UHMapLoader} Klasse und ruft
+folgende Methode auf:
+
+\begin{lstlisting}
+saveResource(self, path)
+\end{lstlisting}
+
+Daraufhin beginnt der \code{UHMapSaver} mit dem Speichern der Map.
+
+\subsubsection{Grundlegendes Speichern}
+Grundsätzlich untergliedert sich das Speichern in die folgenden Schritte:
+\begin{itemize}
+  \item Speichern der Informationen des Ground-Layers
+  \item Speichern der Informaitonen des Building-Layers
+\end{itemize}
 
 Die Layer-Schichten enthalten vor dem Speichern die Instanzen aller vom User
 gesetzen Gebäude und Bodentiles.
 
+Das Problem besteht nun darin, dass der Editor nicht die
+Interna des UH Spielmodells kennen kann. Der Editor ``zeichnet'' einfach nur
+Elemente wie Bodentiles und Gebäude auf die verschiedenen Layer-Schichten, das
+Saver-Plugin muss diese in ein gültiges UH-Model umwandeln.
+
+\subsubsection{Der Aufbau von UH-Savegames}
+Zum generellen Aufbau von UH-Savegames, siehe Abschnitt~\ref{kartenformat}.
+{\bf Beispiel:} Angenommen, wir wollen eine Datei {\tt awesomeUHMap.sqlite}
+speichern. So werden die Informationen des Building-Layers in dieser Datei
+gespeichert. Anschließend werden die auf dem Groundtiles-Layer gesetzen
+Groundtiles in Inseln partitioniert (siehe Abschnitt~\ref{sec:partionierung}).
+Für jede Insel wird im islands-Ordner eine neue SQLite-Datenbank erzeugt, die im
+Wesentlich die Groundtiles dieser Insel enthält. Anschließend wird auf die
+erzeugten Inseln in der Datei {\tt awesomeUHMap.sqlite} verwiesen.
+
+\subsubsection{Partitionierungsproblem von Inseln}
+\label{sec:partionierung}
+Wir entwickelten einen Algorithmus zum Partitionieren zusammengehörender
+Groundtiles. Er wird in diesem Kapitel beschrieben.
+
 Der Algorithmus geht dabei den Groundlayer vom Urpsrung des Koordinatensystems
-(0, 0) nach rechts unten ab. Durch diese Traversierungsstrategie muss nur
-nach oben und nach links auf zu verbindenden Islands überprüft werden. Findet
-sich ein direkt angrenzendes Groundtile, so wird das akutelle Groundtile (rot
+(0, 0) nach rechts unten ab. Durch diese Traversierungsstrategie muss nur nach
+oben und nach links auf zu verbindenden Islands überprüft werden. Findet sich
+ein direkt angrenzendes Groundtile, so wird das akutelle Groundtile (rot
 hinterlegt) mit dem bestehenden vereinigt, indem es dessen Insel-ID übernimmt.
 
 %
@@ -175,4 +221,6 @@ hinterlegt) mit dem bestehenden vereinigt, indem es dessen Insel-ID übernimmt.
 Wie in Abschnitt \ref{kartenformat} erklärt, besteht die Schwierigkeit des
 Transformationsprozesses in diese Richtung darin, zusammenliegende Bodentiles zu
 erkennen. Dadurch benötigt das Speichern großer Inseln eine gewisse Zeit bis die
-Gruppierung der Inslen beendet ist.
+Gruppierung der Inslen beendet ist. Durch einige Performance-Optimierungen
+konnte die Speicherzeit für eine Referenzkarte von über einer Minute auf fünf
+Sekunden gedrückt werden.
