@@ -21,10 +21,11 @@ Bild~\ref{figure:editor} abgebildet.
 \subsection{Kommandozeilen-Parameter (FIFE)}
 Normalerweise sucht der FIFE-Editor Plugins nur in einem Unterordner relativ zu
 seinem Ordner. Dort können Plugins aus UH naturgemäß nicht abgelegt werden. Wir
-benötigen daher einen Kommandozeilen-Parameter {\tt --plugin-dir=PLUGIN\_DIR},
-der es ermöglicht, manuell einen PATH zum Durchsuchen auf Plugins vorzugeben. 
+benötigen daher einen Kommandozeilen-Parameter {\tt --plugin-dir=/pfad/zum/plugin/ordner},
+der es ermöglicht, manuell einen Pfad zum Durchsuchen auf Plugins vorzugeben. 
 
-Da der FIFE-Filbrowser kaum benutzbar ist, und um ein schnelles Laden von Karten
+Da der FIFE-Filebrowser aktuell stark verbessert wird und noch einige Fehler enthält, sowie
+um ein schnelles Laden von Karten
 ohne viele Benutzerinteraktionen zu ermöglichen, implementierten wir im FIFE
 Editor die Möglichkeit, Karten mittels Kommandozeilenargument zu laden. 
 
@@ -61,7 +62,7 @@ Editor relevanten Elementen:
   \item Verweise auf Island-Files. \\
   Ein Island-File ist eine SQLite-Datenbank,
   die die Informationen über die Bodenbeschaffenheit einer zusammengehörenden
-  Inseln enthält:
+  Insel enthält:
   \begin{itemize}
     \item Allgemeine Islandinformationen
     \item Alle zu einem Island gehörenden Groundtiles
@@ -107,7 +108,7 @@ Alle diese Objekte benötigt die Engine, um die Tiles später im Editor korrekt
 darstellen zu können.
 
 \subsubsection{Gebäude}
-Für die Gebäude müssen zunächst die XML-Deskriptoren ausgelesen werden, die
+Für die Gebäude müssen zunächst die YAML-Deskriptoren ausgelesen werden, die
 zusätzliche Informationen zu jedem Gebäude enthalten, wie z.B. dessen Größe.
 
 Anschließend werden wiederum ein \code{Object}, \code{InstanceVisual} und
@@ -124,7 +125,7 @@ aufgerufen, der die Klasse \code{MapLoader} des \code{UHMapLoader} Plugins
 als Loader für Dateien mit der Erweiterung \code{.sqlite} registriert:
 
 \begin{lstlisting}
-fife.extensions.loaders.addMapLoader('sqlite', UHMapLoader)
+fife.extensions.loaders.addMapLoader('sqlite', MapLoader)
 \end{lstlisting}
 
 Sobald die daraufhin eine Map mit \code{.sqlite} Erweiterung im Editor geöffnet
@@ -188,13 +189,14 @@ dafür nötige Infrastruktur und wurde von uns wie in
 Abschnitt~\ref{plugininfrastruktur} beschrieben in den FIFE-Editor
 implementiert.
 
-Registrieren des MapSavers
+Das Registrieren des MapSavers erfolgt analog zu Abschnitt~\ref{sec:registerMapLoader}
+wie folgt:
 
 \begin{lstlisting}
-fife.extensions.loaders.addMapLoader('sqlite', UHMapSaver)
+fife.extensions.loaders.addMapLoader('sqlite', MapSaver)
 \end{lstlisting}
 
-Sobald die daraufhin eine Map mit \code{.sqlite} Erweiterung im Editor
+Sobald daraufhin eine Map mit \code{.sqlite} Erweiterung im Editor
 gespeichert wird, instantiiert dieser die \code{UHMapLoader} Klasse und ruft
 folgende Methode auf:
 
@@ -208,10 +210,10 @@ Daraufhin beginnt der \code{UHMapSaver} mit dem Speichern der Map.
 Grundsätzlich untergliedert sich das Speichern in die folgenden Schritte:
 \begin{itemize}
   \item Speichern der Informationen des Ground-Layers
-  \item Speichern der Informaitonen des Building-Layers
+  \item Speichern der Informationen des Building-Layers
 \end{itemize}
 
-Die Layer-Schichten enthalten vor dem Speichern die Instanzen aller vom User
+Die Layer enthalten vor dem Speichern die Instanzen aller vom User
 gesetzen Gebäude und Bodentiles.
 
 Das Problem besteht nun darin, dass der Editor nicht die
@@ -221,7 +223,8 @@ Saver-Plugin muss diese in ein gültiges UH-Model umwandeln.
 
 \subsubsection{Der Aufbau von UH-Savegames}
 Zum generellen Aufbau von UH-Savegames, siehe Abschnitt~\ref{kartenformat}.
-{\bf Beispiel:} Angenommen, wir wollen eine Datei {\tt awesomeUHMap.sqlite}
+
+\paragraph{Beispiel} Angenommen, wir wollen eine Datei {\tt awesomeUHMap.sqlite}
 speichern. So werden die Informationen des Building-Layers in dieser Datei
 gespeichert. Anschließend werden die auf dem Groundtiles-Layer gesetzen
 Groundtiles in Inseln partitioniert (siehe Abschnitt~\ref{sec:partionierung}).
@@ -235,8 +238,9 @@ Wir entwickelten einen Algorithmus zum Partitionieren zusammengehörender
 Groundtiles. Er wird in diesem Kapitel beschrieben.
 
 Der Algorithmus geht dabei den Groundlayer vom Urpsrung des Koordinatensystems
-(0, 0) nach rechts unten ab. Durch diese Traversierungsstrategie muss nur nach
-oben und nach links auf zu verbindenden Islands überprüft werden. Findet sich
+(0, 0) nach rechts unten ab. Durch diese Traversierungsstrategie muss der Algorithmus
+jeweils nur das obere und das linke Nachbartile betrachten, um zu überprüfen, ob
+zwei Tiles zur selben Insel gehören. Findet sich
 ein direkt angrenzendes Groundtile, so wird das akutelle Groundtile (rot
 hinterlegt) mit dem bestehenden vereinigt, indem es dessen Insel-ID übernimmt.
 
@@ -256,8 +260,8 @@ hinterlegt) mit dem bestehenden vereinigt, indem es dessen Insel-ID übernimmt.
 \end{figure*}
 
 Wie in Abschnitt \ref{kartenformat} erklärt, besteht die Schwierigkeit des
-Transformationsprozesses in diese Richtung darin, zusammenliegende Bodentiles zu
+Transformationsprozesses darin, zusammenliegende Bodentiles zu
 erkennen. Dadurch benötigt das Speichern großer Inseln eine gewisse Zeit bis die
-Gruppierung der Inslen beendet ist. Durch einige Performance-Optimierungen
-konnte die Speicherzeit für eine Referenzkarte von über einer Minute auf fünf
+Gruppierung der Inseln beendet ist. Durch einige Performance-Optimierungen
+konnte die Speicherzeit für eine Referenzkarte jedoch von über einer Minute auf fünf
 Sekunden gedrückt werden.
