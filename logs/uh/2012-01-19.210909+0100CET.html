@@ -1,0 +1,68 @@
+<html><head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><title>Conversation with #unknown-horizons at Do 19 Jan 2012 21:09:09 CET on ronnie_c@irc.freenode.net (irc)</title></head><body><h3>Conversation with #unknown-horizons at Do 19 Jan 2012 21:09:09 CET on ronnie_c@irc.freenode.net (irc)</h3>
+<font size="2">(21:09:09)</font><b> Das Thema für #unknown-horizons ist: Welcome to #unknown-horizons | <a href="http://www.unknown-horizons.org">www.unknown-horizons.org</a> | Read the FAQ: <a href="http://wiki.unknown-horizons.org/w/FAQ">http://wiki.unknown-horizons.org/w/FAQ</a> | News: -</b><br/>
+<font color="#16569E"><font size="2">(21:09:11)</font> <b>ronnie_c:</b></font> hi<br/>
+<font color="#16569E"><font size="2">(21:09:39)</font> <b>ronnie_c:</b></font> where in a save game do i see which building is associated with which player?<br/>
+<font color="#A82F2F"><font size="2">(21:09:49)</font> <b>chrisoelmueller:</b></font> heya ronnie_c<br/>
+<font color="#16569E"><font size="2">(21:11:48)</font> <b>ronnie_c:</b></font> chrisoelmueller: hi<br/>
+<font color="#16569E"><font size="2">(21:11:56)</font> <b>ronnie_c:</b></font> is this perhaps saved in the unit table?<br/>
+<font color="#A82F2F"><font size="2">(21:13:18)</font> <b>chrisoelmueller:</b></font> building.py#load uses this:<br/>
+<font color="#A82F2F"><font size="2">(21:13:27)</font> <b>chrisoelmueller:</b></font> owner_id = db.get_settlement_owner(location)<br/>
+<font color="#A82F2F"><font size="2">(21:13:34)</font> <b>chrisoelmueller:</b></font> owner = None if owner_id is None else WorldObject.get_object_by_id(owner_id)<br/>
+<font size="2">(21:13:39)</font><b> ketas hat den Raum verlassen (quit: Ping timeout: 252 seconds).</b><br/>
+<font color="#A82F2F"><font size="2">(21:13:43)</font> <b>chrisoelmueller:</b></font> so the location is saved in the savegame, right?<br/>
+<font size="2">(21:15:25)</font><b> ketas [<em>~ketas@2001:ad0:91f:0:290:27ff:fea6:a66a</em>] hat den Raum betreten.</b><br/>
+<font color="#16569E"><font size="2">(21:17:41)</font> <b>ronnie_c:</b></font> is the location somehow encoding the island this is placed or what?<br/>
+<font color="#16569E"><font size="2">(21:17:59)</font> <b>ronnie_c:</b></font> yap, location is saved there<br/>
+<font color="#A82F2F"><font size="2">(21:18:45)</font> <b>chrisoelmueller:</b></font> i have no idea about that code, so i can also just check how get_settlement_owner works :)<br/>
+<font color="#16569E"><font size="2">(21:18:54)</font> <b>ronnie_c:</b></font> ok<br/>
+<font size="2">(21:19:59)</font><b> MasterofJOKers hat den Raum verlassen (quit: Ping timeout: 272 seconds).</b><br/>
+<font size="2">(21:20:16)</font><b> ketas hat den Raum verlassen (quit: Ping timeout: 248 seconds).</b><br/>
+<font size="2">(21:33:09)</font><b> MasterofJOKers [<em>~joker@x137.wh17.tu-dresden.de</em>] hat den Raum betreten.</b><br/>
+<font size="2">(21:35:37)</font><b> ketas [<em>~ketas@2001:ad0:91f:0:290:27ff:fea6:a66a</em>] hat den Raum betreten.</b><br/>
+<font size="2">(21:44:08)</font><b> Gambit hat den Raum verlassen (quit: Read error: Connection reset by peer).</b><br/>
+<font size="2">(21:48:25)</font><b> Elouin hat den Raum verlassen (quit: Quit: Ex-Chat).</b><br/>
+<font size="2">(21:48:54)</font><b> Elouin [<em>~max@p57A26030.dip.t-dialin.net</em>] hat den Raum betreten.</b><br/>
+<font color="#A82F2F"><font size="2">(22:35:41)</font> <b>totycro_:</b></font> ronnie_c: do you still have question on that issue?<br/>
+<font color="#16569E"><font size="2">(22:37:18)</font> <b>ronnie_c:</b></font> totycro_: yes :-)<br/>
+<font color="#16569E"><font size="2">(22:37:23)</font> <b>ronnie_c:</b></font> i am still puzzled<br/>
+<font color="#A82F2F"><font size="2">(22:38:01)</font> <b>totycro_:</b></font> iirc, the location column is used in 2 different contexts<br/>
+<font color="#A82F2F"><font size="2">(22:38:12)</font> <b>totycro_:</b></font> i think it can mean settlement or island<br/>
+<font color="#A82F2F"><font size="2">(22:39:33)</font> <b>totycro_:</b></font> if there&apos;s an island, the building is unowned<br/>
+<font color="#A82F2F"><font size="2">(22:39:47)</font> <b>totycro_:</b></font> so owner = None<br/>
+<font color="#A82F2F"><font size="2">(22:40:07)</font> <b>totycro_:</b></font> else the owner is retrieved via settlement, as chrisoelmueller pointed out<br/>
+<font color="#16569E"><font size="2">(22:43:38)</font> <b>ronnie_c:</b></font> hm, ok<br/>
+<font color="#A82F2F"><font size="2">(22:43:55)</font> <b>totycro_:</b></font> so everythings a worldid in the savegame of course<br/>
+<font color="#16569E"><font size="2">(22:44:18)</font> <b>ronnie_c:</b></font> i'll shortly describe the problem we're seeing, maybe it's even not related to this, ok?<br/>
+<font color="#A82F2F"><font size="2">(22:44:45)</font> <b>totycro_:</b></font> k<br/>
+<font color="#16569E"><font size="2">(22:45:01)</font> <b>ronnie_c:</b></font> we can place and load buildings with our mapeditor<br/>
+<font color="#A82F2F"><font size="2">(22:45:09)</font> <b>totycro_:</b></font> i gotta study now, so i&apos;ll jump on any distractions :)<br/>
+<font color="#16569E"><font size="2">(22:45:30)</font> <b>ronnie_c:</b></font> haha, i know that well ^^<br/>
+<font color="#A82F2F"><font size="2">(22:45:50)</font> <b>totycro_:</b></font> but feel free to go on<br/>
+<font color="#16569E"><font size="2">(22:46:20)</font> <b>ronnie_c:</b></font> however, when opening the files from the game, all the buildings are not displayed at all.<br/>
+<font color="#16569E"><font size="2">(22:46:54)</font> <b>ronnie_c:</b></font> which is probably because i don't know what to put in location, i guess<br/>
+<font color="#A82F2F"><font size="2">(22:47:00)</font> <b>totycro_:</b></font> loading buildings works via islands and settlements<br/>
+<font color="#A82F2F"><font size="2">(22:47:08)</font> <b>totycro_:</b></font> they load their respective buildings<br/>
+<font color="#A82F2F"><font size="2">(22:47:39)</font> <b>totycro_:</b></font> it&apos;s always like that: 			  db(&quot;SELECT rowid, type FROM building WHERE location = ?&quot;, worldid):<br/>
+<font color="#A82F2F"><font size="2">(22:47:46)</font> <b>totycro_:</b></font> so do you know if the settlement/island is loaded?<br/>
+<font color="#16569E"><font size="2">(22:48:28)</font> <b>ronnie_c:</b></font> i implemented an algorithm for separating islands yesterday (based on connected groundtiles). about the settlements, i have no knowledge.<br/>
+<font color="#16569E"><font size="2">(22:48:48)</font> <b>ronnie_c:</b></font> what is a worldid bzw? :-)<br/>
+<font color="#A82F2F"><font size="2">(22:49:04)</font> <b>totycro_:</b></font> everything that inherits from worldobject has a worldid<br/>
+<font color="#A82F2F"><font size="2">(22:49:13)</font> <b>totycro_:</b></font> that&apos;s an integer to identify any object<br/>
+<font color="#A82F2F"><font size="2">(22:49:21)</font> <b>totycro_:</b></font> it&apos;s used for savegames and mp<br/>
+<font color="#16569E"><font size="2">(22:49:23)</font> <b>ronnie_c:</b></font> so a worldid is unique for any object in the world?<br/>
+<font color="#A82F2F"><font size="2">(22:49:48)</font> <b>totycro_:</b></font> yes, islands, settlements and buildings among others have such a worldid<br/>
+<font color="#A82F2F"><font size="2">(22:50:07)</font> <b>totycro_:</b></font> ah, that&apos;s the rowid column usually in the savegame db, that&apos;s kind of hidden<br/>
+<font color="#16569E"><font size="2">(22:50:34)</font> <b>ronnie_c:</b></font> :-)<br/>
+<font color="#A82F2F"><font size="2">(22:51:58)</font> <b>totycro_:</b></font> brb<br/>
+<font color="#16569E"><font size="2">(22:52:05)</font> <b>ronnie_c:</b></font> kk<br/>
+<font size="2">(23:17:05)</font><b> Elouin hat den Raum verlassen (quit: Quit: Ex-Chat).</b><br/>
+<font size="2">(23:21:01)</font><b> Emperor2k3 [<em>~srohmen@f048161070.adsl.alicedsl.de</em>] hat den Raum betreten.</b><br/>
+<font color="#A82F2F"><font size="2">(23:31:03)</font> <b>totycro_:</b></font> re<br/>
+<font size="2">(23:34:38)</font><b> inken hat den Raum verlassen (quit: Quit: Leaving.).</b><br/>
+<font size="2">(23:43:19)</font><b> Gambit [<em>~gambit@wesnoth/developer/grickit</em>] hat den Raum betreten.</b><br/>
+<font size="2">(23:45:55)</font><b> Emperor2k3 hat den Raum verlassen (quit: Quit: Leaving.).</b><br/>
+<font size="2">(23:52:51)</font><b> lolcat___ hat den Raum verlassen (quit: Changing host).</b><br/>
+<font size="2">(23:52:51)</font><b> lolcat___ [<em>~xae8koo@unaffiliated/energy-/x-7653247</em>] hat den Raum betreten.</b><br/>
+<font size="2">(23:53:00)</font><b> lolcat___ heißt jetzt lolcat</b><br/>
+<font size="2">(23:55:32)</font><b> Entvex hat den Raum verlassen (quit: Quit: Going offline, see ya! (www.adiirc.com)).</b><br/>
+<font size="2">(00:41:13)</font><b> Kilian] [<em>~kili@p4FF7A22B.dip.t-dialin.net</em>] hat den Raum betreten.</b><br/>

@@ -1,0 +1,248 @@
+<html><head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><title>Conversation with #unknown-horizons at Di 31 Jan 2012 16:16:20 CET on ronnie_c@irc.freenode.net (irc)</title></head><body><h3>Conversation with #unknown-horizons at Di 31 Jan 2012 16:16:20 CET on ronnie_c@irc.freenode.net (irc)</h3>
+<font size="2">(16:16:20)</font><b> Das Thema für #unknown-horizons ist: Welcome to #unknown-horizons | <a href="http://www.unknown-horizons.org">www.unknown-horizons.org</a> | Read the FAQ: <a href="http://wiki.unknown-horizons.org/w/FAQ">http://wiki.unknown-horizons.org/w/FAQ</a> | News: -</b><br/>
+<font color="#16569E"><font size="2">(16:16:24)</font> <b>ronnie_c:</b></font> hi<br/>
+<font color="#A82F2F"><font size="2">(16:16:38)</font> <b>Kilian]:</b></font> Hi ronnie_c &amp; karottenreibe<br/>
+<font color="#A82F2F"><font size="2">(16:16:49)</font> <b>karottenreibe:</b></font> hi all<br/>
+<font color="#16569E"><font size="2">(16:16:53)</font> <b>ronnie_c:</b></font> we are now merging branch editor into master<br/>
+<font color="#16569E"><font size="2">(16:19:53)</font> <b>ronnie_c:</b></font> merged.<br/>
+<font color="#A82F2F"><font size="2">(16:20:28)</font> <b>CIA-10:</b></font> <span style='font-weight: bold;'>unknown-horizons:</span> <span style='color: dark green;'>Moritz Beller</span> <span style='color: orange;'>master</span> * r<span style='font-weight: bold;'>a885a9e</span> <span style='color: teal;'></span>/ (editor/plugins/UHMapLoader.py editor/plugins/UHMapSaver.py)<span style='font-weight: bold;'>:</span> fixes broken rotation due to Fife&apos;s changed rotation handling (+5 more commits...) - http://git.io/5qfrBg<br/>
+<font color="#A82F2F"><font size="2">(16:21:27)</font> <b>uh-ci:</b></font> Project uh-tests build #327: STILL UNSTABLE in 53 sec: http://aviamo.de/jenkins/job/uh-tests/327/<br/>
+<font color="#A82F2F"><font size="2">(16:21:27)</font> <b>uh-ci:</b></font> * git: removed old editor code and added skeleton for new map loader plugin<br/>
+<font color="#A82F2F"><font size="2">(16:21:28)</font> <b>uh-ci:</b></font> * git: added skeleton code for map and island file opening and processing<br/>
+<font color="#A82F2F"><font size="2">(16:21:28)</font> <b>uh-ci:</b></font> * git: added code to create a ground layer for island tiles<br/>
+<font color="#A82F2F"><font size="2">(16:21:29)</font> <b>nihathrael:</b></font> great<br/>
+<font color="#A82F2F"><font size="2">(16:21:29)</font> <b>uh-ci:</b></font> * git: nicer folder structure. made UHMapLoader plugin runnable<br/>
+<font color="#A82F2F"><font size="2">(16:21:29)</font> <b>uh-ci:</b></font> * git: re-added and modified editor start scripts<br/>
+<font color="#A82F2F"><font size="2">(16:21:30)</font> <b>uh-ci:</b></font> * git: using new plugin_dir option of fifedit<br/>
+<font color="#A82F2F"><font size="2">(16:21:30)</font> <b>uh-ci:</b></font> * git: spaces --&gt; tabs<br/>
+<font color="#A82F2F"><font size="2">(16:21:31)</font> <b>uh-ci:</b></font> * git: fixed import errors (needed to import horizons.main first)<br/>
+<font color="#A82F2F"><font size="2">(16:21:31)</font> <b>uh-ci:</b></font> * git: now .sqlite files are shown in the filebrowser<br/>
+<font color="#A82F2F"><font size="2">(16:21:32)</font> <b>uh-ci:</b></font> * moritzbeller: fixed typo<br/>
+<font color="#A82F2F"><font size="2">(16:21:32)</font> <b>uh-ci:</b></font> * git: modified tilesetloader to accept an alternate directory in `load()`<br/>
+<font color="#A82F2F"><font size="2">(16:21:33)</font> <b>uh-ci:</b></font> * git: using TileSetLoader to obtain all tilesets<br/>
+<font color="#A82F2F"><font size="2">(16:21:33)</font> <b>uh-ci:</b></font> * git: Revert &quot;fixed typo&quot;<br/>
+<font color="#A82F2F"><font size="2">(16:21:34)</font> <b>uh-ci:</b></font> * git: added code to load objects from tilesets<br/>
+<font color="#A82F2F"><font size="2">(16:21:34)</font> <b>uh-ci:</b></font> * git: added `isLoadable` function<br/>
+<font color="#A82F2F"><font size="2">(16:21:35)</font> <b>uh-ci:</b></font> * git: fixed some naming errors<br/>
+<font color="#A82F2F"><font size="2">(16:21:35)</font> <b>uh-ci:</b></font> * git: added `time_to_load` attribute and fixed SQL statement for islands<br/>
+<font color="#A82F2F"><font size="2">(16:21:47)</font> <b>uh-ci:</b></font> * moritzbeller: Added first preliminary save function that essentially copies the template file and does some exception handling<br/>
+<font color="#A82F2F"><font size="2">(16:21:47)</font> <b>uh-ci:</b></font> * moritzbeller: Did a small filepath bugfix in loader<br/>
+<font color="#A82F2F"><font size="2">(16:21:48)</font> <b>uh-ci:</b></font> * git: fixed faulty parameter name that caused endless loops when FIFE was not<br/>
+<font color="#A82F2F"><font size="2">(16:21:48)</font> <b>uh-ci:</b></font> * moritzbeller: Added first drafts and methods for ground tile saving and island savings<br/>
+<font color="#A82F2F"><font size="2">(16:21:49)</font> <b>uh-ci:</b></font> * moritzbeller: adds todo for loader<br/>
+<font color="#A82F2F"><font size="2">(16:21:49)</font> <b>uh-ci:</b></font> * moritzbeller: Adds support for different ground tile types in loader<br/>
+<font color="#A82F2F"><font size="2">(16:21:50)</font> <b>uh-ci:</b></font> * moritzbeller: adds display of rotation<br/>
+<font color="#A82F2F"><font size="2">(16:21:50)</font> <b>uh-ci:</b></font> * moritzbeller: removed unused import<br/>
+<font color="#A82F2F"><font size="2">(16:21:51)</font> <b>uh-ci:</b></font> * moritzbeller: fixes bug with wrong import order for some systems<br/>
+<font color="#A82F2F"><font size="2">(16:21:51)</font> <b>uh-ci:</b></font> * git: fixed Object Loader for component refactoring<br/>
+<font color="#A82F2F"><font size="2">(16:21:52)</font> <b>uh-ci:</b></font> * git: fixed building names (removed leading &quot;_ &quot;)<br/>
+<font color="#A82F2F"><font size="2">(16:21:52)</font> <b>uh-ci:</b></font> * moritzbeller: fixes saver plugin<br/>
+<font color="#A82F2F"><font size="2">(16:21:53)</font> <b>uh-ci:</b></font> * git: using YamlCache to load buildings more efficiently<br/>
+<font color="#A82F2F"><font size="2">(16:21:53)</font> <b>uh-ci:</b></font> * git: code cleanup<br/>
+<font color="#A82F2F"><font size="2">(16:21:54)</font> <b>uh-ci:</b></font> * git: forcing our plugins to always be enabled so the editor works OOTB<br/>
+<font color="#A82F2F"><font size="2">(16:21:54)</font> <b>uh-ci:</b></font> * moritzbeller: adds detection of islands (half-way working)<br/>
+<font color="#A82F2F"><font size="2">(16:21:55)</font> <b>uh-ci:</b></font> * moritzbeller: Adds working island detection to saver<br/>
+<font color="#A82F2F"><font size="2">(16:21:55)</font> <b>uh-ci:</b></font> * moritzbeller: Merges in changes from Fabian<br/>
+<font color="#A82F2F"><font size="2">(16:22:10)</font> <b>nihathrael:</b></font> lulz<br/>
+<font color="#A82F2F"><font size="2">(16:22:22)</font> <b>nihathrael:</b></font> it should definitly crop the output<br/>
+<font color="#A82F2F"><font size="2">(16:22:59)</font> <b>karottenreibe:</b></font> hihi<br/>
+<font color="#A82F2F"><font size="2">(16:23:02)</font> <b>karottenreibe:</b></font> migght  be more efficient<br/>
+<font color="#16569E"><font size="2">(16:23:36)</font> <b>ronnie_c:</b></font> nihathrael: can you test the editor please?<br/>
+<font color="#A82F2F"><font size="2">(16:24:55)</font> <b>Kilian]:</b></font> omg, the file browser is broken as hell ...<br/>
+<font color="#A82F2F"><font size="2">(16:25:24)</font> <b>Kilian]:</b></font> it mixed .. of fife path with / <br/>
+<font color="#A82F2F"><font size="2">(16:26:03)</font> <b>nihathrael:</b></font> ronnie_c: alrdeay at it<br/>
+<font color="#A82F2F"><font size="2">(16:26:18)</font> <b>nihathrael:</b></font> is it possible to rotate now?<br/>
+<font size="2">(16:26:30)</font><b> LinuxDonald hat den Raum verlassen (quit: Quit: Verlassend).</b><br/>
+<font color="#A82F2F"><font size="2">(16:27:51)</font> <b>karottenreibe:</b></font> Kilian]: yep, but the fife guys said they were working on that right now<br/>
+<font color="#A82F2F"><font size="2">(16:27:55)</font> <b>karottenreibe:</b></font> they were as annoyed as we were<br/>
+<font color="#A82F2F"><font size="2">(16:28:06)</font> <b>UnknownScribe:</b></font> sound for a catastrophe warning possibly? http://minus.com/mIJG5VZFc#<br/>
+<font color="#A82F2F"><font size="2">(16:28:11)</font> <b>Kilian]:</b></font> karottenreibe: k, good to know<br/>
+<font color="#A82F2F"><font size="2">(16:28:39)</font> <b>karottenreibe:</b></font> nihathrael: nope, you can&apos;t, see also TODO.md in the editor/ directory<br/>
+<font color="#A82F2F"><font size="2">(16:28:47)</font> <b>karottenreibe:</b></font> I listed all the open points there and possible solutions<br/>
+<font color="#A82F2F"><font size="2">(16:29:20)</font> <b>Kilian]:</b></font> UnknownScribe: sounds good<br/>
+<font color="#16569E"><font size="2">(16:29:29)</font> <b>ronnie_c:</b></font> nihathrael: don't try saving buildings atm<br/>
+<font color="#A82F2F"><font size="2">(16:29:58)</font> <b>UnknownScribe:</b></font> Kilian]: thanks<br/>
+<font color="#A82F2F"><font size="2">(16:31:22)</font> <b>Kilian]:</b></font> UnknownScribe: I dont know if its possible, but i would extract one bell sound of it and handle the times, how often it is played in the code, to save diskspace ...<br/>
+<font color="#A82F2F"><font size="2">(16:31:32)</font> <b>nihathrael:</b></font> loading/saving works, but it screwes up the correctly rotated files of the old islands when saving<br/>
+<font color="#A82F2F"><font size="2">(16:31:44)</font> <b>Kilian]:</b></font> but for now, the file like this you linked is fine<br/>
+<font color="#A82F2F"><font size="2">(16:32:12)</font> <b>nihathrael:</b></font> didn&apos;t that work before?<br/>
+<font color="#A82F2F"><font size="2">(16:32:59)</font> <b>UnknownScribe:</b></font> Kilian]: I can do that thought it won&apos;t sound as good as Ive made it reverberate afterwards, at the moment its 100kb<br/>
+<font color="#16569E"><font size="2">(16:32:59)</font> <b>ronnie_c:</b></font> nihathrael: at it<br/>
+<font color="#A82F2F"><font size="2">(16:33:27)</font> <b>UnknownScribe:</b></font> Kilian]: ill try it and see what its like, do you know what file type you need for sounds?<br/>
+<font color="#A82F2F"><font size="2">(16:33:29)</font> <b>Kilian]:</b></font> nihathrael: iam not sure if you want different times in one sounds event<br/>
+<font color="#A82F2F"><font size="2">(16:33:49)</font> <b>Kilian]:</b></font> UnknownScribe: ogg compression rate 8<br/>
+<font color="#A82F2F"><font size="2">(16:34:29)</font> <b>karottenreibe:</b></font> nihathrael: that should work, did you use the current master? we just fixed exactly that :P<br/>
+<font color="#A82F2F"><font size="2">(16:34:42)</font> <b>nihathrael:</b></font> yes i&apos;m using master<br/>
+<font color="#A82F2F"><font size="2">(16:35:02)</font> <b>karottenreibe:</b></font> and you save a file and which rotation is botched afterwards?<br/>
+<font color="#A82F2F"><font size="2">(16:35:04)</font> <b>nihathrael:</b></font> i added an island to quattro<br/>
+<font color="#A82F2F"><font size="2">(16:35:22)</font> <b>karottenreibe:</b></font> and the saved file or the backup file is botched?<br/>
+<font color="#A82F2F"><font size="2">(16:36:42)</font> <b>nihathrael:</b></font> screen coming up<br/>
+<font color="#A82F2F"><font size="2">(16:36:53)</font> <b>nihathrael:</b></font> http://imgur.com/2jDMl<br/>
+<font color="#A82F2F"><font size="2">(16:37:15)</font> <b>karottenreibe:</b></font> yup, we just fixed that bug :P<br/>
+<font color="#A82F2F"><font size="2">(16:37:27)</font> <b>karottenreibe:</b></font> strange<br/>
+<font color="#A82F2F"><font size="2">(16:37:27)</font> <b>nihathrael:</b></font> &quot;fixed&quot;<br/>
+<font color="#A82F2F"><font size="2">(16:37:27)</font> <b>nihathrael:</b></font> :D<br/>
+<font color="#A82F2F"><font size="2">(16:37:27)</font> <b>karottenreibe:</b></font> yeah, as always<br/>
+<font color="#A82F2F"><font size="2">(16:37:49)</font> <b>karottenreibe:</b></font> so, you saved the file and then reopened the same file?<br/>
+<font color="#A82F2F"><font size="2">(16:38:03)</font> <b>karottenreibe:</b></font> and the editor displays them correctly?<br/>
+<font size="2">(16:39:56)</font><b> mmaruseacph2 hat den Raum verlassen (quit: Ping timeout: 272 seconds).</b><br/>
+<font color="#A82F2F"><font size="2">(16:39:57)</font> <b>nihathrael:</b></font> let me check that<br/>
+<font color="#A82F2F"><font size="2">(16:40:38)</font> <b>nihathrael:</b></font> nope its borked in the editor as well<br/>
+<font size="2">(16:41:22)</font><b> Meldrian hat den Raum verlassen (quit: Quit: Der Adler ist auf dem Weg).</b><br/>
+<font color="#16569E"><font size="2">(16:41:22)</font> <b>ronnie_c:</b></font> then you are officially not in master :-)<br/>
+<font size="2">(16:42:04)</font><b> Beliar heißt jetzt Beliar|AFK</b><br/>
+<font color="#A82F2F"><font size="2">(16:42:47)</font> <b>CIA-10:</b></font> <span style='font-weight: bold;'>unknown-horizons:</span> <span style='color: dark green;'>Moritz Beller</span> <span style='color: orange;'>master</span> * r<span style='font-weight: bold;'>7992848</span> <span style='color: teal;'></span>/ (content/maps/development.sqlite editor/plugins/UHMapSaver.py)<span style='font-weight: bold;'>:</span> <br/>
+<font color="#A82F2F"><font size="2">(16:42:47)</font> <b>CIA-10:</b></font> <span style='font-weight: bold;'>unknown-horizons:</span> fixes building save code<br/>
+<font color="#A82F2F"><font size="2">(16:42:47)</font> <b>CIA-10:</b></font> <span style='font-weight: bold;'>unknown-horizons:</span> removes debug output - http://git.io/B0p1ug<br/>
+<font color="#A82F2F"><font size="2">(16:43:37)</font> <b>uh-ci:</b></font> Project uh-tests build #328: STILL UNSTABLE in 44 sec: http://aviamo.de/jenkins/job/uh-tests/328/<br/>
+<font color="#A82F2F"><font size="2">(16:43:37)</font> <b>uh-ci:</b></font> moritzbeller: fixes building save code<br/>
+<font color="#A82F2F"><font size="2">(16:43:38)</font> <b>uh-ci:</b></font> Failed tests:<br/>
+<font color="#A82F2F"><font size="2">(16:43:38)</font> <b>uh-ci:</b></font> tests.game.test_load_save.tests.game.test_load_save.test_load_producing_production_fast: http://aviamo.de/jenkins/job/uh-tests/328/testReport/junit/junit/tests.game/test_load_save/tests_game_test_load_save_test_load_producing_production_fast<br/>
+<font color="#A82F2F"><font size="2">(16:43:39)</font> <b>uh-ci:</b></font> tests.game.test_load_save.tests.game.test_load_save.test_load_producing_production_slow: http://aviamo.de/jenkins/job/uh-tests/328/testReport/junit/junit/tests.game/test_load_save/tests_game_test_load_save_test_load_producing_production_slow<br/>
+<font color="#A82F2F"><font size="2">(16:43:39)</font> <b>uh-ci:</b></font> tests.game.test_status_icons.tests.game.test_status_icons.test_decommissioned: http://aviamo.de/jenkins/job/uh-tests/328/testReport/junit/junit/tests.game/test_status_icons/tests_game_test_status_icons_test_decommissioned<br/>
+<font color="#A82F2F"><font size="2">(16:43:40)</font> <b>uh-ci:</b></font> tests.game.test_status_icons.tests.game.test_status_icons.test_productivity_low: http://aviamo.de/jenkins/job/uh-tests/328/testReport/junit/junit/tests.game/test_status_icons/tests_game_test_status_icons_test_productivity_low<br/>
+<font color="#A82F2F"><font size="2">(16:43:45)</font> <b>nihathrael:</b></font> does that fix the rotation bug?<br/>
+<font color="#16569E"><font size="2">(16:44:45)</font> <b>ronnie_c:</b></font> its fixed for me<br/>
+<font size="2">(16:45:14)</font><b> squiddy [<em>~squiddy@g224193094.adsl.alicedsl.de</em>] hat den Raum betreten.</b><br/>
+<font color="#A82F2F"><font size="2">(16:45:57)</font> <b>uh-ci:</b></font> Project uh-tests build #329: STILL UNSTABLE in 44 sec: http://aviamo.de/jenkins/job/uh-tests/329/<br/>
+<font color="#A82F2F"><font size="2">(16:45:57)</font> <b>uh-ci:</b></font> Failed tests:<br/>
+<font color="#A82F2F"><font size="2">(16:45:58)</font> <b>uh-ci:</b></font> tests.game.test_load_save.tests.game.test_load_save.test_load_producing_production_fast: http://aviamo.de/jenkins/job/uh-tests/329/testReport/junit/junit/tests.game/test_load_save/tests_game_test_load_save_test_load_producing_production_fast<br/>
+<font color="#A82F2F"><font size="2">(16:45:58)</font> <b>uh-ci:</b></font> tests.game.test_load_save.tests.game.test_load_save.test_load_producing_production_slow: http://aviamo.de/jenkins/job/uh-tests/329/testReport/junit/junit/tests.game/test_load_save/tests_game_test_load_save_test_load_producing_production_slow<br/>
+<font color="#A82F2F"><font size="2">(16:45:59)</font> <b>uh-ci:</b></font> tests.game.test_status_icons.tests.game.test_status_icons.test_decommissioned: http://aviamo.de/jenkins/job/uh-tests/329/testReport/junit/junit/tests.game/test_status_icons/tests_game_test_status_icons_test_decommissioned<br/>
+<font color="#A82F2F"><font size="2">(16:45:59)</font> <b>uh-ci:</b></font> tests.game.test_status_icons.tests.game.test_status_icons.test_productivity_low: http://aviamo.de/jenkins/job/uh-tests/329/testReport/junit/junit/tests.game/test_status_icons/tests_game_test_status_icons_test_productivity_low<br/>
+<font size="2">(16:46:09)</font><b> Entvex [<em>~entvex@83.91.89.186</em>] hat den Raum betreten.</b><br/>
+<font color="#A82F2F"><font size="2">(16:46:40)</font> <b>nihathrael:</b></font> tried again, doesnt work<br/>
+<font color="#A82F2F"><font size="2">(16:46:43)</font> <b>nihathrael:</b></font> still same error<br/>
+<font color="#A82F2F"><font size="2">(16:46:45)</font> <b>gscai:</b></font> my editor starting result: http://pastebin.com/KPip7XwL<br/>
+<font color="#A82F2F"><font size="2">(16:47:38)</font> <b>gscai:</b></font> looks like the same problem as before just in a slightly different way<br/>
+<font color="#A82F2F"><font size="2">(16:47:53)</font> <b>karottenreibe:</b></font> gscai: is that your actual UH path? D:\UnknownHorizons\unknown-horizons<br/>
+<font color="#A82F2F"><font size="2">(16:48:02)</font> <b>gscai:</b></font> yes<br/>
+<font color="#A82F2F"><font size="2">(16:48:12)</font> <b>gscai:</b></font> the file it failed to find exists<br/>
+<font color="#A82F2F"><font size="2">(16:48:12)</font> <b>karottenreibe:</b></font> nihathrael: interesting, it works for ronnie_c, but not for you or me ^^<br/>
+<font color="#A82F2F"><font size="2">(16:48:24)</font> <b>nihathrael:</b></font> ronnie_c: do you have any non trunk patched applied to fife?<br/>
+<font color="#A82F2F"><font size="2">(16:49:40)</font> <b>karottenreibe:</b></font> gscai: which problem from before?<br/>
+<font color="#16569E"><font size="2">(16:49:51)</font> <b>ronnie_c:</b></font> nihathrael: nope<br/>
+<font color="#A82F2F"><font size="2">(16:50:08)</font> <b>gscai:</b></font> karottenreibe: the inability to load any maps with similar errors<br/>
+<font color="#16569E"><font size="2">(16:50:20)</font> <b>ronnie_c:</b></font> i had that problem, too. then wrote the fix<br/>
+<font color="#16569E"><font size="2">(16:50:22)</font> <b>ronnie_c:</b></font> which fixed<br/>
+<font color="#16569E"><font size="2">(16:50:23)</font> <b>ronnie_c:</b></font> it<br/>
+<font color="#A82F2F"><font size="2">(16:50:47)</font> <b>karottenreibe:</b></font> gscai: I think I remember that I had something similar and that was why I added &quot;/&quot; to the VFS<br/>
+<font color="#A82F2F"><font size="2">(16:50:56)</font> <b>karottenreibe:</b></font> which obviously doesn&apos;t work for windows^^<br/>
+<font color="#A82F2F"><font size="2">(16:51:14)</font> <b>karottenreibe:</b></font> not sure how to fix that generally, that seems to be a general problem with fifes path/filesystem handling<br/>
+<font color="#A82F2F"><font size="2">(16:51:24)</font> <b>gscai:</b></font> the difference is that previously it would show an error message in the gui; now attempting to open any maps completely crashes the gui with no additional errors<br/>
+<font color="#A82F2F"><font size="2">(16:51:48)</font> <b>karottenreibe:</b></font> its also the cause of them rewriting the file chooser dialog stuff<br/>
+<font color="#A82F2F"><font size="2">(16:52:54)</font> <b>nihathrael:</b></font> I rebuild my fife, so ensure it was up to date<br/>
+<font color="#A82F2F"><font size="2">(16:53:05)</font> <b>nihathrael:</b></font> still doesn&apos;t work, not even if I just load quttro, click save and then load it<br/>
+<font color="#A82F2F"><font size="2">(16:53:15)</font> <b>karottenreibe:</b></font> ronnie_c rebuilt his like 2 hours ago^^<br/>
+<font color="#A82F2F"><font size="2">(16:54:06)</font> <b>nihathrael:</b></font> karottenreibe: you should still be able to load any file into the vfs, works for the game as well<br/>
+<font color="#A82F2F"><font size="2">(16:56:37)</font> <b>karottenreibe:</b></font> nihathrael: I think the problem is that in order to start the editor we chdir to the fife editor directory and that somehow messes some things up<br/>
+<font color="#A82F2F"><font size="2">(16:56:39)</font> <b>karottenreibe:</b></font> not sure how<br/>
+<font color="#A82F2F"><font size="2">(16:56:44)</font> <b>UnknownScribe:</b></font> could anyone tell me how 2x4 buildings rotate as I cant play the game myself: http://i.imgur.com/fi4rb.png one of these or in a different way?<br/>
+<font color="#A82F2F"><font size="2">(16:57:16)</font> <b>karottenreibe:</b></font> UnknownScribe: are you fixing the rotation code?<br/>
+<font color="#A82F2F"><font size="2">(16:57:40)</font> <b>UnknownScribe:</b></font> Im trying to work out where the fife position for rotations come from so kind of<br/>
+<font color="#A82F2F"><font size="2">(16:58:10)</font> <b>karottenreibe:</b></font> UnknownScribe: hehe nice. if you fix that the corresponding editor code needs that fix as well^^<br/>
+<font color="#A82F2F"><font size="2">(16:58:43)</font> <b>karottenreibe:</b></font> nihathrael: it&apos;s a mystery! it consistently keeps working for ronnie_c and failing for me...<br/>
+<font color="#A82F2F"><font size="2">(16:58:56)</font> <b>UnknownScribe:</b></font> haha, ok if i figure it out ill tell you, unfortunately i cant run the game though so I can&apos;t mess around to see whats happening<br/>
+<font color="#A82F2F"><font size="2">(16:59:36)</font> <b>karottenreibe:</b></font> *g*<br/>
+<font color="#A82F2F"><font size="2">(16:59:46)</font> <b>UnknownScribe:</b></font> do you know how the 2x4 buildings rotate? around the corner, of somewhere inside?<br/>
+<font color="#A82F2F"><font size="2">(17:00:10)</font> <b>karottenreibe:</b></font> UnknownScribe: nihathrael told me that the buildings rotate around the top left corner and the UH code moves them around to adjust for that<br/>
+<font color="#A82F2F"><font size="2">(17:00:15)</font> <b>nihathrael:</b></font> UnknownScribe: not 100% sure, but it should be version 1<br/>
+<font color="#A82F2F"><font size="2">(17:00:27)</font> <b>karottenreibe:</b></font> so it looks like it its rotated around the middle<br/>
+<font color="#A82F2F"><font size="2">(17:00:38)</font> <b>UnknownScribe:</b></font> ok cool thanks<br/>
+<font color="#A82F2F"><font size="2">(17:01:07)</font> <b>nihathrael:</b></font> also origin is in the center of tile connected to origin<br/>
+<font color="#A82F2F"><font size="2">(17:01:12)</font> <b>nihathrael:</b></font> so basically that stays at the same place<br/>
+<font color="#A82F2F"><font size="2">(17:01:41)</font> <b>gscai:</b></font> UnknownScribe: you could just use something like ubuntu inside virtualbox<br/>
+<font color="#A82F2F"><font size="2">(17:02:49)</font> <b>UnknownScribe:</b></font> i probably will eventually, but im not meant to download much stuff onto the computer<br/>
+<font color="#A82F2F"><font size="2">(17:02:55)</font> <b>UnknownScribe:</b></font> :(<br/>
+<font color="#A82F2F"><font size="2">(17:04:59)</font> <b>nihathrael:</b></font> karottenreibe: ronnie_c&apos;s computer seems  magic, it was also able to start the editor, when I could not because of the import loop<br/>
+<font color="#16569E"><font size="2">(17:05:21)</font> <b>ronnie_c:</b></font> lol<br/>
+<font color="#A82F2F"><font size="2">(17:05:27)</font> <b>karottenreibe:</b></font> it is^^<br/>
+<font color="#A82F2F"><font size="2">(17:05:38)</font> <b>Kilian]:</b></font> different python version ?<br/>
+<font color="#A82F2F"><font size="2">(17:07:38)</font> <b>UnknownScribe:</b></font> :/ im still confused does fife use the cetre of a tile or a corner of a tile as the tiles position?<br/>
+<font color="#A82F2F"><font size="2">(17:07:48)</font> <b>UnknownScribe:</b></font> *centre<br/>
+<font color="#A82F2F"><font size="2">(17:08:31)</font> <b>karottenreibe:</b></font> UnknownScribe: niha said a corner, otherwise the whole rotation hack fix would not be necessary<br/>
+<font color="#A82F2F"><font size="2">(17:09:45)</font> <b>nihathrael:</b></font> no<br/>
+<font color="#A82F2F"><font size="2">(17:09:48)</font> <b>nihathrael:</b></font> it uses a center of a tile<br/>
+<font color="#A82F2F"><font size="2">(17:10:12)</font> <b>nihathrael:</b></font> i think<br/>
+<font color="#A82F2F"><font size="2">(17:10:13)</font> <b>nihathrael:</b></font> ^^<br/>
+<font color="#A82F2F"><font size="2">(17:10:33)</font> <b>nihathrael:</b></font> I will have a look at this with chris on friday, maybe we can figure it out and possibly fixit<br/>
+<font color="#A82F2F"><font size="2">(17:10:34)</font> <b>karottenreibe:</b></font> but then why would you need to fix the rotation?<br/>
+<font color="#A82F2F"><font size="2">(17:10:36)</font> <b>UnknownScribe:</b></font> but i think it could be a merge of the two, by the looks of it, it might be the centre of the first tile of each overall building :&apos;(<br/>
+<font color="#A82F2F"><font size="2">(17:12:25)</font> <b>nihathrael:</b></font> yes<br/>
+<font color="#A82F2F"><font size="2">(17:12:40)</font> <b>UnknownScribe:</b></font> because the fife positions for a 1x1 tile is (0,0) for all, meaning there needs to be no position adjustment after the rotations, therefore it must be rotationing from its centre<br/>
+<font color="#A82F2F"><font size="2">(17:12:59)</font> <b>UnknownScribe:</b></font> *rotating<br/>
+<font size="2">(17:18:55)</font><b> orakeldel [<em>~chatzilla@217.15.14.29</em>] hat den Raum betreten.</b><br/>
+<font size="2">(17:20:36)</font><b> Andre_Re [<em>~Andre@dslb-094-216-237-242.pools.arcor-ip.net</em>] hat den Raum betreten.</b><br/>
+<font color="#A82F2F"><font size="2">(17:24:30)</font> <b>CIA-10:</b></font> <span style='font-weight: bold;'>unknown-horizons:</span> <span style='color: dark green;'>karottenreibe</span> <span style='color: orange;'>master</span> * r<span style='font-weight: bold;'>9ce07bb</span> <span style='color: teal;'></span>/ (editor/plugins/UHMapLoader.py editor/plugins/UHMapSaver.py)<span style='font-weight: bold;'>:</span> debugging rotation bug - http://git.io/_hs4Eg<br/>
+<font color="#16569E"><font size="2">(17:25:55)</font> <b>ronnie_c:</b></font> we tracked it down to a massiv fife bug<br/>
+<font color="#A82F2F"><font size="2">(17:26:42)</font> <b>nihathrael:</b></font> lol :)<br/>
+<font size="2">(17:36:04)</font><b> Beliar|AFK heißt jetzt Beliar</b><br/>
+<font color="#A82F2F"><font size="2">(17:36:42)</font> <b>uh-ci:</b></font> Project uh-tests build #330: STILL UNSTABLE in 50 sec: http://aviamo.de/jenkins/job/uh-tests/330/<br/>
+<font color="#A82F2F"><font size="2">(17:36:43)</font> <b>uh-ci:</b></font> git: debugging rotation bug<br/>
+<font color="#A82F2F"><font size="2">(17:36:43)</font> <b>uh-ci:</b></font> Failed tests:<br/>
+<font color="#A82F2F"><font size="2">(17:36:45)</font> <b>uh-ci:</b></font> tests.game.test_load_save.tests.game.test_load_save.test_load_producing_production_fast: http://aviamo.de/jenkins/job/uh-tests/330/testReport/junit/junit/tests.game/test_load_save/tests_game_test_load_save_test_load_producing_production_fast<br/>
+<font color="#A82F2F"><font size="2">(17:36:45)</font> <b>uh-ci:</b></font> tests.game.test_load_save.tests.game.test_load_save.test_load_producing_production_slow: http://aviamo.de/jenkins/job/uh-tests/330/testReport/junit/junit/tests.game/test_load_save/tests_game_test_load_save_test_load_producing_production_slow<br/>
+<font color="#A82F2F"><font size="2">(17:36:46)</font> <b>uh-ci:</b></font> tests.game.test_status_icons.tests.game.test_status_icons.test_decommissioned: http://aviamo.de/jenkins/job/uh-tests/330/testReport/junit/junit/tests.game/test_status_icons/tests_game_test_status_icons_test_decommissioned<br/>
+<font color="#A82F2F"><font size="2">(17:36:46)</font> <b>uh-ci:</b></font> tests.game.test_status_icons.tests.game.test_status_icons.test_productivity_low: http://aviamo.de/jenkins/job/uh-tests/330/testReport/junit/junit/tests.game/test_status_icons/tests_game_test_status_icons_test_productivity_low<br/>
+<font size="2">(17:36:46)</font><b> inken [<em>~inken@a89-182-104-205.net-htp.de</em>] hat den Raum betreten.</b><br/>
+<font color="#A82F2F"><font size="2">(17:36:55)</font> <b>UnknownScribe:</b></font> would I be right if i guessed this is how a 2x4 building acts when rotated? http://i.imgur.com/316vb.png<br/>
+<font color="#A82F2F"><font size="2">(17:37:38)</font> <b>nihathrael:</b></font> nope, i don&apos;- think thats correct<br/>
+<font color="#A82F2F"><font size="2">(17:37:46)</font> <b>UnknownScribe:</b></font> D:<br/>
+<font color="#A82F2F"><font size="2">(17:39:07)</font> <b>CIA-10:</b></font> <span style='font-weight: bold;'>unknown-horizons:</span> <span style='color: dark green;'>karottenreibe</span> <span style='color: orange;'>master</span> * r<span style='font-weight: bold;'>b6a6c62</span> <span style='color: teal;'></span>/ (content/maps/quattro.sqlite editor/plugins/UHMapSaver.py)<span style='font-weight: bold;'>:</span> fixed fife rotation bullshit (hopefully) - http://git.io/pkcMJw<br/>
+<font color="#16569E"><font size="2">(17:39:26)</font> <b>ronnie_c:</b></font> epic commit message :D<br/>
+<font color="#A82F2F"><font size="2">(17:39:59)</font> <b>uh-ci:</b></font> Project uh-tests build #331: STILL UNSTABLE in 46 sec: http://aviamo.de/jenkins/job/uh-tests/331/<br/>
+<font color="#A82F2F"><font size="2">(17:39:59)</font> <b>uh-ci:</b></font> git: fixed fife rotation bullshit (hopefully)<br/>
+<font color="#A82F2F"><font size="2">(17:40:00)</font> <b>uh-ci:</b></font> Failed tests:<br/>
+<font color="#A82F2F"><font size="2">(17:40:00)</font> <b>uh-ci:</b></font> tests.game.test_load_save.tests.game.test_load_save.test_load_producing_production_fast: http://aviamo.de/jenkins/job/uh-tests/331/testReport/junit/junit/tests.game/test_load_save/tests_game_test_load_save_test_load_producing_production_fast<br/>
+<font color="#A82F2F"><font size="2">(17:40:01)</font> <b>uh-ci:</b></font> tests.game.test_load_save.tests.game.test_load_save.test_load_producing_production_slow: http://aviamo.de/jenkins/job/uh-tests/331/testReport/junit/junit/tests.game/test_load_save/tests_game_test_load_save_test_load_producing_production_slow<br/>
+<font color="#A82F2F"><font size="2">(17:40:01)</font> <b>uh-ci:</b></font> tests.game.test_status_icons.tests.game.test_status_icons.test_decommissioned: http://aviamo.de/jenkins/job/uh-tests/331/testReport/junit/junit/tests.game/test_status_icons/tests_game_test_status_icons_test_decommissioned<br/>
+<font color="#A82F2F"><font size="2">(17:40:02)</font> <b>uh-ci:</b></font> tests.game.test_status_icons.tests.game.test_status_icons.test_productivity_low: http://aviamo.de/jenkins/job/uh-tests/331/testReport/junit/junit/tests.game/test_status_icons/tests_game_test_status_icons_test_productivity_low<br/>
+<font color="#A82F2F"><font size="2">(17:42:29)</font> <b>CIA-10:</b></font> <span style='font-weight: bold;'>unknown-horizons:</span> <span style='color: dark green;'>karottenreibe</span> <span style='color: orange;'>master</span> * r<span style='font-weight: bold;'>b57e21b</span> <span style='color: teal;'></span>/ content/maps/quattro.sqlite <span style='font-weight: bold;'>:</span> reset map (accidentally committed test saved map) - http://git.io/NlZvFQ<br/>
+<font color="#A82F2F"><font size="2">(17:43:24)</font> <b>uh-ci:</b></font> Project uh-tests build #332: STILL UNSTABLE in 48 sec: http://aviamo.de/jenkins/job/uh-tests/332/<br/>
+<font color="#A82F2F"><font size="2">(17:43:24)</font> <b>uh-ci:</b></font> git: reset map (accidentally committed test saved map)<br/>
+<font color="#A82F2F"><font size="2">(17:43:25)</font> <b>uh-ci:</b></font> Failed tests:<br/>
+<font color="#A82F2F"><font size="2">(17:43:25)</font> <b>uh-ci:</b></font> tests.game.test_load_save.tests.game.test_load_save.test_load_producing_production_fast: http://aviamo.de/jenkins/job/uh-tests/332/testReport/junit/junit/tests.game/test_load_save/tests_game_test_load_save_test_load_producing_production_fast<br/>
+<font color="#A82F2F"><font size="2">(17:43:25)</font> <b>uh-ci:</b></font> tests.game.test_load_save.tests.game.test_load_save.test_load_producing_production_slow: http://aviamo.de/jenkins/job/uh-tests/332/testReport/junit/junit/tests.game/test_load_save/tests_game_test_load_save_test_load_producing_production_slow<br/>
+<font color="#A82F2F"><font size="2">(17:43:26)</font> <b>uh-ci:</b></font> tests.game.test_status_icons.tests.game.test_status_icons.test_decommissioned: http://aviamo.de/jenkins/job/uh-tests/332/testReport/junit/junit/tests.game/test_status_icons/tests_game_test_status_icons_test_decommissioned<br/>
+<font color="#A82F2F"><font size="2">(17:43:27)</font> <b>uh-ci:</b></font> tests.game.test_status_icons.tests.game.test_status_icons.test_productivity_low: http://aviamo.de/jenkins/job/uh-tests/332/testReport/junit/junit/tests.game/test_status_icons/tests_game_test_status_icons_test_productivity_low<br/>
+<font color="#A82F2F"><font size="2">(17:43:53)</font> <b>karottenreibe:</b></font> nihathrael: it now works for both me and ronnie_c, could you test again?<br/>
+<font color="#16569E"><font size="2">(17:44:01)</font> <b>ronnie_c:</b></font> do git pull before<br/>
+<font color="#16569E"><font size="2">(17:44:21)</font> <b>ronnie_c:</b></font> still dont knwo why fife returns good coordinates for me, but not for you and fabian<br/>
+<font color="#A82F2F"><font size="2">(17:44:26)</font> <b>karottenreibe:</b></font> nihathrael: interestingly enough, the problem was that fife on my computer outputted rotation values that were off by one in either direction, i.e. 181 instead of 180<br/>
+<font color="#A82F2F"><font size="2">(17:45:21)</font> <b>nihathrael:</b></font> that probably hassomething to do with the fact that fife &quot;guesses&quot; the correct rotation for a certain facing pos<br/>
+<font color="#A82F2F"><font size="2">(17:45:32)</font> <b>nihathrael:</b></font> pretty borked if it returns unexisting rotations though<br/>
+<font color="#A82F2F"><font size="2">(17:45:44)</font> <b>nihathrael:</b></font> yea works now, great<br/>
+<font color="#A82F2F"><font size="2">(17:45:58)</font> <b>Kilian]:</b></font> ronnie_c: do you build fife from scratch or only a rebuilt of the updated parts ?<br/>
+<font color="#A82F2F"><font size="2">(17:46:00)</font> <b>CIA-10:</b></font> <span style='font-weight: bold;'>unknown-horizons:</span> <span style='color: dark green;'>Moritz Beller</span> <span style='color: orange;'>master</span> * r<span style='font-weight: bold;'>8f87e06</span> <span style='color: teal;'></span>/ (editor/plugins/UHMapLoader.py editor/plugins/UHMapSaver.py)<span style='font-weight: bold;'>:</span> removes debug prints - http://git.io/p8Yr0Q<br/>
+<font color="#16569E"><font size="2">(17:46:30)</font> <b>ronnie_c:</b></font> Kilian]: just issues scons<br/>
+<font color="#16569E"><font size="2">(17:46:33)</font> <b>ronnie_c:</b></font> maybe i should clean<br/>
+<font color="#A82F2F"><font size="2">(17:46:50)</font> <b>uh-ci:</b></font> Project uh-tests build #333: STILL UNSTABLE in 45 sec: http://aviamo.de/jenkins/job/uh-tests/333/<br/>
+<font color="#A82F2F"><font size="2">(17:46:51)</font> <b>uh-ci:</b></font> moritzbeller: removes debug prints<br/>
+<font color="#A82F2F"><font size="2">(17:46:51)</font> <b>uh-ci:</b></font> Failed tests:<br/>
+<font color="#A82F2F"><font size="2">(17:46:52)</font> <b>uh-ci:</b></font> tests.game.test_load_save.tests.game.test_load_save.test_load_producing_production_fast: http://aviamo.de/jenkins/job/uh-tests/333/testReport/junit/junit/tests.game/test_load_save/tests_game_test_load_save_test_load_producing_production_fast<br/>
+<font color="#A82F2F"><font size="2">(17:46:52)</font> <b>Kilian]:</b></font> sometimes after running scons without cleaning the buildenviroment before I run in trouble<br/>
+<font color="#A82F2F"><font size="2">(17:46:52)</font> <b>uh-ci:</b></font> tests.game.test_load_save.tests.game.test_load_save.test_load_producing_production_slow: http://aviamo.de/jenkins/job/uh-tests/333/testReport/junit/junit/tests.game/test_load_save/tests_game_test_load_save_test_load_producing_production_slow<br/>
+<font color="#A82F2F"><font size="2">(17:46:53)</font> <b>uh-ci:</b></font> tests.game.test_status_icons.tests.game.test_status_icons.test_decommissioned: http://aviamo.de/jenkins/job/uh-tests/333/testReport/junit/junit/tests.game/test_status_icons/tests_game_test_status_icons_test_decommissioned<br/>
+<font color="#A82F2F"><font size="2">(17:46:53)</font> <b>uh-ci:</b></font> tests.game.test_status_icons.tests.game.test_status_icons.test_productivity_low: http://aviamo.de/jenkins/job/uh-tests/333/testReport/junit/junit/tests.game/test_status_icons/tests_game_test_status_icons_test_productivity_low<br/>
+<font color="#A82F2F"><font size="2">(17:47:58)</font> <b>karottenreibe:</b></font> nihathrael: might be the compiler<br/>
+<font color="#16569E"><font size="2">(17:48:04)</font> <b>ronnie_c:</b></font> could you try switching to gcc?<br/>
+<font color="#A82F2F"><font size="2">(17:48:06)</font> <b>UnknownScribe:</b></font> my other guess at 2x4 rotation :/ looks weirder but thats the only other idea i have really: http://i.imgur.com/4xJmy.png<br/>
+<font color="#A82F2F"><font size="2">(17:49:06)</font> <b>karottenreibe:</b></font> UnknownScribe: how can 3 and 4 work? shouldn&apos;t they also rotate around the upper right corner of the red square?<br/>
+<font color="#A82F2F"><font size="2">(17:49:57)</font> <b>UnknownScribe:</b></font> no im working off certain values that a test that chris made outputted, http://bpaste.net/show/22665/<br/>
+<font size="2">(17:50:02)</font><b> Andre_Re hat den Raum verlassen (quit: Read error: Connection reset by peer).</b><br/>
+<font color="#A82F2F"><font size="2">(17:50:20)</font> <b>nihathrael:</b></font> i&apos;m using gcc ronnie_c<br/>
+<font color="#A82F2F"><font size="2">(17:50:42)</font> <b>UnknownScribe:</b></font> so for the first roatation theres an offset of (-1, 1) then (1,2) then (2,2) and finally (2,-1)<br/>
+<font color="#16569E"><font size="2">(17:50:46)</font> <b>ronnie_c:</b></font> ok<br/>
+<font color="#A82F2F"><font size="2">(17:51:27)</font> <b>karottenreibe:</b></font> UnknownScribe: that piece of code just keeps baffling me ;-)<br/>
+<font color="#A82F2F"><font size="2">(17:52:02)</font> <b>UnknownScribe:</b></font> my idea worked for all the other that i had results for<br/>
+<font color="#16569E"><font size="2">(17:52:32)</font> <b>ronnie_c:</b></font> confirmed<br/>
+<font color="#16569E"><font size="2">(17:52:34)</font> <b>ronnie_c:</b></font> it's a fife bug<br/>
+<font color="#A82F2F"><font size="2">(17:52:37)</font> <b>UnknownScribe:</b></font> all the AxB where A=B worked<br/>
+<font color="#A82F2F"><font size="2">(17:53:17)</font> <b>UnknownScribe:</b></font> so for a 1x1 2x2 and 3x3 square it worked :(<br/>
+<font color="#16569E"><font size="2">(17:54:20)</font> <b>ronnie_c:</b></font> i just got the same broken coordinates after having cleaned fife and rebuild it. strange that incremental build did not fire up the errors.<br/>
+<font color="#A82F2F"><font size="2">(17:55:45)</font> <b>UnknownScribe:</b></font> karottenreibe: http://bpaste.net/show/22765/ thats the data ive managed to collect<br/>
+<font color="#16569E"><font size="2">(17:55:52)</font> <b>ronnie_c:</b></font> we won't do anything more on the editor<br/>
+<font color="#16569E"><font size="2">(17:55:57)</font> <b>ronnie_c:</b></font> it's now for you to work<br/>
+<font color="#16569E"><font size="2">(17:56:46)</font> <b>ronnie_c:</b></font> on it<br/>
+<font color="#16569E"><font size="2">(17:56:48)</font> <b>ronnie_c:</b></font> bye<br/>
+</body></html>

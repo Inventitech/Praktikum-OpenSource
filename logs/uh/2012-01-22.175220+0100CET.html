@@ -1,0 +1,581 @@
+<html><head><meta http-equiv="content-type" content="text/html; charset=UTF-8"><title>Conversation with #unknown-horizons at So 22 Jan 2012 17:52:20 CET on ronnie_c@irc.freenode.net (irc)</title></head><body><h3>Conversation with #unknown-horizons at So 22 Jan 2012 17:52:20 CET on ronnie_c@irc.freenode.net (irc)</h3>
+<font size="2">(17:52:20)</font><b> Das Thema für #unknown-horizons ist: Welcome to #unknown-horizons | <a href="http://www.unknown-horizons.org">www.unknown-horizons.org</a> | Read the FAQ: <a href="http://wiki.unknown-horizons.org/w/FAQ">http://wiki.unknown-horizons.org/w/FAQ</a> | News: -</b><br/>
+<font color="#16569E"><font size="2">(17:52:26)</font> <b>ronnie_c:</b></font> hi<br/>
+<font color="#A82F2F"><font size="2">(17:52:32)</font> <b>chrisoelmueller:</b></font> heya ronnie_c<br/>
+<font color="#A82F2F"><font size="2">(17:53:48)</font> <b>uh-ci:</b></font> Project uh-gui-tests build #61: STILL UNSTABLE in 2 Minuten 47 Sekunden: http://aviamo.de/jenkins/job/uh-gui-tests/61/<br/>
+<font color="#A82F2F"><font size="2">(17:53:48)</font> <b>uh-ci:</b></font> * chris.oelmueller+uh: * Also fix build preview position. Refs 7e18088<br/>
+<font color="#A82F2F"><font size="2">(17:53:48)</font> <b>uh-ci:</b></font> * chris.oelmueller+uh: * Book status icons by Daniel Stephens<br/>
+<font color="#A82F2F"><font size="2">(17:53:49)</font> <b>uh-ci:</b></font> * chris.oelmueller+uh: * Remove old placeholder status icons<br/>
+<font color="#A82F2F"><font size="2">(17:53:50)</font> <b>uh-ci:</b></font> * chris.oelmueller+uh: * Latest pootle translation files (interface) #557<br/>
+<font color="#A82F2F"><font size="2">(17:55:12)</font> <b>nihathrael:</b></font> moin all<br/>
+<font color="#A82F2F"><font size="2">(17:55:39)</font> <b>nihathrael:</b></font> shall I put the message bus design stuff on the topic list<br/>
+<font color="#A82F2F"><font size="2">(17:55:49)</font> <b>nihathrael:</b></font> or will we try to decide it off meeting<br/>
+<font color="#A82F2F"><font size="2">(17:55:57)</font> <b>totycro_:</b></font> i&apos;m not sure if that&apos;s useful as meeting topic<br/>
+<font color="#A82F2F"><font size="2">(17:55:59)</font> <b>chrisoelmueller:</b></font> how polished is the design?<br/>
+<font color="#A82F2F"><font size="2">(17:56:07)</font> <b>totycro_:</b></font> it doesn&apos;t matter for everyone who doesn&apos;t work on the code<br/>
+<font color="#A82F2F"><font size="2">(17:56:16)</font> <b>chrisoelmueller:</b></font> UH-Guard`: pingall meeting<br/>
+<font color="#A82F2F"><font size="2">(17:56:16)</font> <b>UH-Guard`:</b></font> meeting<br/>
+<font color="#A82F2F"><font size="2">(17:56:16)</font> <b>UH-Guard`:</b></font> abeaumont Atomim_ BladeFreak cassmodiah ChanServ chrisoelmueller christoph_debian CIA-18 Gambit gscai inken janebot janus josch kaschte ketas ketas-ts LinuxDonald lolcat manue| MasterofJOKers mmaruseacph2 Nightraven nihathrael ronnie_c rudi_s spq squiddy totycro_ <br/>
+<font color="#A82F2F"><font size="2">(17:56:16)</font> <b>UH-Guard`:</b></font> uh-ci UH-Guard` UnknownScribe wentam yonathan_ <br/>
+<font color="#A82F2F"><font size="2">(17:56:16)</font> <b>UH-Guard`:</b></font> meeting<br/>
+<font color="#A82F2F"><font size="2">(17:56:20)</font> <b>nihathrael:</b></font> we have a few different designs done, but we need to decide on one<br/>
+<font color="#A82F2F"><font size="2">(17:56:52)</font> <b>chrisoelmueller:</b></font> then we&apos;ll choose the design that the coder prefers who works on the message bus i guess :o<br/>
+<font color="#A82F2F"><font size="2">(17:57:01)</font> <b>totycro_:</b></font> as i said earlier, i&apos;d like to skip the new people topic unless there are new dvelopments<br/>
+<font color="#A82F2F"><font size="2">(17:57:16)</font> <b>totycro_:</b></font> chrisoelmueller: most of the coders will have to use it<br/>
+<font color="#A82F2F"><font size="2">(17:57:24)</font> <b>totycro_:</b></font> and the inital implementation is easy<br/>
+<font size="2">(17:57:39)</font><b> Kilian] [<em>~kili@p4FF7B477.dip.t-dialin.net</em>] hat den Raum betreten.</b><br/>
+<font color="#A82F2F"><font size="2">(17:57:50)</font> <b>totycro_:</b></font> does a gfx upate/suggestions report make sense today?<br/>
+<font color="#A82F2F"><font size="2">(17:57:57)</font> <b>nihathrael:</b></font> not from my side<br/>
+<font color="#A82F2F"><font size="2">(17:58:04)</font> <b>chrisoelmueller:</b></font> UnknownScribe: would you like to summarize in short your gfx update?<br/>
+<font color="#A82F2F"><font size="2">(17:58:24)</font> <b>chrisoelmueller:</b></font> totycro_: else i will add a few lines about status icons, so we should have it<br/>
+<font color="#A82F2F"><font size="2">(17:58:36)</font> <b>totycro_:</b></font> chrisoelmueller: k, great<br/>
+<font color="#A82F2F"><font size="2">(17:58:39)</font> <b>UnknownScribe:</b></font> ok, well I&apos;ve been rendering some 64*64 icons for use in game to show when a building has full stock etc<br/>
+<font color="#A82F2F"><font size="2">(17:58:52)</font> <b>totycro_:</b></font> it&apos;s just that we always have it on the agenda, and very often no one says anything in my perception<br/>
+<font color="#A82F2F"><font size="2">(17:59:02)</font> <b>UnknownScribe:</b></font> and also exclamation mark, question mark and an opening book<br/>
+<font color="#A82F2F"><font size="2">(17:59:10)</font> <b>totycro_:</b></font> UnknownScribe: are you the one who is responsible for the awesome new status icons?<br/>
+<font color="#A82F2F"><font size="2">(17:59:21)</font> <b>UnknownScribe:</b></font> I am indeed :D<br/>
+<font color="#A82F2F"><font size="2">(17:59:26)</font> <b>UnknownScribe:</b></font> haha<br/>
+<font color="#A82F2F"><font size="2">(17:59:26)</font> <b>totycro_:</b></font> nice work :)<br/>
+<font color="#A82F2F"><font size="2">(17:59:30)</font> <b>UnknownScribe:</b></font> thankyou<br/>
+<font color="#A82F2F"><font size="2">(17:59:35)</font> <b>Kilian]:</b></font> Hi, iam not able to participate today.<br/>
+<font size="2">(17:59:37)</font><b> perher [<em>~per@c-39fa72d5.1316-1-64736c10.cust.bredbandsbolaget.se</em>] hat den Raum betreten.</b><br/>
+<font color="#A82F2F"><font size="2">(17:59:43)</font> <b>totycro_:</b></font> hi perher <br/>
+<font color="#A82F2F"><font size="2">(17:59:47)</font> <b>perher:</b></font> totycro_, hi<br/>
+<font color="#A82F2F"><font size="2">(18:00:19)</font> <b>chrisoelmueller:</b></font> heya perher<br/>
+<font color="#A82F2F"><font size="2">(18:00:29)</font> <b>totycro_:</b></font> i was just saying that we perhaps should skip the &quot;How to redo &amp; update information for new people?&quot;-topic that&apos;s on the agenda<br/>
+<font color="#A82F2F"><font size="2">(18:00:31)</font> <b>perher:</b></font> hi<br/>
+<font color="#A82F2F"><font size="2">(18:00:46)</font> <b>chrisoelmueller:</b></font> Kilian]: let&apos;s postpone the forum&lt;&gt;news topic then, shall we?<br/>
+<font color="#A82F2F"><font size="2">(18:00:54)</font> <b>totycro_:</b></font> but on the other hand, since you are here, it would be great if you could give us some insights on how it&apos;s like to see the uh team/dev process from the outside<br/>
+<font color="#A82F2F"><font size="2">(18:01:04)</font> <b>totycro_:</b></font> only if you would like to of course<br/>
+<font color="#A82F2F"><font size="2">(18:01:21)</font> <b>perher:</b></font> sure<br/>
+<font color="#A82F2F"><font size="2">(18:01:49)</font> <b>perher:</b></font> I think its great that you use IRC as a channel for communicating<br/>
+<font color="#A82F2F"><font size="2">(18:02:07)</font> <b>perher:</b></font> I think you should continue using it<br/>
+<font color="#A82F2F"><font size="2">(18:02:09)</font> <b>totycro_:</b></font> ah, i meant later when the meeting actually starts<br/>
+<font color="#A82F2F"><font size="2">(18:02:13)</font> <b>perher:</b></font> ok<br/>
+<font color="#A82F2F"><font size="2">(18:02:19)</font> <b>totycro_:</b></font> we&apos;ll have moderation and topics<br/>
+<font color="#A82F2F"><font size="2">(18:02:22)</font> <b>perher:</b></font> sure, I&apos;ll wait :-)<br/>
+<font color="#A82F2F"><font size="2">(18:02:27)</font> <b>Kilian]:</b></font> chrisoelmueller: sure<br/>
+<font color="#A82F2F"><font size="2">(18:02:31)</font> <b>nihathrael:</b></font> #startmeeting<br/>
+<font color="#A82F2F"><font size="2">(18:02:32)</font> <b>UH-Guard`:</b></font> Meeting started Sun Jan 22 17:02:31 2012 UTC.  The chair is nihathrael. Information about MeetBot at http://wiki.debian.org/MeetBot.<br/>
+<font color="#A82F2F"><font size="2">(18:02:32)</font> <b>UH-Guard`:</b></font> Useful Commands: #action #agreed #help #info #idea #link #topic.<br/>
+<font color="#A82F2F"><font size="2">(18:02:36)</font> <b>nihathrael:</b></font> hi everyone<br/>
+<font color="#A82F2F"><font size="2">(18:02:44)</font> <b>totycro_:</b></font> could you maybe shortly explain how our meetings work?<br/>
+<font color="#A82F2F"><font size="2">(18:02:51)</font> <b>nihathrael:</b></font> sure<br/>
+<font color="#A82F2F"><font size="2">(18:02:55)</font> <b>nihathrael:</b></font> so many new people?<br/>
+<font color="#A82F2F"><font size="2">(18:02:57)</font> <b>totycro_:</b></font> s/shortly/briefly<br/>
+<font color="#A82F2F"><font size="2">(18:03:03)</font> <b>totycro_:</b></font> i&apos;ve counted 2 :)<br/>
+<font color="#A82F2F"><font size="2">(18:03:04)</font> <b>nihathrael:</b></font> ok, we go through the topics listed here: http://wiki.unknown-horizons.org/w/Next_meeting#Topics<br/>
+<font color="#A82F2F"><font size="2">(18:03:05)</font> <b>UnknownScribe:</b></font> im new too :)<br/>
+<font color="#A82F2F"><font size="2">(18:03:29)</font> <b>nihathrael:</b></font> usually a topic has an owner<br/>
+<font color="#A82F2F"><font size="2">(18:03:32)</font> <b>nihathrael:</b></font> who will give an introduction<br/>
+<font color="#A82F2F"><font size="2">(18:03:37)</font> <b>nihathrael:</b></font> then everything can be discussed<br/>
+<font color="#A82F2F"><font size="2">(18:03:50)</font> <b>nihathrael:</b></font> finally, if you have said something during the discussion and have no further input on the topi<br/>
+<font color="#A82F2F"><font size="2">(18:03:54)</font> <b>nihathrael:</b></font> we close with<br/>
+<font color="#A82F2F"><font size="2">(18:03:55)</font> <b>nihathrael:</b></font> &lt;&gt;<br/>
+<font color="#A82F2F"><font size="2">(18:04:32)</font> <b>totycro_:</b></font> there are special tags, such as #idea or #agreed<br/>
+<font color="#A82F2F"><font size="2">(18:04:49)</font> <b>totycro_:</b></font> or #link<br/>
+<font color="#A82F2F"><font size="2">(18:05:00)</font> <b>totycro_:</b></font> just prefix your messages with those if you feel they fit<br/>
+<font color="#A82F2F"><font size="2">(18:05:25)</font> <b>nihathrael:</b></font> great, so lets start<br/>
+<font color="#A82F2F"><font size="2">(18:05:40)</font> <b>nihathrael:</b></font> #topic The Map Editor - ronnie_c<br/>
+<font color="#16569E"><font size="2">(18:05:47)</font> <b>ronnie_c:</b></font> hi<br/>
+<font color="#16569E"><font size="2">(18:06:11)</font> <b>ronnie_c:</b></font> So this has been a thing karottenreibe and me have been working on the past three months in our own branch editor<br/>
+<font size="2">(18:06:14)</font><b> Modus (+o nihathrael) von ChanServ</b><br/>
+<font size="2">(18:06:18)</font><b> Modus (+o UH-Guard`) von nihathrael</b><br/>
+<font size="2">(18:06:22)</font><b> Modus (-o nihathrael) von nihathrael</b><br/>
+<font color="#16569E"><font size="2">(18:06:28)</font> <b>ronnie_c:</b></font> I think now is the time for some feedback from your side<br/>
+<font color="#16569E"><font size="2">(18:07:05)</font> <b>ronnie_c:</b></font> We have implemented full support for loading, and partly support saving (i'll come to that later)<br/>
+<font color="#16569E"><font size="2">(18:07:34)</font> <b>ronnie_c:</b></font> The editor is based on the Fife editor framework, but provides own loaders and savers plugin for UH.<br/>
+<font color="#16569E"><font size="2">(18:07:57)</font> <b>ronnie_c:</b></font> so if there are usability issues, most likely fife is the right place to file your bug reports<br/>
+<font color="#16569E"><font size="2">(18:08:23)</font> <b>ronnie_c:</b></font> the current status is that we are able to load any UH map into the editor and display it as-in-game<br/>
+<font color="#16569E"><font size="2">(18:08:49)</font> <b>ronnie_c:</b></font> you can also save maps, but it's not yet possible to display anything on the builiding layer in-game yet.<br/>
+<font color="#16569E"><font size="2">(18:09:48)</font> <b>ronnie_c:</b></font> it is however possible to create islands and save them. this is done by a merging algorithm that detects groundtiles which belong together and saves them as a separate island file.<br/>
+<font color="#16569E"><font size="2">(18:10:36)</font> <b>ronnie_c:</b></font> another thing we're lacking (and prob. won't be able to implement) is rotation of groundtiles/buildings. this is due to the crude way this is handeled in Fife/UH, so that would be left for some of you to do.<br/>
+<font color="#16569E"><font size="2">(18:11:17)</font> <b>ronnie_c:</b></font> ok, questions :-)<br/>
+<font color="#A82F2F"><font size="2">(18:12:01)</font> <b>perher:</b></font> which branch is this in?<br/>
+<font color="#A82F2F"><font size="2">(18:12:02)</font> <b>totycro_:</b></font> where was the editor branch again?<br/>
+<font color="#A82F2F"><font size="2">(18:12:07)</font> <b>nihathrael:</b></font> I think it would be especially important that the game-design appartment takes a look at the editor<br/>
+<font color="#A82F2F"><font size="2">(18:12:09)</font> <b>chrisoelmueller:</b></font> i&apos;d hoped somebody would finally work on figuring rotation code out as it&apos;s a crucial part, looks like i need to wait a tad longer for that to happen :&gt;<br/>
+<font color="#A82F2F"><font size="2">(18:12:10)</font> <b>nihathrael:</b></font> branch editor<br/>
+<font color="#A82F2F"><font size="2">(18:12:15)</font> <b>nihathrael:</b></font> on our repo<br/>
+<font color="#A82F2F"><font size="2">(18:12:21)</font> <b>perher:</b></font> thanks<br/>
+<font color="#A82F2F"><font size="2">(18:12:50)</font> <b>chrisoelmueller:</b></font> so .. i think displaying buildings is very important<br/>
+<font color="#A82F2F"><font size="2">(18:12:59)</font> <b>totycro_:</b></font> is there some documentation on all the values the editor asks me to specify?<br/>
+<font color="#16569E"><font size="2">(18:13:11)</font> <b>ronnie_c:</b></font> totycro_: don't start by creating a new map<br/>
+<font color="#16569E"><font size="2">(18:13:21)</font> <b>ronnie_c:</b></font> totycro_: it's way easier to load an exisitng UH map<br/>
+<font color="#A82F2F"><font size="2">(18:14:09)</font> <b>totycro_:</b></font> i guess some general documentation or usability work would be great<br/>
+<font color="#A82F2F"><font size="2">(18:14:27)</font> <b>totycro_:</b></font> e.g. it doesn&apos;t display the maps in content/maps to be openable, but that&apos;s just a detail now<br/>
+<font color="#A82F2F"><font size="2">(18:14:39)</font> <b>chrisoelmueller:</b></font> hm it does for me<br/>
+<font color="#16569E"><font size="2">(18:14:43)</font> <b>ronnie_c:</b></font> totycro_: it definitely should<br/>
+<font color="#A82F2F"><font size="2">(18:14:45)</font> <b>chrisoelmueller:</b></font> but opening them shows nothing<br/>
+<font color="#16569E"><font size="2">(18:14:57)</font> <b>ronnie_c:</b></font> chrisoelmueller: have you zoomed out?<br/>
+<font color="#A82F2F"><font size="2">(18:14:58)</font> <b>chrisoelmueller:</b></font> two layers building and ground, all black emptiness<br/>
+<font color="#A82F2F"><font size="2">(18:15:07)</font> <b>chrisoelmueller:</b></font> i pressed Select<br/>
+<font color="#16569E"><font size="2">(18:15:15)</font> <b>ronnie_c:</b></font> it typicall sets the viewpoint to the left upper corner<br/>
+<font color="#A82F2F"><font size="2">(18:15:28)</font> <b>chrisoelmueller:</b></font> i see<br/>
+<font color="#A82F2F"><font size="2">(18:15:39)</font> <b>chrisoelmueller:</b></font> moving around with arrow keys fixed it, yes<br/>
+<font color="#16569E"><font size="2">(18:15:59)</font> <b>ronnie_c:</b></font> you can also zoom :-)<br/>
+<font color="#A82F2F"><font size="2">(18:16:25)</font> <b>chrisoelmueller:</b></font> ctrl and +-, figured :)<br/>
+<font color="#16569E"><font size="2">(18:16:39)</font> <b>ronnie_c:</b></font> to place a new ground tile<br/>
+<font color="#16569E"><font size="2">(18:16:45)</font> <b>ronnie_c:</b></font> open the object selector<br/>
+<font color="#16569E"><font size="2">(18:16:53)</font> <b>ronnie_c:</b></font> make sure the ground layer is active<br/>
+<font color="#A82F2F"><font size="2">(18:17:22)</font> <b>gscai:</b></font> choosing the initial directory is quite confusing with everything mixed in<br/>
+<font color="#16569E"><font size="2">(18:17:46)</font> <b>ronnie_c:</b></font> gscai: we have provided a fix for that, however fife won't accept it<br/>
+<font color="#16569E"><font size="2">(18:17:57)</font> <b>ronnie_c:</b></font> to all:<br/>
+<font color="#16569E"><font size="2">(18:18:08)</font> <b>ronnie_c:</b></font> it's important you realise the concept of the editor<br/>
+<font color="#A82F2F"><font size="2">(18:18:46)</font> <b>CIA-18:</b></font> <span style='font-weight: bold;'>unknown-horizons:</span> <span style='color: dark green;'>nihathrael</span> <span style='color: orange;'>editor</span> * r<span style='font-weight: bold;'>ef9cad2</span> <span style='color: teal;'></span>/ editor/plugins/UHMapSaver.py <span style='font-weight: bold;'>:</span> Fix import order - http://git.io/_ztu7Q<br/>
+<font color="#16569E"><font size="2">(18:19:02)</font> <b>ronnie_c:</b></font> the framework is provided by fife, that includes basically everything &quot;you see&quot;<br/>
+<font color="#16569E"><font size="2">(18:19:36)</font> <b>ronnie_c:</b></font> we fixed several bugs while working on the editor in fife, but what we basically did was write plugins which allow to laod and save UH maps<br/>
+<font color="#A82F2F"><font size="2">(18:19:39)</font> <b>uh-ci:</b></font> Project uh-tests build #313: STILL UNSTABLE in 47 Sekunden: http://aviamo.de/jenkins/job/uh-tests/313/<br/>
+<font color="#A82F2F"><font size="2">(18:19:39)</font> <b>uh-ci:</b></font> Failed tests:<br/>
+<font color="#A82F2F"><font size="2">(18:19:40)</font> <b>uh-ci:</b></font> tests.game.test_load_save.tests.game.test_load_save.test_load_producing_production_fast: http://aviamo.de/jenkins/job/uh-tests/313/testReport/junit/junit/tests.game/test_load_save/tests_game_test_load_save_test_load_producing_production_fast<br/>
+<font color="#A82F2F"><font size="2">(18:19:40)</font> <b>uh-ci:</b></font> tests.game.test_load_save.tests.game.test_load_save.test_load_producing_production_slow: http://aviamo.de/jenkins/job/uh-tests/313/testReport/junit/junit/tests.game/test_load_save/tests_game_test_load_save_test_load_producing_production_slow<br/>
+<font color="#A82F2F"><font size="2">(18:19:41)</font> <b>uh-ci:</b></font> tests.game.test_status_icons.tests.game.test_status_icons.test_decommissioned: http://aviamo.de/jenkins/job/uh-tests/313/testReport/junit/junit/tests.game/test_status_icons/tests_game_test_status_icons_test_decommissioned<br/>
+<font color="#A82F2F"><font size="2">(18:19:41)</font> <b>uh-ci:</b></font> tests.game.test_status_icons.tests.game.test_status_icons.test_productivity_low: http://aviamo.de/jenkins/job/uh-tests/313/testReport/junit/junit/tests.game/test_status_icons/tests_game_test_status_icons_test_productivity_low<br/>
+<font size="2">(18:20:03)</font><b> Kris_CZ [<em>~Kris_CZ@nezmar.jabbim.cz</em>] hat den Raum betreten.</b><br/>
+<font size="2">(18:20:08)</font><b> Kris_CZ hat den Raum verlassen.</b><br/>
+<font color="#A82F2F"><font size="2">(18:20:14)</font> <b>gscai:</b></font> at least on my machine opening any map in the content/maps dir seems to fail and results in some blinking partially visible buttons in the background<br/>
+<font color="#16569E"><font size="2">(18:20:43)</font> <b>ronnie_c:</b></font> gscai: interesting. never heard of that.<br/>
+<font color="#A82F2F"><font size="2">(18:20:56)</font> <b>nihathrael:</b></font> gscai: can you provide a screenshot<br/>
+<font color="#16569E"><font size="2">(18:21:33)</font> <b>ronnie_c:</b></font> and, possibly, error message<br/>
+<font color="#A82F2F"><font size="2">(18:21:56)</font> <b>gscai:</b></font> http://imgur.com/e5dy0<br/>
+<font color="#A82F2F"><font size="2">(18:22:37)</font> <b>gscai:</b></font> the cancel and select buttons have rapidly blinking light outline<br/>
+<font color="#16569E"><font size="2">(18:22:52)</font> <b>ronnie_c:</b></font> can you provide your use case?<br/>
+<font color="#A82F2F"><font size="2">(18:23:19)</font> <b>totycro_:</b></font> could we perhaps talk about the technical details and issues after the meeting?<br/>
+<font color="#A82F2F"><font size="2">(18:23:35)</font> <b>totycro_:</b></font> there are also other things to discuss, and specific bugs aren&apos;t interesting to most people i guess<br/>
+<font color="#A82F2F"><font size="2">(18:23:38)</font> <b>nihathrael:</b></font> is the current master merged in?<br/>
+<font color="#A82F2F"><font size="2">(18:24:05)</font> <b>gscai:</b></font> I agree that it would be better to talk about the bug later on<br/>
+<font color="#A82F2F"><font size="2">(18:24:46)</font> <b>totycro_:</b></font> i get the same thing btw, &quot;unable to open database&quot; was briefly visible<br/>
+<font color="#16569E"><font size="2">(18:25:00)</font> <b>ronnie_c:</b></font> totycro_: ok<br/>
+<font color="#16569E"><font size="2">(18:25:05)</font> <b>ronnie_c:</b></font> for all maps?<br/>
+<font color="#16569E"><font size="2">(18:25:35)</font> <b>ronnie_c:</b></font> development.sqlite should definitely work<br/>
+<font color="#16569E"><font size="2">(18:25:49)</font> <b>ronnie_c:</b></font> you using windows or linux?<br/>
+<font color="#A82F2F"><font size="2">(18:25:50)</font> <b>totycro_:</b></font> dev doesn&apos;t work, triple apparently does<br/>
+<font color="#A82F2F"><font size="2">(18:25:53)</font> <b>totycro_:</b></font> linux<br/>
+<font color="#A82F2F"><font size="2">(18:25:54)</font> <b>totycro_:</b></font> &lt;&gt;<br/>
+<font color="#16569E"><font size="2">(18:26:05)</font> <b>ronnie_c:</b></font> ok very strange<br/>
+<font color="#16569E"><font size="2">(18:26:16)</font> <b>ronnie_c:</b></font> your dev is clean?<br/>
+<font color="#A82F2F"><font size="2">(18:26:48)</font> <b>gscai:</b></font> I get the error on windows on triple, quattro, dev<br/>
+<font color="#A82F2F"><font size="2">(18:27:12)</font> <b>totycro_:</b></font> i&apos;ll tell you more after the meeting :)<br/>
+<font color="#16569E"><font size="2">(18:27:12)</font> <b>ronnie_c:</b></font> gscai: i guess it has something to do with filenames or paths<br/>
+<font color="#A82F2F"><font size="2">(18:27:19)</font> <b>chrisoelmueller:</b></font> ronnie_c: in the current state, the editor seems not useful to content developers because the coastline stuff can not be rotated as it should<br/>
+<font color="#16569E"><font size="2">(18:27:20)</font> <b>ronnie_c:</b></font> try one more thing<br/>
+<font color="#16569E"><font size="2">(18:27:29)</font> <b>ronnie_c:</b></font> chrisoelmueller: i agree<br/>
+<font color="#16569E"><font size="2">(18:27:43)</font> <b>ronnie_c:</b></font> but we won't have time to fix that as i see it<br/>
+<font color="#A82F2F"><font size="2">(18:27:48)</font> <b>nihathrael:</b></font> I agree that we should discuss the technical stuff after the meeting<br/>
+<font color="#A82F2F"><font size="2">(18:28:12)</font> <b>chrisoelmueller:</b></font> i personally think it&apos;s important to have at least manual rotation if not auto-adaption of the coast depending on the tiles<br/>
+<font color="#A82F2F"><font size="2">(18:28:21)</font> <b>chrisoelmueller:</b></font> how much time is left?<br/>
+<font color="#16569E"><font size="2">(18:28:24)</font> <b>ronnie_c:</b></font> chrisoelmueller: none<br/>
+<font color="#A82F2F"><font size="2">(18:29:11)</font> <b>chrisoelmueller:</b></font> well then you at least have no time left to fix it, yep. any chance you&apos;ll work on those features outside of the scope of your project?<br/>
+<font color="#16569E"><font size="2">(18:29:11)</font> <b>ronnie_c:</b></font> chrisoelmueller: the rotation code in UH is not understood by anybody<br/>
+<font size="2">(18:29:27)</font><b> GreyGhost [<em>~GreyGhost@unaffiliated/greyghost</em>] hat den Raum betreten.</b><br/>
+<font color="#A82F2F"><font size="2">(18:29:31)</font> <b>chrisoelmueller:</b></font> that i know, really :(<br/>
+<font color="#A82F2F"><font size="2">(18:29:50)</font> <b>nihathrael:</b></font> the problem is that it is not easily possible to interact with hthe rotation code of the editor<br/>
+<font color="#A82F2F"><font size="2">(18:30:05)</font> <b>GreyGhost:</b></font> is there a way i can create a new repo under github/unknown-horizons<br/>
+<font color="#A82F2F"><font size="2">(18:30:08)</font> <b>GreyGhost:</b></font> ?<br/>
+<font color="#A82F2F"><font size="2">(18:30:39)</font> <b>chrisoelmueller:</b></font> so if rewriting code to understand it is in order, i&apos;d go that way. clearly not easy and i wouldn&apos;t volunteer, but we can&apos;t just go on with our current code and tell everybody who needs it &quot;Uh, sorry, i have no idea what that does&quot;<br/>
+<font color="#16569E"><font size="2">(18:30:41)</font> <b>ronnie_c:</b></font> totycro_: gscai: could you try to open a file with the syntax python2 editor/editor.py content/.../development.sqlite ?<br/>
+<font color="#A82F2F"><font size="2">(18:30:53)</font> <b>chrisoelmueller:</b></font> especially if it blocks important other features like in this case<br/>
+<font color="#16569E"><font size="2">(18:31:11)</font> <b>ronnie_c:</b></font> chrisoelmueller: this has been the case very often in our project, not only on the rotation<br/>
+<font color="#A82F2F"><font size="2">(18:31:44)</font> <b>totycro_:</b></font> ronnie_c: i can try that later<br/>
+<font color="#16569E"><font size="2">(18:31:51)</font> <b>ronnie_c:</b></font> ok, but i suggest one thing becasue i think we did great on the editor<br/>
+<font color="#16569E"><font size="2">(18:32:05)</font> <b>ronnie_c:</b></font> and it would be a shame to let all this effort be invane<br/>
+<font color="#16569E"><font size="2">(18:32:25)</font> <b>ronnie_c:</b></font> i will create a list with things that need to be done in the near future<br/>
+<font color="#16569E"><font size="2">(18:32:53)</font> <b>ronnie_c:</b></font> inorder to make the editor fully-featured (i.e. not fully useable)<br/>
+<font color="#16569E"><font size="2">(18:33:03)</font> <b>ronnie_c:</b></font> that includes stuff like setting rotation etc.<br/>
+<font color="#16569E"><font size="2">(18:33:41)</font> <b>ronnie_c:</b></font> we have developed some ideas for these things (like e.g. using UH code to auto-generate island for setting the rotation of the coastline ... which you don't want to do manually, really)<br/>
+<font color="#A82F2F"><font size="2">(18:33:54)</font> <b>chrisoelmueller:</b></font> a bit of user documentation would also be nice to have, i&apos;m not sure a lot of people have used the fife editor before and it definitely doesn&apos;t look like a prime usability example<br/>
+<font color="#16569E"><font size="2">(18:34:11)</font> <b>ronnie_c:</b></font> so as a conclusion, i would write that<br/>
+<font color="#A82F2F"><font size="2">(18:34:16)</font> <b>chrisoelmueller:</b></font> and since you&apos;ve been doing that for long now, it might be easier for you than for anybody else<br/>
+<font color="#16569E"><font size="2">(18:34:37)</font> <b>ronnie_c:</b></font> chrisoelmueller: willdo<br/>
+<font color="#16569E"><font size="2">(18:35:10)</font> <b>ronnie_c:</b></font> totycro_ will help with the loading map issues after this meeting<br/>
+<font color="#16569E"><font size="2">(18:35:25)</font> <b>ronnie_c:</b></font> so if there are no objections i consider this done and would soon merge into master<br/>
+<font color="#A82F2F"><font size="2">(18:36:04)</font> <b>nihathrael:</b></font> I agree, that should be done so further work can be easily done. The merge doesn&apos;t effect the game code anyway<br/>
+<font color="#A82F2F"><font size="2">(18:36:11)</font> <b>totycro_:</b></font> it would be great if the basic features would work (and have been tested) before merging<br/>
+<font color="#16569E"><font size="2">(18:36:31)</font> <b>ronnie_c:</b></font> totycro_: they have been tested and verified to work on 3 different machines<br/>
+<font color="#A82F2F"><font size="2">(18:37:32)</font> <b>gscai:</b></font> in general it would be a good idea to merge it but in my opinion it should at the very least successfully load the existing maps<br/>
+<font color="#A82F2F"><font size="2">(18:37:33)</font> <b>totycro_:</b></font> i&apos;ve no idea what&apos;s happening on gscai&apos;s and my machine, but it would be great to get that sorted out<br/>
+<font color="#16569E"><font size="2">(18:37:48)</font> <b>ronnie_c:</b></font> totycro_: absolutely, we will look into that<br/>
+<font color="#A82F2F"><font size="2">(18:37:53)</font> <b>nihathrael:</b></font> we can fix that after the meeting<br/>
+<font color="#A82F2F"><font size="2">(18:38:01)</font> <b>nihathrael:</b></font> so lets move on<br/>
+<font color="#A82F2F"><font size="2">(18:38:05)</font> <b>nihathrael:</b></font> &lt;&gt;<br/>
+<font color="#A82F2F"><font size="2">(18:38:11)</font> <b>gscai:</b></font> &lt;&gt;<br/>
+<font color="#A82F2F"><font size="2">(18:38:13)</font> <b>totycro_:</b></font> &lt;&gt;<br/>
+<font color="#16569E"><font size="2">(18:38:17)</font> <b>ronnie_c:</b></font> &lt;&gt;<br/>
+<font color="#A82F2F"><font size="2">(18:38:20)</font> <b>nihathrael:</b></font> #topic Graphics report - nihathrael<br/>
+<font size="2">(18:38:20)</font><b> UH-Guard` hat das Thema zu Graphics report - nihathrael abgeändert</b><br/>
+<font color="#A82F2F"><font size="2">(18:38:28)</font> <b>nihathrael:</b></font> nothing new to report from my side<br/>
+<font color="#A82F2F"><font size="2">(18:38:38)</font> <b>nihathrael:</b></font> chrisoelmueller: might have some updates concerning the new status icons<br/>
+<font color="#A82F2F"><font size="2">(18:39:12)</font> <b>GreyGhost:</b></font> we are missing some of the models for the images that have to be re rendered..<br/>
+<font color="#A82F2F"><font size="2">(18:39:27)</font> <b>nihathrael:</b></font> can you create a list somewhere?<br/>
+<font color="#A82F2F"><font size="2">(18:39:35)</font> <b>chrisoelmueller:</b></font> i just got annoyed by our status icon placeholders this week and asked around at #oga whether there&apos;d be some artist willing to create nice ones instead<br/>
+<font color="#A82F2F"><font size="2">(18:39:46)</font> <b>GreyGhost:</b></font> yeah ..i&apos;ll do it soon after my small exam tomorrow<br/>
+<font color="#A82F2F"><font size="2">(18:40:18)</font> <b>chrisoelmueller:</b></font> of course i didn&apos;t expect UnknownScribe to contribute a huge amount of awesome animated icons, but it still happened :P<br/>
+<font color="#A82F2F"><font size="2">(18:40:55)</font> <b>UnknownScribe:</b></font> Hello, yep im new here and im called Daniel Stephens so you might see my stuff on GitHub<br/>
+<font color="#A82F2F"><font size="2">(18:40:58)</font> <b>chrisoelmueller:</b></font> so right now we have the following icon sets (all animated): as_attention_please  as_book_close  as_book_flip  as_book_open  as_decommissioned  as_inventory_full  as_mine_gold  as_question_mark<br/>
+<font color="#A82F2F"><font size="2">(18:41:22)</font> <b>totycro_:</b></font> UnknownScribe: i&apos;m kind of responsible for getting the placement of the status icons right, i hope i&apos;ll get to it this week or next week<br/>
+<font color="#A82F2F"><font size="2">(18:41:25)</font> <b>UnknownScribe:</b></font> I&apos;ve been working through a list of status icons that chrisoelmueller asked for<br/>
+<font color="#A82F2F"><font size="2">(18:41:28)</font> <b>totycro_:</b></font> then the icons should be fully enjoyable<br/>
+<font color="#A82F2F"><font size="2">(18:41:29)</font> <b>chrisoelmueller:</b></font> most of them won&apos;t show up currently because of some status icon bugs (the failed tests uh-ci reports all over)<br/>
+<font color="#A82F2F"><font size="2">(18:42:00)</font> <b>UnknownScribe:</b></font> but anyway, once the codes fixed you have the graphics to use<br/>
+<font color="#A82F2F"><font size="2">(18:42:17)</font> <b>chrisoelmueller:</b></font> but you can do a quick hack to see them and i just love the looks, thanks again!<br/>
+<font color="#A82F2F"><font size="2">(18:42:19)</font> <b>nihathrael:</b></font> great, nice work!<br/>
+<font color="#A82F2F"><font size="2">(18:42:30)</font> <b>chrisoelmueller:</b></font> i&apos;ll explain that hack in detail after the meeting<br/>
+<font color="#A82F2F"><font size="2">(18:42:44)</font> <b>chrisoelmueller:</b></font> is there any icon you absolutely want to have working soon?<br/>
+<font color="#A82F2F"><font size="2">(18:42:45)</font> <b>UnknownScribe:</b></font> my pleasure :)<br/>
+<font size="2">(18:42:47)</font><b> tuempl [<em>~Miranda@213.47.93.188</em>] hat den Raum betreten.</b><br/>
+<font color="#A82F2F"><font size="2">(18:43:00)</font> <b>UnknownScribe:</b></font> and any others that i havent already done<br/>
+<font color="#A82F2F"><font size="2">(18:43:10)</font> <b>UnknownScribe:</b></font> #link https://github.com/unknown-horizons/unknown-horizons/tree/master/content/gfx/misc/status_icons<br/>
+<font color="#A82F2F"><font size="2">(18:43:41)</font> <b>uh-ci:</b></font> Project uh-ai-tests build #82: STILL UNSTABLE in 42 min: http://aviamo.de/jenkins/job/uh-ai-tests/82/<br/>
+<font color="#A82F2F"><font size="2">(18:43:41)</font> <b>uh-ci:</b></font> * chris.oelmueller+uh: * Also fix build preview position. Refs 7e18088<br/>
+<font color="#A82F2F"><font size="2">(18:43:42)</font> <b>uh-ci:</b></font> * chris.oelmueller+uh: * Book status icons by Daniel Stephens<br/>
+<font color="#A82F2F"><font size="2">(18:43:43)</font> <b>uh-ci:</b></font> * chris.oelmueller+uh: * Remove old placeholder status icons<br/>
+<font color="#A82F2F"><font size="2">(18:43:43)</font> <b>uh-ci:</b></font> * chris.oelmueller+uh: * Latest pootle translation files (interface) #557<br/>
+<font color="#A82F2F"><font size="2">(18:43:43)</font> <b>uh-ci:</b></font> Failed tests:<br/>
+<font color="#A82F2F"><font size="2">(18:43:44)</font> <b>uh-ci:</b></font> tests.game.test_load_save.tests.game.test_load_save.test_load_producing_production_fast: http://aviamo.de/jenkins/job/uh-ai-tests/82/testReport/junit/junit/tests.game/test_load_save/tests_game_test_load_save_test_load_producing_production_fast<br/>
+<font color="#A82F2F"><font size="2">(18:43:44)</font> <b>uh-ci:</b></font> tests.game.test_load_save.tests.game.test_load_save.test_load_producing_production_slow: http://aviamo.de/jenkins/job/uh-ai-tests/82/testReport/junit/junit/tests.game/test_load_save/tests_game_test_load_save_test_load_producing_production_slow<br/>
+<font color="#A82F2F"><font size="2">(18:44:13)</font> <b>nihathrael:</b></font> UnknownScribe: nice work, they look really great<br/>
+<font color="#A82F2F"><font size="2">(18:44:44)</font> <b>chrisoelmueller:</b></font> #info i also put up a blog post to tell our players about the icons. the draft is in cmsms and ready to get reviewed/published<br/>
+<font color="#A82F2F"><font size="2">(18:45:02)</font> <b>UnknownScribe:</b></font> thanks, maybe you can make a ticket with anyother icons you would like to be done<br/>
+<font color="#A82F2F"><font size="2">(18:45:03)</font> <b>chrisoelmueller:</b></font> the resolution on the gifs i created is somewhat horrible but should work for now<br/>
+<font color="#A82F2F"><font size="2">(18:46:08)</font> <b>nihathrael:</b></font> &lt;&gt;<br/>
+<font color="#A82F2F"><font size="2">(18:46:27)</font> <b>totycro_:</b></font> UnknownScribe: would you also like to perhaps work on models of game objects?<br/>
+<font color="#A82F2F"><font size="2">(18:47:15)</font> <b>UnknownScribe:</b></font> I certainly can, at the moment I have more free time than usual as Ive just finished some exams but I&apos;d be happy to give some buildings a go<br/>
+<font color="#A82F2F"><font size="2">(18:47:18)</font> <b>chrisoelmueller:</b></font> #info i pushed placeholder icons for the planned fire service building and also created build menu icons for it<br/>
+<font color="#A82F2F"><font size="2">(18:47:52)</font> <b>totycro_:</b></font> UnknownScribe: that&apos;d be great, maybe we can talk more later<br/>
+<font color="#A82F2F"><font size="2">(18:48:05)</font> <b>UnknownScribe:</b></font> sure, after the meeting :)<br/>
+<font color="#A82F2F"><font size="2">(18:48:12)</font> <b>chrisoelmueller:</b></font> since doctor and herbary already have placeholders, catastrophe implementation should now &quot;just&quot; be code that&apos;s left :)<br/>
+<font color="#A82F2F"><font size="2">(18:48:46)</font> <b>chrisoelmueller:</b></font> alright &lt;&gt;<br/>
+<font color="#A82F2F"><font size="2">(18:48:57)</font> <b>nihathrael:</b></font> #topic How to redo &amp; update information for new people?<br/>
+<font size="2">(18:48:58)</font><b> UH-Guard` hat das Thema zu How to redo &amp; update information for new people? abgeändert</b><br/>
+<font color="#A82F2F"><font size="2">(18:49:25)</font> <b>totycro_:</b></font> we don&apos;t really have a plan for this right now i guess<br/>
+<font color="#A82F2F"><font size="2">(18:49:43)</font> <b>totycro_:</b></font> we&apos;ve been discussing this before, e.g. on questions such as which means of communications are best for everyone<br/>
+<font color="#A82F2F"><font size="2">(18:50:02)</font> <b>totycro_:</b></font> perher: would you like to give us some input now?<br/>
+<font color="#A82F2F"><font size="2">(18:50:03)</font> <b>chrisoelmueller:</b></font> hm i got something, sec<br/>
+<font color="#A82F2F"><font size="2">(18:50:28)</font> <b>chrisoelmueller:</b></font> our recent blog post received a comment. question 1: how many of us noticed? http://www.unknown-horizons.org/devblog/56/114/Survived-once-more/<br/>
+<font color="#A82F2F"><font size="2">(18:50:39)</font> <b>chrisoelmueller:</b></font> i yesterday accidentally saw it<br/>
+<font color="#A82F2F"><font size="2">(18:50:58)</font> <b>totycro_:</b></font> can we have irc notifications for that?<br/>
+<font color="#A82F2F"><font size="2">(18:51:03)</font> <b>perher:</b></font> I didn&apos;t know that is were a blog for uh<br/>
+<font color="#A82F2F"><font size="2">(18:51:08)</font> <b>perher:</b></font> can you subscribe to it?<br/>
+<font color="#A82F2F"><font size="2">(18:51:09)</font> <b>chrisoelmueller:</b></font> so a more tighly coupled connection between the blog and us would be nice<br/>
+<font color="#A82F2F"><font size="2">(18:51:24)</font> <b>chrisoelmueller:</b></font> perher: yep, the posts have an rss feed<br/>
+<font color="#A82F2F"><font size="2">(18:51:31)</font> <b>chrisoelmueller:</b></font> &gt; http://www.unknown-horizons.org/feed/<br/>
+<font color="#A82F2F"><font size="2">(18:51:37)</font> <b>perher:</b></font> great, I&apos;ll follow that then<br/>
+<font color="#A82F2F"><font size="2">(18:51:57)</font> <b>chrisoelmueller:</b></font> totycro_: yep something along the lines of that would be nice to have<br/>
+<font color="#A82F2F"><font size="2">(18:52:06)</font> <b>totycro_:</b></font> i&apos;ll ticket it<br/>
+<font color="#A82F2F"><font size="2">(18:52:11)</font> <b>chrisoelmueller:</b></font> or even a tight forums integration for news<br/>
+<font color="#A82F2F"><font size="2">(18:52:22)</font> <b>UnknownScribe:</b></font> personally I was quite suprised not to find a link from that page to the github, wiki and IRC channel<br/>
+<font color="#A82F2F"><font size="2">(18:52:23)</font> <b>totycro_:</b></font> chrisoelmueller: how could that look like?<br/>
+<font color="#A82F2F"><font size="2">(18:52:25)</font> <b>chrisoelmueller:</b></font> such that a new blog post creates a thread in the forums where people can reply (comment)<br/>
+<font color="#A82F2F"><font size="2">(18:52:51)</font> <b>totycro_:</b></font> chrisoelmueller: as replacement for the comment feature on the blog?<br/>
+<font color="#A82F2F"><font size="2">(18:52:54)</font> <b>chrisoelmueller:</b></font> yes<br/>
+<font color="#A82F2F"><font size="2">(18:52:57)</font> <b>chrisoelmueller:</b></font> i am totally not sure to which degree our software supports that, but investigation there would be nice<br/>
+<font color="#A82F2F"><font size="2">(18:53:01)</font> <b>totycro_:</b></font> i&apos;d be for that, one less medium to read<br/>
+<font color="#A82F2F"><font size="2">(18:53:13)</font> <b>chrisoelmueller:</b></font> we allow anonymous forum entries anyways, so the moderation bit is still retained<br/>
+<font color="#A82F2F"><font size="2">(18:53:44)</font> <b>nihathrael:</b></font> UnknownScribe: which site are you referring to specifically?<br/>
+<font color="#A82F2F"><font size="2">(18:53:56)</font> <b>UnknownScribe:</b></font> http://www.unknown-horizons.org/<br/>
+<font color="#A82F2F"><font size="2">(18:54:13)</font> <b>nihathrael:</b></font> irc links are on get involved and support<br/>
+<font color="#A82F2F"><font size="2">(18:54:16)</font> <b>chrisoelmueller:</b></font> we need a link to Get Involved on our main page<br/>
+<font color="#A82F2F"><font size="2">(18:54:25)</font> <b>chrisoelmueller:</b></font> just like the Download section has<br/>
+<font color="#A82F2F"><font size="2">(18:54:33)</font> <b>nihathrael:</b></font> wiki could probably have a more prominent place<br/>
+<font color="#A82F2F"><font size="2">(18:54:55)</font> <b>UnknownScribe:</b></font> seeing as this seems to be kind of a main, inviting web site, I&apos;d think it would be a good idea to have links to the other sites that you use from there nihathrael<br/>
+<font color="#A82F2F"><font size="2">(18:55:14)</font> <b>chrisoelmueller:</b></font> UnknownScribe: some portal like http://www.unknown-horizons.org/get-involved/ ?<br/>
+<font color="#A82F2F"><font size="2">(18:55:50)</font> <b>UnknownScribe:</b></font> haha, ahh its there :D<br/>
+<font color="#A82F2F"><font size="2">(18:56:04)</font> <b>chrisoelmueller:</b></font> just hidden well enough :/<br/>
+<font color="#A82F2F"><font size="2">(18:56:20)</font> <b>nihathrael:</b></font> we just recently reworked that page to be easy to understand and follow<br/>
+<font color="#A82F2F"><font size="2">(18:56:29)</font> <b>chrisoelmueller:</b></font> now we need people to find it, obviously :)<br/>
+<font color="#A82F2F"><font size="2">(18:56:38)</font> <b>nihathrael:</b></font> seems to be a problem, yep<br/>
+<font color="#A82F2F"><font size="2">(18:56:46)</font> <b>UnknownScribe:</b></font> haha, it might just have been me being slow :D<br/>
+<font color="#A82F2F"><font size="2">(18:57:06)</font> <b>totycro_:</b></font> perher: you mentioned earlier that irc would be fine for you, even if you don&apos;t have much time to read everything?<br/>
+<font color="#A82F2F"><font size="2">(18:57:10)</font> <b>UnknownScribe:</b></font> and seeing as when i went to the website I was already &apos;involved&apos; I didnt bother going to that page<br/>
+<font color="#A82F2F"><font size="2">(18:57:31)</font> <b>UnknownScribe:</b></font> so maybe im a special case ;)<br/>
+<font color="#A82F2F"><font size="2">(18:57:40)</font> <b>nihathrael:</b></font> Maybe we have to rename it?<br/>
+<font color="#A82F2F"><font size="2">(18:57:44)</font> <b>chrisoelmueller:</b></font> UnknownScribe: any idea for a better name?<br/>
+<font color="#A82F2F"><font size="2">(18:57:58)</font> <b>nihathrael:</b></font> Contributer/Developer Portal<br/>
+<font size="2">(18:58:21)</font><b> BladeFreak hat den Raum verlassen (quit: Quit: I generally avoid temptation.. unless I can&apos;t resist it).</b><br/>
+<font color="#A82F2F"><font size="2">(18:58:32)</font> <b>UnknownScribe:</b></font> maybe you dont need to rename it, but you could have like a side bar on the home page with all the other &apos;useful links&apos;<br/>
+<font color="#A82F2F"><font size="2">(18:58:33)</font> <b>perher:</b></font> I think get involved is a good name, it clearly states what it is about<br/>
+<font color="#A82F2F"><font size="2">(18:59:22)</font> <b>chrisoelmueller:</b></font> janebot: !ticket 1396<br/>
+<font color="#A82F2F"><font size="2">(18:59:22)</font> <b>janebot:</b></font> chrisoelmueller: http://trac.unknown-horizons.org/t/ticket/1396<br/>
+<font color="#A82F2F"><font size="2">(18:59:24)</font> <b>janebot:</b></font> chrisoelmueller:  #1396 (Add easily visible link to Get Involved on main page) – Unknown Horizons <br/>
+<font color="#A82F2F"><font size="2">(18:59:40)</font> <b>perher:</b></font> regarding the uses of  IRC is good for dicussing code, but I don&apos;t really have time to monitor it reguraly<br/>
+<font color="#A82F2F"><font size="2">(19:00:04)</font> <b>perher:</b></font> would be good if the devblog or fourm or wiki could be used to provide some status of the project<br/>
+<font color="#A82F2F"><font size="2">(19:00:06)</font> <b>chrisoelmueller:</b></font> perher: which way would you like to get discussion results summarized? mail, blog, forums, wiki,?<br/>
+<font color="#A82F2F"><font size="2">(19:00:25)</font> <b>nihathrael:</b></font> just today we were thinking about the dev mailinglist again<br/>
+<font color="#A82F2F"><font size="2">(19:00:51)</font> <b>perher:</b></font> but is a mailing list a good idea, since you already have so many channels today?/<br/>
+<font color="#A82F2F"><font size="2">(19:00:57)</font> <b>UnknownScribe:</b></font> for example on OGA website one of the top left most things is a link to their IRC channel<br/>
+<font color="#A82F2F"><font size="2">(19:01:14)</font> <b>totycro_:</b></font> perher: +1<br/>
+<font color="#A82F2F"><font size="2">(19:01:24)</font> <b>totycro_:</b></font> that&apos;s kind of a main issue, we can&apos;t have more means of communication<br/>
+<font color="#A82F2F"><font size="2">(19:01:38)</font> <b>totycro_:</b></font> but the current ones are hard to keep track of if you aren&apos;t in the channel at all times<br/>
+<font color="#A82F2F"><font size="2">(19:01:41)</font> <b>perher:</b></font> I think the forum is equally good to a mailing list (although I personally prefer a mailing list)<br/>
+<font color="#A82F2F"><font size="2">(19:02:24)</font> <b>totycro_:</b></font> what would you want to read there?<br/>
+<font color="#A82F2F"><font size="2">(19:02:46)</font> <b>perher:</b></font> not sure, I don&apos;t know what kind of dicussions you are having on IRC today<br/>
+<font color="#A82F2F"><font size="2">(19:03:03)</font> <b>nihathrael:</b></font> I would kind of think about it this way, code discussion ML, content discussion forum<br/>
+<font color="#A82F2F"><font size="2">(19:03:20)</font> <b>chrisoelmueller:</b></font> how about code discussion forum, content discussion forum<br/>
+<font color="#A82F2F"><font size="2">(19:03:39)</font> <b>nihathrael:</b></font> personally i&apos;m not very fond of reading forums<br/>
+<font color="#A82F2F"><font size="2">(19:03:40)</font> <b>chrisoelmueller:</b></font> not like we&apos;d have ten threads per day :)<br/>
+<font color="#A82F2F"><font size="2">(19:04:05)</font> <b>perher:</b></font> I guess it really depends on what kinds of dicussions should be on the forums<br/>
+<font color="#A82F2F"><font size="2">(19:04:28)</font> <b>UnknownScribe:</b></font> would there be a way of sending one email at the end of the day with a summary of that day?<br/>
+<font color="#A82F2F"><font size="2">(19:04:56)</font> <b>chrisoelmueller:</b></font> that&apos;s the plan, though not based on days but on topics<br/>
+<font color="#A82F2F"><font size="2">(19:04:57)</font> <b>perher:</b></font> that would be helpful feature to have<br/>
+<font color="#A82F2F"><font size="2">(19:05:09)</font> <b>chrisoelmueller:</b></font> we just are not sure where to send that to :)<br/>
+<font color="#A82F2F"><font size="2">(19:05:37)</font> <b>nihathrael:</b></font> on an ml that is pretty simple<br/>
+<font color="#A82F2F"><font size="2">(19:05:40)</font> <b>totycro_:</b></font> we could perhaps try to mimick threads in the irc by introducing commands<br/>
+<font color="#A82F2F"><font size="2">(19:05:49)</font> <b>nihathrael:</b></font> it has a batch report thing included<br/>
+<font color="#A82F2F"><font size="2">(19:05:59)</font> <b>totycro_:</b></font> so when something interesting happens, you add a hashtag, and that generates a mail every day<br/>
+<font color="#A82F2F"><font size="2">(19:06:08)</font> <b>totycro_:</b></font> not sure if it&apos;s useful, but it should be trivial to try<br/>
+<font color="#A82F2F"><font size="2">(19:06:36)</font> <b>chrisoelmueller:</b></font> i&apos;d go the manual route first tbh .. just that it&apos;s hard to decide on responsibility again.<br/>
+<font color="#A82F2F"><font size="2">(19:06:48)</font> <b>chrisoelmueller:</b></font> so. who&apos;d like to sum up the message bus discussion?<br/>
+<font color="#A82F2F"><font size="2">(19:07:14)</font> <b>nihathrael:</b></font> imho for these longer design discussions a ml would be pretty well suited<br/>
+<font color="#A82F2F"><font size="2">(19:07:24)</font> <b>totycro_:</b></font> i&apos;m not sure if that works, summing up such a discussion isn&apos;t useful per se<br/>
+<font color="#A82F2F"><font size="2">(19:07:41)</font> <b>nihathrael:</b></font> btw one reason I prefer an ML is that I can easily read that on my mobile<br/>
+<font color="#A82F2F"><font size="2">(19:07:53)</font> <b>nihathrael:</b></font> in contrast to the forums <br/>
+<font color="#A82F2F"><font size="2">(19:07:58)</font> <b>UnknownScribe:</b></font> at the moment do you have a log of all the messages from the IRC somewhere?<br/>
+<font color="#A82F2F"><font size="2">(19:08:14)</font> <b>nihathrael:</b></font> logs.unknown-horizons.org uhguest:guest<br/>
+<font color="#A82F2F"><font size="2">(19:08:23)</font> <b>UnknownScribe:</b></font> I wouldn&apos;t mind getting minutes from a meeting I missed<br/>
+<font color="#A82F2F"><font size="2">(19:08:32)</font> <b>totycro_:</b></font> the meeting logs are extra<br/>
+<font color="#A82F2F"><font size="2">(19:08:38)</font> <b>nihathrael:</b></font> sorry<br/>
+<font color="#A82F2F"><font size="2">(19:08:39)</font> <b>chrisoelmueller:</b></font> meetings are foun at http://meetings.christoph-egger.org/unknown-horizons<br/>
+<font color="#A82F2F"><font size="2">(19:08:46)</font> <b>UnknownScribe:</b></font> thanks<br/>
+<font color="#A82F2F"><font size="2">(19:08:47)</font> <b>chrisoelmueller:</b></font> nihathrael: sure about the credentials?<br/>
+<font color="#A82F2F"><font size="2">(19:08:49)</font> <b>nihathrael:</b></font> http://logs.unknown-horizons.org/%23unknown-horizons/ <br/>
+<font color="#A82F2F"><font size="2">(19:08:52)</font> <b>nihathrael:</b></font> guest:uh-guest<br/>
+<font color="#A82F2F"><font size="2">(19:08:57)</font> <b>chrisoelmueller:</b></font> ah :)<br/>
+<font color="#A82F2F"><font size="2">(19:10:14)</font> <b>nihathrael:</b></font> I&apos;ll summarize my thoughts on the discussion about the message bus to our uh-users mailinglist<br/>
+<font color="#A82F2F"><font size="2">(19:10:19)</font> <b>nihathrael:</b></font> how is that for a start?<br/>
+<font color="#A82F2F"><font size="2">(19:10:34)</font> <b>nihathrael:</b></font> then we try to finish that discussion on the ml<br/>
+<font color="#A82F2F"><font size="2">(19:10:36)</font> <b>nihathrael:</b></font> and see how it goes<br/>
+<font color="#A82F2F"><font size="2">(19:10:59)</font> <b>chrisoelmueller:</b></font> we should also just remove uh-dev<br/>
+<font color="#A82F2F"><font size="2">(19:11:05)</font> <b>nihathrael:</b></font> true<br/>
+<font color="#A82F2F"><font size="2">(19:11:05)</font> <b>chrisoelmueller:</b></font> since it has 0 messages and i see 0 uses<br/>
+<font color="#A82F2F"><font size="2">(19:11:15)</font> <b>chrisoelmueller:</b></font> christoph_debian: ^<br/>
+<font color="#A82F2F"><font size="2">(19:11:50)</font> <b>perher:</b></font> how do you register for the mailinglist?<br/>
+<font color="#A82F2F"><font size="2">(19:11:57)</font> <b>nihathrael:</b></font> http://lists.unknown-horizons.org/cgi-bin/mailman/listinfo/uh-user<br/>
+<font color="#A82F2F"><font size="2">(19:12:18)</font> <b>perher:</b></font> thanks<br/>
+<font color="#A82F2F"><font size="2">(19:12:33)</font> <b>perher:</b></font> is that info somewhere on the wiki?<br/>
+<font color="#A82F2F"><font size="2">(19:12:55)</font> <b>chrisoelmueller:</b></font> on admins, more or less  http://wiki.unknown-horizons.org/w/Admins<br/>
+<font color="#A82F2F"><font size="2">(19:13:22)</font> <b>perher:</b></font> cool, thanks again<br/>
+<font color="#A82F2F"><font size="2">(19:13:27)</font> <b>totycro_:</b></font> is there info about the mailing list on the hp?<br/>
+<font color="#A82F2F"><font size="2">(19:13:33)</font> <b>nihathrael:</b></font> probably not<br/>
+<font color="#A82F2F"><font size="2">(19:13:38)</font> <b>nihathrael:</b></font> currently for a good reason<br/>
+<font color="#A82F2F"><font size="2">(19:13:57)</font> <b>nihathrael:</b></font> If we really change the usage, we should definitly put it on the hp though<br/>
+<font color="#A82F2F"><font size="2">(19:14:34)</font> <b>christoph_debian:</b></font> chrisoelmueller: can do<br/>
+<font color="#A82F2F"><font size="2">(19:14:43)</font> <b>chrisoelmueller:</b></font> christoph_debian: thanks<br/>
+<font color="#A82F2F"><font size="2">(19:16:03)</font> <b>totycro_:</b></font> if the number of registrees is currently too small, it won&apos;t start properly<br/>
+<font color="#A82F2F"><font size="2">(19:16:14)</font> <b>totycro_:</b></font> btw, the beta testers list is also dead?<br/>
+<font color="#A82F2F"><font size="2">(19:16:33)</font> <b>chrisoelmueller:</b></font> why would it be?<br/>
+<font color="#A82F2F"><font size="2">(19:16:36)</font> <b>gscai:</b></font> the uh-user name implies that it is for users or players of the game; not sure how something that doesn&apos;t influence the gameplay at all would be relevant<br/>
+<font color="#A82F2F"><font size="2">(19:16:37)</font> <b>nihathrael:</b></font> there has not been anything to post to the beta-testers list<br/>
+<font color="#A82F2F"><font size="2">(19:16:46)</font> <b>totycro_:</b></font> i can&apos;t remember when i got the last mail from it<br/>
+<font color="#A82F2F"><font size="2">(19:17:00)</font> <b>chrisoelmueller:</b></font> when the cursor speed issue was sent to it<br/>
+<font color="#A82F2F"><font size="2">(19:17:04)</font> <b>chrisoelmueller:</b></font> which is not that long ago<br/>
+<font color="#A82F2F"><font size="2">(19:17:20)</font> <b>totycro_:</b></font> k<br/>
+<font color="#A82F2F"><font size="2">(19:17:33)</font> <b>nihathrael:</b></font> last post was on the 7th<br/>
+<font color="#A82F2F"><font size="2">(19:18:35)</font> <b>nihathrael:</b></font> we could also rename uh-users to uh-dev<br/>
+<font color="#A82F2F"><font size="2">(19:19:08)</font> <b>perher:</b></font> I agree, uh-dev sounds like a better name for development questions<br/>
+<font color="#A82F2F"><font size="2">(19:19:21)</font> <b>UnknownScribe:</b></font> +1<br/>
+<font color="#A82F2F"><font size="2">(19:20:58)</font> <b>nihathrael:</b></font> we can rename that later<br/>
+<font color="#A82F2F"><font size="2">(19:21:01)</font> <b>UH-Guard`:</b></font> <span style='font-weight: bold;'>New news from uhtrac: </span>Ticket #1397 (Connect forum/blog comments with irc) created<span style='font-weight: bold;'> || </span>Ticket #1396 (Add easily visible link to Get Involved on main page) created<br/>
+<font color="#A82F2F"><font size="2">(19:21:05)</font> <b>totycro_:</b></font> &lt;&gt;<br/>
+<font color="#A82F2F"><font size="2">(19:21:16)</font> <b>perher:</b></font> &lt;&gt;<br/>
+<font color="#A82F2F"><font size="2">(19:21:24)</font> <b>UnknownScribe:</b></font> &lt;&gt;<br/>
+<font color="#A82F2F"><font size="2">(19:21:29)</font> <b>nihathrael:</b></font> so please subscribe to the uh-users list, this is the only list that contains any data<br/>
+<font color="#A82F2F"><font size="2">(19:21:36)</font> <b>nihathrael:</b></font> &lt;&gt;<br/>
+<font color="#A82F2F"><font size="2">(19:21:39)</font> <b>chrisoelmueller:</b></font> &lt;&gt;<br/>
+<font color="#A82F2F"><font size="2">(19:21:57)</font> <b>nihathrael:</b></font> #topic Suggestions: Kilian<br/>
+<font size="2">(19:21:57)</font><b> UH-Guard` hat das Thema zu Suggestions: Kilian abgeändert</b><br/>
+<font color="#A82F2F"><font size="2">(19:22:00)</font> <b>nihathrael:</b></font> any news?<br/>
+<font color="#A82F2F"><font size="2">(19:22:53)</font> <b>UnknownScribe:</b></font> hes set to away :/<br/>
+<font color="#A82F2F"><font size="2">(19:23:45)</font> <b>nihathrael:</b></font> ok, so nothing new from that side for now<br/>
+<font color="#A82F2F"><font size="2">(19:24:01)</font> <b>nihathrael:</b></font> #topic Status update and Hallway chat: everybody<br/>
+<font size="2">(19:24:01)</font><b> UH-Guard` hat das Thema zu Status update and Hallway chat: everybody abgeändert</b><br/>
+<font color="#A82F2F"><font size="2">(19:24:34)</font> <b>nihathrael:</b></font> the idea is that you can add relevant work you did during the week here in a short summary<br/>
+<font color="#A82F2F"><font size="2">(19:24:38)</font> <b>nihathrael:</b></font> using #info<br/>
+<font color="#A82F2F"><font size="2">(19:24:46)</font> <b>totycro_:</b></font> #info mountains now only show their exact contents when there is no mine on them<br/>
+<font color="#A82F2F"><font size="2">(19:25:00)</font> <b>totycro_:</b></font> #info fields give a message when they are ready for harvest, but no farm is in range<br/>
+<font color="#A82F2F"><font size="2">(19:25:27)</font> <b>chrisoelmueller:</b></font> #info Tabwidget and minimap were moved closer to screen edge. This should help prevent accidental scrolling as was found in our usability tests<br/>
+<font color="#A82F2F"><font size="2">(19:25:32)</font> <b>totycro_:</b></font> #info yaml cache is now much faster, please report if opening singleplayer menu is still slow<br/>
+<font color="#A82F2F"><font size="2">(19:25:39)</font> <b>chrisoelmueller:</b></font> (if you find misplaced widgets still please leave me a short note on trac)<br/>
+<font color="#A82F2F"><font size="2">(19:26:02)</font> <b>UnknownScribe:</b></font> #info attention, book, decommissioned, inventory full, mine gold and question mark status icons have been made<br/>
+<font color="#A82F2F"><font size="2">(19:26:41)</font> <b>nihathrael:</b></font> #info There are still problems withsaving and loading, very difficult bugs, I&apos;ll try to look at that further this wee<br/>
+<font color="#A82F2F"><font size="2">(19:26:42)</font> <b>nihathrael:</b></font> k<br/>
+<font color="#A82F2F"><font size="2">(19:28:22)</font> <b>chrisoelmueller:</b></font> also did some string and wording fixes, using suggestions from several people including Novatlan and spectre<br/>
+<font color="#A82F2F"><font size="2">(19:28:44)</font> <b>chrisoelmueller:</b></font> pootle templates updated again as well, for some embarrassing reason the build menu strings were not correctly included last time<br/>
+<font color="#A82F2F"><font size="2">(19:29:02)</font> <b>chrisoelmueller:</b></font> already mentioned the fire service stuff, that&apos;s it &lt;&gt;<br/>
+<font color="#A82F2F"><font size="2">(19:29:11)</font> <b>totycro_:</b></font> &lt;&gt;<br/>
+<font size="2">(19:29:18)</font><b> GreyGhost_ [<em>~GreyGhost@triband-mum-59.183.16.40.mtnl.net.in</em>] hat den Raum betreten.</b><br/>
+<font color="#A82F2F"><font size="2">(19:29:21)</font> <b>UnknownScribe:</b></font> &lt;&gt;<br/>
+<font color="#A82F2F"><font size="2">(19:29:36)</font> <b>nihathrael:</b></font> &lt;&gt;<br/>
+<font color="#A82F2F"><font size="2">(19:29:47)</font> <b>nihathrael:</b></font> #topic Test Report: coders<br/>
+<font size="2">(19:29:47)</font><b> UH-Guard` hat das Thema zu Test Report: coders abgeändert</b><br/>
+<font color="#A82F2F"><font size="2">(19:29:56)</font> <b>nihathrael:</b></font> when did the two addition new tests berak<br/>
+<font color="#A82F2F"><font size="2">(19:29:58)</font> <b>nihathrael:</b></font> break<br/>
+<font color="#A82F2F"><font size="2">(19:30:03)</font> <b>totycro_:</b></font> i think due to jenkins, this issue has sunk into the general consciousness<br/>
+<font color="#A82F2F"><font size="2">(19:30:10)</font> <b>totycro_:</b></font> therefore we could get rid of this regular topic imo<br/>
+<font color="#A82F2F"><font size="2">(19:30:44)</font> <b>gscai:</b></font> the two new tests are testing old bugs<br/>
+<font color="#A82F2F"><font size="2">(19:31:07)</font> <b>gscai:</b></font> but I haven&apos;t looked very far back<br/>
+<font color="#A82F2F"><font size="2">(19:31:35)</font> <b>nihathrael:</b></font> ok, thats good<br/>
+<font color="#A82F2F"><font size="2">(19:32:04)</font> <b>nihathrael:</b></font> I&apos;ll try to look at that this week<br/>
+<font color="#A82F2F"><font size="2">(19:32:17)</font> <b>MasterofJOKers:</b></font> does uh-ci have to tell about all the new commits again?<br/>
+<font color="#A82F2F"><font size="2">(19:32:25)</font> <b>nihathrael:</b></font> no<br/>
+<font size="2">(19:32:27)</font><b> GreyGhost hat den Raum verlassen (quit: Ping timeout: 252 seconds).</b><br/>
+<font color="#A82F2F"><font size="2">(19:32:30)</font> <b>nihathrael:</b></font> only if tests are broken<br/>
+<font color="#A82F2F"><font size="2">(19:32:36)</font> <b>nihathrael:</b></font> (which is currently the case)<br/>
+<font color="#A82F2F"><font size="2">(19:32:46)</font> <b>MasterofJOKers:</b></font> even then this are most likely the last commits<br/>
+<font color="#A82F2F"><font size="2">(19:32:48)</font> <b>nihathrael:</b></font> we can&apos;t make it report errors without the changes sadly<br/>
+<font color="#A82F2F"><font size="2">(19:33:03)</font> <b>MasterofJOKers:</b></font> k<br/>
+<font color="#A82F2F"><font size="2">(19:33:40)</font> <b>gscai:</b></font> the new commits are useful if there are multiple new commits being tested at the same time<br/>
+<font color="#A82F2F"><font size="2">(19:34:27)</font> <b>nihathrael:</b></font> &lt;&gt;<br/>
+<font color="#A82F2F"><font size="2">(19:34:28)</font> <b>MasterofJOKers:</b></font> if tests fail, you could always go and look at the link of the testrun<br/>
+<font color="#A82F2F"><font size="2">(19:34:42)</font> <b>MasterofJOKers:</b></font> to see for which commits these tests failed<br/>
+<font color="#A82F2F"><font size="2">(19:35:12)</font> <b>MasterofJOKers:</b></font> but ok, if it&apos;s not configurable &lt;&gt;<br/>
+<font color="#A82F2F"><font size="2">(19:35:39)</font> <b>nihathrael:</b></font> #endmeeting<br/>
+<font size="2">(19:35:39)</font><b> UH-Guard` hat das Thema zu Welcome to #unknown-horizons | <a href="http://www.unknown-horizons.org">www.unknown-horizons.org</a> | Read the FAQ: <a href="http://wiki.unknown-horizons.org/w/FAQ">http://wiki.unknown-horizons.org/w/FAQ</a> | News: - abgeändert</b><br/>
+<font color="#A82F2F"><font size="2">(19:35:39)</font> <b>UH-Guard`:</b></font> Meeting ended Sun Jan 22 18:35:38 2012 UTC.  Information about MeetBot at http://wiki.debian.org/MeetBot . (v 0.1.4)<br/>
+<font color="#A82F2F"><font size="2">(19:35:39)</font> <b>UH-Guard`:</b></font> Minutes:        http://meetings.christoph-egger.org/unknown-horizons/2012/unknown-horizons.2012-01-22-17.02.html<br/>
+<font color="#A82F2F"><font size="2">(19:35:39)</font> <b>UH-Guard`:</b></font> Minutes (text): http://meetings.christoph-egger.org/unknown-horizons/2012/unknown-horizons.2012-01-22-17.02.txt<br/>
+<font color="#A82F2F"><font size="2">(19:35:39)</font> <b>UH-Guard`:</b></font> Log:            http://meetings.christoph-egger.org/unknown-horizons/2012/unknown-horizons.2012-01-22-17.02.log.html<br/>
+<font color="#A82F2F"><font size="2">(19:36:20)</font> <b>totycro_:</b></font> thanks for participating @all!<br/>
+<font color="#A82F2F"><font size="2">(19:36:28)</font> <b>totycro_:</b></font> hope to see everyone again in a week :)<br/>
+<font size="2">(19:36:39)</font><b> BladeFreak [<em>~BladeFrea@unaffiliated/bladefreak</em>] hat den Raum betreten.</b><br/>
+<font size="2">(19:36:43)</font><b> BladeFr3 [<em>~BladeFrea@109.161.210.177</em>] hat den Raum betreten.</b><br/>
+<font size="2">(19:36:43)</font><b> BladeFreak hat den Raum verlassen (quit: Disconnected by services).</b><br/>
+<font color="#A82F2F"><font size="2">(19:37:15)</font> <b>totycro_:</b></font> perher: are you thinking about tackling another issue?<br/>
+<font color="#A82F2F"><font size="2">(19:37:28)</font> <b>gscai:</b></font> ronnie_c: http://uh.otinn.com/editor_crash.avi<br/>
+<font size="2">(19:37:45)</font><b> uh-gfx-report [<em>~uh-gfx-re@sh1-ext.rs.github.com</em>] hat den Raum betreten.</b><br/>
+<font color="#A82F2F"><font size="2">(19:37:45)</font> <b>uh-gfx-report:</b></font> [gfx] ChrisOelmueller pushed 1 new commit to master: http://git.io/IBhFLA<br/>
+<font color="#A82F2F"><font size="2">(19:37:45)</font> <b>uh-gfx-report:</b></font> [gfx/master] * Mailing list icon for website, fire service icon - Chris Oelmueller<br/>
+<font size="2">(19:37:45)</font><b> uh-gfx-report hat den Raum verlassen.</b><br/>
+<font color="#A82F2F"><font size="2">(19:37:46)</font> <b>chrisoelmueller:</b></font> sources for and export of new ML icon for the website, in case we need it ^<br/>
+<font color="#16569E"><font size="2">(19:38:13)</font> <b>ronnie_c:</b></font> gscai: i suspect this to be a path-related problem<br/>
+<font size="2">(19:38:33)</font><b> Emperor2k3 [<em>~srohmen@f048017152.adsl.alicedsl.de</em>] hat den Raum betreten.</b><br/>
+<font color="#16569E"><font size="2">(19:38:35)</font> <b>ronnie_c:</b></font> can you try the command line option for loading maps (we implemented this in fife due to the broken file browser)<br/>
+<font color="#16569E"><font size="2">(19:38:48)</font> <b>ronnie_c:</b></font> gscai: and thanks for providing the video :-)<br/>
+<font color="#A82F2F"><font size="2">(19:39:14)</font> <b>gscai:</b></font> I tried it but it still didn&apos;t work<br/>
+<font color="#A82F2F"><font size="2">(19:39:22)</font> <b>gscai:</b></font> just provided a slightly different error<br/>
+<font color="#A82F2F"><font size="2">(19:39:25)</font> <b>CIA-18:</b></font> <span style='font-weight: bold;'>unknown-horizons:</span> <span style='color: dark green;'>Chris Oelmueller</span> <span style='color: orange;'>master</span> * r<span style='font-weight: bold;'>6bb9173</span> <span style='color: teal;'></span>/ (72 files in 2 dirs)<span style='font-weight: bold;'>:</span> <br/>
+<font color="#A82F2F"><font size="2">(19:39:25)</font> <b>CIA-18:</b></font> <span style='font-weight: bold;'>unknown-horizons:</span> * Update book status icons<br/>
+<font color="#A82F2F"><font size="2">(19:39:25)</font> <b>CIA-18:</b></font> <span style='font-weight: bold;'>unknown-horizons:</span> Accidentally committed old versions of &quot;open&quot; and &quot;close&quot; animations. - http://git.io/wE7zFg<br/>
+<font color="#16569E"><font size="2">(19:39:39)</font> <b>ronnie_c:</b></font> gscai: can you give me that error perhaps? :-)<br/>
+<font color="#A82F2F"><font size="2">(19:40:20)</font> <b>uh-ci:</b></font> Project uh-tests build #314: STILL UNSTABLE in 53 sec: http://aviamo.de/jenkins/job/uh-tests/314/<br/>
+<font color="#A82F2F"><font size="2">(19:40:20)</font> <b>uh-ci:</b></font> chris.oelmueller+uh: * Update book status icons<br/>
+<font color="#A82F2F"><font size="2">(19:40:21)</font> <b>uh-ci:</b></font> Failed tests:<br/>
+<font color="#A82F2F"><font size="2">(19:40:21)</font> <b>uh-ci:</b></font> tests.game.test_load_save.tests.game.test_load_save.test_load_producing_production_fast: http://aviamo.de/jenkins/job/uh-tests/314/testReport/junit/junit/tests.game/test_load_save/tests_game_test_load_save_test_load_producing_production_fast<br/>
+<font color="#A82F2F"><font size="2">(19:40:22)</font> <b>uh-ci:</b></font> tests.game.test_load_save.tests.game.test_load_save.test_load_producing_production_slow: http://aviamo.de/jenkins/job/uh-tests/314/testReport/junit/junit/tests.game/test_load_save/tests_game_test_load_save_test_load_producing_production_slow<br/>
+<font color="#A82F2F"><font size="2">(19:40:22)</font> <b>uh-ci:</b></font> tests.game.test_status_icons.tests.game.test_status_icons.test_decommissioned: http://aviamo.de/jenkins/job/uh-tests/314/testReport/junit/junit/tests.game/test_status_icons/tests_game_test_status_icons_test_decommissioned<br/>
+<font color="#A82F2F"><font size="2">(19:40:23)</font> <b>uh-ci:</b></font> tests.game.test_status_icons.tests.game.test_status_icons.test_productivity_low: http://aviamo.de/jenkins/job/uh-tests/314/testReport/junit/junit/tests.game/test_status_icons/tests_game_test_status_icons_test_productivity_low<br/>
+<font color="#A82F2F"><font size="2">(19:41:00)</font> <b>gscai:</b></font> http://pastebin.com/fGJeAxg0<br/>
+<font color="#A82F2F"><font size="2">(19:41:18)</font> <b>chrisoelmueller:</b></font> totycro_: can i do anything to help you wrt status icon positioning?<br/>
+<font color="#A82F2F"><font size="2">(19:41:29)</font> <b>gscai:</b></font> this seems slightly weird: &quot;Invalid plugin: UHObjectLoader&quot;<br/>
+<font color="#A82F2F"><font size="2">(19:41:42)</font> <b>chrisoelmueller:</b></font> not sure what needs to be done, but i&apos;d also like to work on it because of the nice reward :)<br/>
+<font color="#A82F2F"><font size="2">(19:41:56)</font> <b>totycro_:</b></font> chrisoelmueller: you could play around with it<br/>
+<font color="#A82F2F"><font size="2">(19:42:01)</font> <b>totycro_:</b></font> status.py:61ff<br/>
+<font color="#16569E"><font size="2">(19:42:05)</font> <b>ronnie_c:</b></font> ok<br/>
+<font color="#A82F2F"><font size="2">(19:42:18)</font> <b>totycro_:</b></font> oh, wait<br/>
+<font color="#A82F2F"><font size="2">(19:42:39)</font> <b>totycro_:</b></font> concreteobject.py:175 <br/>
+<font color="#A82F2F"><font size="2">(19:42:56)</font> <b>totycro_:</b></font> there is the offset in pixels<br/>
+<font color="#A82F2F"><font size="2">(19:43:16)</font> <b>totycro_:</b></font> it must be set to reflect the current rotation and size of the object<br/>
+<font color="#A82F2F"><font size="2">(19:43:31)</font> <b>gscai:</b></font> ronnie_c: the file it says was missing actually exists<br/>
+<font color="#A82F2F"><font size="2">(19:43:32)</font> <b>totycro_:</b></font> or there could be an easier way to this in fife that i don&apos;t know about<br/>
+<font color="#A82F2F"><font size="2">(19:44:24)</font> <b>totycro_:</b></font> chrisoelmueller: does that help you somehow?<br/>
+<font color="#16569E"><font size="2">(19:44:36)</font> <b>ronnie_c:</b></font> gscai: hm.... very weird indeed<br/>
+<font color="#A82F2F"><font size="2">(19:44:38)</font> <b>chrisoelmueller:</b></font> i&apos;ll see<br/>
+<font color="#A82F2F"><font size="2">(19:44:54)</font> <b>chrisoelmueller:</b></font> haven&apos;t worked with the renderer yet<br/>
+<font color="#A82F2F"><font size="2">(19:45:06)</font> <b>totycro_:</b></font> you could check the docu, it&apos;s not very surprising<br/>
+<font color="#16569E"><font size="2">(19:45:30)</font> <b>ronnie_c:</b></font> is the plugin activated in .fife/editor/settings.xml ?<br/>
+<font color="#A82F2F"><font size="2">(19:45:42)</font> <b>totycro_:</b></font> you just do addImage with an image and a position, as position token, a renderernode is used<br/>
+<font color="#A82F2F"><font size="2">(19:45:52)</font> <b>totycro_:</b></font> the one here works relative to a fife instance<br/>
+<font color="#A82F2F"><font size="2">(19:47:05)</font> <b>gscai:</b></font> do you mean the regular uh settings.xml or something else?<br/>
+<font color="#A82F2F"><font size="2">(19:47:22)</font> <b>chrisoelmueller:</b></font> totycro_: where&apos;s that instance center?<br/>
+<font color="#A82F2F"><font size="2">(19:47:32)</font> <b>chrisoelmueller:</b></font> or do we only get left upper edge / similar stuff?<br/>
+<font color="#A82F2F"><font size="2">(19:47:42)</font> <b>totycro_:</b></font> that&apos;s not documented<br/>
+<font color="#A82F2F"><font size="2">(19:47:46)</font> <b>chrisoelmueller:</b></font> awesome :)<br/>
+<font color="#A82F2F"><font size="2">(19:47:53)</font> <b>totycro_:</b></font> i tried to find it in the fife src, but i could just find some addition<br/>
+<font color="#16569E"><font size="2">(19:48:07)</font> <b>ronnie_c:</b></font> gscai: i mean ~/ .fife/editor/settings.xml<br/>
+<font color="#062585"><font size="2">(19:48:10)</font> <b>***chrisoelmueller</b></font> practises looking at fife guys angrily<br/>
+<font color="#A82F2F"><font size="2">(19:48:18)</font> <b>totycro_:</b></font> i don&apos;t know what exactly they add there, and figured it was more efficient to play around until some values fit<br/>
+<font color="#A82F2F"><font size="2">(19:49:54)</font> <b>gscai:</b></font> any idea where that would be in windows?<br/>
+<font color="#16569E"><font size="2">(19:50:33)</font> <b>ronnie_c:</b></font> gscai: so you ARE using windows?<br/>
+<font color="#A82F2F"><font size="2">(19:50:43)</font> <b>gscai:</b></font> I am, totycro_ isn&apos;t<br/>
+<font color="#16569E"><font size="2">(19:51:01)</font> <b>ronnie_c:</b></font> ok, maybe try under your user?<br/>
+<font color="#16569E"><font size="2">(19:51:10)</font> <b>ronnie_c:</b></font> app data<br/>
+<font color="#A82F2F"><font size="2">(19:51:13)</font> <b>gscai:</b></font> anyway I fount it in C:\Users\user\AppData\Roaming\fife\editor<br/>
+<font color="#16569E"><font size="2">(19:51:16)</font> <b>ronnie_c:</b></font> C:\Users ...<br/>
+<font color="#A82F2F"><font size="2">(19:51:54)</font> <b>gscai:</b></font>     &lt;Setting name=&quot;UHObjectLoader&quot; type=&quot;bool&quot;&gt;True&lt;/Setting&gt;<br/>
+<font color="#A82F2F"><font size="2">(19:52:35)</font> <b>gscai:</b></font> entire file: http://pastebin.com/tBMRkcBv<br/>
+<font color="#A82F2F"><font size="2">(19:53:51)</font> <b>uh-ci:</b></font> Project uh-gui-tests build #62: STILL UNSTABLE in 2 min 51 sec: http://aviamo.de/jenkins/job/uh-gui-tests/62/<br/>
+<font color="#A82F2F"><font size="2">(19:53:52)</font> <b>uh-ci:</b></font> chris.oelmueller+uh: * Update book status icons<br/>
+<font color="#A82F2F"><font size="2">(19:56:12)</font> <b>chrisoelmueller:</b></font> totycro_: wow, the placement seems totally random to me when i look at tents<br/>
+<font color="#A82F2F"><font size="2">(19:56:34)</font> <b>chrisoelmueller:</b></font> totycro_: does the building rotation somehow break this already?<br/>
+<font color="#A82F2F"><font size="2">(19:56:47)</font> <b>chrisoelmueller:</b></font> as in, is the offset applied to rotated coordinates?<br/>
+<font color="#A82F2F"><font size="2">(19:56:58)</font> <b>totycro_:</b></font> tbh, i don&apos;t know<br/>
+<font size="2">(19:57:04)</font><b> GreyGhost_ hat den Raum verlassen (quit: Quit: Leaving).</b><br/>
+<font color="#A82F2F"><font size="2">(19:57:19)</font> <b>chrisoelmueller:</b></font> looks like it<br/>
+<font color="#A82F2F"><font size="2">(19:57:33)</font> <b>totycro_:</b></font> is it the same for buildings with the same rotation?<br/>
+<font color="#A82F2F"><font size="2">(19:57:46)</font> <b>chrisoelmueller:</b></font> when i build the tents in same direction (shift) the icons are at least placed in the same location<br/>
+<font color="#A82F2F"><font size="2">(19:59:06)</font> <b>chrisoelmueller:</b></font> i&apos;ll upload a shot<br/>
+<font color="#A82F2F"><font size="2">(20:00:19)</font> <b>totycro_:</b></font> i suppose it&apos;s time to ask the fife people then<br/>
+<font color="#A82F2F"><font size="2">(20:05:58)</font> <b>chrisoelmueller:</b></font> totycro_: http://minus.com/m3s8TvfqX#1<br/>
+<font color="#A82F2F"><font size="2">(20:07:10)</font> <b>chrisoelmueller:</b></font> does that help to see the issue?<br/>
+<font color="#A82F2F"><font size="2">(20:07:52)</font> <b>totycro_:</b></font> we could try setting the location instead of the related instance<br/>
+<font color="#A82F2F"><font size="2">(20:08:07)</font> <b>totycro_:</b></font> then the status icon wouldn&apos;t move with the unit though, which would be very nice for unis<br/>
+<font color="#A82F2F"><font size="2">(20:08:10)</font> <b>totycro_:</b></font> *units<br/>
+<font color="#A82F2F"><font size="2">(20:08:45)</font> <b>totycro_:</b></font> http://fifedocs.boxbox.org/epydoc/fife.fife.GenericRendererNode-class.html<br/>
+<font color="#A82F2F"><font size="2">(20:09:06)</font> <b>totycro_:</b></font> currently, RendererNode(Instance, Point) is used<br/>
+<font color="#A82F2F"><font size="2">(20:09:07)</font> <b>chrisoelmueller:</b></font> how about doing that for buildings now and later figuring out the proper way together with fife?<br/>
+<font color="#A82F2F"><font size="2">(20:09:37)</font> <b>totycro_:</b></font> since there are no unit status icon, i don&apos;t think we need to support them<br/>
+<font color="#A82F2F"><font size="2">(20:09:46)</font> <b>chrisoelmueller:</b></font> *yet<br/>
+<font color="#A82F2F"><font size="2">(20:09:53)</font> <b>totycro_:</b></font> k :)<br/>
+<font color="#A82F2F"><font size="2">(20:09:57)</font> <b>chrisoelmueller:</b></font> but yeah that was my reasoning<br/>
+<font color="#A82F2F"><font size="2">(20:10:13)</font> <b>chrisoelmueller:</b></font> if we can at least fix buildings, that&apos;s great<br/>
+<font color="#A82F2F"><font size="2">(20:10:16)</font> <b>totycro_:</b></font> if you want to play around with it, you only need to change the renderernode in concreteobject<br/>
+<font color="#A82F2F"><font size="2">(20:10:37)</font> <b>totycro_:</b></font> for code that uses the location coords, you could try to find other examples in the code<br/>
+<font color="#A82F2F"><font size="2">(20:10:40)</font> <b>totycro_:</b></font> i don&apos;t know that by heart<br/>
+<font color="#A82F2F"><font size="2">(20:12:56)</font> <b>totycro_:</b></font> iirc, the fife demo uses relative positioning w.r.t. instances somewhere<br/>
+<font size="2">(20:16:30)</font><b> mmaruseacph2 hat den Raum verlassen (quit: Read error: Connection reset by peer).</b><br/>
+<font size="2">(20:21:21)</font><b> mmaruseacph2 [<em>~mihai@188.26.151.70</em>] hat den Raum betreten.</b><br/>
+<font size="2">(20:30:31)</font><b> perher hat den Raum verlassen (quit: Ping timeout: 244 seconds).</b><br/>
+<font color="#A82F2F"><font size="2">(20:39:12)</font> <b>CIA-18:</b></font> <span style='font-weight: bold;'>unknown-horizons:</span> <span style='color: dark green;'>manuel</span> <span style='color: orange;'>master</span> * r<span style='font-weight: bold;'>384ae26</span> <span style='color: teal;'></span>/ (2 files)<span style='font-weight: bold;'>:</span> adding enet binary packages for freebsd on amd64/x86_64 - http://git.io/Bmvs-g<br/>
+<font size="2">(20:39:39)</font><b> Andre_Re [<em>~Andre@dslb-094-216-233-160.pools.arcor-ip.net</em>] hat den Raum betreten.</b><br/>
+<font color="#A82F2F"><font size="2">(20:40:06)</font> <b>uh-ci:</b></font> Project uh-tests build #315: STILL UNSTABLE in 48 sec: http://aviamo.de/jenkins/job/uh-tests/315/<br/>
+<font color="#A82F2F"><font size="2">(20:40:06)</font> <b>uh-ci:</b></font> manuel: adding enet binary packages for freebsd on amd64/x86_64<br/>
+<font color="#A82F2F"><font size="2">(20:40:07)</font> <b>uh-ci:</b></font> Failed tests:<br/>
+<font color="#A82F2F"><font size="2">(20:40:07)</font> <b>uh-ci:</b></font> tests.game.test_load_save.tests.game.test_load_save.test_load_producing_production_fast: http://aviamo.de/jenkins/job/uh-tests/315/testReport/junit/junit/tests.game/test_load_save/tests_game_test_load_save_test_load_producing_production_fast<br/>
+<font color="#A82F2F"><font size="2">(20:40:08)</font> <b>uh-ci:</b></font> tests.game.test_load_save.tests.game.test_load_save.test_load_producing_production_slow: http://aviamo.de/jenkins/job/uh-tests/315/testReport/junit/junit/tests.game/test_load_save/tests_game_test_load_save_test_load_producing_production_slow<br/>
+<font color="#A82F2F"><font size="2">(20:40:08)</font> <b>uh-ci:</b></font> tests.game.test_status_icons.tests.game.test_status_icons.test_decommissioned: http://aviamo.de/jenkins/job/uh-tests/315/testReport/junit/junit/tests.game/test_status_icons/tests_game_test_status_icons_test_decommissioned<br/>
+<font color="#A82F2F"><font size="2">(20:40:09)</font> <b>uh-ci:</b></font> tests.game.test_status_icons.tests.game.test_status_icons.test_productivity_low: http://aviamo.de/jenkins/job/uh-tests/315/testReport/junit/junit/tests.game/test_status_icons/tests_game_test_status_icons_test_productivity_low<br/>
+<font color="#A82F2F"><font size="2">(20:40:50)</font> <b>chrisoelmueller:</b></font> totycro_: i get weird results for   print self.fife_instance.getRotation()<br/>
+<font color="#A82F2F"><font size="2">(20:40:59)</font> <b>chrisoelmueller:</b></font> in particular the values for all four directions seem to be<br/>
+<font color="#A82F2F"><font size="2">(20:41:14)</font> <b>chrisoelmueller:</b></font> 0, 89, 170, 259<br/>
+<font color="#A82F2F"><font size="2">(20:41:27)</font> <b>chrisoelmueller:</b></font> which makes little to no sense as i&apos;d expected 0, 90, 180, 270<br/>
+<font color="#A82F2F"><font size="2">(20:42:06)</font> <b>uh-ci:</b></font> Project uh-ai-tests build #83: STILL UNSTABLE in 41 min: http://aviamo.de/jenkins/job/uh-ai-tests/83/<br/>
+<font color="#A82F2F"><font size="2">(20:42:06)</font> <b>uh-ci:</b></font> chris.oelmueller+uh: * Update book status icons<br/>
+<font color="#A82F2F"><font size="2">(20:42:07)</font> <b>uh-ci:</b></font> Failed tests:<br/>
+<font color="#A82F2F"><font size="2">(20:42:07)</font> <b>uh-ci:</b></font> tests.game.test_load_save.tests.game.test_load_save.test_load_producing_production_fast: http://aviamo.de/jenkins/job/uh-ai-tests/83/testReport/junit/junit/tests.game/test_load_save/tests_game_test_load_save_test_load_producing_production_fast<br/>
+<font color="#A82F2F"><font size="2">(20:42:08)</font> <b>uh-ci:</b></font> tests.game.test_load_save.tests.game.test_load_save.test_load_producing_production_slow: http://aviamo.de/jenkins/job/uh-ai-tests/83/testReport/junit/junit/tests.game/test_load_save/tests_game_test_load_save_test_load_producing_production_slow<br/>
+<font color="#A82F2F"><font size="2">(20:42:51)</font> <b>CIA-18:</b></font> <span style='font-weight: bold;'>unknown-horizons:</span> <span style='color: dark green;'>manuel</span> <span style='color: orange;'>master</span> * r<span style='font-weight: bold;'>213a97f</span> <span style='color: teal;'></span>/ horizons/network/freebsd-x64/__init__.py <span style='font-weight: bold;'>:</span> fix wrong year in me recent commit - http://git.io/65tKkQ<br/>
+<font color="#A82F2F"><font size="2">(20:43:11)</font> <b>UnknownScribe:</b></font> 0, 89, 170, 259! is the base definitely isometric<br/>
+<font color="#A82F2F"><font size="2">(20:43:49)</font> <b>uh-ci:</b></font> Project uh-tests build #316: STILL UNSTABLE in 53 sec: http://aviamo.de/jenkins/job/uh-tests/316/<br/>
+<font color="#A82F2F"><font size="2">(20:43:50)</font> <b>uh-ci:</b></font> manuel: fix wrong year in me recent commit<br/>
+<font color="#A82F2F"><font size="2">(20:43:50)</font> <b>uh-ci:</b></font> Failed tests:<br/>
+<font color="#A82F2F"><font size="2">(20:43:50)</font> <b>uh-ci:</b></font> tests.game.test_load_save.tests.game.test_load_save.test_load_producing_production_fast: http://aviamo.de/jenkins/job/uh-tests/316/testReport/junit/junit/tests.game/test_load_save/tests_game_test_load_save_test_load_producing_production_fast<br/>
+<font color="#A82F2F"><font size="2">(20:43:51)</font> <b>uh-ci:</b></font> tests.game.test_load_save.tests.game.test_load_save.test_load_producing_production_slow: http://aviamo.de/jenkins/job/uh-tests/316/testReport/junit/junit/tests.game/test_load_save/tests_game_test_load_save_test_load_producing_production_slow<br/>
+<font color="#A82F2F"><font size="2">(20:43:52)</font> <b>uh-ci:</b></font> tests.game.test_status_icons.tests.game.test_status_icons.test_decommissioned: http://aviamo.de/jenkins/job/uh-tests/316/testReport/junit/junit/tests.game/test_status_icons/tests_game_test_status_icons_test_decommissioned<br/>
+<font color="#A82F2F"><font size="2">(20:43:52)</font> <b>uh-ci:</b></font> tests.game.test_status_icons.tests.game.test_status_icons.test_productivity_low: http://aviamo.de/jenkins/job/uh-tests/316/testReport/junit/junit/tests.game/test_status_icons/tests_game_test_status_icons_test_productivity_low<br/>
+<font color="#A82F2F"><font size="2">(20:44:32)</font> <b>chrisoelmueller:</b></font> so we can&apos;t use that rotation for placement since our internal rotation uses 90&apos; steps i assume<br/>
+<font color="#A82F2F"><font size="2">(20:45:24)</font> <b>totycro_:</b></font> i&apos;m not sure where we operate with the actual instance rotations<br/>
+<font color="#A82F2F"><font size="2">(20:45:30)</font> <b>gscai:</b></font> we use 45 + n * 90<br/>
+<font color="#A82F2F"><font size="2">(20:45:53)</font> <b>totycro_:</b></font> chrisoelmueller: try self.rotation<br/>
+<font color="#A82F2F"><font size="2">(20:46:04)</font> <b>totycro_:</b></font> that&apos;s as gscai said<br/>
+<font color="#A82F2F"><font size="2">(20:47:28)</font> <b>chrisoelmueller:</b></font> thanks, that did it<br/>
+<font color="#A82F2F"><font size="2">(20:53:48)</font> <b>uh-ci:</b></font> Project uh-gui-tests build #63: STILL UNSTABLE in 2 min 48 sec: http://aviamo.de/jenkins/job/uh-gui-tests/63/<br/>
+<font color="#A82F2F"><font size="2">(20:53:49)</font> <b>uh-ci:</b></font> * manuel: adding enet binary packages for freebsd on amd64/x86_64<br/>
+<font color="#A82F2F"><font size="2">(20:53:49)</font> <b>uh-ci:</b></font> * manuel: fix wrong year in me recent commit<br/>
+<font size="2">(20:53:52)</font><b> mmaruseacph2 hat den Raum verlassen (quit: Ping timeout: 260 seconds).</b><br/>
+<font size="2">(20:56:34)</font><b> Elouin [<em>~max@p54BF9F3C.dip.t-dialin.net</em>] hat den Raum betreten.</b><br/>
+<font size="2">(21:10:20)</font><b> hagabaka [<em>~hagabaka@cblmdm24-53-178-92.buckeyecom.net</em>] hat den Raum betreten.</b><br/>
+<font size="2">(21:10:20)</font><b> hagabaka hat den Raum verlassen (quit: Changing host).</b><br/>
+<font size="2">(21:10:20)</font><b> hagabaka [<em>~hagabaka@unaffiliated/hagabaka</em>] hat den Raum betreten.</b><br/>
+<font size="2">(21:20:37)</font><b> seblabel [<em>~seb@ARouen-256-1-60-6.w90-51.abo.wanadoo.fr</em>] hat den Raum betreten.</b><br/>
+<font size="2">(21:26:37)</font><b> kaschte hat den Raum verlassen (quit: Quit: Verlassend).</b><br/>
+<font size="2">(21:28:15)</font><b> Memphissss [<em>~opera@ip-109-45-255-208.web.vodafone.de</em>] hat den Raum betreten.</b><br/>
+<font color="#A82F2F"><font size="2">(21:31:07)</font> <b>seblabel:</b></font> hey people!<br/>
