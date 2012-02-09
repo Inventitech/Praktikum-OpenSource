@@ -197,14 +197,14 @@ fife.extensions.loaders.addMapLoader('sqlite', MapSaver)
 \end{lstlisting}
 
 Sobald daraufhin eine Map mit \code{.sqlite} Erweiterung im Editor
-gespeichert wird, instantiiert dieser die \code{UHMapLoader} Klasse und ruft
+gespeichert wird, instantiiert dieser die \code{MapSaver} Klasse und ruft
 folgende Methode auf:
 
 \begin{lstlisting}
 saveResource(self, path)
 \end{lstlisting}
 
-Daraufhin beginnt der \code{UHMapSaver} mit dem Speichern der Map.
+Daraufhin beginnt der \code{MapSaver} mit dem Speichern der Map.
 
 \subsubsection{Grundlegendes Speichern}
 Grundsätzlich untergliedert sich das Speichern in die folgenden Schritte:
